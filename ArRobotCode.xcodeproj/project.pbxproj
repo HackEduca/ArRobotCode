@@ -15,6 +15,7 @@
 		D3E50F362178850D000270EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F342178850D000270EE /* LaunchScreen.storyboard */; };
 		D3E50F412178850D000270EE /* ArRobotCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F402178850D000270EE /* ArRobotCodeTests.swift */; };
 		D3E50F4C2178850D000270EE /* ArRobotCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F4B2178850D000270EE /* ArRobotCodeUITests.swift */; };
+		D3E50F5A21788FF2000270EE /* Tile.sks in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F5921788FF2000270EE /* Tile.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D3E50F472178850D000270EE /* ArRobotCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArRobotCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F4B2178850D000270EE /* ArRobotCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArRobotCodeUITests.swift; sourceTree = "<group>"; };
 		D3E50F4D2178850D000270EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E50F5921788FF2000270EE /* Tile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tile.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D3E50F322178850D000270EE /* Assets.xcassets */,
 				D3E50F342178850D000270EE /* LaunchScreen.storyboard */,
 				D3E50F372178850D000270EE /* Info.plist */,
+				D3E50F5921788FF2000270EE /* Tile.sks */,
 			);
 			path = ArRobotCode;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				D3E50F2C2178850C000270EE /* art.scnassets in Resources */,
 				D3E50F362178850D000270EE /* LaunchScreen.storyboard in Resources */,
 				D3E50F332178850D000270EE /* Assets.xcassets in Resources */,
+				D3E50F5A21788FF2000270EE /* Tile.sks in Resources */,
 				D3E50F312178850C000270EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
