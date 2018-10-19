@@ -8,14 +8,11 @@
 
 import UIKit
 
-class InstructionsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+class InstructionsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDragDelegate {
     var instructionsArray = [UIImage(named: "up"), UIImage(named: "down"), UIImage(named: "left"), UIImage(named: "right")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         // Do any additional setup after loading the view.
     }
     
@@ -29,17 +26,28 @@ class InstructionsViewController: UIViewController, UICollectionViewDelegate, UI
         cell.Instruction.image = instructionsArray[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        collectionView.dragDelegate = self
+        
+        let item = self.instructionsArray[indexPath.row]
+        let itemProvider = NSItemProvider(object: "hello" as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return [dragItem]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem]
+    {
+        let item = self.instructionsArray[indexPath.row]
+        let itemProvider = NSItemProvider(object: "hello" as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return [dragItem]
+    }
 
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
