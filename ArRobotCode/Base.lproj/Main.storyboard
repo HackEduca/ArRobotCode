@@ -83,20 +83,61 @@
             </objects>
             <point key="canvasLocation" x="-680" y="2908"/>
         </scene>
-        <!--Action List-->
+        <!--Instructions-->
         <scene sceneID="Lmq-yq-eEZ">
             <objects>
-                <viewController storyboardIdentifier="ActionListScene" title="Action List" id="Mlk-0r-Bbw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActionListScene" title="Action List" id="Mlk-0r-Bbw" userLabel="Instructions" customClass="InstructionsViewController" customModule="ArRobotCode" customModuleProvider="target" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rtA-NU-Z0x">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SPC-Ju-kuX">
+                                <rect key="frame" x="0.0" y="65" width="1112" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y8t-3Y-lUn">
+                                    <size key="itemSize" width="162" height="131"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InstructionsCollectionViewCell" id="jQQ-0E-U5l" customClass="InstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-1.5" width="162" height="131"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="usl-RA-XPk">
+                                                    <rect key="frame" x="5" y="10" width="152" height="111"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="usl-RA-XPk" firstAttribute="top" secondItem="jQQ-0E-U5l" secondAttribute="top" constant="10" id="5y2-TU-jce"/>
+                                            <constraint firstItem="usl-RA-XPk" firstAttribute="leading" secondItem="jQQ-0E-U5l" secondAttribute="leading" constant="5" id="7ft-Lm-QWc"/>
+                                            <constraint firstAttribute="bottom" secondItem="usl-RA-XPk" secondAttribute="bottom" constant="10" id="RSI-5U-MM1"/>
+                                            <constraint firstAttribute="trailing" secondItem="usl-RA-XPk" secondAttribute="trailing" constant="5" id="XdB-Lw-O5J"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="Instruction" destination="usl-RA-XPk" id="wdp-09-FyN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mlk-0r-Bbw" id="mBo-cB-JtZ"/>
+                                    <outlet property="delegate" destination="Mlk-0r-Bbw" id="xGC-f2-rOf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.67953334783515018" blue="0.69663503542117144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8bj-V7-Ync"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUF-or-AVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1057" y="3606"/>
+            <point key="canvasLocation" x="-1057.0143884892086" y="3605.7553956834536"/>
         </scene>
         <!--Level Description-->
         <scene sceneID="YrA-ag-GuO">
