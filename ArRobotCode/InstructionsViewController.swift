@@ -9,7 +9,12 @@
 import UIKit
 
 class InstructionsViewController: UIViewController{
+    @IBOutlet weak var instructionsCollectionView: UICollectionView!
+    @IBOutlet weak var runningInstructionsCollectionView: UICollectionView!
+    
     var instructionsArray = [UIImage(named: "up"), UIImage(named: "down"), UIImage(named: "left"), UIImage(named: "right")]
+    
+    var runningInstructionsArray =  [UIImage(named: "up"), UIImage(named: "up"), UIImage(named: "left"), UIImage(named: "up"), UIImage(named: "right"), UIImage(named: "right")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +24,34 @@ class InstructionsViewController: UIViewController{
 
 extension InstructionsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return instructionsArray.count
+        if collectionView == self.instructionsCollectionView {
+             return instructionsArray.count
+        }
+        else if collectionView == self.runningInstructionsCollectionView {
+            return runningInstructionsArray.count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstructionsCollectionViewCell", for:  indexPath) as! InstructionsCollectionViewCell
+        if collectionView == self.instructionsCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstructionsCollectionViewCell", for:  indexPath) as! InstructionsCollectionViewCell
+            
+            cell.Instruction.image = instructionsArray[indexPath.row]
+            return cell
+        }
+            
+        else if collectionView == self.runningInstructionsCollectionView {
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RunningInstructionsCollectionViewCell",
+                                                         for: indexPath) as! RunningInstructionsCollectionViewCell
+            
+            cell.Instruction.image = instructionsArray[0]
+            cell.Status.image = instructionsArray[0]
+            return cell
+        }
         
-        cell.Instruction.image = instructionsArray[indexPath.row]
-        return cell
+       return UICollectionViewCell()
     }
 }
 

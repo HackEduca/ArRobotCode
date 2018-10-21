@@ -142,7 +142,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z8J-k0-eLx" customClass="RunningInstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RunningInstructionsCollectionViewCell" id="Z8J-k0-eLx" customClass="RunningInstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -166,11 +166,20 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mlk-0r-Bbw" id="aBn-8I-0rZ"/>
+                                    <outlet property="delegate" destination="Mlk-0r-Bbw" id="Wbj-ql-iYA"/>
+                                    <outlet property="dropDelegate" destination="Mlk-0r-Bbw" id="ddZ-wO-kTg"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.67953334783515018" blue="0.69663503542117144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8bj-V7-Ync"/>
                     </view>
+                    <connections>
+                        <outlet property="instructionsCollectionView" destination="SPC-Ju-kuX" id="uso-6o-eWc"/>
+                        <outlet property="runningInstructionsCollectionView" destination="WfR-5m-dTD" id="vGj-Y9-s4G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUF-or-AVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
