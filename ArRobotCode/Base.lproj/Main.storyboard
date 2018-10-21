@@ -91,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SPC-Ju-kuX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SPC-Ju-kuX" userLabel="Instructions Collection View">
                                 <rect key="frame" x="0.0" y="65" width="1112" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,10 +126,46 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Mlk-0r-Bbw" id="mBo-cB-JtZ"/>
-                                    <outlet property="delegate" destination="Mlk-0r-Bbw" id="xGC-f2-rOf"/>
-                                    <outlet property="dragDelegate" destination="Mlk-0r-Bbw" id="lgK-1B-gBM"/>
+                                    <outlet property="dataSource" destination="Mlk-0r-Bbw" id="uuM-1S-xg9"/>
+                                    <outlet property="delegate" destination="Mlk-0r-Bbw" id="P6N-Bp-5jO"/>
+                                    <outlet property="dragDelegate" destination="Mlk-0r-Bbw" id="7NS-Au-EZz"/>
                                 </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-5m-dTD" userLabel="Running Instructions Collection View">
+                                <rect key="frame" x="0.0" y="223" width="1112" height="611"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aRY-RU-GU8">
+                                    <size key="itemSize" width="1112" height="97"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z8J-k0-eLx" customClass="RunningInstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfC-8a-qC5" userLabel="Status Image View">
+                                                    <rect key="frame" x="244" y="0.0" width="194" height="97"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTL-f3-KQB" userLabel="Instruction Image View">
+                                                    <rect key="frame" x="640" y="0.0" width="229" height="97"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="Instruction" destination="WTL-f3-KQB" id="gNS-4v-9nm"/>
+                                            <outlet property="Status" destination="jfC-8a-qC5" id="Y1M-Z0-pDd"/>
+                                            <outlet property="backgroundView" destination="WTL-f3-KQB" id="INN-OR-muE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.67953334783515018" blue="0.69663503542117144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

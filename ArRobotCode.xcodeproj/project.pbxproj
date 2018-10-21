@@ -11,6 +11,7 @@
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
 		D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */; };
 		D31F160B217A420D006B37B4 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* InstructionsViewController.swift */; };
+		D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D31F160A217A420D006B37B4 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D31F160A217A420D006B37B4 /* InstructionsViewController.swift */,
 				D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */,
+				D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */,
 			);
 			path = ArRobotCode;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E50F2E2178850C000270EE /* ViewController.swift in Sources */,
+				D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
