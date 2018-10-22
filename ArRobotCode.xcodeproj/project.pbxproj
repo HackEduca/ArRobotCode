@@ -10,7 +10,7 @@
 		D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F16022179EF02006B37B4 /* SidePageViewController.swift */; };
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
 		D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */; };
-		D31F160B217A420D006B37B4 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* InstructionsViewController.swift */; };
+		D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */; };
 		D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
@@ -21,6 +21,12 @@
 		D3E50F412178850D000270EE /* ArRobotCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F402178850D000270EE /* ArRobotCodeTests.swift */; };
 		D3E50F4C2178850D000270EE /* ArRobotCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F4B2178850D000270EE /* ArRobotCodeUITests.swift */; };
 		D3E50F5A21788FF2000270EE /* Tile.sks in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F5921788FF2000270EE /* Tile.sks */; };
+		D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */; };
+		D3F0ED0F217DBD4D00054F87 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D3F0ED0A217DBD4D00054F87 /* index.html */; };
+		D3F0ED10217DBD4D00054F87 /* javascript_compressed.js in Resources */ = {isa = PBXBuildFile; fileRef = D3F0ED0B217DBD4D00054F87 /* javascript_compressed.js */; };
+		D3F0ED11217DBD4D00054F87 /* blocks_compressed.js in Resources */ = {isa = PBXBuildFile; fileRef = D3F0ED0C217DBD4D00054F87 /* blocks_compressed.js */; };
+		D3F0ED12217DBD4D00054F87 /* blockly_compressed.js in Resources */ = {isa = PBXBuildFile; fileRef = D3F0ED0D217DBD4D00054F87 /* blockly_compressed.js */; };
+		D3F0ED13217DBD4D00054F87 /* en.js in Resources */ = {isa = PBXBuildFile; fileRef = D3F0ED0E217DBD4D00054F87 /* en.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +50,7 @@
 		D31F16022179EF02006B37B4 /* SidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePageViewController.swift; sourceTree = "<group>"; };
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		D31F160A217A420D006B37B4 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeInstructionsViewController.swift; sourceTree = "<group>"; };
 		D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +67,12 @@
 		D3E50F4B2178850D000270EE /* ArRobotCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArRobotCodeUITests.swift; sourceTree = "<group>"; };
 		D3E50F4D2178850D000270EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E50F5921788FF2000270EE /* Tile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tile.sks; sourceTree = "<group>"; };
+		D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D3F0ED0A217DBD4D00054F87 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		D3F0ED0B217DBD4D00054F87 /* javascript_compressed.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = javascript_compressed.js; sourceTree = "<group>"; };
+		D3F0ED0C217DBD4D00054F87 /* blocks_compressed.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = blocks_compressed.js; sourceTree = "<group>"; };
+		D3F0ED0D217DBD4D00054F87 /* blockly_compressed.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = blockly_compressed.js; sourceTree = "<group>"; };
+		D3F0ED0E217DBD4D00054F87 /* en.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = en.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 		D3E50F282178850C000270EE /* ArRobotCode */ = {
 			isa = PBXGroup;
 			children = (
+				D3F0ED09217DBD4D00054F87 /* ScratchBlocksHTML */,
 				D3E50F292178850C000270EE /* AppDelegate.swift */,
 				D3E50F2B2178850C000270EE /* art.scnassets */,
 				D3E50F2D2178850C000270EE /* ViewController.swift */,
@@ -121,7 +134,8 @@
 				D3E50F5921788FF2000270EE /* Tile.sks */,
 				D31F16022179EF02006B37B4 /* SidePageViewController.swift */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
-				D31F160A217A420D006B37B4 /* InstructionsViewController.swift */,
+				D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */,
+				D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */,
 				D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */,
 				D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */,
 			);
@@ -144,6 +158,18 @@
 				D3E50F4D2178850D000270EE /* Info.plist */,
 			);
 			path = ArRobotCodeUITests;
+			sourceTree = "<group>";
+		};
+		D3F0ED09217DBD4D00054F87 /* ScratchBlocksHTML */ = {
+			isa = PBXGroup;
+			children = (
+				D3F0ED0A217DBD4D00054F87 /* index.html */,
+				D3F0ED0B217DBD4D00054F87 /* javascript_compressed.js */,
+				D3F0ED0C217DBD4D00054F87 /* blocks_compressed.js */,
+				D3F0ED0D217DBD4D00054F87 /* blockly_compressed.js */,
+				D3F0ED0E217DBD4D00054F87 /* en.js */,
+			);
+			path = ScratchBlocksHTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +276,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F0ED13217DBD4D00054F87 /* en.js in Resources */,
+				D3F0ED0F217DBD4D00054F87 /* index.html in Resources */,
 				D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */,
 				D3E50F2C2178850C000270EE /* art.scnassets in Resources */,
 				D3E50F362178850D000270EE /* LaunchScreen.storyboard in Resources */,
 				D3E50F332178850D000270EE /* Assets.xcassets in Resources */,
+				D3F0ED11217DBD4D00054F87 /* blocks_compressed.js in Resources */,
+				D3F0ED12217DBD4D00054F87 /* blockly_compressed.js in Resources */,
 				D3E50F5A21788FF2000270EE /* Tile.sks in Resources */,
+				D3F0ED10217DBD4D00054F87 /* javascript_compressed.js in Resources */,
 				D3E50F312178850C000270EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +316,8 @@
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
-				D31F160B217A420D006B37B4 /* InstructionsViewController.swift in Sources */,
+				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
+				D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

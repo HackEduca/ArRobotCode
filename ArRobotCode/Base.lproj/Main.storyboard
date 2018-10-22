@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="-680" y="2908"/>
         </scene>
-        <!--Instructions-->
+        <!--Instructions Alternative-->
         <scene sceneID="Lmq-yq-eEZ">
             <objects>
-                <viewController storyboardIdentifier="ActionListScene" title="Action List" id="Mlk-0r-Bbw" userLabel="Instructions" customClass="InstructionsViewController" customModule="ArRobotCode" customModuleProvider="target" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActionListSceneAlternative" title="Action List" id="Mlk-0r-Bbw" userLabel="Instructions Alternative" customClass="AlternativeInstructionsViewController" customModule="ArRobotCode" customModuleProvider="target" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rtA-NU-Z0x">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,23 +142,42 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RunningInstructionsCollectionViewCell" id="Z8J-k0-eLx" customClass="RunningInstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="RunningInstructionsCollectionViewCell" id="Z8J-k0-eLx" customClass="RunningInstructionsCollectionViewCell" customModule="ArRobotCode" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfC-8a-qC5" userLabel="Status Image View">
-                                                    <rect key="frame" x="244" y="0.0" width="194" height="97"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTL-f3-KQB" userLabel="Instruction Image View">
-                                                    <rect key="frame" x="640" y="0.0" width="229" height="97"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UZw-uW-CcB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1112" height="97"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jfC-8a-qC5" userLabel="Status Image View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="97"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTL-f3-KQB" userLabel="Instruction Image View">
+                                                            <rect key="frame" x="561" y="0.0" width="551" height="97"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="jfC-8a-qC5" firstAttribute="top" secondItem="UZw-uW-CcB" secondAttribute="top" id="7by-2o-O4B"/>
+                                                        <constraint firstItem="jfC-8a-qC5" firstAttribute="bottom" secondItem="wob-DG-16R" secondAttribute="bottom" id="Bv3-Az-JBO"/>
+                                                        <constraint firstItem="WTL-f3-KQB" firstAttribute="leading" secondItem="jfC-8a-qC5" secondAttribute="trailing" id="Itm-jg-6Rz"/>
+                                                        <constraint firstItem="WTL-f3-KQB" firstAttribute="bottom" secondItem="wob-DG-16R" secondAttribute="bottom" id="LKl-pb-eww"/>
+                                                        <constraint firstItem="WTL-f3-KQB" firstAttribute="trailing" secondItem="wob-DG-16R" secondAttribute="trailing" id="QCR-10-RAS"/>
+                                                        <constraint firstItem="WTL-f3-KQB" firstAttribute="top" secondItem="UZw-uW-CcB" secondAttribute="top" id="qSU-mI-cpo"/>
+                                                        <constraint firstItem="jfC-8a-qC5" firstAttribute="leading" secondItem="wob-DG-16R" secondAttribute="leading" id="u9h-8E-8RP"/>
+                                                    </constraints>
+                                                    <viewLayoutGuide key="safeArea" id="wob-DG-16R"/>
+                                                </stackView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="UZw-uW-CcB" secondAttribute="bottom" id="9JS-XN-GAc"/>
+                                            <constraint firstAttribute="trailing" secondItem="UZw-uW-CcB" secondAttribute="trailing" id="MB6-ql-b1E"/>
+                                            <constraint firstItem="UZw-uW-CcB" firstAttribute="leading" secondItem="Z8J-k0-eLx" secondAttribute="leading" id="clq-mN-cJa"/>
+                                            <constraint firstItem="UZw-uW-CcB" firstAttribute="top" secondItem="Z8J-k0-eLx" secondAttribute="top" id="roN-JG-Vlr"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="Instruction" destination="WTL-f3-KQB" id="gNS-4v-9nm"/>
                                             <outlet property="Status" destination="jfC-8a-qC5" id="Y1M-Z0-pDd"/>
@@ -183,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUF-or-AVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1057.0143884892086" y="3605.7553956834536"/>
+            <point key="canvasLocation" x="-1902" y="3606"/>
         </scene>
         <!--Level Description-->
         <scene sceneID="YrA-ag-GuO">
@@ -199,6 +218,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNl-WY-H9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-261" y="3607"/>
+        </scene>
+        <!--Instructions WebView-->
+        <scene sceneID="vRu-N4-BDr">
+            <objects>
+                <viewController storyboardIdentifier="ActionListScene" id="20N-G7-iUZ" userLabel="Instructions WebView" customClass="InstructionsViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yLK-TP-FP1">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-rd-Chu">
+                                <rect key="frame" x="0.0" y="20" width="1112" height="814"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gnl-rd-Chu" firstAttribute="bottom" secondItem="Adt-XJ-jDf" secondAttribute="bottom" id="6rb-1k-hz0"/>
+                            <constraint firstItem="gnl-rd-Chu" firstAttribute="top" secondItem="Adt-XJ-jDf" secondAttribute="top" id="U9d-Cy-0gA"/>
+                            <constraint firstItem="gnl-rd-Chu" firstAttribute="leading" secondItem="Adt-XJ-jDf" secondAttribute="leading" id="X3b-ZR-SNh"/>
+                            <constraint firstItem="gnl-rd-Chu" firstAttribute="trailing" secondItem="Adt-XJ-jDf" secondAttribute="trailing" id="qJF-P6-v5f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Adt-XJ-jDf"/>
+                    </view>
+                    <connections>
+                        <outlet property="instructionsWebView" destination="gnl-rd-Chu" id="J9b-pe-nTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6n-lc-Xbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1118.5251798561151" y="3605.7553956834536"/>
         </scene>
     </scenes>
 </document>

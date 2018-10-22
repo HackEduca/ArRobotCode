@@ -1,0 +1,53 @@
+<html>
+    <title>My scratch blocks page</title>
+    
+    <script src="blockly_compressed.js"></script>
+    <script src="javascript_compressed.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <script src="en.js"></script>
+    
+    <body>
+         <!-- Controlls -->
+        <div style="height:10%">
+            <button style="height:100%; width:25%" id="run" onclick="myUpdateFunction()">Run</button>
+        </div>
+        
+        <!-- Playground -->
+        <div id="blocklyDiv" style="height:90%; width: 100%"></div>
+        
+        <xml id="toolbox" style="display: none">
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="controls_repeat_ext"></block>
+            <block type="math_number">
+                <field name="NUM">123</field>
+            </block>
+            <block type="math_arithmetic"></block>
+            <block type="text"></block>
+            <block type="text_print"></block>
+        </xml>
+        
+        <script>
+            var demoWorkspace = Blockly.inject('blocklyDiv',
+                                               {
+                                                    media: '../../media/',
+                                                    toolbox: document.getElementById('toolbox'),
+                                                    zoom:
+                                                    {
+                                                        controls: false,
+                                                        wheel: false,
+                                                        startScale: 2.3,
+        
+                                                    }
+                                               }
+                                               );
+            </script>
+        
+        <script>
+            function myUpdateFunction() {
+                var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+                alert(code)
+            }
+        </script>
+    </body>
+</html>
