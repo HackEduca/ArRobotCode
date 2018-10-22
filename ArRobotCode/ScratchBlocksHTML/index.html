@@ -6,11 +6,11 @@
 
     <title>Compressed Vertical Playground</title>
 
-    <script src="scratch-blocks/blockly_compressed_vertical.js"></script>
-    <script src="scratch-blocks/messages.js"></script>
-    <script src="scratch-blocks/scratch_msgs.js"></script>
-    <script src="scratch-blocks/blocks_compressed.js"></script>
-    <script src="scratch-blocks/blocks_compressed_vertical.js"></script>
+    <script src="blockly_compressed_vertical.js"></script>
+    <script src="messages.js"></script>
+    <script src="scratch_msgs.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <script src="blocks_compressed_vertical.js"></script>
     <script>
       'use strict';
 
@@ -57,7 +57,7 @@
           comments: true,
           disable: false,
           collapse: false,
-          media: 'media/',
+          media: './',
           readOnly: false,
           rtl: rtl,
           scrollbars: true,
@@ -67,9 +67,9 @@
           trashcan: true,
           sounds: soundsEnabled,
           zoom: {
-            controls: true,
-            wheel: true,
-            startScale: 0.75,
+            controls: false,
+            wheel: false,
+            startScale: 0.65,
             maxScale: 4,
             minScale: 0.25,
             scaleSpeed: 1.1
