@@ -226,28 +226,9 @@
                     <view key="view" contentMode="scaleToFill" id="yLK-TP-FP1">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-rd-Chu">
-                                <rect key="frame" x="0.0" y="20" width="1112" height="814"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gnl-rd-Chu" firstAttribute="bottom" secondItem="Adt-XJ-jDf" secondAttribute="bottom" id="6rb-1k-hz0"/>
-                            <constraint firstItem="gnl-rd-Chu" firstAttribute="top" secondItem="Adt-XJ-jDf" secondAttribute="top" id="U9d-Cy-0gA"/>
-                            <constraint firstItem="gnl-rd-Chu" firstAttribute="leading" secondItem="Adt-XJ-jDf" secondAttribute="leading" id="X3b-ZR-SNh"/>
-                            <constraint firstItem="gnl-rd-Chu" firstAttribute="trailing" secondItem="Adt-XJ-jDf" secondAttribute="trailing" id="qJF-P6-v5f"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Adt-XJ-jDf"/>
                     </view>
-                    <connections>
-                        <outlet property="instructionsWebView" destination="gnl-rd-Chu" id="J9b-pe-nTx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6n-lc-Xbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

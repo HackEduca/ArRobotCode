@@ -11,18 +11,10 @@ import WebKit
 
 class InstructionsViewController: UIViewController {
 
-    @IBOutlet weak var instructionsWebView: WKWebView!
+    var instructionsWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        instructionsWebView.uiDelegate = self
-        instructionsWebView.navigationDelegate = self
-    
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         // Set up to listen to messages
         let contentController = WKUserContentController()
@@ -31,10 +23,24 @@ class InstructionsViewController: UIViewController {
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
         
+        // Create the webView
+        instructionsWebView = WKWebView(frame: self.view.bounds, configuration: config)
+        
         // Load the index.html
         let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")
         let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
         instructionsWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
+        
+        // Add it
+        self.view.addSubview(instructionsWebView)
+        
+        // Add the delegtes
+        instructionsWebView.uiDelegate = self
+        instructionsWebView.navigationDelegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     /*

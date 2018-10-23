@@ -112,7 +112,7 @@
         taChange();
         
           try {
-            webkit.messageHandlers.callback.postMessage(xml);
+            webkit.messageHandlers.callback.postMessage(Blockly.Xml.domToPrettyText(xml));
           } catch(err) {
             alert("Can not reach native code" + err);
             console.log('Can not reach native code');
