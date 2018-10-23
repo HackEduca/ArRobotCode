@@ -62,7 +62,7 @@
         <!--Split View Controller-->
         <scene sceneID="Co1-re-JSB">
             <objects>
-                <splitViewController maximumPrimaryColumnWidth="600" minimumPrimaryColumnWidth="556" preferredPrimaryColumnWidthFraction="1" id="HcK-VT-8rj" sceneMemberID="viewController">
+                <splitViewController maximumPrimaryColumnWidth="556" minimumPrimaryColumnWidth="556" preferredPrimaryColumnWidthFraction="1" id="HcK-VT-8rj" sceneMemberID="viewController">
                     <size key="freeformSize" width="1112" height="834"/>
                     <connections>
                         <segue destination="Vdz-UX-9zE" kind="relationship" relationship="masterViewController" id="tUM-Kj-cNH"/>

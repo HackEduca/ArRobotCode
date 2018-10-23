@@ -67,8 +67,8 @@
           trashcan: true,
           sounds: soundsEnabled,
           zoom: {
-            controls: false,
-            wheel: false,
+            controls: true,
+            wheel: true,
             startScale: 0.65,
             maxScale: 4,
             minScale: 0.25,
@@ -110,6 +110,13 @@
         output.focus();
         output.select();
         taChange();
+        
+          try {
+            webkit.messageHandlers.callback.postMessage(xml);
+          } catch(err) {
+            alert("Can not reach native code" + err);
+            console.log('Can not reach native code');
+          }
       }
 
       function fromXml() {
@@ -396,6 +403,7 @@
       #importExport {
         font-family: monospace;
       }
+   
     </style>
   </head>
 
@@ -611,6 +619,7 @@
     </xml>
 
     <!-- Sidebar -->
+    <input type="button" value="Export to XML" onclick="toXml()">
     <div style="display:none">
         <h1>Vertical Blocks</h1>
         <p>
