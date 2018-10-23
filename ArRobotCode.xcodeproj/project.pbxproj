@@ -12,6 +12,8 @@
 		D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */; };
 		D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */; };
 		D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */; };
+		D3B5D2FE217F3C0F0052A2A7 /* RobotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5D2FD217F3C0F0052A2A7 /* RobotInterface.swift */; };
+		D3B5D300217F3CFB0052A2A7 /* RobotHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5D2FF217F3CFB0052A2A7 /* RobotHexa.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ViewController.swift */; };
@@ -125,6 +127,8 @@
 		D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeInstructionsViewController.swift; sourceTree = "<group>"; };
 		D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D3B5D2FD217F3C0F0052A2A7 /* RobotInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotInterface.swift; sourceTree = "<group>"; };
+		D3B5D2FF217F3CFB0052A2A7 /* RobotHexa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotHexa.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -246,6 +250,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3B5D2FC217F3BD60052A2A7 /* Robot */ = {
+			isa = PBXGroup;
+			children = (
+				D3B5D2FD217F3C0F0052A2A7 /* RobotInterface.swift */,
+				D3B5D2FF217F3CFB0052A2A7 /* RobotHexa.swift */,
+			);
+			path = Robot;
+			sourceTree = "<group>";
+		};
 		D3E50F1D2178850C000270EE = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +282,7 @@
 		D3E50F282178850C000270EE /* ArRobotCode */ = {
 			isa = PBXGroup;
 			children = (
+				D3B5D2FC217F3BD60052A2A7 /* Robot */,
 				D3E61B2D217DCE2C00E76FE9 /* ScratchBlocksHTML */,
 				D3E50F292178850C000270EE /* AppDelegate.swift */,
 				D3E50F2B2178850C000270EE /* art.scnassets */,
@@ -619,12 +633,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B5D300217F3CFB0052A2A7 /* RobotHexa.swift in Sources */,
 				D3E50F2E2178850C000270EE /* ViewController.swift in Sources */,
 				D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
+				D3B5D2FE217F3C0F0052A2A7 /* RobotInterface.swift in Sources */,
 				D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

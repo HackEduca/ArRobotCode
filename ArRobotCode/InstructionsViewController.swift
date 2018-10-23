@@ -75,6 +75,10 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         print("Alert from WebKIT: " + message)
+        
+        let rb = RobotHexa()
+        rb.moveFront(distanceInMM: 100)
+        
         completionHandler()
     }
     
