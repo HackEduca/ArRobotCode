@@ -56,13 +56,16 @@ class InstructionsViewController: UIViewController {
 
 extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        //This function handles the events coming from javascript. We'll configure the javascript side of this later.
-        //We can access properties through the message body, like this:
+        // Receive message from WebKit JS
         guard let response = message.body as? String else {
             print("Something is fishy")
             return
         }
         print(response)
+    }
+    
+    func sendToJS(message msg: String) {
+        instructionsWebView.evaluateJavaScript("fromIOS('hello from the ios')", completionHandler: nil)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

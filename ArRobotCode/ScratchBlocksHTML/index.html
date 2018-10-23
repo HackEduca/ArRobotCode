@@ -102,7 +102,11 @@
         var match = location.search.match(/toolbox=([^&]+)/);
         return document.getElementById('toolbox-' + (match ? match[1] : 'categories'));
       }
-
+      
+      function fromIOS(msg) {
+        alert("Received: " + msg);
+      }
+      
       function toXml() {
         var output = document.getElementById('importExport');
         var xml = Blockly.Xml.workspaceToDom(workspace);
