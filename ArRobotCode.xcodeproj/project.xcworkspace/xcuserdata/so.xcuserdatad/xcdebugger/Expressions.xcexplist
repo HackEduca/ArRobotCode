@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "LevelBuilderViewController.collectionView(_:numberOfItemsInSection:):LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

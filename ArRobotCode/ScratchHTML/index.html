@@ -6,11 +6,22 @@
 
     <title>Compressed Vertical Playground</title>
 
-    <script src="blockly_compressed_vertical.js"></script>
+    <!-- Default imports -->
+    <!-- <script src="blockly_compressed_vertical.js"></script>
     <script src="messages.js"></script>
     <script src="scratch_msgs.js"></script>
     <script src="blocks_compressed.js"></script>
-    <script src="blocks_compressed_vertical.js"></script>
+    <script src="blocks_compressed_vertical.js"></script> -->
+
+    <!-- Custom imports -->
+    <script src="blockly_uncompressed_vertical.js"></script>
+    <script src="tojs.js"></script>
+    <script src="messages.js"></script>
+    <script src="scratch_msgs.js"></script>
+    <script src="blocks_uncompressed.js"></script>
+    <script src="blocks_uncompressed_vertical.js"></script>
+
+        
     <script>
       'use strict';
 
@@ -116,6 +127,7 @@
         taChange();
         
           try {
+            alert(Blockly.Xml.domToPrettyText(xml));
             webkit.messageHandlers.callback.postMessage(Blockly.Xml.domToPrettyText(xml));
           } catch(err) {
             alert("Can not reach native code" + err);
@@ -131,8 +143,13 @@
       }
 
       function toCode(lang) {
-        var output = document.getElementById('importExport');
-        output.value = Blockly[lang].workspaceToCode(workspace);
+        // var output = document.getElementById('importExport');
+        // output.value = Blockly[lang].workspaceToCode(workspace);
+
+
+        Blockly.JavaScript.addReservedWords('code');
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        alert(code);
         taChange();
       }
 
@@ -624,6 +641,7 @@
 
     <!-- Sidebar -->
     <input type="button" value="Export to XML" onclick="toXml()">
+    <input type="button" value="To JavaScript" onclick="toCode('JavaScript')">
     <div style="display:none">
         <h1>Vertical Blocks</h1>
         <p>
@@ -687,7 +705,6 @@
         &nbsp;
         <input type="button" value="Import from XML" onclick="fromXml()" id="import">
         <br>
-        <input type="button" value="To JavaScript" onclick="toCode('JavaScript')">
         <br>
         <textarea id="importExport" style="width: 26%; height: 12em"
             onchange="taChange();" onkeyup="taChange()"></textarea>

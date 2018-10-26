@@ -9,8 +9,8 @@
 import UIKit
 
 protocol RobotInterface {
-    func moveFront(distanceInMM distance: Int)
-    func moveBack(distanceInMM distance: Int)
-    func moveLeft(distanceInMM distance: Int)
-    func moveRight(distanceInMM distance: Int)
+    func moveFront  (distanceInMM distance: Int)
+    func moveBack   (distanceInMM distance: Int)
+    func moveLeft   (distanceInMM distance: Int)
+    func moveRight  (distanceInMM distance: Int)
 }
