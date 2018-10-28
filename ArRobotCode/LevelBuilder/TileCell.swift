@@ -19,6 +19,14 @@ class TileCell: UICollectionViewCell {
         if tile.state == .Used {
             tileImageView.image = UIImage(named: "red")
         }
+        
+        if tile.state == .Start {
+            tileImageView.image = UIImage(named: "pink")
+        }
+        
+        if tile.state == .Finish{
+            tileImageView.image = UIImage(named: "yellow")
+        }
        
     }
 }

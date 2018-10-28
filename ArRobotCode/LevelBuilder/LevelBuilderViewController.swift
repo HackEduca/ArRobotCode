@@ -28,6 +28,13 @@ class LevelBuilderViewController: UIViewController {
         
         tilesCollectionView.delegate = self
         tilesCollectionView.dataSource = self
+        
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTap))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = false
+        lpgr.delegate = self
+
+        tilesCollectionView.addGestureRecognizer(lpgr)
     }
     
     func createArray() -> [DataTile] {
@@ -48,7 +55,7 @@ extension LevelBuilderViewController: UITextFieldDelegate {
     }
 }
 
-extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tiles.count
     }
@@ -63,13 +70,30 @@ extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionView
     }
     
 
-    
+    // Handle TAP
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         print(indexPath.row)
         tiles[indexPath.row].swap()
         collectionView.reloadItems(at: [indexPath])
     }
     
+    // Handle Long TAP
+    @objc func handleLongTap(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
+            return
+        }
+        
+        let point = gestureReconizer.location(in: self.tilesCollectionView)
+        let indexPath = self.tilesCollectionView.indexPathForItem(at: point)
+        
+        if let index = indexPath {
+            var cell = self.tilesCollectionView.cellForItem(at: index)
+            tiles[index.row].setToStart()
+            self.tilesCollectionView.reloadItems(at: [index])
+        } else {
+            print("Could not find index path")
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing),

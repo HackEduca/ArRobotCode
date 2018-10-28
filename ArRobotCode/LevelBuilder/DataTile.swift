@@ -32,5 +32,21 @@ class DataTile {
             state = .Free
             return
         }
+        
+        if state == .Start {
+            state = .Finish
+            return
+        }
+        
+        state = .Free
+        return
+    }
+    
+    func setToStart() {
+        state = .Start
+    }
+    
+    func setToFinish() {
+        state = .Finish
     }
 }
