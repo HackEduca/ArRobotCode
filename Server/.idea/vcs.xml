@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/couchbase/gocb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/google/uuid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/opentracing/opentracing-go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/net" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/golang.org/x/text" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/couchbase/gocbcore.v7" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/couchbaselabs/gocbconnstr.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/couchbaselabs/gojcbmock.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/couchbaselabs/jsonx.v1" vcs="Git" />
+  </component>
+</project>

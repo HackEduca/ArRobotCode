@@ -1,0 +1,52 @@
+//
+//  DataTile.swift
+//  ArRobotCode
+//
+//  Created by Sorin Sebastian Mircea on 26/10/2018.
+//  Copyright © 2018 Sorin Sebastian Mircea. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+enum TypeOfTile {
+    case Free
+    case Used
+    case Start
+    case Finish
+}
+class DataTile {
+    var type: TypeOfTile
+    
+    init(){
+        self.type = .Free
+    }
+    
+    func swap() {
+        if type == .Free {
+            type = .Used
+            return
+        }
+        
+        if type == .Used {
+            type = .Free
+            return
+        }
+        
+        if type == .Start {
+            type = .Finish
+            return
+        }
+        
+        type = .Free
+        return
+    }
+    
+    func setToStart() {
+        type = .Start
+    }
+    
+    func setToFinish() {
+        type = .Finish
+    }
+}
