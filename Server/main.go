@@ -1,12 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"github.com/couchbase/gocb"
+	"API"
+	"Entities"
+	"Repository"
 )
 
 func main() {
-	fmt.Println("Hello darkness my old friend")
-	a, _ := gocb.Connect("http://127.0.0.1:8091")
-	fmt.Println(a)
+	var cbr Repository.IRepository
+	cbr = Repository.CouchBaseRepositoryBuilder("levels")
+
+	tiles := []Entities.Tile{ Entities.Tile{Type:0}, Entities.Tile{Type:0}, Entities.Tile{Type:1}, Entities.Tile{Type:2}}
+	level := Entities.Level{ Name: "IntroductoryLevel", Width: 5, Height: 5, Tiles: tiles}
+	cbr.AddLevel(level)
+
+	// Start the API
+	api := API.APIBuilder("", ":8000", cbr)
+	api.StartServer()
 }
+

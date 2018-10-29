@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/couchbase/gocb" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/google/uuid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/gorilla/mux" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/opentracing/opentracing-go" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/golang.org/x/net" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/golang.org/x/text" vcs="Git" />
