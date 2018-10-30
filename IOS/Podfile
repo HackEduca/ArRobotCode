@@ -8,6 +8,8 @@ target 'ArRobotCode' do
   # Pods for ArRobotCode
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa'
+  pod 'RxGesture'
+
   target 'ArRobotCodeTests' do
     inherit! :search_paths
     # Pods for testing

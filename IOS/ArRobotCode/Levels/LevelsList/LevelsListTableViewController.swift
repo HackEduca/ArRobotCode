@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxGesture
 
 class LevelsListVController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var levelsTableView: UITableView!
@@ -26,6 +27,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         setupViewModel()
         setupTableView()
         setupTableViewBinding()
+        setupAddingNewLevel()
     }
     
     private func setupViewModel() {
@@ -80,6 +82,19 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         return [deleteButton]
     }
     
+    private func setupAddingNewLevel() {
+        addLevelImageView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { gesture in
+                // Add Level with name from addLevelTextField
+                self.viewModel.addItem(item: DataLevel(Name: self.addLevelTextField.text!, Width: 10, Height: 10 ))
+                
+                // Close keyboard
+                UIApplication.shared.sendAction(#selector(self.resignFirstResponder), to: nil, from: nil, for: nil)
+            })
+            .disposed(by: self.disposeBag)
+    }
 
 }
 
