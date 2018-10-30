@@ -109,10 +109,14 @@
 		D3682B0621807D02000458C1 /* dropdown-arrow.svg in Resources */ = {isa = PBXBuildFile; fileRef = D3682AA921807D02000458C1 /* dropdown-arrow.svg */; };
 		D3682B0721807D02000458C1 /* click.ogg in Resources */ = {isa = PBXBuildFile; fileRef = D3682AAA21807D02000458C1 /* click.ogg */; };
 		D3682B0821807D02000458C1 /* vertical_extensions.js in Resources */ = {isa = PBXBuildFile; fileRef = D3682AAB21807D02000458C1 /* vertical_extensions.js */; };
+		D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */; };
+		D3C55EDE2187791A0007BCC9 /* LevelsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */; };
+		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
+		D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE121883B8F0007BCC9 /* DataLevel.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ViewController.swift */; };
-		D3E50F312178850C000270EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2F2178850C000270EE /* Main.storyboard */; };
+		D3E50F312178850C000270EE /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2F2178850C000270EE /* Game.storyboard */; };
 		D3E50F332178850D000270EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F322178850D000270EE /* Assets.xcassets */; };
 		D3E50F362178850D000270EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F342178850D000270EE /* LaunchScreen.storyboard */; };
 		D3E50F412178850D000270EE /* ArRobotCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F402178850D000270EE /* ArRobotCodeTests.swift */; };
@@ -122,6 +126,7 @@
 		D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */; };
 		D3F7440E21830EA10096958F /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440D21830EA10096958F /* TileCell.swift */; };
 		D3F74410218312600096958F /* DataTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440F218312600096958F /* DataTile.swift */; };
+		D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F888892187302500D7A080 /* Levels.storyboard */; };
 		E07EB761F78F427627962263 /* Pods_ArRobotCodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46A38F146B0693217A16C04 /* Pods_ArRobotCodeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -250,11 +255,15 @@
 		D3682AA921807D02000458C1 /* dropdown-arrow.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dropdown-arrow.svg"; sourceTree = "<group>"; };
 		D3682AAA21807D02000458C1 /* click.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.ogg; sourceTree = "<group>"; };
 		D3682AAB21807D02000458C1 /* vertical_extensions.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vertical_extensions.js; sourceTree = "<group>"; };
+		D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListViewModel.swift; sourceTree = "<group>"; };
+		D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListTableViewController.swift; sourceTree = "<group>"; };
+		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
+		D3C55EE121883B8F0007BCC9 /* DataLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLevel.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		D3E50F2D2178850C000270EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D3E50F302178850C000270EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3E50F302178850C000270EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		D3E50F322178850D000270EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3E50F352178850D000270EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3E50F372178850D000270EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,6 +279,7 @@
 		D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilderViewController.swift; sourceTree = "<group>"; };
 		D3F7440D21830EA10096958F /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		D3F7440F218312600096958F /* DataTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTile.swift; sourceTree = "<group>"; };
+		D3F888892187302500D7A080 /* Levels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levels.storyboard; sourceTree = "<group>"; };
 		E1C3977C63C9ACA352E47E74 /* Pods-ArRobotCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeTests/Pods-ArRobotCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -475,19 +485,19 @@
 		D3E50F282178850C000270EE /* ArRobotCode */ = {
 			isa = PBXGroup;
 			children = (
-				D3F7440A21830A0F0096958F /* LevelBuilder */,
+				D3F74409218309760096958F /* Game */,
+				D3F888862187261E00D7A080 /* Levels */,
 				D368124221807CAA000458C1 /* Robot */,
-				D3F74409218309760096958F /* Instructions */,
 				D3682A4C21807D02000458C1 /* ScratchHTML */,
 				D3E50F292178850C000270EE /* AppDelegate.swift */,
 				D3E50F2B2178850C000270EE /* art.scnassets */,
 				D3E50F2D2178850C000270EE /* ViewController.swift */,
-				D3E50F2F2178850C000270EE /* Main.storyboard */,
+				D3E50F2F2178850C000270EE /* Game.storyboard */,
+				D3F888892187302500D7A080 /* Levels.storyboard */,
 				D3E50F322178850D000270EE /* Assets.xcassets */,
 				D3E50F342178850D000270EE /* LaunchScreen.storyboard */,
 				D3E50F372178850D000270EE /* Info.plist */,
 				D3E50F5921788FF2000270EE /* Tile.sks */,
-				D31F16022179EF02006B37B4 /* SidePageViewController.swift */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 			);
 			path = ArRobotCode;
@@ -511,25 +521,54 @@
 			path = ArRobotCodeUITests;
 			sourceTree = "<group>";
 		};
-		D3F74409218309760096958F /* Instructions */ = {
+		D3F74409218309760096958F /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */,
 				D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */,
 				D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */,
 				D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */,
+				D31F16022179EF02006B37B4 /* SidePageViewController.swift */,
 			);
-			path = Instructions;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		D3F7440A21830A0F0096958F /* LevelBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */,
-				D3F7440F218312600096958F /* DataTile.swift */,
 				D3F7440D21830EA10096958F /* TileCell.swift */,
 			);
 			path = LevelBuilder;
+			sourceTree = "<group>";
+		};
+		D3F888852187256300D7A080 /* LevelsList */ = {
+			isa = PBXGroup;
+			children = (
+				D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */,
+				D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */,
+				D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */,
+			);
+			path = LevelsList;
+			sourceTree = "<group>";
+		};
+		D3F888862187261E00D7A080 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				D3F8888D218733E300D7A080 /* Entities */,
+				D3F7440A21830A0F0096958F /* LevelBuilder */,
+				D3F888852187256300D7A080 /* LevelsList */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		D3F8888D218733E300D7A080 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D3F7440F218312600096958F /* DataTile.swift */,
+				D3C55EE121883B8F0007BCC9 /* DataLevel.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +754,7 @@
 				D3682AF121807D02000458C1 /* event_when-broadcast-received_coral.svg in Resources */,
 				D3682AEF21807D02000458C1 /* wedo_motor-speed_fast.svg in Resources */,
 				D3682AD521807D02000458C1 /* arrow.svg in Resources */,
+				D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */,
 				D3682AB521807D02000458C1 /* dropdown-arrow-dark.svg in Resources */,
 				D3682ABC21807D02000458C1 /* vertical.js in Resources */,
 				D3682AF621807D02000458C1 /* event_when-broadcast-received_purple.svg in Resources */,
@@ -732,7 +772,7 @@
 				D3682ADD21807D02000458C1 /* set-led_orange.svg in Resources */,
 				D3682B0821807D02000458C1 /* vertical_extensions.js in Resources */,
 				D3682AD621807D02000458C1 /* control_repeat.svg in Resources */,
-				D3E50F312178850C000270EE /* Main.storyboard in Resources */,
+				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
 				D3682AAD21807D02000458C1 /* comment-arrow-up.svg in Resources */,
 				D3682AEE21807D02000458C1 /* remove.svg in Resources */,
 				D3682AB621807D02000458C1 /* looks.js in Resources */,
@@ -861,13 +901,17 @@
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
+				D3C55EDE2187791A0007BCC9 /* LevelsListTableViewController.swift in Sources */,
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* RobotHexa.swift in Sources */,
 				D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */,
 				D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */,
 				D3F74410218312600096958F /* DataTile.swift in Sources */,
+				D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */,
+				D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */,
 				D3F7440E21830EA10096958F /* TileCell.swift in Sources */,
 				D368124621807CAA000458C1 /* RobotInterface.swift in Sources */,
+				D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,12 +947,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D3E50F2F2178850C000270EE /* Main.storyboard */ = {
+		D3E50F2F2178850C000270EE /* Game.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D3E50F302178850C000270EE /* Base */,
 			);
-			name = Main.storyboard;
+			name = Game.storyboard;
 			sourceTree = "<group>";
 		};
 		D3E50F342178850D000270EE /* LaunchScreen.storyboard */ = {
