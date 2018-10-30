@@ -11,7 +11,7 @@ import RxSwift
 
 class SidePageViewController: UIPageViewController, UIPageViewControllerDataSource {
     lazy var viewControllerList:[UIViewController] = {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "Game", bundle: nil)
         
         let actionListScene = sb.instantiateViewController(withIdentifier: "ActionListScene")
         let levelDescriptionScene = sb.instantiateViewController(withIdentifier: "LevelDescriptionScene")

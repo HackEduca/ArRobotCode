@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ck-8i-gJg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="OnO-ch-bGn" customClass="LevelListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quk-nP-nN3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qj7-Sy-y9X"/>
@@ -24,61 +24,106 @@
             </objects>
             <point key="canvasLocation" x="-655" y="-517"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="fX3-7x-7YW">
+        <!--Levels ListV Controller-->
+        <scene sceneID="0F5-Ty-iEz">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="6bQ-7N-S65" customClass="LevelsListTableViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7wZ-2Z-2d2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="sl9-TU-unF" customClass="LevelsListVController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zAT-Hc-z9g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-yz-Lal">
+                                <rect key="frame" x="0.0" y="70" width="320" height="1042"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="io7-1C-7TG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Level Name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vow-Vb-BWM" userLabel="AddLevelTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="bpY-pG-cKa" userLabel="AddLevelImageView">
+                                                <rect key="frame" x="287" y="0.0" width="33" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="QN3-ag-Gff"/>
+                                                    <constraint firstAttribute="width" constant="33" id="vOw-So-sFl"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0at-mX-r8G"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7wZ-2Z-2d2">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="992"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LevelCell" id="clH-MJ-ebh" customClass="LevelTableViewCell" customModule="ArRobotCode" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="clH-MJ-ebh" id="CiZ-fU-q57">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="182-Du-ZAf" userLabel="Level Name">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="182-Du-ZAf" firstAttribute="top" secondItem="CiZ-fU-q57" secondAttribute="top" id="Td7-gS-itA"/>
+                                                        <constraint firstItem="182-Du-ZAf" firstAttribute="leading" secondItem="CiZ-fU-q57" secondAttribute="leading" id="VdN-I0-ovz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="182-Du-ZAf" secondAttribute="trailing" id="kFD-2e-uv2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="182-Du-ZAf" secondAttribute="bottom" id="vTk-d6-8wX"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="levelNameLabel" destination="182-Du-ZAf" id="Kfx-ZT-eLD"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="io7-1C-7TG" secondAttribute="trailing" id="dHB-Fe-hXI"/>
+                                    <constraint firstItem="io7-1C-7TG" firstAttribute="leading" secondItem="2FR-yz-Lal" secondAttribute="leading" id="gwl-p2-HHh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LevelCell" id="clH-MJ-ebh" customClass="LevelTableViewCell" customModule="ArRobotCode" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="clH-MJ-ebh" id="CiZ-fU-q57">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="182-Du-ZAf" userLabel="Level Name">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="182-Du-ZAf" firstAttribute="top" secondItem="CiZ-fU-q57" secondAttribute="top" id="Td7-gS-itA"/>
-                                        <constraint firstItem="182-Du-ZAf" firstAttribute="leading" secondItem="CiZ-fU-q57" secondAttribute="leading" id="VdN-I0-ovz"/>
-                                        <constraint firstAttribute="trailing" secondItem="182-Du-ZAf" secondAttribute="trailing" id="kFD-2e-uv2"/>
-                                        <constraint firstAttribute="bottom" secondItem="182-Du-ZAf" secondAttribute="bottom" id="vTk-d6-8wX"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="levelNameLabel" destination="182-Du-ZAf" id="Kfx-ZT-eLD"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6Dt-kW-n2X"/>
+                        <constraints>
+                            <constraint firstItem="2FR-yz-Lal" firstAttribute="top" secondItem="Ppx-Q1-W8I" secondAttribute="top" id="EHh-Kw-m5z"/>
+                            <constraint firstAttribute="trailing" secondItem="2FR-yz-Lal" secondAttribute="trailing" id="T8X-OA-hQX"/>
+                            <constraint firstItem="2FR-yz-Lal" firstAttribute="leading" secondItem="Ppx-Q1-W8I" secondAttribute="leading" id="UJ5-Ni-EI6"/>
+                            <constraint firstAttribute="bottom" secondItem="2FR-yz-Lal" secondAttribute="bottom" id="vHh-jW-T7h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ppx-Q1-W8I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gRj-cR-Fcw"/>
                     <connections>
-                        <outlet property="levelsTableView" destination="7wZ-2Z-2d2" id="zJ7-2v-eP5"/>
+                        <outlet property="addLevelImageView" destination="bpY-pG-cKa" id="j1u-Vf-JKn"/>
+                        <outlet property="addLevelTextField" destination="vow-Vb-BWM" id="rLM-CL-E3Y"/>
+                        <outlet property="levelsTableView" destination="7wZ-2Z-2d2" id="Dz7-Vt-iEn"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JQT-ld-xWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7W-4d-h3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="-1183.3583208395803"/>
+            <point key="canvasLocation" x="544.79999999999995" y="-1183.3583208395803"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K3R-FK-kwI">
             <objects>
                 <navigationController id="BLd-gP-6bL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bH6-1R-S5D">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="6bQ-7N-S65" kind="relationship" relationship="rootViewController" id="fMY-kF-oWn"/>
+                        <segue destination="sl9-TU-unF" kind="relationship" relationship="rootViewController" id="kLc-gb-lKN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6c-Yr-9vK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,23 +148,23 @@
             <objects>
                 <viewController title="Level Builder" id="R8d-Kp-qKH" customClass="LevelBuilderViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4f-Iu-XHW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="zSD-Vh-7O9">
-                                <rect key="frame" x="10" y="20" width="355" height="647"/>
+                                <rect key="frame" x="10" y="20" width="814" height="1092"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkB-9A-dlQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="814" height="475"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUK-O4-h9z" userLabel="Height">
-                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="222.5" width="402" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-HC-od6" userLabel="Width">
-                                                <rect key="frame" x="182.5" y="0.0" width="172.5" height="30"/>
+                                                <rect key="frame" x="412" y="222.5" width="402" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -130,7 +175,7 @@
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tKg-g1-3Rk" userLabel="Tiles Collection View">
-                                        <rect key="frame" x="0.0" y="41" width="355" height="606"/>
+                                        <rect key="frame" x="0.0" y="486" width="814" height="606"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E5O-q4-wHj">
                                             <size key="itemSize" width="50" height="50"/>
@@ -190,4 +235,7 @@
             <point key="canvasLocation" x="-680.39568345323744" y="282.73381294964031"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="33.604373931884766" height="33.604373931884766"/>
+    </resources>
 </document>

@@ -7,84 +7,80 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class LevelsListTableViewController: UITableViewController {
+class LevelsListVController: UIViewController, UITableViewDelegate {
+    @IBOutlet weak var levelsTableView: UITableView!
+    @IBOutlet weak var addLevelTextField: UITextField!
+    @IBOutlet weak var addLevelImageView: UIImageView!
+    
+    private var viewModel: LevelsListViewModel!
+    private let cellIdentifier = "LevelCell"
+    private let disposeBag = DisposeBag()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        setupViewModel()
+        setupTableView()
+        setupTableViewBinding()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    private func setupViewModel() {
+        self.viewModel = LevelsListViewModel()
+        self.viewModel.addItem(item: DataLevel(Name: "Level1", Width: 10, Height: 10))
+        self.viewModel.addItem(item: DataLevel(Name: "Level2", Width: 10, Height: 10))
+        self.viewModel.addItem(item: DataLevel(Name: "Level3", Width: 10, Height: 10))
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    private func setupTableView() {
+        self.levelsTableView.delegate = nil
+        self.levelsTableView.dataSource = nil
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    private func setupTableViewBinding() {
+        viewModel.dataSource
+            .bind(to: self.levelsTableView.rx.items(cellIdentifier: cellIdentifier, cellType: LevelTableViewCell.self)) {  row, element, cell in
+                cell.levelNameLabel.text = element.Name
+            }
+            .disposed(by: disposeBag)
+        
+        levelsTableView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        // Select
+        self.levelsTableView.rx
+            .itemSelected
+            .subscribe({ pair in
+                print(pair)
+            })
+            .disposed(by: disposeBag)
+    
+        //
+        self.levelsTableView.rx.itemDeleted.subscribe({ index in
+            self.viewModel.deleteItem(at: index.element![1])
+        })
+        .disposed(by: disposeBag)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.levelsTableView.dataSource!.tableView!(self.levelsTableView, commit: .delete, forRowAt: indexPath)
+            return
+        }
+        
+        
+//         let updateButton = UITableViewRowAction(style: .default, title: "Update") { (action, indexPath) in
+////            self.tableView.dataSource?.tableView!(self.tableView, commit: .editing, forRowAt: indexPath)
+//            return
+//         }
+        
+        return [deleteButton]
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
+
+

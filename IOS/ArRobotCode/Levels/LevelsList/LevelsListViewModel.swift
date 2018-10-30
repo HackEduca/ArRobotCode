@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class LevelsListViewModel: UIView {
+class LevelsListViewModel{
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // Private properties
+    private let privateDataSource: Variable<[DataLevel]> = Variable([])
+    //private let disposeBag = DisposeBag()
+    
+    // Outputs
+    public let dataSource: Observable<[DataLevel]>
+    
+    init() {
+        // Make the output dataSource an Observable of the privateDataSource
+        self.dataSource = privateDataSource.asObservable()
     }
-    */
+    
+    public func addItem(item: DataLevel) {
+        self.privateDataSource.value.append(item)
+    }
+    
+    public func deleteItem(at: Int) {
+        self.privateDataSource.value.remove(at: at)
+    }
 
 }
