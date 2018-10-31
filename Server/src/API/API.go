@@ -86,7 +86,8 @@ func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode("OK")
+	//json.NewEncoder(w).Encode("OK")
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
 }
 
 func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {

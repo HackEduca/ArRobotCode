@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataLevel {
+class DataLevel: Codable {
     var Name: String = ""
     var Width: Int = 0
     var Height: Int = 0
@@ -25,5 +25,12 @@ class DataLevel {
         self.Name   = Name
         self.Width  = Width
         self.Height = Height
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case Name
+        case Width
+        case Height
+        case Tiles
     }
 }

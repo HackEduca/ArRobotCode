@@ -12,11 +12,15 @@ import RxSwift
 
 class LevelsRepository: Repository {
     private var entities: Variable<[DataLevel]> = Variable([])
+    private let apiClient = APIClient()
+    private let disposeBag = DisposeBag()
     
     public let dataSource: Observable<[DataLevel]>
     
     init() {
         dataSource = entities.asObservable()
+        syncWithDataFromLocal()
+        syncWithDataFromServer()
     }
     
     func getAll() -> [DataLevel] {
@@ -35,6 +39,7 @@ class LevelsRepository: Repository {
     
     func add(a: DataLevel) -> Bool {
         self.entities.value.append(a)
+        syncAddedDataToServer(a: a)
         return true
     }
     
@@ -63,4 +68,54 @@ class LevelsRepository: Repository {
         self.entities.value.remove(at: at)
         return true
     }
+    
+    private func syncWithDataFromLocal() {
+        
+    }
+    
+    private func syncWithDataFromServer() {
+        let obs: Observable<[DataLevel]>
+        let rq = LevelsRequest()
+        
+        obs = self.apiClient.send(apiRequest: rq)
+        obs.subscribe { (entries) in
+            if var ent = entries.element {
+                self.entities.value = ent
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    private func syncAddedDataToServer(a: DataLevel) {
+        // Encode a to JSON string
+        // To do: refactor this
+        let jsonEncoder = JSONEncoder()
+        var json: String = ""
+        do {
+           let jsonData = try jsonEncoder.encode(a)
+           json = String(data: jsonData, encoding: String.Encoding.utf8)!
+        } catch {
+            print("Very big problem")
+            return
+        }
+        
+        // Build the request
+        let obs: Observable<APIResponse>
+        let rq = LevelsRequest()
+        rq.method = RequestType.POST
+        rq.httpBody = json
+        
+        // Send it and wait for confirmation
+        obs = self.apiClient.send(apiRequest: rq)
+        obs.subscribe { (entries) in
+            if var ent = entries.element {
+                if ent.code == "200" {
+                    // Delete request from local queue
+                }
+            }
+            print(entries)
+        }.disposed(by: disposeBag)
+        
+    }
+    
+
 }

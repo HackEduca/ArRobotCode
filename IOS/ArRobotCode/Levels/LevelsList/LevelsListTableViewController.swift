@@ -31,10 +31,8 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     }
     
     private func setupViewModel() {
-        self.viewModel = LevelsListViewModel(repo: LevelsRepository())
-        self.viewModel.addItem(item: DataLevel(Name: "Level1", Width: 10, Height: 10))
-        self.viewModel.addItem(item: DataLevel(Name: "Level2", Width: 10, Height: 10))
-        self.viewModel.addItem(item: DataLevel(Name: "Level3", Width: 10, Height: 10))
+        var repo = LevelsRepository()
+        self.viewModel = LevelsListViewModel(repo: repo)
     }
     
     private func setupTableView() {

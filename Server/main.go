@@ -11,7 +11,9 @@ func main() {
 	cbr = Repository.CouchBaseRepositoryBuilder("levels")
 
 	tiles := []Entities.Tile{ Entities.Tile{Type:0}, Entities.Tile{Type:0}, Entities.Tile{Type:1}, Entities.Tile{Type:2}}
-	level := Entities.Level{ Name: "IntroductoryLevel", Width: 5, Height: 5, Tiles: tiles}
+	level := Entities.Level{ Name: "HardLevel", Width: 15, Height: 15, Tiles: tiles}
+	cbr.AddLevel(level)
+	level = Entities.Level{ Name: "UltraHardLevel", Width: 25, Height: 25, Tiles: tiles}
 	cbr.AddLevel(level)
 
 	// Start the API

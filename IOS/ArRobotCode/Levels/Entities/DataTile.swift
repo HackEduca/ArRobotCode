@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-enum TypeOfTile {
+enum TypeOfTile: Int, Codable {
     case Free
     case Used
     case Start
     case Finish
 }
-class DataTile {
+
+class DataTile: Codable {
     var type: TypeOfTile
     
     init(){
@@ -49,4 +50,9 @@ class DataTile {
     func setToFinish() {
         type = .Finish
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case type = "Type"
+    }
+    
 }
