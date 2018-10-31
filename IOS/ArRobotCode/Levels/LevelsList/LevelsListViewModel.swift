@@ -13,23 +13,24 @@ import RxCocoa
 class LevelsListViewModel{
 
     // Private properties
-    private let privateDataSource: Variable<[DataLevel]> = Variable([])
+    private let privateDataSource: LevelsRepository
     //private let disposeBag = DisposeBag()
     
     // Outputs
     public let dataSource: Observable<[DataLevel]>
     
-    init() {
+    init(repo: LevelsRepository) {
         // Make the output dataSource an Observable of the privateDataSource
-        self.dataSource = privateDataSource.asObservable()
+        self.privateDataSource = repo
+        self.dataSource = privateDataSource.dataSource
     }
     
     public func addItem(item: DataLevel) {
-        self.privateDataSource.value.append(item)
+        self.privateDataSource.add(a: item)
     }
     
     public func deleteItem(at: Int) {
-        self.privateDataSource.value.remove(at: at)
+        self.privateDataSource.delete(at: at)
     }
 
 }
