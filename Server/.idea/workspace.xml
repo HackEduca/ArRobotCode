@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e921154-24e7-48b6-810c-62d3b1eb9f08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIClient.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIRequest.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIResponse.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/LevelsRequest.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataLevel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataLevel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataTile.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataTile.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Repository/LevelsRepository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Repository/LevelsRepository.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/API.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/API.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" afterDir="false" />
@@ -55,12 +44,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="1660" />
+          <entry key="go" value="1774" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="1660" />
+          <entry key="Go" value="1774" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
@@ -75,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/API/API.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+            <state relative-caret-position="554">
+              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -102,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/CouchBaseRepository.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-915">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="34" />
+            <state relative-caret-position="645">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
               <folding>
                 <element signature="e#20#75#0" expanded="true" />
               </folding>
@@ -130,6 +119,7 @@
       <find>repository</find>
       <find>AddBuck</find>
       <find>post</find>
+      <find>addLeve</find>
     </findStrings>
     <replaceStrings>
       <replace>level</replace>
@@ -198,12 +188,6 @@
               <item name="Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Server" type="b2602c69:ProjectViewProjectNode" />
@@ -387,17 +371,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/Repository/CouchBaseRepository.go</url>
-          <line>107</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/tests/ALL_tests.go" />
     <entry file="file://$PROJECT_DIR$/src/tests/DB_test.go">
@@ -424,6 +397,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/IRepository.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -433,25 +413,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/CouchBaseRepository.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="34" />
+        <state relative-caret-position="645">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
           <folding>
             <element signature="e#20#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/API/API.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+        <state relative-caret-position="554">
+          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
         </state>
       </provider>
     </entry>

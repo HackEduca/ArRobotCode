@@ -60,7 +60,7 @@ func (this *API) GetLevelByName(w http.ResponseWriter, r *http.Request) {
 	// Show the response
 	if err != nil {
 		w.WriteHeader(404)
-		json.NewEncoder(w).Encode("Error, level not found")
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400"})
 		return
 	}
 
@@ -74,7 +74,7 @@ func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode("Level not formated correctly")
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Level not formated correctly", "code": "400"})
 		return
 	}
 
@@ -82,7 +82,7 @@ func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
 	err = this.levelsRepository.AddLevel(newLevel)
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(err)
+		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400"})
 		return
 	}
 
@@ -101,7 +101,7 @@ func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(err)
+		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400"})
 		return
 	}
 
@@ -109,11 +109,11 @@ func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {
 	err = this.levelsRepository.UpdateLevel(levelName, newLevel)
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode("Problems with the name of the level")
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Problems", "code": "400"})
 		return
 	}
 
-	json.NewEncoder(w).Encode("OK")
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
 }
 
 func (this *API) DeleteLevelByName(w http.ResponseWriter, r *http.Request) {
@@ -127,11 +127,11 @@ func (this *API) DeleteLevelByName(w http.ResponseWriter, r *http.Request) {
 	// Show the response
 	if err != nil {
 		w.WriteHeader(404)
-		json.NewEncoder(w).Encode("Error, level not found")
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400"})
 		return
 	}
 
-	json.NewEncoder(w).Encode("OK")
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
 }
 
 

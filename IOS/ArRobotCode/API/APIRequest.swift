@@ -16,7 +16,7 @@ protocol APIRequest {
 }
 
 public enum RequestType: String {
-    case GET, POST
+    case GET, POST, DELETE
 }
 
 extension APIRequest {

@@ -57,6 +57,7 @@ class LevelsRepository: Repository {
     func delete(Name: String) -> Bool {
         for i in 0..<self.entities.value.count{
             if self.entities.value[i].Name == Name {
+                self.syncDeletedDataToServer(Name: Name)
                 self.entities.value.remove(at: i)
                 return true
             }
@@ -65,7 +66,8 @@ class LevelsRepository: Repository {
     }
     
     func delete(at: Int) -> Bool {
-        self.entities.value.remove(at: at)
+        self.syncDeletedDataToServer(at: at)
+         self.entities.value.remove(at: at)
         return true
     }
     
@@ -110,11 +112,36 @@ class LevelsRepository: Repository {
             if var ent = entries.element {
                 if ent.code == "200" {
                     // Delete request from local queue
+                    print("Server response: OK")
+                } else {
+                    print(ent.msg)
                 }
             }
             print(entries)
         }.disposed(by: disposeBag)
+    }
+    
+    private func syncDeletedDataToServer(at: Int) {
+        syncDeletedDataToServer(Name: self.entities.value[at].Name )
+    }
+    
+    private func syncDeletedDataToServer(Name: String) {
+        let obs: Observable<APIResponse>
+        let rq = LevelsRequest()
+        rq.path = "levels/" + Name
+        rq.method = RequestType.DELETE
         
+        obs = self.apiClient.send(apiRequest: rq)
+        obs.subscribe { (entries) in
+            if var ent = entries.element {
+                if ent.code == "200" {
+                    // Delete request from local queue
+                    print("Server response: OK")
+                } else {
+                    print(ent.msg)
+                }
+            }
+            }.disposed(by: disposeBag)
     }
     
 
