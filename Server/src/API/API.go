@@ -46,7 +46,8 @@ func (this *API) GetAllLevels(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(levels)
+	json.NewEncoder(w).Encode(map[string]interface{}{"msg": "OK", "code": "200", "data": levels})
+
 }
 
 func (this *API) GetLevelByName(w http.ResponseWriter, r *http.Request) {
@@ -60,11 +61,11 @@ func (this *API) GetLevelByName(w http.ResponseWriter, r *http.Request) {
 	// Show the response
 	if err != nil {
 		w.WriteHeader(404)
-		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400", "data": ""})
 		return
 	}
 
-	json.NewEncoder(w).Encode(level)
+	json.NewEncoder(w).Encode(map[string]interface{}{"msg": "OK", "code": "200", "data": level})
 }
 
 func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
@@ -74,7 +75,7 @@ func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(map[string]string{"msg": "Level not formated correctly", "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Level not formated correctly", "code": "400", "data": ""})
 		return
 	}
 
@@ -82,12 +83,12 @@ func (this *API) AddLevel(w http.ResponseWriter, r *http.Request) {
 	err = this.levelsRepository.AddLevel(newLevel)
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400", "data": ""})
 		return
 	}
 
 	//json.NewEncoder(w).Encode("OK")
-	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200", "data": ""})
 }
 
 func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {
@@ -101,7 +102,7 @@ func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": err.Error(), "code": "400", "data": ""})
 		return
 	}
 
@@ -109,11 +110,11 @@ func (this *API) UpdateLevelByName(w http.ResponseWriter, r *http.Request) {
 	err = this.levelsRepository.UpdateLevel(levelName, newLevel)
 	if err != nil {
 		w.WriteHeader(400)
-		json.NewEncoder(w).Encode(map[string]string{"msg": "Problems", "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Problems", "code": "400", "data": ""})
 		return
 	}
 
-	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200", "data": ""})
 }
 
 func (this *API) DeleteLevelByName(w http.ResponseWriter, r *http.Request) {
@@ -127,11 +128,11 @@ func (this *API) DeleteLevelByName(w http.ResponseWriter, r *http.Request) {
 	// Show the response
 	if err != nil {
 		w.WriteHeader(404)
-		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400"})
+		json.NewEncoder(w).Encode(map[string]string{"msg": "Error, level not found", "code": "400", "data": ""})
 		return
 	}
 
-	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200"})
+	json.NewEncoder(w).Encode(map[string]string{"msg": "OK", "code": "200", "data": ""})
 }
 
 

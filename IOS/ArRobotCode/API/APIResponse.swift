@@ -11,4 +11,5 @@ import Foundation
 class APIResponse: Codable {
     var msg: String = ""
     var code: String = ""
+    var data: [DataLevel] = []
 }

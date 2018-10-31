@@ -14,6 +14,10 @@ class DataLevel: Codable {
     var Height: Int = 0
     var Tiles: [DataTile] = []
     
+    init() {
+        
+    }
+    
     init(Name: String, Width: Int, Height: Int, Tiles: [DataTile] ) {
         self.Name   = Name
         self.Width  = Width
