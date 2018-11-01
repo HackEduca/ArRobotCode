@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxGesture
 
 class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var heightTextField: UITextField!
@@ -17,6 +20,9 @@ class LevelBuilderViewController: UIViewController {
     private var minimumLineSpacing:      Int = 5;
     private var minimumInteritemSpacing: Int = 5;
     private var itemsPerLineOrColumn: Int = 0;
+    
+    private let disposeBag = DisposeBag()
+    var levelsListVController: LevelsListVController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +39,23 @@ class LevelBuilderViewController: UIViewController {
         lpgr.minimumPressDuration = 0.5
         lpgr.delaysTouchesBegan = false
         lpgr.delegate = self
-
         tilesCollectionView.addGestureRecognizer(lpgr)
+        
+        // HEREEE
+        self.levelsListVController = storyboard!.instantiateViewController(withIdentifier: "LevelsListVControllerID") as!LevelsListVController
+        
+        debugPrint("Printing for the sake of initializing view of VC: \(self.levelsListVController!.view)")
+        
+        self.levelsListVController!.selectedLevelObservable
+            .subscribe(onNext: { ev in
+                print("Got here !!!!!")
+                print(ev)
+            }).disposed(by: disposeBag)
+    }
+    
+    func loadLevel() {
+      
+        
     }
     
     func createArray() -> [DataTile] {

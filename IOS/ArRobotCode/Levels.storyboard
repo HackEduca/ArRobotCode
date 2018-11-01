@@ -9,25 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Level List View Controller-->
-        <scene sceneID="KvP-J8-iGH">
-            <objects>
-                <viewController id="OnO-ch-bGn" customClass="LevelListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="quk-nP-nN3">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="qj7-Sy-y9X"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9k4-fy-8lM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-655" y="-517"/>
-        </scene>
         <!--Levels ListV Controller-->
         <scene sceneID="0F5-Ty-iEz">
             <objects>
-                <viewController id="sl9-TU-unF" customClass="LevelsListVController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelsListVControllerID" id="sl9-TU-unF" customClass="LevelsListVController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zAT-Hc-z9g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +121,7 @@
                 <splitViewController id="8Ck-8i-gJg" sceneMemberID="viewController">
                     <connections>
                         <segue destination="BLd-gP-6bL" kind="relationship" relationship="masterViewController" id="efY-Me-TKL"/>
-                        <segue destination="OnO-ch-bGn" kind="relationship" relationship="detailViewController" id="3Xs-aK-lhD"/>
+                        <segue destination="R8d-Kp-qKH" kind="relationship" relationship="detailViewController" id="odi-Xw-BEd"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJ2-lx-HAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdq-VS-HL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-680.39568345323744" y="282.73381294964031"/>
+            <point key="canvasLocation" x="-655" y="-101"/>
         </scene>
     </scenes>
     <resources>

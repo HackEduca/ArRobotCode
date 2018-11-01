@@ -114,7 +114,7 @@
 		D38833712189B0F000D04589 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38833702189B0F000D04589 /* APIClient.swift */; };
 		D38833732189E21600D04589 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38833722189E21600D04589 /* APIResponse.swift */; };
 		D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */; };
-		D3C55EDE2187791A0007BCC9 /* LevelsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */; };
+		D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */; };
 		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
 		D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE121883B8F0007BCC9 /* DataLevel.swift */; };
 		D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE42188531C0007BCC9 /* Repository.swift */; };
@@ -266,7 +266,7 @@
 		D38833702189B0F000D04589 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D38833722189E21600D04589 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListViewModel.swift; sourceTree = "<group>"; };
-		D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListTableViewController.swift; sourceTree = "<group>"; };
+		D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListVController.swift; sourceTree = "<group>"; };
 		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		D3C55EE121883B8F0007BCC9 /* DataLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLevel.swift; sourceTree = "<group>"; };
 		D3C55EE42188531C0007BCC9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -579,7 +579,7 @@
 		D3F888852187256300D7A080 /* LevelsList */ = {
 			isa = PBXGroup;
 			children = (
-				D3C55EDD2187791A0007BCC9 /* LevelsListTableViewController.swift */,
+				D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */,
 				D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */,
 				D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */,
 			);
@@ -943,7 +943,7 @@
 				D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */,
 				D38833712189B0F000D04589 /* APIClient.swift in Sources */,
 				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
-				D3C55EDE2187791A0007BCC9 /* LevelsListTableViewController.swift in Sources */,
+				D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */,
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* RobotHexa.swift in Sources */,
 				D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */,

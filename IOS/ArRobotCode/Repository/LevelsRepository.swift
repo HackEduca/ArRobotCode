@@ -37,6 +37,10 @@ class LevelsRepository: Repository {
         return nil
     }
     
+    func get(at: Int) -> DataLevel {
+        return self.entities.value[at]
+    }
+    
     func add(a: DataLevel) -> Bool {
         self.entities.value.append(a)
         syncAddedDataToServer(a: a)

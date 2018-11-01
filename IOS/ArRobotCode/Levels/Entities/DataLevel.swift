@@ -18,6 +18,10 @@ class DataLevel: Codable {
         
     }
     
+    static func comparer(lhs: DataLevel, rhs: DataLevel) -> Bool {
+        return lhs.Name == rhs.Name
+    }
+    
     init(Name: String, Width: Int, Height: Int, Tiles: [DataTile] ) {
         self.Name   = Name
         self.Width  = Width

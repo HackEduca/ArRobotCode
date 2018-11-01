@@ -20,19 +20,34 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     private let cellIdentifier = "LevelCell"
     private let disposeBag = DisposeBag()
     
-
+    public let selectedLevel: Variable<String> = Variable("First")
+    public var selectedLevelObservable: Observable<String> {
+            return selectedLevel.asObservable()
+    }
+    
+    private var levelsRepository = LevelsRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewModel()
         setupTableView()
         setupTableViewBinding()
+        setupTableViewItemSelected()
         setupAddingNewLevel()
+        
+        self.selectedLevelObservable
+            .subscribe(onNext: { ev in
+                print("Got here act1")
+                print(ev)
+            }).disposed(by: disposeBag)
+        
+        selectedLevel.value = "Second"
+        selectedLevel.value = "Third"
     }
     
     private func setupViewModel() {
-        var repo = LevelsRepository()
-        self.viewModel = LevelsListViewModel(repo: repo)
+        self.viewModel = LevelsListViewModel(repo: self.levelsRepository)
     }
     
     private func setupTableView() {
@@ -50,19 +65,23 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         levelsTableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
-        // Select
-        self.levelsTableView.rx
-            .itemSelected
-            .subscribe({ pair in
-                print(pair)
-            })
-            .disposed(by: disposeBag)
-    
         //
         self.levelsTableView.rx.itemDeleted.subscribe({ index in
             self.viewModel.deleteItem(at: index.element![1])
         })
         .disposed(by: disposeBag)
+    }
+    
+    private func setupTableViewItemSelected() {
+        // Select
+        self.levelsTableView.rx
+            .itemSelected
+            .subscribe({ pair in
+                self.selectedLevel.value = self.levelsRepository.get(at: pair.element![1]).Name
+                print("Selected: ", pair.element![1], self.selectedLevel.value)
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -87,7 +106,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
             .subscribe(onNext: { gesture in
                 // Add Level with name from addLevelTextField
                 self.viewModel.addItem(item: DataLevel(Name: self.addLevelTextField.text!, Width: 10, Height: 10 ))
-                
+            
                 // Close keyboard
                 UIApplication.shared.sendAction(#selector(self.resignFirstResponder), to: nil, from: nil, for: nil)
             })
