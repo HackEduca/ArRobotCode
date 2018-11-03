@@ -23,8 +23,14 @@ class LevelViewModel{
         self.privateDataSource.value = tiles
     }
     
-    public func changeTile(at: Int, newTile: DataTile ) {
-        self.privateDataSource.value[at] = newTile
+    public func swapTile(at: Int) {
+        self.privateDataSource.value[at].swap()
+        self.privateDataSource.value.append(DataTile())
+    }
+    
+    public func setToStartTile(at: Int) {
+        self.privateDataSource.value[at].setToStart()
+        self.privateDataSource.value.append(DataTile())
     }
     
 }

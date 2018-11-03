@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArRobotCode/API/APIClient.swift"
-            timestampString = "562950587.013271"
+            timestampString = "562953632.0337059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -160,6 +160,22 @@
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "comparer(lhs:rhs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift"
+            timestampString = "562953632.034018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "setupCollectionViewBinding()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

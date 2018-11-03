@@ -17,7 +17,6 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     
     var crtLevel: DataLevel!
-    var tiles: [DataTile] = []
     private var minimumLineSpacing:      Int = 5;
     private var minimumInteritemSpacing: Int = 5;
     private var itemsPerLineOrColumn: Int = 10;
@@ -30,20 +29,6 @@ class LevelBuilderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tiles = createArray()
-//
-//        // Add all the callbacks from UI
-//        heightTextField.addTarget(self, action: #selector(fieldTextChanged), for: .editingChanged)
-//        widthTextField.addTarget(self, action: #selector(fieldTextChanged), for: .editingChanged)
-//
-//        tilesCollectionView.delegate = self
-//        tilesCollectionView.dataSource = self
-//        // Create long tap recognizer
-//        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTap))
-//        lpgr.minimumPressDuration = 0.5
-//        lpgr.delaysTouchesBegan = false
-//        lpgr.delegate = self
-//        tilesCollectionView.addGestureRecognizer(lpgr)
     }
     
     public func loadLevel(level: DataLevel) {
@@ -51,6 +36,8 @@ class LevelBuilderViewController: UIViewController {
         setupViewModel()
         setupCollectionView()
         setupCollectionViewBinding()
+        setupCollectionViewTap()
+        setupCollectionViewLongTap()
     }
     
     private func setupViewModel() {
@@ -77,16 +64,30 @@ class LevelBuilderViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func createArray() -> [DataTile] {
-        var tmpDataTiles: [DataTile] = []
-        
-        // To do: make this responsive !
-        for i in Range(1...100) {
-            tmpDataTiles.append(DataTile())
-        }
-        itemsPerLineOrColumn = 10
-        
-        return tmpDataTiles
+    private func setupCollectionViewTap() {
+        self.tilesCollectionView.rx
+            .tapGesture(configuration: { gestureRecognizer, delegate in
+                delegate.simultaneousRecognitionPolicy = .never
+                })
+            .subscribe(onNext: { gesture in
+                if let indexPath = self.tilesCollectionView?.indexPathForItem(at: gesture.location(in: self.tilesCollectionView)) {
+                    self.viewModel.swapTile(at: indexPath.row)
+                }
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func setupCollectionViewLongTap() {
+        self.tilesCollectionView.rx
+            .longPressGesture()
+            .when(.recognized)
+            .subscribe(onNext: { gesture in
+                if let indexPath = self.tilesCollectionView?.indexPathForItem(at: gesture.location(in: self.tilesCollectionView)) {
+                    self.viewModel.setToStartTile(at: indexPath.row)
+                    print("Intrat si aici")
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -97,45 +98,6 @@ extension LevelBuilderViewController: UITextFieldDelegate {
 }
 
 extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return tiles.count
-//    }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let tile = tiles[indexPath.item]
-//        let cell = tilesCollectionView.dequeueReusableCell(withReuseIdentifier: "TileCell", for: indexPath) as! TileCell
-//
-//        cell.setTile(tile: tile)
-//        return cell
-//    }
-//
-//
-//    // Handle TAP
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        print(indexPath.row)
-//        tiles[indexPath.row].swap()
-//        collectionView.reloadItems(at: [indexPath])
-//    }
-//
-//    // Handle Long TAP
-//    @objc func handleLongTap(gestureReconizer: UILongPressGestureRecognizer) {
-//        if gestureReconizer.state != UIGestureRecognizer.State.began {
-//            return
-//        }
-//
-//        let point = gestureReconizer.location(in: self.tilesCollectionView)
-//        let indexPath = self.tilesCollectionView.indexPathForItem(at: point)
-//
-//        if let index = indexPath {
-//            var cell = self.tilesCollectionView.cellForItem(at: index)
-//            tiles[index.row].setToStart()
-//            self.tilesCollectionView.reloadItems(at: [index])
-//        } else {
-//            print("Could not find index path")
-//        }
-//    }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var sz = CGSize(width: collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing),
                       height: collectionView.frame.height / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumLineSpacing) - 1)
