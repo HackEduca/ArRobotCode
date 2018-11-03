@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-yz-Lal">
-                                <rect key="frame" x="0.0" y="70" width="320" height="1042"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="1092"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="io7-1C-7TG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7wZ-2Z-2d2">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="992"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="1042"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LevelCell" id="clH-MJ-ebh" customClass="LevelTableViewCell" customModule="ArRobotCode" customModuleProvider="target">
@@ -97,31 +97,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7W-4d-h3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.79999999999995" y="-1183.3583208395803"/>
+            <point key="canvasLocation" x="-2069" y="-101"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="K3R-FK-kwI">
-            <objects>
-                <navigationController id="BLd-gP-6bL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bH6-1R-S5D">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="sl9-TU-unF" kind="relationship" relationship="rootViewController" id="kLc-gb-lKN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W6c-Yr-9vK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-655" y="-1183"/>
-        </scene>
-        <!--Split View Controller-->
+        <!--Levels Split View Controller-->
         <scene sceneID="0M5-VA-r87">
             <objects>
-                <splitViewController id="8Ck-8i-gJg" sceneMemberID="viewController">
+                <splitViewController id="8Ck-8i-gJg" customClass="LevelsSplitViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="BLd-gP-6bL" kind="relationship" relationship="masterViewController" id="efY-Me-TKL"/>
                         <segue destination="R8d-Kp-qKH" kind="relationship" relationship="detailViewController" id="odi-Xw-BEd"/>
+                        <segue destination="sl9-TU-unF" kind="relationship" relationship="masterViewController" id="wJC-Cd-MNa"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJ2-lx-HAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdq-VS-HL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="-101"/>
+            <point key="canvasLocation" x="-1127" y="-101"/>
         </scene>
     </scenes>
     <resources>

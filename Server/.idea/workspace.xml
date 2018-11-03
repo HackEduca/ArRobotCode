@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e921154-24e7-48b6-810c-62d3b1eb9f08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsSplitViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIClient.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIClient.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels.storyboard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListVController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Repository/LevelsRepository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Repository/LevelsRepository.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListVController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListVController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" afterDir="false" />
@@ -30,12 +32,13 @@
     <session id="1619693638">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,16 +53,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="2173" />
+          <entry key="go" value="2324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="2173" />
+          <entry key="Go" value="2324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
         <counts>
+          <entry key=".append" value="1" />
           <entry key=".p" value="1" />
         </counts>
       </usages-collector>
@@ -70,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/API/API.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="285">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -79,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+            <state relative-caret-position="420">
+              <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -180,8 +184,8 @@
         <option value="$PROJECT_DIR$/src/tests/DB_Tests.go" />
         <option value="$PROJECT_DIR$/src/tests/DB_test.go" />
         <option value="$PROJECT_DIR$/src/Repository/CouchBaseRepository.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/src/API/API.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
@@ -201,6 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,7 +240,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,12 +380,12 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15873016" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16239317" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17959183" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17959183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -428,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Level.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Tile.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -442,17 +439,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Level.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/API/API.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="285">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+        <state relative-caret-position="420">
+          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
         </state>
       </provider>
     </entry>

@@ -16,38 +16,58 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var addLevelTextField: UITextField!
     @IBOutlet weak var addLevelImageView: UIImageView!
     
+    // Will be a reference received from parent controller
+    private var levelsRepository: LevelsRepository?
+    
     private var viewModel: LevelsListViewModel!
     private let cellIdentifier = "LevelCell"
     private let disposeBag = DisposeBag()
     
-    public let selectedLevel: Variable<String> = Variable("First")
-    public var selectedLevelObservable: Observable<String> {
+    // Observer for the selected level
+    public let selectedLevel: Variable<DataLevel> = Variable(DataLevel())
+    public var selectedLevelObservable: Observable<DataLevel> {
             return selectedLevel.asObservable()
     }
     
-    private var levelsRepository = LevelsRepository()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.initialize()
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.initialize()
+    }
+    
+    func initialize() {
+        //do your stuff here
+        var levelBuilderVC = splitViewController?.viewControllers.last as? LevelBuilderViewController
+        levelBuilderVC?.levelsListVController = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    public func setupRepository(repository: LevelsRepository) {
+        self.levelsRepository = repository
         setupViewModel()
         setupTableView()
         setupTableViewBinding()
         setupTableViewItemSelected()
         setupAddingNewLevel()
-        
-        self.selectedLevelObservable
-            .subscribe(onNext: { ev in
-                print("Got here act1")
-                print(ev)
-            }).disposed(by: disposeBag)
-        
-        selectedLevel.value = "Second"
-        selectedLevel.value = "Third"
     }
     
     private func setupViewModel() {
-        self.viewModel = LevelsListViewModel(repo: self.levelsRepository)
+        self.viewModel = LevelsListViewModel(repo: self.levelsRepository!)
     }
     
     private func setupTableView() {
@@ -77,7 +97,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         self.levelsTableView.rx
             .itemSelected
             .subscribe({ pair in
-                self.selectedLevel.value = self.levelsRepository.get(at: pair.element![1]).Name
+                self.selectedLevel.value = self.levelsRepository!.get(at: pair.element![1])
                 print("Selected: ", pair.element![1], self.selectedLevel.value)
             })
             .disposed(by: disposeBag)

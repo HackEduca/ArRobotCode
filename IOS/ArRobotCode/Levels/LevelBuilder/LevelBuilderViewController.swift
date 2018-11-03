@@ -22,7 +22,7 @@ class LevelBuilderViewController: UIViewController {
     private var itemsPerLineOrColumn: Int = 0;
     
     private let disposeBag = DisposeBag()
-    var levelsListVController: LevelsListVController?
+    public var levelsListVController: LevelsListVController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +40,10 @@ class LevelBuilderViewController: UIViewController {
         lpgr.delaysTouchesBegan = false
         lpgr.delegate = self
         tilesCollectionView.addGestureRecognizer(lpgr)
-        
-        // HEREEE
-        self.levelsListVController = storyboard!.instantiateViewController(withIdentifier: "LevelsListVControllerID") as!LevelsListVController
-        
-        debugPrint("Printing for the sake of initializing view of VC: \(self.levelsListVController!.view)")
-        
-        self.levelsListVController!.selectedLevelObservable
-            .subscribe(onNext: { ev in
-                print("Got here !!!!!")
-                print(ev)
-            }).disposed(by: disposeBag)
     }
     
-    func loadLevel() {
-      
+    public func loadLevel(level: DataLevel) {
+        print("Loading level: ", level)
         
     }
     
