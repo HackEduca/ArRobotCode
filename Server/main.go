@@ -30,7 +30,7 @@ func main() {
 	tiles1[40] = Entities.Tile{Type: 1}
 	tiles1[60] = Entities.Tile{Type: 1}
 	tiles1[80] = Entities.Tile{Type: 1}
-	
+
 
 	level := Entities.Level{ Name: "HardLevel", Width: 10, Height: 10, Tiles: tiles}
 	cbr.AddLevel(level)

@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e921154-24e7-48b6-810c-62d3b1eb9f08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsSplitViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelViewModel.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIClient.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/API/APIClient.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataTile.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/Entities/DataTile.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListVController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsListVController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/TileCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/TileCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelTableViewCell.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net" afterDir="false" />
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state relative-caret-position="435">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -380,12 +381,12 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16239317" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16239317" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17959183" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17959183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -455,8 +456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="435">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>

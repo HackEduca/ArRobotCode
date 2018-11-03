@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
@@ -17,13 +20,19 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "">
+               value = "itemsPerLineOrColumn">
             </PersistentString>
             <PersistentString
-               value = "viewControllers[0]">
+               value = "collectionView.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "CGFloat(itemsPerLineOrColumn)">
+            </PersistentString>
+            <PersistentString
+               value = "collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -47,7 +56,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "viewControllers[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

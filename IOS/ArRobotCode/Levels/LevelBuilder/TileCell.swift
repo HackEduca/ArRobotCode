@@ -11,7 +11,7 @@ import UIKit
 class TileCell: UICollectionViewCell {
     @IBOutlet weak var tileImageView: UIImageView!
     
-    func setTile(tile: DataTile) {
+    public func setTile(tile: DataTile) {
         if tile.type == .Free {
              tileImageView.image = UIImage(named: "green")
         }
@@ -29,4 +29,11 @@ class TileCell: UICollectionViewCell {
         }
        
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+
 }

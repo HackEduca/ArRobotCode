@@ -14,6 +14,7 @@
 		D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */; };
 		D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */; };
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
+		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
 		D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */; };
 		D368124521807CAA000458C1 /* RobotHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* RobotHexa.swift */; };
 		D368124621807CAA000458C1 /* RobotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* RobotInterface.swift */; };
@@ -167,6 +168,7 @@
 		D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeInstructionsViewController.swift; sourceTree = "<group>"; };
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
+		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
 		D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* RobotHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* RobotInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotInterface.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 			children = (
 				D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */,
 				D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */,
+				D35DC80C218DE210000B0FFC /* LevelViewModel.swift */,
 				D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */,
 				D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */,
 			);
@@ -938,6 +941,7 @@
 				D3E50F2E2178850C000270EE /* ViewController.swift in Sources */,
 				D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */,
 				D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */,
+				D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */,
 				D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */,
 				D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */,
 				D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */,

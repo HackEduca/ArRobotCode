@@ -23,6 +23,10 @@ class DataTile: Codable {
         self.type = .Free
     }
     
+    init(type: TypeOfTile) {
+        self.type = type
+    }
+    
     func swap() {
         if type == .Free {
             type = .Used
