@@ -126,14 +126,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkB-9A-dlQ">
                                         <rect key="frame" x="0.0" y="0.0" width="814" height="475"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUK-O4-h9z" userLabel="Height">
-                                                <rect key="frame" x="0.0" y="222.5" width="402" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUK-O4-h9z" userLabel="Height">
+                                                <rect key="frame" x="0.0" y="222.5" width="264.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-HC-od6" userLabel="Width">
-                                                <rect key="frame" x="412" y="222.5" width="402" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32r-uG-m2y" userLabel="Height">
+                                                <rect key="frame" x="274.5" y="222.5" width="265" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Width" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-HC-od6" userLabel="Width">
+                                                <rect key="frame" x="549.5" y="222.5" width="264.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -194,9 +200,10 @@
                         <viewLayoutGuide key="safeArea" id="QUA-Fj-SaO"/>
                     </view>
                     <connections>
-                        <outlet property="heightTextField" destination="VUK-O4-h9z" id="ucA-bA-6kd"/>
+                        <outlet property="heightTextField" destination="32r-uG-m2y" id="59K-8P-zTv"/>
                         <outlet property="tilesCollectionView" destination="tKg-g1-3Rk" id="hUf-v1-fM2"/>
-                        <outlet property="widthTextField" destination="WHe-HC-od6" id="Ab4-co-CLH"/>
+                        <outlet property="titleTextField" destination="VUK-O4-h9z" id="eRr-Qt-Ukt"/>
+                        <outlet property="widthTextField" destination="WHe-HC-od6" id="uZG-qb-kP3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdq-VS-HL5" userLabel="First Responder" sceneMemberID="firstResponder"/>

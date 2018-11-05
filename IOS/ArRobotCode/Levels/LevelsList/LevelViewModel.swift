@@ -11,26 +11,63 @@ import RxSwift
 import RxCocoa
 
 class LevelViewModel{
-    private let privateDataSource: Variable<[DataTile]> = Variable([])
-    //private let disposeBag = DisposeBag()
+    private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
     
-    // Outputs
-    public var dataSource: Observable<[DataTile]> {
-        return self.privateDataSource.asObservable()
+    public var levelObserver: Observable<DataLevel> {
+        return self.level.asObservable()
     }
     
-    init(tiles: [DataTile]) {
-        self.privateDataSource.value = tiles
+    
+    init(level: DataLevel) {
+        self.level.onNext(level)
     }
     
     public func swapTile(at: Int) {
-        self.privateDataSource.value[at].swap()
-        self.privateDataSource.value.append(DataTile())
+        do {
+            try self.level.value().Tiles[at].swap()
+            self.level.onNext(try self.level.value())
+        } catch {
+        
+        }
     }
     
     public func setToStartTile(at: Int) {
-        self.privateDataSource.value[at].setToStart()
-        self.privateDataSource.value.append(DataTile())
+        do {
+            try self.level.value().Tiles[at].setToStart()
+            self.level.onNext(try self.level.value())
+        } catch {
+        }
     }
+    
+    public func setName(newName: String) {
+        do {
+            try self.level.value().Name = newName
+            self.level.onNext(try self.level.value())
+        } catch {
+            
+        }
+    }
+    
+    public func setHeight(newHeight: String) {
+        do {
+            // To do: make it safe
+            try self.level.value().Height = Int(newHeight)!
+            self.level.onNext(try self.level.value())
+        } catch {
+            
+        }
+    }
+    
+    
+    public func setWidth(newWidth: String) {
+        do {
+            // To do: make it safe
+            try self.level.value().Width = Int(newWidth)!
+            self.level.onNext(try self.level.value())
+        } catch {
+            
+        }
+    }
+    
     
 }

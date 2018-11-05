@@ -12,6 +12,7 @@ import RxSwift
 import RxGesture
 
 class LevelBuilderViewController: UIViewController {
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var widthTextField: UITextField!
     @IBOutlet weak var tilesCollectionView: UICollectionView!
@@ -38,10 +39,11 @@ class LevelBuilderViewController: UIViewController {
         setupCollectionViewBinding()
         setupCollectionViewTap()
         setupCollectionViewLongTap()
+        setupTextFieldBinding()
     }
     
     private func setupViewModel() {
-        self.viewModel = LevelViewModel(tiles: self.crtLevel.Tiles)
+        self.viewModel = LevelViewModel(level: self.crtLevel)
     }
     
     private func setupCollectionView() {
@@ -50,7 +52,10 @@ class LevelBuilderViewController: UIViewController {
     }
     
     private func setupCollectionViewBinding() {
-        viewModel.dataSource
+        viewModel.levelObserver
+            .map({ (DataLevel) -> [DataTile] in
+                DataLevel.Tiles
+            })
             .bind(to: self.tilesCollectionView.rx.items) { view, row, element in
                 let cell = self.tilesCollectionView.dequeueReusableCell(withReuseIdentifier: "TileCell", for: IndexPath(row: row, section: 0)) as! TileCell
                 
@@ -80,14 +85,59 @@ class LevelBuilderViewController: UIViewController {
     private func setupCollectionViewLongTap() {
         self.tilesCollectionView.rx
             .longPressGesture()
-            .when(.recognized)
             .subscribe(onNext: { gesture in
                 if let indexPath = self.tilesCollectionView?.indexPathForItem(at: gesture.location(in: self.tilesCollectionView)) {
                     self.viewModel.setToStartTile(at: indexPath.row)
-                    print("Intrat si aici")
                 }
             })
             .disposed(by: self.disposeBag)
+    }
+    
+    func setupTextFieldBinding() {
+        // titleTextField:
+        self.viewModel.levelObserver
+            .map({ (DataLevel) -> String in
+                DataLevel.Name
+            })
+            .bind(to:  self.titleTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.titleTextField.rx
+            .observe(String.self, "text")
+            .subscribe(onNext: { s in
+                self.viewModel.setName(newName: s!)
+            })
+            .disposed(by: disposeBag)
+        
+        // heightTextField:
+        self.viewModel.levelObserver
+            .map({ (DataLevel) -> String in
+                String(DataLevel.Height)
+            })
+            .bind(to:  self.heightTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.heightTextField.rx
+            .observe(String.self, "text")
+            .subscribe(onNext: { s in
+                self.viewModel.setHeight(newHeight: s!)
+            })
+            .disposed(by: disposeBag)
+        
+        // widthTextField
+        self.viewModel.levelObserver
+            .map({ (DataLevel) -> String in
+                String(DataLevel.Width)
+            })
+            .bind(to:  self.widthTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.widthTextField.rx
+            .observe(String.self, "text")
+            .subscribe(onNext: { s in
+                self.viewModel.setWidth(newWidth: s!)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -116,5 +166,4 @@ extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(minimumInteritemSpacing)
     }
-
 }
