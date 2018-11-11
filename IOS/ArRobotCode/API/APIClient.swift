@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class APIClient {
-    private let baseURL = URL(string: "https://unus.serveo.net")!
+    private let baseURL = URL(string: "https://devito.serveo.net")!
     
     func send<T: Codable>(apiRequest: APIRequest) -> Observable<T> {
         return Observable<T>.create { observer in

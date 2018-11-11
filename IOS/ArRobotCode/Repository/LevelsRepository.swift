@@ -11,46 +11,65 @@ import RxCocoa
 import RxSwift
 
 class LevelsRepository: Repository {
-    private var entities: Variable<[DataLevel]> = Variable([])
+    private var entities: [DataLevel] = []
+    private var entitiesBehaviourSubject: BehaviorSubject<[DataLevel]> = BehaviorSubject(value: [])
     private let apiClient = APIClient()
     private let disposeBag = DisposeBag()
     
     public let dataSource: Observable<[DataLevel]>
     
     init() {
-        dataSource = entities.asObservable()
+        dataSource = entitiesBehaviourSubject.asObservable()
         syncWithDataFromLocal()
         syncWithDataFromServer()
     }
     
     func getAll() -> [DataLevel] {
-        return self.entities.value
+        return self.entities;
     }
     
     func get(Name: String) -> DataLevel? {
-        for entity in self.entities.value {
+        for entity in self.entities {
             if entity.Name == Name {
                 return entity
             }
         }
-        
+
         return nil
     }
     
+    func getAt(Name: String) -> Int {
+        var at = 0;
+        for entity in self.entities {
+            if entity.Name == Name {
+                return at
+            }
+            
+            at += 1
+        }
+        
+        return -1
+    }
+    
     func get(at: Int) -> DataLevel {
-        return self.entities.value[at]
+        if(at < 0) {
+             return DataLevel()
+        }
+        
+        return self.entities[at]
     }
     
     func add(a: DataLevel) -> Bool {
-        self.entities.value.append(a)
-        syncAddedDataToServer(a: a)
+        self.entities.append(a)
+        self.entitiesBehaviourSubject.onNext(self.entities)
         return true
     }
     
     func update(a: DataLevel) -> Bool {
-        for i in 0..<self.entities.value.count{
-            if self.entities.value[i].Name == a.Name {
-                self.entities.value[i] = a
+        for i in 0..<self.entities.count{
+            if self.entities[i].Name == a.Name {
+                self.entities[i] = a
+                self.entitiesBehaviourSubject.onNext(self.entities)
                 return true
             }
         }
@@ -58,11 +77,19 @@ class LevelsRepository: Repository {
         return false
     }
     
+    func update(at: Int, newDataLevel: DataLevel) {
+        if(at >= 0) {
+            self.entities[at] = newDataLevel
+            self.entitiesBehaviourSubject.onNext(self.entities)
+        }
+    }
+    
     func delete(Name: String) -> Bool {
-        for i in 0..<self.entities.value.count{
-            if self.entities.value[i].Name == Name {
+        for i in 0..<self.entities.count{
+            if self.entities[i].Name == Name {
                 self.syncDeletedDataToServer(Name: Name)
-                self.entities.value.remove(at: i)
+                self.entities.remove(at: i)
+                self.entitiesBehaviourSubject.onNext(self.entities)
                 return true
             }
         }
@@ -71,7 +98,7 @@ class LevelsRepository: Repository {
     
     func delete(at: Int) -> Bool {
         self.syncDeletedDataToServer(at: at)
-        self.entities.value.remove(at: at)
+        self.entities.remove(at: at)
         return true
     }
     
@@ -85,11 +112,12 @@ class LevelsRepository: Repository {
         
         obs = self.apiClient.send(apiRequest: rq)
         obs.subscribe { (entries) in
-            if var ent = entries.element {
+            if let ent = entries.element {
                 if ent.code == "200" {
                     // Delete request from local queue
                     print("Server response: OK")
-                    self.entities.value = ent.data
+                    self.entities = ent.data
+                    self.entitiesBehaviourSubject.onNext(self.entities)
                 } else {
                      print(ent.msg)
                 }
@@ -119,7 +147,7 @@ class LevelsRepository: Repository {
         // Send it and wait for confirmation
         obs = self.apiClient.send(apiRequest: rq)
         obs.subscribe { (entries) in
-            if var ent = entries.element {
+            if let ent = entries.element {
                 if ent.code == "200" {
                     // Delete request from local queue
                     print("Server response: OK")
@@ -132,7 +160,7 @@ class LevelsRepository: Repository {
     }
     
     private func syncDeletedDataToServer(at: Int) {
-        syncDeletedDataToServer(Name: self.entities.value[at].Name )
+        syncDeletedDataToServer(Name: self.entities[at].Name )
     }
     
     private func syncDeletedDataToServer(Name: String) {
@@ -143,7 +171,7 @@ class LevelsRepository: Repository {
         
         obs = self.apiClient.send(apiRequest: rq)
         obs.subscribe { (entries) in
-            if var ent = entries.element {
+            if let ent = entries.element {
                 if ent.code == "200" {
                     // Delete request from local queue
                     print("Server response: OK")

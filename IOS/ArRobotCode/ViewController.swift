@@ -51,6 +51,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         
         if let objectAnchor = anchor as? ARObjectAnchor {
+            
             print("Detected ARObjectAnchor")
             
             // Create the plane

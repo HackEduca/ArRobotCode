@@ -11,15 +11,19 @@ import RxSwift
 import RxCocoa
 
 class LevelViewModel{
+    private var levelsRepository: LevelsRepository;
     private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
+    private var levelAt: Int = -1;
     
     public var levelObserver: Observable<DataLevel> {
         return self.level.asObservable()
     }
     
     
-    init(level: DataLevel) {
-        self.level.onNext(level)
+    init(repository: LevelsRepository, at: Int) {
+        self.levelsRepository = repository
+        self.levelAt = at
+        self.level.onNext(repository.get(at: at))
     }
     
     public func swapTile(at: Int) {
@@ -43,6 +47,7 @@ class LevelViewModel{
         do {
             try self.level.value().Name = newName
             self.level.onNext(try self.level.value())
+            self.levelsRepository.update(at: self.levelAt, newDataLevel: try self.level.value())
         } catch {
             
         }

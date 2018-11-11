@@ -17,7 +17,9 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var widthTextField: UITextField!
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     
-    var crtLevel: DataLevel!
+    private var levelsRepository: LevelsRepository!
+    private var crtLevelAt: Int = -1
+    
     private var minimumLineSpacing:      Int = 5;
     private var minimumInteritemSpacing: Int = 5;
     private var itemsPerLineOrColumn: Int = 10;
@@ -32,8 +34,9 @@ class LevelBuilderViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    public func loadLevel(level: DataLevel) {
-        self.crtLevel = level
+    public func loadLevel(repository: LevelsRepository, at: Int) {
+        self.levelsRepository = repository
+        self.crtLevelAt = at
         setupViewModel()
         setupCollectionView()
         setupCollectionViewBinding()
@@ -43,7 +46,7 @@ class LevelBuilderViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        self.viewModel = LevelViewModel(level: self.crtLevel)
+        self.viewModel = LevelViewModel(repository: levelsRepository, at: self.crtLevelAt)
     }
     
     private func setupCollectionView() {
