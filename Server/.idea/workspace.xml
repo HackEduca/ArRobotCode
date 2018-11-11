@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e921154-24e7-48b6-810c-62d3b1eb9f08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode.xcworkspace/xcuserdata/so.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsSplitViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsSplitViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/ViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelBuilder/LevelViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsList/LevelsSplitViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../IOS/ArRobotCode/Levels/LevelsSplitViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" afterDir="false" />

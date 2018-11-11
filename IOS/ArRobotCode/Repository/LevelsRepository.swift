@@ -99,6 +99,7 @@ class LevelsRepository: Repository {
     func delete(at: Int) -> Bool {
         self.syncDeletedDataToServer(at: at)
         self.entities.remove(at: at)
+        self.entitiesBehaviourSubject.onNext(self.entities)
         return true
     }
     

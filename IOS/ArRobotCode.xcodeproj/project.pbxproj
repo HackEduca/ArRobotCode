@@ -576,6 +576,7 @@
 			children = (
 				D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */,
 				D3F7440D21830EA10096958F /* TileCell.swift */,
+				D35DC80C218DE210000B0FFC /* LevelViewModel.swift */,
 			);
 			path = LevelBuilder;
 			sourceTree = "<group>";
@@ -585,9 +586,7 @@
 			children = (
 				D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */,
 				D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */,
-				D35DC80C218DE210000B0FFC /* LevelViewModel.swift */,
 				D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */,
-				D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */,
 			);
 			path = LevelsList;
 			sourceTree = "<group>";
@@ -595,6 +594,7 @@
 		D3F888862187261E00D7A080 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */,
 				D3F8888D218733E300D7A080 /* Entities */,
 				D3F7440A21830A0F0096958F /* LevelBuilder */,
 				D3F888852187256300D7A080 /* LevelsList */,

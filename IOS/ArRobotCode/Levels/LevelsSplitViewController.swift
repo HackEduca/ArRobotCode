@@ -33,7 +33,6 @@ class LevelsSplitViewController: UISplitViewController {
         
         // Setup selectedLevel Observable
         levelsListVC?.selectedLevelObservable.subscribe(onNext: { selectedLevel in
-            
             self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.levelsRepository.getAt(Name: selectedLevel.Name))
         }).disposed(by: disposeBag)
     }

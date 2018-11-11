@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArRobotCode/Levels/LevelBuilder/LevelBuilderViewController.swift"
-            timestampString = "563619414.643412"
+            timestampString = "563619998.961339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ArRobotCode/Levels/LevelsList/LevelViewModel.swift"
-            timestampString = "563619414.643504"
+            filePath = "ArRobotCode/Levels/LevelsList/LevelsListVController.swift"
+            timestampString = "563619998.961446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "setName(newName:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "setupTableViewBinding()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
