@@ -27,7 +27,7 @@ class InstructionsViewController: UIViewController {
         instructionsWebView = WKWebView(frame: self.view.bounds, configuration: config)
         
         // Load the index.html
-        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")
+        let htmlPath = Bundle.main.path(forResource: "blocks-only", ofType: "html")
         let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
         instructionsWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
         
