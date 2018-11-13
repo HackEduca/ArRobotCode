@@ -18,6 +18,7 @@ class Scratch3MotionBlocks {
     getPrimitives () {
         return {
             motion_movesteps: this.moveSteps,
+            motion_movesteps_back: this.moveStepsBack,
             motion_gotoxy: this.goToXY,
             motion_goto: this.goTo,
             motion_turnright: this.turnRight,
@@ -64,6 +65,16 @@ class Scratch3MotionBlocks {
     moveSteps (args, util) {
         alert("moveFront called!")
         webkit.messageHandlers.callback.postMessage("moveFront");
+        const steps = Cast.toNumber(args.STEPS);
+        const radians = MathUtil.degToRad(90 - util.target.direction);
+        const dx = steps * Math.cos(radians);
+        const dy = steps * Math.sin(radians);
+        util.target.setXY(util.target.x + dx, util.target.y + dy);
+    }
+
+    moveStepsBack (args, util) {
+        alert("moveBack called!")
+        webkit.messageHandlers.callback.postMessage("moveBack");
         const steps = Cast.toNumber(args.STEPS);
         const radians = MathUtil.degToRad(90 - util.target.direction);
         const dx = steps * Math.cos(radians);

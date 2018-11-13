@@ -52,6 +52,16 @@ const specMap = {
             }
         ]
     },
+    'back:': {
+        opcode: 'motion_movesteps_back',
+        argMap: [
+            {
+                type: 'input',
+                inputOp: 'math_number',
+                inputName: 'STEPS'
+            }
+        ]
+    },
     'turnRight:': {
         opcode: 'motion_turnright',
         argMap: [
