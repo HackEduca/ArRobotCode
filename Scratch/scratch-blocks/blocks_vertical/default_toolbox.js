@@ -58,98 +58,98 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '</shadow>' +
       '</value>' +
     '</block>' +
-    '<block type="motion_pointindirection" id="motion_pointindirection">' +
-      '<value name="DIRECTION">' +
-        '<shadow type="math_angle">' +
-          '<field name="NUM">90</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_pointtowards" id="motion_pointtowards">' +
-      '<value name="TOWARDS">' +
-        '<shadow type="motion_pointtowards_menu">' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_gotoxy" id="motion_gotoxy">' +
-      '<value name="X">' +
-        '<shadow id="movex" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-      '<value name="Y">' +
-        '<shadow id="movey" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_goto" id="motion_goto">' +
-      '<value name="TO">' +
-        '<shadow type="motion_goto_menu">' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_glidesecstoxy" id="motion_glidesecstoxy">' +
-      '<value name="SECS">' +
-        '<shadow type="math_number">' +
-          '<field name="NUM">1</field>' +
-        '</shadow>' +
-      '</value>' +
-      '<value name="X">' +
-        '<shadow id="glidex" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-      '<value name="Y">' +
-        '<shadow id="glidey" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_glideto" id="motion_glideto">' +
-      '<value name="SECS">' +
-        '<shadow type="math_number">' +
-          '<field name="NUM">1</field>' +
-        '</shadow>' +
-      '</value>' +
-      '<value name="TO">' +
-        '<shadow type="motion_glideto_menu">' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_changexby" id="motion_changexby">' +
-      '<value name="DX">' +
-        '<shadow type="math_number">' +
-          '<field name="NUM">10</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_setx" id="motion_setx">' +
-      '<value name="X">' +
-        '<shadow id="setx" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_changeyby" id="motion_changeyby">' +
-      '<value name="DY">' +
-        '<shadow type="math_number">' +
-          '<field name="NUM">10</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_sety" id="motion_sety">' +
-      '<value name="Y">' +
-        '<shadow id="sety" type="math_number">' +
-          '<field name="NUM">0</field>' +
-        '</shadow>' +
-      '</value>' +
-    '</block>' +
-    '<block type="motion_ifonedgebounce" id="motion_ifonedgebounce"></block>' +
-    '<block type="motion_setrotationstyle" id="motion_setrotationstyle"></block>' +
-    '<block type="motion_xposition" id="motion_xposition"></block>' +
-    '<block type="motion_yposition" id="motion_yposition"></block>' +
-    '<block type="motion_direction" id="motion_direction"></block>' +
+    // '<block type="motion_pointindirection" id="motion_pointindirection">' +
+    //   '<value name="DIRECTION">' +
+    //     '<shadow type="math_angle">' +
+    //       '<field name="NUM">90</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_pointtowards" id="motion_pointtowards">' +
+    //   '<value name="TOWARDS">' +
+    //     '<shadow type="motion_pointtowards_menu">' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_gotoxy" id="motion_gotoxy">' +
+    //   '<value name="X">' +
+    //     '<shadow id="movex" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    //   '<value name="Y">' +
+    //     '<shadow id="movey" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_goto" id="motion_goto">' +
+    //   '<value name="TO">' +
+    //     '<shadow type="motion_goto_menu">' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_glidesecstoxy" id="motion_glidesecstoxy">' +
+    //   '<value name="SECS">' +
+    //     '<shadow type="math_number">' +
+    //       '<field name="NUM">1</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    //   '<value name="X">' +
+    //     '<shadow id="glidex" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    //   '<value name="Y">' +
+    //     '<shadow id="glidey" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_glideto" id="motion_glideto">' +
+    //   '<value name="SECS">' +
+    //     '<shadow type="math_number">' +
+    //       '<field name="NUM">1</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    //   '<value name="TO">' +
+    //     '<shadow type="motion_glideto_menu">' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_changexby" id="motion_changexby">' +
+    //   '<value name="DX">' +
+    //     '<shadow type="math_number">' +
+    //       '<field name="NUM">10</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_setx" id="motion_setx">' +
+    //   '<value name="X">' +
+    //     '<shadow id="setx" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_changeyby" id="motion_changeyby">' +
+    //   '<value name="DY">' +
+    //     '<shadow type="math_number">' +
+    //       '<field name="NUM">10</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_sety" id="motion_sety">' +
+    //   '<value name="Y">' +
+    //     '<shadow id="sety" type="math_number">' +
+    //       '<field name="NUM">0</field>' +
+    //     '</shadow>' +
+    //   '</value>' +
+    // '</block>' +
+    // '<block type="motion_ifonedgebounce" id="motion_ifonedgebounce"></block>' +
+    // '<block type="motion_setrotationstyle" id="motion_setrotationstyle"></block>' +
+    // '<block type="motion_xposition" id="motion_xposition"></block>' +
+    // '<block type="motion_yposition" id="motion_yposition"></block>' +
+    // '<block type="motion_direction" id="motion_direction"></block>' +
   '</category>' +
   '<category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB">' +
     '<block type="looks_show" id="looks_show"></block>' +
