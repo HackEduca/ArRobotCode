@@ -7,36 +7,41 @@
 //
 
 import UIKit
+import Alamofire
 
 class RobotHexa: RobotInterface {
-    let host = "http://192.168.43.24"
-    let port = 8000
+    let host = "http://192.168.43.24:8000"
     
     func moveFront(distanceInMM distance: Int) {
-        let url = URL(string: host + ":8000/moveFront?distance=" + String(distance))!
+        let url = URL(string: host + "/moveFront?dist=" + String(distance))!
         
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else {
-                print("Error when making the request: " + error!.localizedDescription)
-                return
-                
-            }
-            print(String(data: data, encoding: .utf8)!)
-        }
-        task.resume()
+        Alamofire.request(url).responseJSON(completionHandler: { (data) in
+            print(data)
+        })
     }
     
     func moveBack(distanceInMM distance: Int) {
-        print("moveBackwards called")
+        let url = URL(string: host + "/moveBack?dist=" + String(distance))!
+
+        Alamofire.request(url).responseJSON(completionHandler: { (data) in
+            print(data)
+        })
     }
     
-    func moveLeft(distanceInMM distance: Int) {
-        print("moveLeft called")
+    func rotateLeft() {
+        let url = URL(string: host + "/rotateLeft")!
+        
+        Alamofire.request(url).responseJSON(completionHandler: { (data) in
+            print(data)
+        })
     }
     
-    func moveRight(distanceInMM distance: Int) {
-        print("moveRight called")
-    
+    func rotateRight() {
+        let url = URL(string: host + "/rotateRight")!
+        
+        Alamofire.request(url).responseJSON(completionHandler: { (data) in
+            print(data)
+        })
     }
 
 }

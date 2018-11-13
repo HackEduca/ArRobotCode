@@ -12,6 +12,7 @@ import WebKit
 class InstructionsViewController: UIViewController {
 
     var instructionsWebView: WKWebView!
+    var robotHexa: RobotHexa = RobotHexa();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,20 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
             print("Something is fishy")
             return
         }
-        print(response)
+        
+        print("Message from WebKIT: ", response)
+        switch response {
+            case "moveFront":
+                self.robotHexa.moveFront(distanceInMM: 100);
+            case "moveBack":
+                self.robotHexa.moveBack(distanceInMM: 100);
+            case "rotateLeft":
+                self.robotHexa.rotateLeft()
+            case "rotateRight":
+                self.robotHexa.rotateRight()
+            default:
+                print("Invalid response from WebKit")
+        }
     }
     
     func sendToJS(message msg: String) {
@@ -75,10 +89,6 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         print("Alert from WebKIT: " + message)
-        
-        let rb = RobotHexa()
-        rb.moveFront(distanceInMM: 100)
-        
         completionHandler()
     }
     
