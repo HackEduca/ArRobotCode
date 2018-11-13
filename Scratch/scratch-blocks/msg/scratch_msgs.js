@@ -3528,7 +3528,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "LOOKS_NEXTBACKDROP": "next backdrop",
     "LOOKS_PREVIOUSBACKDROP": "previous backdrop",
     "LOOKS_RANDOMBACKDROP": "random backdrop",
-    "MOTION_MOVESTEPS": "move %1 steps",
+    "MOTION_MOVESTEPS": "move front %1 steps",
     "MOTION_TURNLEFT": "turn %1 %2 degrees",
     "MOTION_TURNRIGHT": "turn %1 %2 degrees",
     "MOTION_POINTINDIRECTION": "point in direction %1",
