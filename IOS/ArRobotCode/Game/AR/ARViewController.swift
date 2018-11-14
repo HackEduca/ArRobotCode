@@ -12,8 +12,13 @@ import ARKit
 import RxSwift
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
-    
     @IBOutlet var sceneView: ARSCNView!
+    var sceneController = HoverScene()
+    
+    var didInitializeScene: Bool = false
+    var planes = [ARPlaneAnchor: Plane]()
+    let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+    var visibleGrid: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +30,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/game.scn")!
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -39,9 +44,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         
-        // Object detection
+        // Object & plane detection
         configuration.detectionObjects = ARReferenceObject.referenceObjects(inGroupNamed: "AR Object Detection", bundle: Bundle.main)!
-        print("Run Configuration")
+        configuration.planeDetection = [.horizontal]
         
         // Run the view's session
         sceneView.session.run(configuration)

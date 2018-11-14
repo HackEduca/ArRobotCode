@@ -23,6 +23,9 @@
 		D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F16022179EF02006B37B4 /* SidePageViewController.swift */; };
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
 		D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */; };
+		D324C400219C255D00C78C4D /* HoverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C3FF219C255D00C78C4D /* HoverScene.swift */; };
+		D324C403219C256600C78C4D /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C401219C256500C78C4D /* Plane.swift */; };
+		D324C404219C256600C78C4D /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C402219C256600C78C4D /* Sphere.swift */; };
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
 		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
 		D368124521807CAA000458C1 /* RobotHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* RobotHexa.swift */; };
@@ -99,6 +102,9 @@
 		D31F16022179EF02006B37B4 /* SidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePageViewController.swift; sourceTree = "<group>"; };
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISplitViewController.swift; sourceTree = "<group>"; };
+		D324C3FF219C255D00C78C4D /* HoverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverScene.swift; sourceTree = "<group>"; };
+		D324C401219C256500C78C4D /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		D324C402219C256600C78C4D /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* RobotHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotHexa.swift; sourceTree = "<group>"; };
@@ -199,9 +205,30 @@
 		D324C3F8219C0A3500C78C4D /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				D324C3FE219C254F00C78C4D /* Scenes */,
+				D324C3FD219C254800C78C4D /* Objects */,
 				D3E50F2D2178850C000270EE /* ARViewController.swift */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		D324C3FD219C254800C78C4D /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D324C401219C256500C78C4D /* Plane.swift */,
+				D324C402219C256600C78C4D /* Sphere.swift */,
+			);
+			name = Objects;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D324C3FE219C254F00C78C4D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D324C3FF219C255D00C78C4D /* HoverScene.swift */,
+			);
+			name = Scenes;
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		D368124221807CAA000458C1 /* Robot */ = {
@@ -625,6 +652,7 @@
 				D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */,
 				D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */,
 				D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */,
+				D324C404219C256600C78C4D /* Sphere.swift in Sources */,
 				D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */,
 				D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */,
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
@@ -636,11 +664,13 @@
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* RobotHexa.swift in Sources */,
 				D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */,
+				D324C400219C255D00C78C4D /* HoverScene.swift in Sources */,
 				D3F74410218312600096958F /* DataTile.swift in Sources */,
 				D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */,
 				D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */,
 				D3F7440E21830EA10096958F /* TileCell.swift in Sources */,
 				D368124621807CAA000458C1 /* RobotInterface.swift in Sources */,
+				D324C403219C256600C78C4D /* Plane.swift in Sources */,
 				D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
