@@ -22,11 +22,9 @@
 		D3185F9D219A0EC6002310C6 /* player.js in Resources */ = {isa = PBXBuildFile; fileRef = D3185F92219A0EC5002310C6 /* player.js */; };
 		D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F16022179EF02006B37B4 /* SidePageViewController.swift */; };
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
-		D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */; };
-		D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */; };
+		D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */; };
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
 		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
-		D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */; };
 		D368124521807CAA000458C1 /* RobotHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* RobotHexa.swift */; };
 		D368124621807CAA000458C1 /* RobotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* RobotInterface.swift */; };
 		D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388336C2189AEDD00D04589 /* APIRequest.swift */; };
@@ -41,7 +39,7 @@
 		D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE6218853800007BCC9 /* LevelsRepository.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
-		D3E50F2E2178850C000270EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ViewController.swift */; };
+		D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ARViewController.swift */; };
 		D3E50F312178850C000270EE /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2F2178850C000270EE /* Game.storyboard */; };
 		D3E50F332178850D000270EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F322178850D000270EE /* Assets.xcassets */; };
 		D3E50F362178850D000270EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F342178850D000270EE /* LaunchScreen.storyboard */; };
@@ -100,11 +98,9 @@
 		D3185F92219A0EC5002310C6 /* player.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = player.js; path = "../../../Scratch/scratch-gui/build/player.js"; sourceTree = "<group>"; };
 		D31F16022179EF02006B37B4 /* SidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePageViewController.swift; sourceTree = "<group>"; };
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
-		D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeInstructionsViewController.swift; sourceTree = "<group>"; };
+		D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
-		D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInstructionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* RobotHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* RobotInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotInterface.swift; sourceTree = "<group>"; };
 		D388336C2189AEDD00D04589 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -120,7 +116,7 @@
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		D3E50F2D2178850C000270EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3E50F2D2178850C000270EE /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		D3E50F302178850C000270EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		D3E50F322178850D000270EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3E50F352178850D000270EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,6 +186,22 @@
 				B262C8F5CBA09810F4EFEC74 /* Pods-ArRobotCodeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D324C3F5219C09B200C78C4D /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
+		D324C3F8219C0A3500C78C4D /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				D3E50F2D2178850C000270EE /* ARViewController.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 		D368124221807CAA000458C1 /* Robot */ = {
@@ -279,7 +291,6 @@
 				D3682A4C21807D02000458C1 /* ScratchHTML */,
 				D3E50F292178850C000270EE /* AppDelegate.swift */,
 				D3E50F2B2178850C000270EE /* art.scnassets */,
-				D3E50F2D2178850C000270EE /* ViewController.swift */,
 				D3E50F2F2178850C000270EE /* Game.storyboard */,
 				D3F888892187302500D7A080 /* Levels.storyboard */,
 				D3E50F322178850D000270EE /* Assets.xcassets */,
@@ -312,11 +323,10 @@
 		D3F74409218309760096958F /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */,
-				D31F160A217A420D006B37B4 /* AlternativeInstructionsViewController.swift */,
-				D31F1608217A4137006B37B4 /* InstructionsCollectionViewCell.swift */,
-				D3637438217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift */,
+				D324C3F8219C0A3500C78C4D /* AR */,
+				D324C3F5219C09B200C78C4D /* Instructions */,
 				D31F16022179EF02006B37B4 /* SidePageViewController.swift */,
+				D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -610,23 +620,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3E50F2E2178850C000270EE /* ViewController.swift in Sources */,
+				D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */,
 				D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */,
 				D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */,
 				D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */,
 				D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */,
+				D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */,
 				D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */,
-				D3637439217CD30A00A21385 /* RunningInstructionsCollectionViewCell.swift in Sources */,
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */,
 				D38833712189B0F000D04589 /* APIClient.swift in Sources */,
-				D31F1609217A4137006B37B4 /* InstructionsCollectionViewCell.swift in Sources */,
 				D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */,
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* RobotHexa.swift in Sources */,
-				D31F160B217A420D006B37B4 /* AlternativeInstructionsViewController.swift in Sources */,
 				D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */,
 				D3F74410218312600096958F /* DataTile.swift in Sources */,
 				D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */,

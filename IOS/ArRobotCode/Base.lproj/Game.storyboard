@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="uj0-f0-aFO">
             <objects>
-                <viewController id="w1v-NA-Qf0" customClass="ViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w1v-NA-Qf0" customClass="ARViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lTh-7y-csy">
                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="-680" y="2009"/>
         </scene>
-        <!--Split View Controller-->
+        <!--GameUI Split View Controller-->
         <scene sceneID="Co1-re-JSB">
             <objects>
-                <splitViewController maximumPrimaryColumnWidth="556" minimumPrimaryColumnWidth="556" preferredPrimaryColumnWidthFraction="1" id="HcK-VT-8rj" sceneMemberID="viewController">
+                <splitViewController maximumPrimaryColumnWidth="556" minimumPrimaryColumnWidth="556" preferredPrimaryColumnWidthFraction="1" id="HcK-VT-8rj" customClass="GameUISplitViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <size key="freeformSize" width="1112" height="834"/>
                     <connections>
                         <segue destination="Vdz-UX-9zE" kind="relationship" relationship="masterViewController" id="tUM-Kj-cNH"/>

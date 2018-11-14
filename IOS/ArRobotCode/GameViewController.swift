@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 import RxSwift
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
     

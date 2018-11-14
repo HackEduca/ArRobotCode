@@ -1447,6 +1447,8 @@ class Runtime extends EventEmitter {
             // Look up metadata for the relevant hat.
             const hatMeta = instance._hats[requestedHatOpcode];
             if (hatMeta.restartExistingThreads) {
+                console.log("run called!");
+                webkit.messageHandlers.callback.postMessage("run");
                 // If `restartExistingThreads` is true, we should stop
                 // any existing threads starting with the top block.
                 for (let i = 0; i < instance.threads.length; i++) {

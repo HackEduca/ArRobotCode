@@ -28,7 +28,7 @@ class RobotHexa: RobotInterface {
         })
     }
     
-    func rotateLeft() {
+    func turnLeft() {
         let url = URL(string: host + "/rotateLeft")!
         
         Alamofire.request(url).responseJSON(completionHandler: { (data) in
@@ -36,7 +36,7 @@ class RobotHexa: RobotInterface {
         })
     }
     
-    func rotateRight() {
+    func turnRight() {
         let url = URL(string: host + "/rotateRight")!
         
         Alamofire.request(url).responseJSON(completionHandler: { (data) in
