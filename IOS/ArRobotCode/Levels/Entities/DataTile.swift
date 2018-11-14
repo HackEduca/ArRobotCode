@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 enum TypeOfTile: Int, Codable {
     case Free
@@ -16,47 +17,35 @@ enum TypeOfTile: Int, Codable {
     case Finish
 }
 
-class DataTile: Codable {
-    var type: TypeOfTile
-    
-    init(){
-        self.type = .Free
-    }
-    
-    init(type: TypeOfTile) {
-        self.type = type
-    }
+class DataTile: Object, Codable {
+    @objc dynamic var type: Int = 0
     
     func swap() {
-        if type == .Free {
-            type = .Used
+        if type == TypeOfTile.Free.rawValue {
+            type = TypeOfTile.Used.rawValue
             return
         }
         
-        if type == .Used {
-            type = .Free
+        if type == TypeOfTile.Used.rawValue {
+            type = TypeOfTile.Free.rawValue
             return
         }
         
-        if type == .Start {
-            type = .Finish
+        if type == TypeOfTile.Start.rawValue {
+            type = TypeOfTile.Finish.rawValue
             return
         }
         
-        type = .Free
+        type = TypeOfTile.Free.rawValue
         return
     }
     
     func setToStart() {
-        type = .Start
+        type = TypeOfTile.Start.rawValue
     }
     
     func setToFinish() {
-        type = .Finish
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case type = "Type"
+        type = TypeOfTile.Finish.rawValue
     }
     
 }

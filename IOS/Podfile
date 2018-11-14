@@ -11,6 +11,7 @@ target 'ArRobotCode' do
   pod 'RxGesture'
   pod 'ObservableArray-RxSwift'
   pod 'Alamofire'
+  pod 'RealmSwift'
 
   target 'ArRobotCodeTests' do
     inherit! :search_paths

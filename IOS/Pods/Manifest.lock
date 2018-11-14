@@ -2,6 +2,11 @@ PODS:
   - Alamofire (4.7.3)
   - ObservableArray-RxSwift (0.2.0):
     - RxSwift (~> 4.0)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxGesture (2.0.1):
@@ -12,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ObservableArray-RxSwift
+  - RealmSwift
   - RxCocoa
   - RxGesture
   - RxSwift (~> 4.0)
@@ -20,6 +26,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ObservableArray-RxSwift
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxGesture
     - RxSwift
@@ -27,10 +35,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   ObservableArray-RxSwift: 905a088f51b1653f7eb55e6887f8a13916618f50
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: e4aeab5b5d9587432e30108c4b7686461a1dbe79
+PODFILE CHECKSUM: 528cf956afbc9564de62cf20db2d3ade3ba080ee
 
 COCOAPODS: 1.5.3

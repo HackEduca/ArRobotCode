@@ -9,12 +9,14 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 class LevelsRepository: Repository {
     private var entities: [DataLevel] = []
     private var entitiesBehaviourSubject: BehaviorSubject<[DataLevel]> = BehaviorSubject(value: [])
     private let apiClient = APIClient()
     private let disposeBag = DisposeBag()
+    let realm = try! Realm()
     
     public let dataSource: Observable<[DataLevel]>
     
@@ -62,6 +64,7 @@ class LevelsRepository: Repository {
     func add(a: DataLevel) -> Bool {
         self.entities.append(a)
         self.entitiesBehaviourSubject.onNext(self.entities)
+        self.syncDataToLocalStorage()
         return true
     }
     
@@ -104,7 +107,10 @@ class LevelsRepository: Repository {
     }
     
     private func syncWithDataFromLocal() {
-        
+        realm.objects(DataLevel.self).forEach { (el) in
+            self.entities.append(el);
+            self.entitiesBehaviourSubject.onNext(self.entities)
+        }
     }
     
     private func syncWithDataFromServer() {
@@ -181,6 +187,14 @@ class LevelsRepository: Repository {
                 }
             }
             }.disposed(by: disposeBag)
+    }
+    
+    private func syncDataToLocalStorage() {
+        for entity in entities {
+            try! realm.write {
+                realm.add(entity)
+            }
+        }
     }
     
 

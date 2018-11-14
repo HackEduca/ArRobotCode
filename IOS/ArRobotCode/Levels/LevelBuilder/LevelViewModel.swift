@@ -9,11 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
+import RealmSwift
 class LevelViewModel{
     private var levelsRepository: LevelsRepository;
     private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
     private var levelAt: Int = -1;
+    let realm = try! Realm()
     
     public var levelObserver: Observable<DataLevel> {
         return self.level.asObservable()
@@ -28,7 +29,9 @@ class LevelViewModel{
     
     public func swapTile(at: Int) {
         do {
-            try self.level.value().Tiles[at].swap()
+            try! self.realm.write {
+                 try self.level.value().Tiles[at].swap()
+            }
             self.level.onNext(try self.level.value())
         } catch {
         
@@ -37,7 +40,9 @@ class LevelViewModel{
     
     public func setToStartTile(at: Int) {
         do {
-            try self.level.value().Tiles[at].setToStart()
+            try! self.realm.write {
+                try self.level.value().Tiles[at].setToStart()
+            }
             self.level.onNext(try self.level.value())
         } catch {
         }
@@ -45,7 +50,9 @@ class LevelViewModel{
     
     public func setName(newName: String) {
         do {
-            try self.level.value().Name = newName
+            try! self.realm.write {
+                try self.level.value().Name = newName
+            }
             self.level.onNext(try self.level.value())
             self.levelsRepository.update(at: self.levelAt, newDataLevel: try self.level.value())
         } catch {
@@ -56,7 +63,9 @@ class LevelViewModel{
     public func setHeight(newHeight: String) {
         do {
             // To do: make it safe
-            try self.level.value().Height = Int(newHeight)!
+            try! self.realm.write {
+                try self.level.value().Height = Int(newHeight)!
+            }
             self.level.onNext(try self.level.value())
         } catch {
             
@@ -67,7 +76,9 @@ class LevelViewModel{
     public func setWidth(newWidth: String) {
         do {
             // To do: make it safe
-            try self.level.value().Width = Int(newWidth)!
+            try! self.realm.write {
+                try self.level.value().Width = Int(newWidth)!
+            }
             self.level.onNext(try self.level.value())
         } catch {
             

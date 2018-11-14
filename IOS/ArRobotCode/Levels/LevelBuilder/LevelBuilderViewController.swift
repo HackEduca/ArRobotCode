@@ -56,18 +56,18 @@ class LevelBuilderViewController: UIViewController {
     
     private func setupCollectionViewBinding() {
         viewModel.levelObserver
-            .map({ (DataLevel) -> [DataTile] in
-                DataLevel.Tiles
+            .map({ (dl) ->[DataTile] in
+                Array(dl.Tiles)
             })
             .bind(to: self.tilesCollectionView.rx.items) { view, row, element in
                 let cell = self.tilesCollectionView.dequeueReusableCell(withReuseIdentifier: "TileCell", for: IndexPath(row: row, section: 0)) as! TileCell
-                
+
                 cell.setTile(tile: element)
                 return cell;
-                
+
             }
             .disposed(by: disposeBag)
-        
+
         tilesCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
     }

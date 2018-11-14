@@ -7,32 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class DataLevel: Codable {
-    var Name: String = ""
-    var Width: Int = 0
-    var Height: Int = 0
-    var Tiles: [DataTile] = []
-    
-    init() {
-        
-    }
+class DataLevel: Object, Codable {
+    @objc dynamic  var Name: String = ""
+    @objc dynamic  var Width: Int = 0
+    @objc dynamic  var Height: Int = 0
+    var Tiles = List<DataTile>()
     
     static func comparer(lhs: DataLevel, rhs: DataLevel) -> Bool {
         return lhs.Name == rhs.Name
-    }
-    
-    init(Name: String, Width: Int, Height: Int, Tiles: [DataTile] ) {
-        self.Name   = Name
-        self.Width  = Width
-        self.Height = Height
-        self.Tiles  = Tiles
-    }
-    
-    init(Name: String, Width: Int, Height: Int) {
-        self.Name   = Name
-        self.Width  = Width
-        self.Height = Height
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -42,3 +26,21 @@ class DataLevel: Codable {
         case Tiles
     }
 }
+
+extension List : Decodable where Element : Decodable {
+    public convenience init(from decoder: Decoder) throws {
+        self.init()
+        var container = try decoder.unkeyedContainer()
+        while !container.isAtEnd {
+            let element = try container.decode(Element.self)
+            self.append(element)
+        }
+    } }
+
+extension List : Encodable where Element : Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        for element in self {
+            try element.encode(to: container.superEncoder())
+        }
+    } }

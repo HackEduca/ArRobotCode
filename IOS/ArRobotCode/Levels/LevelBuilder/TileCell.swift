@@ -12,19 +12,19 @@ class TileCell: UICollectionViewCell {
     @IBOutlet weak var tileImageView: UIImageView!
     
     public func setTile(tile: DataTile) {
-        if tile.type == .Free {
+        if tile.type == TypeOfTile.Free.rawValue{
              tileImageView.image = UIImage(named: "green")
         }
         
-        if tile.type == .Used {
+        if tile.type == TypeOfTile.Used.rawValue {
             tileImageView.image = UIImage(named: "red")
         }
         
-        if tile.type == .Start {
+        if tile.type == TypeOfTile.Start.rawValue {
             tileImageView.image = UIImage(named: "pink")
         }
         
-        if tile.type == .Finish{
+        if tile.type == TypeOfTile.Finish.rawValue {
             tileImageView.image = UIImage(named: "yellow")
         }
        

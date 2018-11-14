@@ -125,7 +125,14 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
             .when(.recognized)
             .subscribe(onNext: { gesture in
                 // Add Level with name from addLevelTextField
-                self.viewModel.addItem(item: DataLevel(Name: self.addLevelTextField.text!, Width: 10, Height: 10 ))
+                let data = DataLevel()
+                data.Name = self.addLevelTextField.text!
+                data.Width = 10
+                data.Height = 10
+                for _ in 0..<100 {
+                    data.Tiles.append(DataTile())
+                }
+                self.viewModel.addItem(item: data)
             
                 // Close keyboard
                 UIApplication.shared.sendAction(#selector(self.resignFirstResponder), to: nil, from: nil, for: nil)
