@@ -64,15 +64,20 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
         }
         
         print("Message from WebKIT: ", response)
-        switch response {
+        var responseSplit = response.split(separator: " ")
+        switch responseSplit[0] {
             case "moveFront":
-                self.robotHexa.moveFront(distanceInMM: 100);
+                self.robotHexa.moveFront(distanceInMM: 100)
+                break
             case "moveBack":
                 self.robotHexa.moveBack(distanceInMM: 100);
+                break
             case "rotateLeft":
                 self.robotHexa.rotateLeft()
+                break
             case "rotateRight":
                 self.robotHexa.rotateRight()
+                break
             default:
                 print("Invalid response from WebKit")
         }
