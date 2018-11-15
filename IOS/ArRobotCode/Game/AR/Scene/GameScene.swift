@@ -1,28 +1,39 @@
 //
-//  HoverScene.swift
-//  ARWalkthrough
+//  GameSceneViewController.swift
+//  ArRobotCode
 //
-//  Created by Wyszynski, Daniel on 2/18/18.
-//  Copyright © 2018 Nike, Inc. All rights reserved.
+//  Created by Sorin Sebastian Mircea on 15/11/2018.
+//  Copyright © 2018 Sorin Sebastian Mircea. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import SceneKit
 
-struct HoverScene {
-    
+struct GameScene {
     var scene: SCNScene?
+    var player: SCNNode?
     
     init() {
         scene = self.initializeScene()
+        player = self.initializePlayer()
     }
     
     func initializeScene() -> SCNScene? {
-        let scene = SCNScene()
-        
+        let scene = SCNScene(named: "art.scnassets/game.scn")!
         setDefaults(scene: scene)
         
         return scene
+    }
+    
+    func initializePlayer() -> SCNNode? {
+        var foundNode: SCNNode? = nil
+        self.scene!.rootNode.enumerateChildNodes { (node, _) in
+            if node.name == "ship" {
+                foundNode = node
+            }
+        }
+        return foundNode
     }
     
     func setDefaults(scene: SCNScene) {
@@ -32,7 +43,7 @@ struct HoverScene {
         ambientLightNode.light?.type = SCNLight.LightType.ambient
         ambientLightNode.light?.color = UIColor(white: 0.6, alpha: 1.0)
         scene.rootNode.addChildNode(ambientLightNode)
-
+        
         // Create a directional light with an angle to provide a more interesting look
         let directionalLight = SCNLight()
         directionalLight.type = .directional
@@ -47,32 +58,12 @@ struct HoverScene {
         scene.rootNode.addChildNode(directionalNode)
     }
     
-    func addSphere(position: SCNVector3) {
-        
-        guard let scene = self.scene else { return }
-        
-        let sphere = Sphere()
-        sphere.position = position
-        
-        let prevScale = sphere.scale
-        sphere.scale = SCNVector3(0.01, 0.01, 0.01)
-        let scaleAction = SCNAction.scale(to: CGFloat(prevScale.x), duration: 1.5)
-        scaleAction.timingMode = .linear
-        
-        scaleAction.timingFunction = { (p: Float) in
-            return self.easeOutElastic(p)
-        }
-
-        scene.rootNode.addChildNode(sphere)
-        sphere.runAction(scaleAction, forKey: "scaleAction")
-    }
-    
     func addText(string: String, parent: SCNNode, position: SCNVector3 = SCNVector3Zero) {
         guard let scene = self.scene else { return }
-
+        
         let textNode = self.createTextNode(string: string)
         textNode.position = scene.rootNode.convertPosition(position, to: parent)
-
+        
         parent.addChildNode(textNode)
     }
     
@@ -81,13 +72,13 @@ struct HoverScene {
         text.font = UIFont.systemFont(ofSize: 1.0)
         text.flatness = 0.01
         text.firstMaterial?.diffuse.contents = UIColor.white
-
+        
         let textNode = SCNNode(geometry: text)
         textNode.castsShadow = true
         
         let fontSize = Float(0.04)
         textNode.scale = SCNVector3(fontSize, fontSize, fontSize)
-
+        
         var minVec = SCNVector3Zero
         var maxVec = SCNVector3Zero
         (minVec, maxVec) =  textNode.boundingBox
@@ -96,8 +87,11 @@ struct HoverScene {
             minVec.y,
             minVec.z + (maxVec.z - minVec.z)/2
         )
-
         return textNode
+    }
+    
+    func movePlayer(pos: SCNVector3) {
+        self.player?.position = pos
     }
     
     func easeOutElastic(_ t: Float) -> Float {
@@ -106,13 +100,5 @@ struct HoverScene {
         return result
     }
 
-    func makeUpdateCameraPos(towards: SCNVector3) {
-//        guard let scene = self.scene else { return }
-//        scene.rootNode.enumerateChildNodes({ (node, _) in
-//            if let sphere = node.topmost(until: scene.rootNode) as? Sphere {
-//                sphere.patrol(targetPos: towards)
-//            }
-//        })
-    }
 }
 

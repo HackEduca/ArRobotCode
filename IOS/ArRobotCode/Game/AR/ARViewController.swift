@@ -13,7 +13,7 @@ import RxSwift
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
-    var sceneController = HoverScene()
+     var sceneController = GameScene()
     
     var didInitializeScene: Bool = false
     var planes = [ARPlaneAnchor: Plane]()
@@ -29,13 +29,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/game.scn")!
+        // Assign the scene
+        if let scene = sceneController.scene {
+            // Set the scene to the view
+            sceneView.scene = scene
+        }
         
-        // Set the scene to the view
-        sceneView.scene = scene
-        
-        _ = Observable.of("Hello RxSwift!")
+        // Set tap recognizer
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTapScreen))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +108,27 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    // Did Tap screen
+    @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
+        print("Screen tapped")
+        if (sceneView.session.currentFrame?.camera) != nil {
+            let tapLocation = recognizer.location(in: sceneView)
+            let hitTestResults = sceneView.hitTest(tapLocation)
+            if let node = hitTestResults.first?.node {
+                if let plane = node.parent as? Plane, let _ = plane.parent, let hitResult = hitTestResults.first {
+                    _ = SCNVector3Make(
+                        hitResult.worldCoordinates.x,
+                        hitResult.worldCoordinates.y,
+                        hitResult.worldCoordinates.z
+                    )
+                    
+                    // Move the player to the touch point
+                    sceneController.movePlayer(pos: hitResult.worldCoordinates)
+                }
+            }
+        }
+    }
+    
     func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
         let plane = Plane(anchor)
         planes[anchor] = plane
@@ -125,8 +150,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
