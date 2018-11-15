@@ -50,6 +50,7 @@
 		D3E50F4C2178850D000270EE /* ArRobotCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F4B2178850D000270EE /* ArRobotCodeUITests.swift */; };
 		D3E50F5A21788FF2000270EE /* Tile.sks in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F5921788FF2000270EE /* Tile.sks */; };
 		D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */; };
+		D3F0F71B219D9D0D0002788C /* plane_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F0F71A219D9D0D0002788C /* plane_grid.png */; };
 		D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */; };
 		D3F7440E21830EA10096958F /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440D21830EA10096958F /* TileCell.swift */; };
 		D3F74410218312600096958F /* DataTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440F218312600096958F /* DataTile.swift */; };
@@ -135,6 +136,7 @@
 		D3E50F4D2178850D000270EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E50F5921788FF2000270EE /* Tile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tile.sks; sourceTree = "<group>"; };
 		D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D3F0F71A219D9D0D0002788C /* plane_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_grid.png; sourceTree = "<group>"; };
 		D3F4BDBA13353D4679E0430E /* Pods-ArRobotCodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeUITests/Pods-ArRobotCodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilderViewController.swift; sourceTree = "<group>"; };
 		D3F7440D21830EA10096958F /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		D324C3FD219C254800C78C4D /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D3F0F71A219D9D0D0002788C /* plane_grid.png */,
 				D324C401219C256500C78C4D /* Plane.swift */,
 				D324C402219C256600C78C4D /* Sphere.swift */,
 			);
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3185F99219A0EC6002310C6 /* compatibility-testing.html in Resources */,
+				D3F0F71B219D9D0D0002788C /* plane_grid.png in Resources */,
 				D3185F98219A0EC6002310C6 /* static in Resources */,
 				D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */,
 				D3185F96219A0EC5002310C6 /* index.html in Resources */,

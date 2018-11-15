@@ -52,6 +52,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
+    
+    // Object detection callback
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
         
@@ -67,8 +69,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             let spriteKitScene = SKScene(fileNamed: "Tile")
             plane.firstMaterial?.diffuse.contents = spriteKitScene
             plane.firstMaterial?.isDoubleSided = true
-//            plane.firstMaterial?.diffuse.con= SCNVector4Make(0, 1, 0, Float(M_PI/2))
-// SCNMatrix4Translate(SCNMatrix4MakeScale(1, , 1), 1, 0, 0)
             
             let planeNode = SCNNode(geometry: plane)
             planeNode.rotation =  SCNVector4Make(1, 0, 0, Float.pi/2)
@@ -80,6 +80,53 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
     
+    // Add plane callback
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        DispatchQueue.main.async {
+            if let planeAnchor = anchor as? ARPlaneAnchor {
+                self.addPlane(node: node, anchor: planeAnchor)
+                self.feedbackGenerator.impactOccurred()
+            }
+        }
+    }
+    
+    // Update plane callback
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        DispatchQueue.main.async {
+            if let planeAnchor = anchor as? ARPlaneAnchor {
+                self.updatePlane(anchor: planeAnchor)
+            }
+        }
+    }
+    
+    // Remove plane callback
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        
+    }
+    
+    func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
+        let plane = Plane(anchor)
+        planes[anchor] = plane
+        plane.setPlaneVisibility(self.visibleGrid)
+        
+        node.addChildNode(plane)
+        print("Added plane: \(plane)")
+    }
+    
+    func updatePlane(anchor: ARPlaneAnchor) {
+        if let plane = planes[anchor] {
+            plane.update(anchor)
+        }
+    }
+    
+    func removePlane(anchor: ARPlaneAnchor) {
+        if let plane = planes.removeValue(forKey: anchor) {
+            plane.removeFromParentNode()
+        }
+    }
+
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -87,16 +134,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    // MARK: - ARSCNViewDelegate
-    
-    /*
-     // Override to create and configure nodes for anchors added to the view's session.
-     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-     let node = SCNNode()
-     
-     return node
-     }
-     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
