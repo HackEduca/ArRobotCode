@@ -18,7 +18,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var didInitializeScene: Bool = false
     var planes = [ARPlaneAnchor: Plane]()
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-    var visibleGrid: Bool = true
+    var findingStartPosition: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
-    
     // Object detection callback
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
@@ -86,6 +85,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     // Add plane callback
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        print("new plane: ", sceneView.session.currentFrame!.anchors.count)
         DispatchQueue.main.async {
             if let planeAnchor = anchor as? ARPlaneAnchor {
                 self.addPlane(node: node, anchor: planeAnchor)
@@ -110,8 +110,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     // Did Tap screen
     @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
-        print("Screen tapped")
-        if (sceneView.session.currentFrame?.camera) != nil {
+        if (sceneView.session.currentFrame?.camera) != nil && findingStartPosition == true {
             let tapLocation = recognizer.location(in: sceneView)
             let hitTestResults = sceneView.hitTest(tapLocation)
             if let node = hitTestResults.first?.node {
@@ -122,8 +121,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         hitResult.worldCoordinates.z
                     )
                     
+                    print(plane.name!)
+                    
                     // Move the player to the touch point
                     sceneController.movePlayer(pos: hitResult.worldCoordinates)
+                    
+                    // Found the start position
+                    findingStartPosition = false;
+                    
+                    // Remove the planes from the scene
+                    self.removeAllPlanes()
                 }
             }
         }
@@ -132,7 +139,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
         let plane = Plane(anchor)
         planes[anchor] = plane
-        plane.setPlaneVisibility(self.visibleGrid)
+        plane.setPlaneVisibility(true)
         
         node.addChildNode(plane)
         print("Added plane: \(plane)")
@@ -141,6 +148,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func updatePlane(anchor: ARPlaneAnchor) {
         if let plane = planes[anchor] {
             plane.update(anchor)
+        }
+    }
+    
+    func removeAllPlanes() {
+        self.sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            if node.name == "plane" {
+                //edit something
+                node.removeFromParentNode()
+            }
         }
     }
     

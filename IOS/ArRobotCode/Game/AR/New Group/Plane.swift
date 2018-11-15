@@ -48,7 +48,8 @@ class Plane: SCNNode {
         self.shadowNode.castsShadow = false
         
         super.init()
-        
+        self.name = "plane"
+    
         self.addChildNode(planeNode)
         self.addChildNode(shadowNode)
 
