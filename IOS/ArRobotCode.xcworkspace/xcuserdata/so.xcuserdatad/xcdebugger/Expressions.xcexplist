@@ -6,6 +6,14 @@
          contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "GameScene.spawnLevel():GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tile">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState

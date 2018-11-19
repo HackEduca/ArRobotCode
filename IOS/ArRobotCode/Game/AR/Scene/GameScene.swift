@@ -12,11 +12,13 @@ import SceneKit
 
 struct GameScene {
     var scene: SCNScene?
-    var player: SCNNode?
+    var game: SCNNode?
+    var tile: SCNNode?
     
     init() {
         scene = self.initializeScene()
-        player = self.initializePlayer()
+        game = self.initializeNode(name: "game")
+        tile = self.initializeNode(name: "tile")
     }
     
     func initializeScene() -> SCNScene? {
@@ -26,15 +28,16 @@ struct GameScene {
         return scene
     }
     
-    func initializePlayer() -> SCNNode? {
+    func initializeNode(name: String) -> SCNNode? {
         var foundNode: SCNNode? = nil
         self.scene!.rootNode.enumerateChildNodes { (node, _) in
-            if node.name == "ship" {
+            if node.name == name {
                 foundNode = node
             }
         }
         return foundNode
     }
+    
     
     func setDefaults(scene: SCNScene) {
         
@@ -90,14 +93,48 @@ struct GameScene {
         return textNode
     }
     
-    func movePlayer(pos: SCNVector3) {
-        self.player?.position = pos
+    func setGamePosition(pos: SCNVector3) {
+        self.game?.position = pos
     }
     
     func easeOutElastic(_ t: Float) -> Float {
         let p: Float = 0.3
         let result = pow(2.0, -10.0 * t) * sin((t - p / 4.0) * (2.0 * Float.pi) / p) + 1.0
         return result
+    }
+    
+    func spawnLevel() {
+        // Will initialise
+//        var heightBB = self.player!.boundingBox.max.x - self.player!.boundingBox.min.x
+//        var widthBB  = self.player!.boundingBox.max.y - self.player!.boundingBox.min.y
+//
+//        print("Height: ", heightBB, " Width: ", widthBB)
+        
+        var N = 10;
+        var M = 10;
+        var tileSize: Float = 0.15;
+        
+        var pos = game?.position
+        pos!.x -= tileSize * Float(N / 2)
+        pos!.z -= tileSize * Float(N / 2)
+        var crtPos = pos
+        
+        for i in 1...N {
+            for j in 1...M {
+                print(crtPos)
+                
+                var newTile = tile?.clone()
+                newTile?.isHidden = false
+                newTile?.position = crtPos!
+                
+                game?.addChildNode(newTile!)
+                
+                crtPos?.z += tileSize
+            }
+            crtPos?.z = (pos?.z)!
+            crtPos?.x += tileSize
+        }
+        
     }
 
 }

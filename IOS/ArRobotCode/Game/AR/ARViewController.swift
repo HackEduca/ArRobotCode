@@ -61,7 +61,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         
         if let objectAnchor = anchor as? ARObjectAnchor {
-            
             print("Detected ARObjectAnchor")
             
             // Create the plane
@@ -87,12 +86,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("new plane: ", sceneView.session.currentFrame!.anchors.count)
         DispatchQueue.main.async {
+            
             if let planeAnchor = anchor as? ARPlaneAnchor {
                 self.addPlane(node: node, anchor: planeAnchor)
                 self.feedbackGenerator.impactOccurred()
+                return
+            }
+            
+            if let anchorName = anchor.name as? String {
+//                node.addChildNode(SCNNode(geometry: <#T##SCNGeometry?#>))
+                print(anchorName)
             }
         }
     }
+    
+
     
     // Update plane callback
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -120,17 +128,23 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         hitResult.worldCoordinates.y,
                         hitResult.worldCoordinates.z
                     )
-                    
-                    print(plane.name!)
+    
+                    // Create an anchor at that position
+                    print("Adding anchor")
+                    let anchor = ARAnchor(name: "gameCenter", transform: simd_float4x4(hitResult.modelTransform))
+                    sceneView.session.add(anchor: anchor)
                     
                     // Move the player to the touch point
-                    sceneController.movePlayer(pos: hitResult.worldCoordinates)
+                    sceneController.setGamePosition(pos: hitResult.worldCoordinates)
                     
                     // Found the start position
                     findingStartPosition = false;
                     
                     // Remove the planes from the scene
                     self.removeAllPlanes()
+                    
+                    // Spawn the level tiles
+                    sceneController.spawnLevel()
                 }
             }
         }
