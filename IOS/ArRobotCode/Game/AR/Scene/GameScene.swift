@@ -103,7 +103,7 @@ struct GameScene {
         return result
     }
     
-    func spawnLevel() {
+    func spawnLevel(level: DataLevel) {
         // Will initialise
 //        var heightBB = self.player!.boundingBox.max.x - self.player!.boundingBox.min.x
 //        var widthBB  = self.player!.boundingBox.max.y - self.player!.boundingBox.min.y
@@ -119,28 +119,39 @@ struct GameScene {
         pos!.z -= tileSize * Float(N / 2)
         var crtPos = pos
         
+        var index = 0
         for i in 1...N {
             for j in 1...M {
+                // Create a new tile
                 var newTile = deepCopyNode(node: tile!)
-                newTile.isHidden = false
                 newTile.position = crtPos!
+                newTile.isHidden = false
                 
-                if ((i + j) % 2 == 0) {
-                    newTile.geometry!.materials.first!.diffuse.contents  = UIColor.blue
-                    print("Here")
-                } else {
-                    newTile.geometry!.materials.first!.diffuse.contents  = UIColor.red
-                    print("There")
+                // Set color && hidden state
+                switch level.Tiles[index].type {
+                    case TypeOfTile.Start.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
+                    
+                    case TypeOfTile.Finish.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
+                    
+                    case TypeOfTile.Used.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.red
+                    
+                    default:
+                        newTile.isHidden = true
                 }
-            
+
+                // Add the tile
                 game?.addChildNode(newTile)
                 
+                // Prepare for the next one
                 crtPos?.z += tileSize
+                index += 1
             }
             crtPos?.z = (pos?.z)!
             crtPos?.x += tileSize
         }
-        
     }
     
     fileprivate func deepCopyNode(node: SCNNode) -> SCNNode {

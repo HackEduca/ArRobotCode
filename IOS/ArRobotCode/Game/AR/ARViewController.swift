@@ -144,7 +144,30 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     self.removeAllPlanes()
                     
                     // Spawn the level tiles
-                    sceneController.spawnLevel()
+                    
+                    let data = DataLevel()
+                    data.Name = "Hello"
+                    data.Width = 10
+                    data.Height = 10
+                    for _ in 0..<100 {
+                        data.Tiles.append(DataTile())
+                    }
+                    
+                    var dt = DataTile()
+                    dt.setToStart()
+                    data.Tiles[0] = dt
+                    
+                    var dt2 = DataTile()
+                    dt2.swap()
+                    data.Tiles[1] = dt2
+                    data.Tiles[2] = dt2
+                    data.Tiles[3] = dt2
+                    data.Tiles[4] = dt2
+                    
+                    var dt3 = DataTile()
+                    dt3.setToFinish()
+                    data.Tiles[5] = dt3
+                    sceneController.spawnLevel(level: data)
                 }
             }
         }
