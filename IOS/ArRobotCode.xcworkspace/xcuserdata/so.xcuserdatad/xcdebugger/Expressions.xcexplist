@@ -11,6 +11,9 @@
             <PersistentString
                value = "tile">
             </PersistentString>
+            <PersistentString
+               value = "newTile!.geometry!.materials.first!.diffuse.contents">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState

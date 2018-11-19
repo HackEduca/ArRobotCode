@@ -121,13 +121,19 @@ struct GameScene {
         
         for i in 1...N {
             for j in 1...M {
-                print(crtPos)
+                var newTile = deepCopyNode(node: tile!)
+                newTile.isHidden = false
+                newTile.position = crtPos!
                 
-                var newTile = tile?.clone()
-                newTile?.isHidden = false
-                newTile?.position = crtPos!
-                
-                game?.addChildNode(newTile!)
+                if ((i + j) % 2 == 0) {
+                    newTile.geometry!.materials.first!.diffuse.contents  = UIColor.blue
+                    print("Here")
+                } else {
+                    newTile.geometry!.materials.first!.diffuse.contents  = UIColor.red
+                    print("There")
+                }
+            
+                game?.addChildNode(newTile)
                 
                 crtPos?.z += tileSize
             }
@@ -135,6 +141,15 @@ struct GameScene {
             crtPos?.x += tileSize
         }
         
+    }
+    
+    fileprivate func deepCopyNode(node: SCNNode) -> SCNNode {
+        let clone = node.clone()
+        clone.geometry = node.geometry?.copy() as? SCNGeometry
+        if let g = node.geometry {
+            clone.geometry?.materials = g.materials.map{ $0.copy() as! SCNMaterial }
+        }
+        return clone
     }
 
 }
