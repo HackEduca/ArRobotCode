@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol RobotInterface {
-    func moveFront  (distanceInMM distance: Int)
-    func moveBack   (distanceInMM distance: Int)
+protocol PlayerInterface {
+    func moveFront  ()
+    func moveBack   ()
     func turnLeft   ()
     func turnRight  ()
 }

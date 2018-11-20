@@ -11,14 +11,21 @@ import Foundation
 import SceneKit
 
 struct GameScene {
+    let TILE_SIZE: Float = 0.15
+    
     var scene: SCNScene?
     var game: SCNNode?
     var tile: SCNNode?
+    
+    var player: SCNNode?
+    var playerController: PlayerAR!
     
     init() {
         scene = self.initializeScene()
         game = self.initializeNode(name: "game")
         tile = self.initializeNode(name: "tile")
+        player = self.initializeNode(name: "player")
+        self.playerController = PlayerAR(player: self.player!, tileSize: TILE_SIZE)
     }
     
     func initializeScene() -> SCNScene? {
@@ -38,9 +45,7 @@ struct GameScene {
         return foundNode
     }
     
-    
     func setDefaults(scene: SCNScene) {
-        
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         ambientLightNode.light?.type = SCNLight.LightType.ambient
@@ -107,7 +112,6 @@ struct GameScene {
         // Will initialise
         let N = 10;
         let M = 10;
-        let tileSize: Float = 0.15;
         
         // Find the start position && center everything from it
         var pos = game?.position
@@ -115,8 +119,8 @@ struct GameScene {
         for i in 0...N - 1 {
             for j in 0...M - 1 {
                 if level.Tiles[index].type == TypeOfTile.Start.rawValue {
-                    pos!.x -= tileSize * Float(i)
-                    pos!.z -= tileSize * Float(j)
+                    pos!.x -= TILE_SIZE * Float(i)
+                    pos!.z -= TILE_SIZE * Float(j)
                 }
                 
                 index += 1
@@ -130,6 +134,7 @@ struct GameScene {
             for _ in 1...M {
                 // Create a new tile
                 let newTile = deepCopyNode(node: tile!)
+                newTile.setValue(index, forKey: "index")
                 newTile.position = crtPos!
                 newTile.isHidden = false
                 
@@ -152,11 +157,11 @@ struct GameScene {
                 self.scene?.rootNode.addChildNode(newTile)
                 
                 // Prepare for the next one
-                crtPos?.x += tileSize
+                crtPos?.x += TILE_SIZE
                 index += 1
             }
             crtPos?.x = (pos?.x)!
-            crtPos?.z += tileSize
+            crtPos?.z += TILE_SIZE
         }
     }
     
@@ -168,6 +173,7 @@ struct GameScene {
         }
         return clone
     }
+    
 
 }
 

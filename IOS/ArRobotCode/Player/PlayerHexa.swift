@@ -9,19 +9,19 @@
 import UIKit
 import Alamofire
 
-class RobotHexa: RobotInterface {
+class PlayerHexa: PlayerInterface {
     let host = "http://192.168.43.24:8000"
     
-    func moveFront(distanceInMM distance: Int) {
-        let url = URL(string: host + "/moveFront?dist=" + String(distance))!
+    func moveFront() {
+        let url = URL(string: host + "/moveFront?dist=" + String(100))!
         
         Alamofire.request(url).responseJSON(completionHandler: { (data) in
             print(data)
         })
     }
     
-    func moveBack(distanceInMM distance: Int) {
-        let url = URL(string: host + "/moveBack?dist=" + String(distance))!
+    func moveBack() {
+        let url = URL(string: host + "/moveBack?dist=" + String(100))!
 
         Alamofire.request(url).responseJSON(completionHandler: { (data) in
             print(data)

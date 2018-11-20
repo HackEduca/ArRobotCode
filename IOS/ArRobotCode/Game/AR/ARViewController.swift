@@ -100,8 +100,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-
-    
     // Update plane callback
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async {
@@ -118,6 +116,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     // Did Tap screen
     @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
+        if self.findingStartPosition == false {
+            self.sceneController.playerController.moveFront()
+        }
+        
         if (sceneView.session.currentFrame?.camera) != nil && findingStartPosition == true {
             let tapLocation = recognizer.location(in: sceneView)
             let hitTestResults = sceneView.hitTest(tapLocation)
@@ -137,7 +139,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     // Move the player to the touch point
                     sceneController.setGamePosition(pos: hitResult.worldCoordinates)
                     
-                    // Spawn the level tiles
+                    // To do: receive a DataLevel from other component
                     let data = DataLevel()
                     data.Name = "Hello"
                     data.Width = 10
@@ -145,23 +147,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     for _ in 0..<100 {
                         data.Tiles.append(DataTile())
                     }
-                    
-//                    let dt = DataTile()
-//                    dt.setToStart()
-//                    data.Tiles[23] = dt
-//
-//                    let dt2 = DataTile()
-//                    dt2.swap()
-//                    data.Tiles[33] = dt2
-//                    data.Tiles[43] = dt2
-//                    data.Tiles[53] = dt2
-//                    data.Tiles[54] = dt2
-//                    data.Tiles[64] = dt2
-//                    data.Tiles[74] = dt2
-//
-//                    let dt3 = DataTile()
-//                    dt3.setToFinish()
-//                    data.Tiles[84] = dt3
                     
                     let dt = DataTile()
                     dt.setToStart()

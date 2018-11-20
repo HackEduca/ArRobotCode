@@ -12,7 +12,7 @@ import WebKit
 class InstructionsViewController: UIViewController {
 
     var instructionsWebView: WKWebView!
-    var robotHexa: RobotHexa = RobotHexa();
+    var robotHexa: PlayerHexa = PlayerHexa();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +69,10 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
             case "run":
                 print("")
             case "moveFront":
-                self.robotHexa.moveFront(distanceInMM: 100)
+                self.robotHexa.moveFront()
                 break
             case "moveBack":
-                self.robotHexa.moveBack(distanceInMM: 100);
+                self.robotHexa.moveBack();
                 break
             case "turnLeft":
                 self.robotHexa.turnLeft()
