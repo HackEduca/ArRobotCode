@@ -105,25 +105,31 @@ struct GameScene {
     
     func spawnLevel(level: DataLevel) {
         // Will initialise
-//        var heightBB = self.player!.boundingBox.max.x - self.player!.boundingBox.min.x
-//        var widthBB  = self.player!.boundingBox.max.y - self.player!.boundingBox.min.y
-//
-//        print("Height: ", heightBB, " Width: ", widthBB)
+        let N = 10;
+        let M = 10;
+        let tileSize: Float = 0.15;
         
-        var N = 10;
-        var M = 10;
-        var tileSize: Float = 0.15;
-        
+        // Find the start position && center everything from it
         var pos = game?.position
-        pos!.x -= tileSize * Float(N / 2)
-        pos!.z -= tileSize * Float(N / 2)
+        var index = 0
+        for i in 0...N - 1 {
+            for j in 0...M - 1 {
+                if level.Tiles[index].type == TypeOfTile.Start.rawValue {
+                    pos!.x -= tileSize * Float(i)
+                    pos!.z -= tileSize * Float(j)
+                }
+                
+                index += 1
+            }
+        }
         var crtPos = pos
         
-        var index = 0
-        for i in 1...N {
-            for j in 1...M {
+        // Generate all the tiles
+        index = 0
+        for _ in 1...N {
+            for _ in 1...M {
                 // Create a new tile
-                var newTile = deepCopyNode(node: tile!)
+                let newTile = deepCopyNode(node: tile!)
                 newTile.position = crtPos!
                 newTile.isHidden = false
                 
@@ -133,7 +139,7 @@ struct GameScene {
                         newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
                     
                     case TypeOfTile.Finish.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.green
                     
                     case TypeOfTile.Used.rawValue:
                         newTile.geometry!.materials.first!.diffuse.contents  = UIColor.red
@@ -143,14 +149,14 @@ struct GameScene {
                 }
 
                 // Add the tile
-                game?.addChildNode(newTile)
+                self.scene?.rootNode.addChildNode(newTile)
                 
                 // Prepare for the next one
-                crtPos?.z += tileSize
+                crtPos?.x += tileSize
                 index += 1
             }
-            crtPos?.z = (pos?.z)!
-            crtPos?.x += tileSize
+            crtPos?.x = (pos?.x)!
+            crtPos?.z += tileSize
         }
     }
     

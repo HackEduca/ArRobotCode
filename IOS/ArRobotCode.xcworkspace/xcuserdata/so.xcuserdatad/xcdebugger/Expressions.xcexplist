@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Start.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "game">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState

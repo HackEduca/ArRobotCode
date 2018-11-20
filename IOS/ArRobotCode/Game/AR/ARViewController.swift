@@ -137,14 +137,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     // Move the player to the touch point
                     sceneController.setGamePosition(pos: hitResult.worldCoordinates)
                     
-                    // Found the start position
-                    findingStartPosition = false;
-                    
-                    // Remove the planes from the scene
-                    self.removeAllPlanes()
-                    
                     // Spawn the level tiles
-                    
                     let data = DataLevel()
                     data.Name = "Hello"
                     data.Width = 10
@@ -153,21 +146,47 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         data.Tiles.append(DataTile())
                     }
                     
-                    var dt = DataTile()
+//                    let dt = DataTile()
+//                    dt.setToStart()
+//                    data.Tiles[23] = dt
+//
+//                    let dt2 = DataTile()
+//                    dt2.swap()
+//                    data.Tiles[33] = dt2
+//                    data.Tiles[43] = dt2
+//                    data.Tiles[53] = dt2
+//                    data.Tiles[54] = dt2
+//                    data.Tiles[64] = dt2
+//                    data.Tiles[74] = dt2
+//
+//                    let dt3 = DataTile()
+//                    dt3.setToFinish()
+//                    data.Tiles[84] = dt3
+                    
+                    let dt = DataTile()
                     dt.setToStart()
                     data.Tiles[0] = dt
                     
-                    var dt2 = DataTile()
+                    let dt2 = DataTile()
                     dt2.swap()
                     data.Tiles[1] = dt2
                     data.Tiles[2] = dt2
                     data.Tiles[3] = dt2
                     data.Tiles[4] = dt2
+                    data.Tiles[10] = dt2
+                    data.Tiles[20] = dt2
+                    data.Tiles[30] = dt2
                     
-                    var dt3 = DataTile()
+                    let dt3 = DataTile()
                     dt3.setToFinish()
-                    data.Tiles[5] = dt3
+                    data.Tiles[40] = dt3
                     sceneController.spawnLevel(level: data)
+                    
+                    // Found the start position
+                    findingStartPosition = false;
+                    
+                    // Remove the planes from the scene
+                    self.removeAllPlanes()
                 }
             }
         }
