@@ -42,6 +42,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GameUISplitViewController.viewDidLoad():GameUISplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "self.sidePageNavController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -84,7 +95,7 @@
                value = "">
             </PersistentString>
             <PersistentString
-               value = "viewControllers[0]">
+               value = "viewControllers.second">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

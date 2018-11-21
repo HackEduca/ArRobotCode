@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxGesture
 
 class LevelsSplitViewController: UISplitViewController {
     // Child view controllers
@@ -17,6 +18,7 @@ class LevelsSplitViewController: UISplitViewController {
     
     // Repository with all the levels
     private var levelsRepository = LevelsRepository()
+    private var at: Int = -1
     
     // For disposing rx
     private let disposeBag = DisposeBag()
@@ -33,8 +35,35 @@ class LevelsSplitViewController: UISplitViewController {
         
         // Setup selectedLevel Observable
         levelsListVC?.selectedLevelObservable.subscribe(onNext: { selectedLevel in
-            self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.levelsRepository.getAt(Name: selectedLevel.Name))
+            self.at = self.levelsRepository.getAt(Name: selectedLevel.Name)
+            self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.at)
         }).disposed(by: disposeBag)
+        
+        // Observe when level is played
+        levelBuilderVC?.playLevelButton
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe({_ in
+                self.navigateToGameInterface()
+            })
+            .disposed(by: disposeBag)
     }
-
+    
+    func navigateToGameInterface() {
+        // Get the storyboard
+        let gameStoryboard = UIStoryboard(name: "Game", bundle: Bundle.main)
+        
+        // Instantiate the VC
+        guard let gameUISplitViewController = gameStoryboard.instantiateInitialViewController() as? GameUISplitViewController else {
+            return
+        }
+    
+        // Send data
+        self.navigationItem.title = "Very here"
+        gameUISplitViewController.setLevelData(levelsVC: self, repo: self.levelsRepository, at: self.at)
+        
+        // Show
+        present(gameUISplitViewController, animated: true, completion: nil)
+    }
 }

@@ -352,8 +352,8 @@
 		D3F74409218309760096958F /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				D324C3F8219C0A3500C78C4D /* AR */,
 				D324C3F5219C09B200C78C4D /* Instructions */,
+				D324C3F8219C0A3500C78C4D /* AR */,
 				D31F16022179EF02006B37B4 /* SidePageViewController.swift */,
 				D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */,
 			);

@@ -16,6 +16,7 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var widthTextField: UITextField!
     @IBOutlet weak var tilesCollectionView: UICollectionView!
+    @IBOutlet weak var playLevelButton: UIButton!
     
     private var levelsRepository: LevelsRepository!
     private var crtLevelAt: Int = -1

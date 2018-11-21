@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ck-8i-gJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ck-8i-gJg">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,10 +99,26 @@
             </objects>
             <point key="canvasLocation" x="-2069" y="-101"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="xzO-Rb-ddx">
+            <objects>
+                <viewController id="6mi-13-PY9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehZ-R5-QBo">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WXj-D8-sM6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITk-sp-fxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1612" y="-1532"/>
+        </scene>
         <!--Levels Split View Controller-->
         <scene sceneID="0M5-VA-r87">
             <objects>
                 <splitViewController id="8Ck-8i-gJg" customClass="LevelsSplitViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="F8j-5d-ZUk"/>
                     <connections>
                         <segue destination="R8d-Kp-qKH" kind="relationship" relationship="detailViewController" id="odi-Xw-BEd"/>
                         <segue destination="sl9-TU-unF" kind="relationship" relationship="masterViewController" id="wJC-Cd-MNa"/>
@@ -111,6 +127,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJ2-lx-HAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1606" y="-851"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="1Ew-9U-TPy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="8eT-lc-3nS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sff-ND-Q0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="-926"/>
         </scene>
         <!--Level Builder-->
         <scene sceneID="7m5-Aj-1VS">
@@ -127,23 +151,27 @@
                                         <rect key="frame" x="0.0" y="0.0" width="814" height="475"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUK-O4-h9z" userLabel="Height">
-                                                <rect key="frame" x="0.0" y="222.5" width="264.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="222.5" width="196" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32r-uG-m2y" userLabel="Height">
-                                                <rect key="frame" x="274.5" y="222.5" width="265" height="30"/>
+                                                <rect key="frame" x="206" y="222.5" width="196" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Width" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-HC-od6" userLabel="Width">
-                                                <rect key="frame" x="549.5" y="222.5" width="264.5" height="30"/>
+                                                <rect key="frame" x="412" y="222.5" width="196" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O71-HK-BEL">
+                                                <rect key="frame" x="618" y="222.5" width="196" height="30"/>
+                                                <state key="normal" title="Play"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="WHe-HC-od6" firstAttribute="width" secondItem="VUK-O4-h9z" secondAttribute="width" id="NsU-xz-8yS"/>
@@ -201,6 +229,7 @@
                     </view>
                     <connections>
                         <outlet property="heightTextField" destination="32r-uG-m2y" id="59K-8P-zTv"/>
+                        <outlet property="playLevelButton" destination="O71-HK-BEL" id="KYF-Sl-Eqe"/>
                         <outlet property="tilesCollectionView" destination="tKg-g1-3Rk" id="hUf-v1-fM2"/>
                         <outlet property="titleTextField" destination="VUK-O4-h9z" id="eRr-Qt-Ukt"/>
                         <outlet property="widthTextField" destination="WHe-HC-od6" id="uZG-qb-kP3"/>
