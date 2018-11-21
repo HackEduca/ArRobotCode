@@ -13,12 +13,13 @@ import RxSwift
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
-     var sceneController = GameScene()
+    var level : DataLevel?
+    private var sceneController = GameScene()
     
-    var didInitializeScene: Bool = false
-    var planes = [ARPlaneAnchor: Plane]()
-    let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-    var findingStartPosition: Bool = true
+    private var didInitializeScene: Bool = false
+    private var planes = [ARPlaneAnchor: Plane]()
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+    private var findingStartPosition: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,33 +140,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     // Move the player to the touch point
                     sceneController.setGamePosition(pos: hitResult.worldCoordinates)
                     
-                    // To do: receive a DataLevel from other component
-                    let data = DataLevel()
-                    data.Name = "Hello"
-                    data.Width = 10
-                    data.Height = 10
-                    for _ in 0..<100 {
-                        data.Tiles.append(DataTile())
-                    }
-                    
-                    let dt = DataTile()
-                    dt.setToStart()
-                    data.Tiles[0] = dt
-                    
-                    let dt2 = DataTile()
-                    dt2.swap()
-                    data.Tiles[1] = dt2
-                    data.Tiles[2] = dt2
-                    data.Tiles[3] = dt2
-                    data.Tiles[4] = dt2
-                    data.Tiles[10] = dt2
-                    data.Tiles[20] = dt2
-                    data.Tiles[30] = dt2
-                    
-                    let dt3 = DataTile()
-                    dt3.setToFinish()
-                    data.Tiles[40] = dt3
-                    sceneController.spawnLevel(level: data)
+                    // Spwan the level
+                    sceneController.spawnLevel(level: self.level!)
                     
                     // Found the start position
                     findingStartPosition = false;

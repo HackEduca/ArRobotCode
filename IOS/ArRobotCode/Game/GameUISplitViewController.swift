@@ -15,28 +15,20 @@ class GameUISplitViewController: UISplitViewController {
     public var sideVC: SidePageViewController!
     public var arVC: ARViewController!
     
-    public var levelsVC : UIViewController!
+    // The parent
+    public var levelsVC : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sideVC = (viewControllers.first as! SidePageViewController)
         arVC = (viewControllers.last as! ARViewController)
-//
-//        self.sidePageNavController.navigationItem.hidesBackButton = true
-//        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.bordered, target: self, action: Selector("back:"))
-//
-//        self.sidePageNavController.navigationItem.leftBarButtonItem = newBackButton
-//        self.sidePageNavController.viewControllers = [ self.sidePageNavController.viewControllers.first] as! [UIViewController]
+        arVC.level = levelsRepository!.get(at: self.crtLevelAt)
     }
     
     public func setLevelData(levelsVC: UIViewController, repo: LevelsRepository, at: Int) {
         self.levelsVC = levelsVC
         self.levelsRepository = repo
         self.crtLevelAt = at
-        
-        print("Working: ", at)
     }
-    
-
 }
