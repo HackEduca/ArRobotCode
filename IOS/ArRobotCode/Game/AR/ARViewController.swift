@@ -14,7 +14,7 @@ import RxSwift
 class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     var level : DataLevel?
-    private var sceneController = GameScene()
+    public var sceneController = GameScene()
     
     private var didInitializeScene: Bool = false
     private var planes = [ARPlaneAnchor: Plane]()
@@ -133,7 +133,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     )
     
                     // Create an anchor at that position
-                    print("Adding anchor")
                     let anchor = ARAnchor(name: "gameCenter", transform: simd_float4x4(hitResult.modelTransform))
                     sceneView.session.add(anchor: anchor)
                     

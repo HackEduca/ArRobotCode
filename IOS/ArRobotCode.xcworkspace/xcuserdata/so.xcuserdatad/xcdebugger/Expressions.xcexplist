@@ -50,6 +50,9 @@
             <PersistentString
                value = "self.sidePageNavController.viewControllers">
             </PersistentString>
+            <PersistentString
+               value = "sideVC.viewControllers">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState

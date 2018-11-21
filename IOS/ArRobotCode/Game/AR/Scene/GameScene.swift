@@ -18,7 +18,7 @@ struct GameScene {
     var tile: SCNNode?
     
     var player: SCNNode?
-    var playerController: PlayerAR!
+    public var playerController: PlayerAR!
     
     init() {
         scene = self.initializeScene()

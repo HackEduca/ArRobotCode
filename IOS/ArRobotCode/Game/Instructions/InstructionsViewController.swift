@@ -9,10 +9,13 @@
 import UIKit
 import WebKit
 
-class InstructionsViewController: UIViewController {
+import RxSwift
+import RxCocoa
 
-    var instructionsWebView: WKWebView!
-    var robotHexa: PlayerHexa = PlayerHexa();
+
+class InstructionsViewController: UIViewController {
+    public var instructionsBehaviourSubject: BehaviorSubject<String> = BehaviorSubject(value: "")
+    private var instructionsWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,23 +68,14 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
         
         print("Message from WebKIT: ", response)
         var responseSplit = response.split(separator: " ")
-        switch responseSplit[0] {
-            case "run":
-                print("")
-            case "moveFront":
-                self.robotHexa.moveFront()
-                break
-            case "moveBack":
-                self.robotHexa.moveBack();
-                break
-            case "turnLeft":
-                self.robotHexa.turnLeft()
-                break
-            case "turnRight":
-                self.robotHexa.turnRight()
-                break
-            default:
-                print("Invalid response from WebKit")
+        if responseSplit.count == 0 {
+            return;
+        }
+    
+        // Publish the responnse from webkit only if the instruction is valid
+        let possibleInstructions = ["moveFront", "moveBack", "turnLeft", "turnRight"]
+        if possibleInstructions.contains(String(responseSplit[0])) {
+            self.instructionsBehaviourSubject.onNext(response)
         }
     }
     
