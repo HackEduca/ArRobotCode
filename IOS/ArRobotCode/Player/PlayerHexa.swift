@@ -43,5 +43,4 @@ class PlayerHexa: PlayerInterface {
             print(data)
         })
     }
-
 }

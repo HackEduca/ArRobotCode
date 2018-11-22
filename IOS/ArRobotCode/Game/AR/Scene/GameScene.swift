@@ -119,8 +119,8 @@ struct GameScene {
         for i in 0...N - 1 {
             for j in 0...M - 1 {
                 if level.Tiles[index].type == TypeOfTile.Start.rawValue {
-                    pos!.x -= TILE_SIZE * Float(i)
-                    pos!.z -= TILE_SIZE * Float(j)
+                    pos!.x -= TILE_SIZE * Float(j)
+                    pos!.z -= TILE_SIZE * Float(i)
                 }
                 
                 index += 1

@@ -18,7 +18,6 @@ class PlayerAR: PlayerInterface {
         self.tileSize = tileSize
     }
     
-    
     func moveFront() {
         // Combine translation with ref node
         let updatedPlayer = -1 * self.player.simdWorldFront * self.tileSize
@@ -45,8 +44,7 @@ class PlayerAR: PlayerInterface {
     func turnRight() {
         let rotateRightAction = SCNAction.rotateBy(x: 0, y: CGFloat(-Float.pi / 2), z: 0, duration: 1)
         player.runAction(rotateRightAction)
-    }
-    
+    }    
 }
 
 extension matrix_float4x4 {
