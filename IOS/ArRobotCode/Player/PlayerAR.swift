@@ -19,12 +19,26 @@ class PlayerAR: PlayerInterface {
     }
     
     func moveFront() {
-        let moveFrontAction = SCNAction.moveBy(x: 0, y: 0, z: CGFloat(tileSize), duration: 1)
+        let refNodeTransform = matrix_float4x4(player.transform)
+        
+        // Combine translation with ref node
+        let newPositionPlayer = SCNNode()
+        newPositionPlayer.transform = SCNMatrix4Translate(player.transform, 0.0, 0.0, self.tileSize)
+        
+        // Do the animation
+        let moveFrontAction = SCNAction.move(to: newPositionPlayer.position, duration: 1)
         player.runAction(moveFrontAction)
     }
     
     func moveBack() {
-        let moveBackAction = SCNAction.moveBy(x: 0, y: 0, z: CGFloat(-tileSize), duration: 1)
+        let refNodeTransform = matrix_float4x4(player.transform)
+        
+        // Combine translation with ref node
+        let newPositionPlayer = SCNNode()
+        newPositionPlayer.transform = SCNMatrix4Translate(player.transform, 0.0, 0.0, -self.tileSize)
+        
+        // Do the animation
+        let moveBackAction = SCNAction.move(to: newPositionPlayer.position, duration: 1)
         player.runAction(moveBackAction)
     }
     
@@ -38,4 +52,16 @@ class PlayerAR: PlayerInterface {
         player.runAction(rotateRightAction)
     }
     
+}
+
+extension SCNMatrix4 {
+    func position() -> SCNVector3 {
+        return SCNVector3(m31, m32, m33)
+    }
+}
+
+extension SCNVector3 {
+    init(_ vector: float4) {
+        self.init(x: vector.x / vector.w, y: vector.y / vector.w, z: vector.z / vector.w)
+    }
 }

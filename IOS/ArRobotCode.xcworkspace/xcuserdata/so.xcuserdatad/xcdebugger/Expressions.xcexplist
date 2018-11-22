@@ -3,13 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "">
             </PersistentString>
             <PersistentString
-               value = "game">
+               value = "viewControllers.second">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -24,6 +24,20 @@
             </PersistentString>
             <PersistentString
                value = "newTile!.geometry!.materials.first!.diffuse.contents">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayerAR.moveFront():PlayerAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tileSize">
+            </PersistentString>
+            <PersistentString
+               value = "self.player.simdWorldFront">
+            </PersistentString>
+            <PersistentString
+               value = "self.player.position">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -92,13 +106,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "">
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
             <PersistentString
-               value = "viewControllers.second">
+               value = "game">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
