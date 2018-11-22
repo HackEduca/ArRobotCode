@@ -18,27 +18,22 @@ class PlayerAR: PlayerInterface {
         self.tileSize = tileSize
     }
     
+    
     func moveFront() {
-        let refNodeTransform = matrix_float4x4(player.transform)
-        
         // Combine translation with ref node
-        let newPositionPlayer = SCNNode()
-        newPositionPlayer.transform = SCNMatrix4Translate(player.transform, 0.0, 0.0, self.tileSize)
-        
+        let updatedPlayer = -1 * self.player.simdWorldFront * self.tileSize
+
         // Do the animation
-        let moveFrontAction = SCNAction.move(to: newPositionPlayer.position, duration: 1)
+        let moveFrontAction = SCNAction.move(by: SCNVector3(updatedPlayer), duration: 1)
         player.runAction(moveFrontAction)
     }
     
     func moveBack() {
-        let refNodeTransform = matrix_float4x4(player.transform)
-        
         // Combine translation with ref node
-        let newPositionPlayer = SCNNode()
-        newPositionPlayer.transform = SCNMatrix4Translate(player.transform, 0.0, 0.0, -self.tileSize)
+        let updatedPlayer = self.player.simdWorldFront * self.tileSize
         
         // Do the animation
-        let moveBackAction = SCNAction.move(to: newPositionPlayer.position, duration: 1)
+        let moveBackAction = SCNAction.move(by: SCNVector3(updatedPlayer), duration: 1)
         player.runAction(moveBackAction)
     }
     
@@ -54,14 +49,8 @@ class PlayerAR: PlayerInterface {
     
 }
 
-extension SCNMatrix4 {
+extension matrix_float4x4 {
     func position() -> SCNVector3 {
-        return SCNVector3(m31, m32, m33)
-    }
-}
-
-extension SCNVector3 {
-    init(_ vector: float4) {
-        self.init(x: vector.x / vector.w, y: vector.y / vector.w, z: vector.z / vector.w)
+        return SCNVector3(columns.3.x, columns.3.y, columns.3.z)
     }
 }
