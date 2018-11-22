@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 class GameUISplitViewController: UISplitViewController {
     public var levelsRepository: LevelsRepository!
@@ -17,6 +18,8 @@ class GameUISplitViewController: UISplitViewController {
     public var sideVC: SidePageViewController!
     public var instructionsVC: InstructionsViewController!
     public var arVC: ARViewController!
+    
+    public var engineAR: EngineAR!
     
     // The parent
     public var levelsVC : UIViewController?
@@ -35,6 +38,10 @@ class GameUISplitViewController: UISplitViewController {
         // Set the selected level of child AR VC
         arVC.level = levelsRepository!.get(at: self.crtLevelAt)
         
+        // Instantiate engine ar
+        self.engineAR = EngineAR(levelReference: ThreadSafeReference(to: self.levelsRepository.get(at: self.crtLevelAt)), player: self.arVC.sceneController.playerController)
+        
+        // Events from Instructions WebView
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         self.instructionsVC.instructionsBehaviourSubject.asObserver()
             .observeOn(concurrentScheduler)
@@ -54,16 +61,16 @@ class GameUISplitViewController: UISplitViewController {
                 case "run":
                     print("")
                 case "moveFront":
-                    self.arVC.sceneController.playerController.moveFront()
+                    self.engineAR.moveFront()
                     break
                 case "moveBack":
-                    self.arVC.sceneController.playerController.moveBack()
+                    self.engineAR.moveBack()
                     break
                 case "turnLeft":
-                    self.arVC.sceneController.playerController.turnLeft()
+                    self.engineAR.turnLeft()
                     break
                 case "turnRight":
-                    self.arVC.sceneController.playerController.turnRight()
+                    self.engineAR.turnRight()
                     break
                 default:
                     print("Invalid response from WebKit")
@@ -72,72 +79,13 @@ class GameUISplitViewController: UISplitViewController {
         })
         .disposed(by: self.disposeBag)
         
-//        _ = Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
-//            .debug("interval")
-//            .subscribe({_ in
-//                self.instructionsVC.instructionsBehaviourSubject.asObserver().take(1).subscribe({ (ev) in
-//                    print("Processing: ", ev)
-//                    guard let event = ev.element else {
-//                        return
-//                    }
-//                    var evSplit = event.split(separator: " ")
-//                    if evSplit.count == 0 {
-//                        return;
-//                    }
-//
-//                    switch evSplit[0] {
-//                    case "run":
-//                        print("")
-//                    case "moveFront":
-//                        self.arVC.sceneController.playerController.moveFront()
-//                        break
-//                    case "moveBack":
-//                        self.arVC.sceneController.playerController.moveBack()
-//                        break
-//                    case "turnLeft":
-//                        self.arVC.sceneController.playerController.turnLeft()
-//                        break
-//                    case "turnRight":
-//                        self.arVC.sceneController.playerController.turnRight()
-//                        break
-//                    default:
-//                        print("Invalid response from WebKit")
-//                    }
-//                })
-//            })
-//            .disposed(by: disposeBag)
-//
-
-//        // Subscribe to commands from instructions web kit
-//        Observable<String>.zip(self.instructionsVC.instructionsBehaviourSubject.asObserver() as Observable<String>, Observable<Int>.interval(1, scheduler: MainScheduler.init())) {a,b in
-//                a
-//            }.subscribe { (ev) in
-//                print("Processing: ", ev)
-//                var evSplit = ev.element!.split(separator: " ")
-//                if evSplit.count == 0 {
-//                    return;
-//                }
-//
-//                switch evSplit[0] {
-//                case "run":
-//                    print("")
-//                case "moveFront":
-//                    self.arVC.sceneController.playerController.moveFront()
-//                    break
-//                case "moveBack":
-//                    self.arVC.sceneController.playerController.moveBack()
-//                    break
-//                case "turnLeft":
-//                    self.arVC.sceneController.playerController.turnLeft()
-//                    break
-//                case "turnRight":
-//                    self.arVC.sceneController.playerController.turnRight()
-//                    break
-//                default:
-//                    print("Invalid response from WebKit")
-//                }
-//            }
-//            .disposed(by: self.disposeBag)
+        // Events from AR Engine
+        self.engineAR.eventsBehaviourSubject
+            .asObserver()
+            .subscribe({ (ev) in
+                print(ev.event)
+            })
+            .disposed(by: self.disposeBag)
     }
     
     public func setLevelData(levelsVC: UIViewController, repo: LevelsRepository, at: Int) {

@@ -21,6 +21,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
     private var findingStartPosition: Bool = true
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

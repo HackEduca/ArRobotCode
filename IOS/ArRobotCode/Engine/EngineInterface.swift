@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol EngineInterface: PlayerInterface {
+    func isValid() -> Bool
+    func isDone() -> Bool
+}

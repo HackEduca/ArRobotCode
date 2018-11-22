@@ -3,20 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-            <PersistentString
-               value = "viewControllers.second">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "GameScene.spawnLevel():GameScene.swift">
          <PersistentStrings>
             <PersistentString
@@ -26,23 +12,6 @@
                value = "newTile!.geometry!.materials.first!.diffuse.contents">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PlayerAR.moveFront():PlayerAR.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.tileSize">
-            </PersistentString>
-            <PersistentString
-               value = "self.player.simdWorldFront">
-            </PersistentString>
-            <PersistentString
-               value = "self.player.position">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "LevelBuilderViewController.viewDidLoad():LevelBuilderViewController.swift">
@@ -56,18 +25,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameUISplitViewController.viewDidLoad():GameUISplitViewController.swift">
+         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewControllers">
-            </PersistentString>
-            <PersistentString
-               value = "self.sidePageNavController.viewControllers">
-            </PersistentString>
-            <PersistentString
-               value = "sideVC.viewControllers">
+               value = "splitViewController?.viewControllers">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.moveFront():EngineAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.playerController.player.simdWorldFront">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
@@ -98,12 +72,46 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
+         contextName = "GameUISplitViewController.viewDidLoad():GameUISplitViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "splitViewController?.viewControllers">
+               value = "viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "self.sidePageNavController.viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "sideVC.viewControllers">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayerAR.moveFront():PlayerAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tileSize">
+            </PersistentString>
+            <PersistentString
+               value = "self.player.simdWorldFront">
+            </PersistentString>
+            <PersistentString
+               value = "self.player.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "viewControllers.second">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.init(level:player:):EngineAR.swift">
       </ContextState>
       <ContextState
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
@@ -115,6 +123,9 @@
                value = "game">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
