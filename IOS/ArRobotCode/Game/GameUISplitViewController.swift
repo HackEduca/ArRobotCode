@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import PopupDialog
 
 class GameUISplitViewController: UISplitViewController {
     public var levelsRepository: LevelsRepository!
@@ -85,6 +86,17 @@ class GameUISplitViewController: UISplitViewController {
             .asObserver()
             .subscribe({ (ev) in
                 print(ev.event)
+                
+                switch ev.element {
+                case "invalid":
+                    let popUP = PopupDialog(title: "Sorry", message: "You can try again")
+                    self.present(popUP, animated: true, completion: nil)
+                case "done":
+                    let popUP = PopupDialog(title: "Congrats", message: "Well done, you can advance to the next level")
+                    self.present(popUP, animated: true, completion: nil)
+                default :
+                    print("Invalid event received")
+                }
             })
             .disposed(by: self.disposeBag)
     }
