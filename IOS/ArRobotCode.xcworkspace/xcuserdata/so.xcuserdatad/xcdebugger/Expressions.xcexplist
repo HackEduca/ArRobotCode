@@ -36,7 +36,13 @@
          contextName = "EngineAR.moveFront():EngineAR.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.crtPosition">
+            </PersistentString>
+            <PersistentString
                value = "self.playerController.player.simdWorldFront">
+            </PersistentString>
+            <PersistentString
+               value = "self.level">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -89,29 +95,15 @@
          contextName = "PlayerAR.moveFront():PlayerAR.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.tileSize">
+               value = "self.player.simdWorldFront">
             </PersistentString>
             <PersistentString
-               value = "self.player.simdWorldFront">
+               value = "self.tileSize">
             </PersistentString>
             <PersistentString
                value = "self.player.position">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-            <PersistentString
-               value = "viewControllers.second">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EngineAR.init(level:player:):EngineAR.swift">
       </ContextState>
       <ContextState
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
@@ -121,6 +113,20 @@
             </PersistentString>
             <PersistentString
                value = "game">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.init(level:player:):EngineAR.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "viewControllers.second">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

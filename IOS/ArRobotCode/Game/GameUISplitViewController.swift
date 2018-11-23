@@ -39,7 +39,8 @@ class GameUISplitViewController: UISplitViewController {
         arVC.level = levelsRepository!.get(at: self.crtLevelAt)
         
         // Instantiate engine ar
-        self.engineAR = EngineAR(levelReference: ThreadSafeReference(to: self.levelsRepository.get(at: self.crtLevelAt)), player: self.arVC.sceneController.playerController)
+        let levelName = self.levelsRepository.get(at: self.crtLevelAt).Name
+        self.engineAR = EngineAR(levelName: levelName, player: self.arVC.sceneController.playerController)
         
         // Events from Instructions WebView
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
