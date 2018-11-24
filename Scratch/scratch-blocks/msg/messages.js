@@ -141,10 +141,10 @@ Blockly.Msg.LOOKS_PREVIOUSBACKDROP = 'previous backdrop';
 Blockly.Msg.LOOKS_RANDOMBACKDROP = 'random backdrop';
 
 // Motion blocks
-Blockly.Msg.MOTION_MOVESTEPS = 'move front %1 steps';
-Blockly.Msg.MOTION_MOVESTEPS_BACK = 'move back %1 steps';
-Blockly.Msg.MOTION_TURNLEFT = 'turn %1 %2 degrees';
-Blockly.Msg.MOTION_TURNRIGHT = 'turn %1 %2 degrees';
+Blockly.Msg.MOTION_MOVESTEPS = 'move front';
+Blockly.Msg.MOTION_MOVESTEPS_BACK = 'move back';
+Blockly.Msg.MOTION_TURNLEFT = 'turn %1';
+Blockly.Msg.MOTION_TURNRIGHT = 'turn %1';
 Blockly.Msg.MOTION_POINTINDIRECTION = 'point in direction %1';
 Blockly.Msg.MOTION_POINTTOWARDS = 'point towards %1';
 Blockly.Msg.MOTION_POINTTOWARDS_POINTER = 'mouse-pointer';

@@ -36,12 +36,6 @@ Blockly.Blocks['motion_movesteps'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.MOTION_MOVESTEPS,
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "STEPS"
-        }
-      ],
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
     });
@@ -56,12 +50,6 @@ Blockly.Blocks['motion_movesteps_back'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.MOTION_MOVESTEPS_BACK,
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "STEPS"
-        }
-      ],
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
     });
@@ -83,10 +71,6 @@ Blockly.Blocks['motion_turnright'] = {
           "width": 24,
           "height": 24
         },
-        {
-          "type": "input_value",
-          "name": "DEGREES"
-        }
       ],
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
@@ -108,10 +92,6 @@ Blockly.Blocks['motion_turnleft'] = {
           "src": Blockly.mainWorkspace.options.pathToMedia + "rotate-left.svg",
           "width": 24,
           "height": 24
-        },
-        {
-          "type": "input_value",
-          "name": "DEGREES"
         }
       ],
       "category": Blockly.Categories.motion,
