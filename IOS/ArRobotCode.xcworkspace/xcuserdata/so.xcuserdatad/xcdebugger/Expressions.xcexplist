@@ -36,13 +36,16 @@
          contextName = "EngineAR.moveFront():EngineAR.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.crtDXDY">
+            </PersistentString>
+            <PersistentString
                value = "self.crtPosition">
             </PersistentString>
             <PersistentString
-               value = "self.playerController.player.simdWorldFront">
+               value = "self.level">
             </PersistentString>
             <PersistentString
-               value = "self.level">
+               value = "self.playerController.player.simdWorldFront">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -106,20 +109,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "TypeOfTile.Start.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "game">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EngineAR.init(level:player:):EngineAR.swift">
-      </ContextState>
-      <ContextState
          contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -127,6 +116,20 @@
             </PersistentString>
             <PersistentString
                value = "viewControllers.second">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.init(level:player:):EngineAR.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Start.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "game">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

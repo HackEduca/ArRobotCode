@@ -25,6 +25,9 @@ class EngineAR: EngineInterface {
     private var done: Bool = false
     
     private var crtPosition: Position = Position(x: 0, y: 0)
+    
+    private var dxdy = [ Position(x: -1, y: 0), Position(x: 0, y: 1) , Position(x: 1, y: 0), Position(x: 0, y: -1)]
+    private var crtDXDY = 0
 
     
     init(levelName: String, player: PlayerAR!) {
@@ -51,30 +54,10 @@ class EngineAR: EngineInterface {
     
     func moveFront() {
         self.playerController.moveFront()
-        var vertical = false
         
-        // UP
-        if(self.playerController.player.simdWorldFront[2] == 1) {
-            self.crtPosition.x -= 1
-            vertical = true
-        }
-        
-        // DOWN
-        if(self.playerController.player.simdWorldFront[2] == -1) {
-            self.crtPosition.x += 1
-            vertical = true
-        }
-        
-        // LEFT
-        if(!vertical && self.playerController.player.simdWorldFront[0] < 0) {
-            self.crtPosition.y -= 1
-        }
-        
-        // RIGHT
-        if(!vertical && self.playerController.player.simdWorldFront[0] > 0) {
-            self.crtPosition.y += 1
-        }
-        
+        // Move
+        self.crtPosition.x += self.dxdy[self.crtDXDY].x
+        self.crtPosition.y += self.dxdy[self.crtDXDY].y
        
         if self.checkIfInvalid() {
             return
@@ -84,30 +67,10 @@ class EngineAR: EngineInterface {
     
     func moveBack() {
         self.playerController.moveBack()
-       
-        var vertical = false
-        
-        // UP
-        if(self.playerController.player.simdWorldFront[2] == -1) {
-            self.crtPosition.x -= 1
-            vertical = true
-        }
-        
-        // DOWN
-        if(self.playerController.player.simdWorldFront[2] == 1) {
-            self.crtPosition.x += 1
-            vertical = true
-        }
-        
-        // LEFT
-        if(!vertical && self.playerController.player.simdWorldFront[0] > 0) {
-            self.crtPosition.y -= 1
-        }
-        
-        // RIGHT
-        if(!vertical && self.playerController.player.simdWorldFront[0] < 0) {
-            self.crtPosition.y += 1
-        }
+
+        // Move
+        self.crtPosition.x -= self.dxdy[self.crtDXDY].x
+        self.crtPosition.y -= self.dxdy[self.crtDXDY].y
         
         if self.checkIfInvalid() {
             return
@@ -117,10 +80,18 @@ class EngineAR: EngineInterface {
     
     func turnLeft() {
         self.playerController.turnLeft()
+        self.crtDXDY -= 1
+        self.crtDXDY %= 4
+        if self.crtDXDY == -1 {
+            self.crtDXDY = 3
+        }
+        
     }
     
     func turnRight() {
         self.playerController.turnRight()
+        self.crtDXDY += 1
+        self.crtDXDY %= 4
     }
     
     private func checkIfInvalid() -> Bool {
