@@ -15,6 +15,12 @@ import RxCocoa
 
 class InstructionsViewController: UIViewController {
     public var instructionsBehaviourSubject: BehaviorSubject<String> = BehaviorSubject(value: "")
+    
+    @IBOutlet public weak var backButton: UIButton!
+    @IBOutlet public weak var statusTextView: UITextView!
+
+    @IBOutlet private weak var actionBarView: UIView!
+    @IBOutlet private weak var webView: UIView!
     private var instructionsWebView: WKWebView!
     
     override func viewDidLoad() {
@@ -36,7 +42,7 @@ class InstructionsViewController: UIViewController {
         instructionsWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
         
         // Add it
-        self.view.addSubview(instructionsWebView)
+        self.webView.addSubview(instructionsWebView)
         
         // Add the delegtes
         instructionsWebView.uiDelegate = self
@@ -73,7 +79,7 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
         }
     
         // Publish the responnse from webkit only if the instruction is valid
-        let possibleInstructions = ["moveFront", "moveBack", "turnLeft", "turnRight"]
+        let possibleInstructions = ["run","moveFront", "moveBack", "turnLeft", "turnRight"]
         if possibleInstructions.contains(String(responseSplit[0])) {
             self.instructionsBehaviourSubject.onNext(response)
         }

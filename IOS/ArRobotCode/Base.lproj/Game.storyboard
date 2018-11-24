@@ -200,13 +200,45 @@
                     <view key="view" contentMode="scaleToFill" id="yLK-TP-FP1">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0Y-v4-5Py" userLabel="ActionBarView">
+                                <rect key="frame" x="0.0" y="29" width="1112" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0O-Gt-8QX">
+                                        <rect key="frame" x="8" y="0.0" width="74" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back"/>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="sssssssssdadadadadadadadadadadadadadadad" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-tu-0mM" userLabel="StatusTextView">
+                                        <rect key="frame" x="90" y="0.0" width="240" height="49.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-bP-Mqe" userLabel="WebView">
+                                <rect key="frame" x="0.0" y="84" width="1112" height="751"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Adt-XJ-jDf"/>
                     </view>
+                    <connections>
+                        <outlet property="actionBarView" destination="w0Y-v4-5Py" id="arz-TW-Iu6"/>
+                        <outlet property="backButton" destination="t0O-Gt-8QX" id="xOt-4B-D25"/>
+                        <outlet property="statusTextView" destination="ODS-tu-0mM" id="1hB-hT-if4"/>
+                        <outlet property="webView" destination="Wze-bP-Mqe" id="LH2-VF-2VQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6n-lc-Xbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-680" y="3136"/>
+            <point key="canvasLocation" x="-680.39568345323744" y="3135.9712230215828"/>
         </scene>
     </scenes>
 </document>

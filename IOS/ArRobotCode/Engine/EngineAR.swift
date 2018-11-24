@@ -24,6 +24,7 @@ class EngineAR: EngineInterface {
     private var valid: Bool = true
     private var done: Bool = false
     
+    private var startPosition: Position = Position(x: 0, y: 0)
     private var crtPosition: Position = Position(x: 0, y: 0)
     
     private var dxdy = [ Position(x: -1, y: 0), Position(x: 0, y: 1) , Position(x: 1, y: 0), Position(x: 0, y: -1)]
@@ -38,7 +39,8 @@ class EngineAR: EngineInterface {
         let level = getLevel()!
         for i in 0...level.Tiles.count - 1 {
             if level.Tiles[i].type == TypeOfTile.Start.rawValue {
-                (self.crtPosition.x, self.crtPosition.y) = vectorCoordinatesToMatrix(i: i)
+                (self.startPosition.x, self.startPosition.y) = vectorCoordinatesToMatrix(i: i)
+                self.crtPosition = self.startPosition
                 break
             }
         }
@@ -92,6 +94,14 @@ class EngineAR: EngineInterface {
         self.playerController.turnRight()
         self.crtDXDY += 1
         self.crtDXDY %= 4
+    }
+    
+    func resetLevel() {
+        self.crtPosition = self.startPosition
+        self.crtDXDY = 0
+        self.valid = true
+        self.done = false
+        self.playerController.reset()
     }
     
     private func checkIfInvalid() -> Bool {

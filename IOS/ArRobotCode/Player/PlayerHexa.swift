@@ -43,4 +43,8 @@ class PlayerHexa: PlayerInterface {
             print(data)
         })
     }
+    
+    func reset() {
+        
+    }
 }

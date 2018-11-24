@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol EngineInterface: PlayerInterface {
+protocol EngineInterface{
     func isValid() -> Bool
     func isDone() -> Bool
+    func resetLevel()
 }

@@ -13,4 +13,5 @@ protocol PlayerInterface {
     func moveBack   ()
     func turnLeft   ()
     func turnRight  ()
+    func reset      ()
 }

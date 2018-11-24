@@ -44,7 +44,15 @@ class PlayerAR: PlayerInterface {
     func turnRight() {
         let rotateRightAction = SCNAction.rotateBy(x: 0, y: CGFloat(-Float.pi / 2), z: 0, duration: 1)
         player.runAction(rotateRightAction)
-    }    
+    }
+    
+    func reset() {
+        let positionAction = SCNAction.move(to: SCNVector3(0, 0.01, 0), duration: 1)
+        let rotationAction = SCNAction.rotateTo(x: 0, y: CGFloat(Float.pi), z: 0, duration: 1)
+        
+        player.runAction(positionAction)
+        player.runAction(rotationAction)
+    }
 }
 
 extension matrix_float4x4 {

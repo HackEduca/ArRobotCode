@@ -61,7 +61,7 @@ class GameUISplitViewController: UISplitViewController {
 
                 switch evSplit[0] {
                 case "run":
-                    print("")
+                    self.engineAR.resetLevel()
                 case "moveFront":
                     self.engineAR.moveFront()
                     break
