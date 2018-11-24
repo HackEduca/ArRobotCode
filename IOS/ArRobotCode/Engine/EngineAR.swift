@@ -21,6 +21,8 @@ class EngineAR: EngineInterface {
     
     private var playerController: PlayerAR!
     private var levelName: String!
+    private var status: UITextView!
+    
     private var valid: Bool = true
     private var done: Bool = false
     
@@ -31,9 +33,10 @@ class EngineAR: EngineInterface {
     private var crtDXDY = 0
 
     
-    init(levelName: String, player: PlayerAR!) {
+    init(levelName: String, player: PlayerAR!, status: UITextView) {
         self.levelName = levelName
         self.playerController = player
+        self.status = status
         
 
         let level = getLevel()!
@@ -55,6 +58,9 @@ class EngineAR: EngineInterface {
     }
     
     func moveFront() {
+        DispatchQueue.main.async {
+            self.status.text = "Moving in front"
+        }
         self.playerController.moveFront()
         
         // Move
@@ -68,6 +74,9 @@ class EngineAR: EngineInterface {
     }
     
     func moveBack() {
+        DispatchQueue.main.async {
+            self.status.text = "Moving back"
+        }
         self.playerController.moveBack()
 
         // Move
@@ -81,6 +90,9 @@ class EngineAR: EngineInterface {
     }
     
     func turnLeft() {
+        DispatchQueue.main.async {
+            self.status.text = "Moving left"
+        }
         self.playerController.turnLeft()
         self.crtDXDY -= 1
         self.crtDXDY %= 4
@@ -91,12 +103,18 @@ class EngineAR: EngineInterface {
     }
     
     func turnRight() {
+        DispatchQueue.main.async {
+            self.status.text = "Moving right"
+        }
         self.playerController.turnRight()
         self.crtDXDY += 1
         self.crtDXDY %= 4
     }
     
     func resetLevel() {
+        DispatchQueue.main.async {
+            self.status.text = "Starting..."
+        }
         self.crtPosition = self.startPosition
         self.crtDXDY = 0
         self.valid = true

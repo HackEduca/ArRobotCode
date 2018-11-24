@@ -41,7 +41,7 @@ class GameUISplitViewController: UISplitViewController {
         
         // Instantiate engine ar
         let levelName = self.levelsRepository.get(at: self.crtLevelAt).Name
-        self.engineAR = EngineAR(levelName: levelName, player: self.arVC.sceneController.playerController)
+        self.engineAR = EngineAR(levelName: levelName, player: self.arVC.sceneController.playerController, status: self.instructionsVC.statusTextView)
         
         // Events from Instructions WebView
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
@@ -78,6 +78,11 @@ class GameUISplitViewController: UISplitViewController {
                     print("Invalid response from WebKit")
                 }
                 sleep(1)
+                
+                DispatchQueue.main.async {
+                     self.instructionsVC.statusTextView.text = ""
+                }
+               
         })
         .disposed(by: self.disposeBag)
         
