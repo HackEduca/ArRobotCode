@@ -36,6 +36,14 @@ Blockly.Blocks['motion_movesteps'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.MOTION_MOVESTEPS,
+      "args0": [
+        {
+          "type": "field_image",
+          "src": Blockly.mainWorkspace.options.pathToMedia + "move-front.svg",
+          "width": 24,
+          "height": 24
+        },
+      ],
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
     });
@@ -50,6 +58,14 @@ Blockly.Blocks['motion_movesteps_back'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.MOTION_MOVESTEPS_BACK,
+      "args0": [
+        {
+          "type": "field_image",
+          "src": Blockly.mainWorkspace.options.pathToMedia + "move-back.svg",
+          "width": 24,
+          "height": 24
+        },
+      ],
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
     });
