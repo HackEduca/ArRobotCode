@@ -153,8 +153,8 @@ extension LevelBuilderViewController: UITextFieldDelegate {
 
 extension LevelBuilderViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var sz = CGSize(width: collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing),
-                      height: collectionView.frame.height / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumLineSpacing) - 1)
+        var sz = CGSize(width: collectionView.frame.width / CGFloat(self.levelsRepository.get(at: self.crtLevelAt).Width) - CGFloat(minimumInteritemSpacing),
+                      height: collectionView.frame.height / CGFloat(self.levelsRepository.get(at: self.crtLevelAt).Height) - CGFloat(minimumLineSpacing) - 1)
         
         return sz
     }

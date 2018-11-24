@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "GameScene.spawnLevel():GameScene.swift">
          <PersistentStrings>
             <PersistentString
@@ -70,6 +73,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "EngineAR.checkIfInvalid():EngineAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.matrixCoordinatesToVector(0,1)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
          <PersistentStrings>
             <PersistentString
@@ -109,20 +120,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-            <PersistentString
-               value = "viewControllers.second">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EngineAR.init(level:player:):EngineAR.swift">
-      </ContextState>
-      <ContextState
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
@@ -130,6 +127,20 @@
             </PersistentString>
             <PersistentString
                value = "game">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.init(level:player:):EngineAR.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "viewControllers.second">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

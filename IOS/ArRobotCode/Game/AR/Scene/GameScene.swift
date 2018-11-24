@@ -110,8 +110,8 @@ struct GameScene {
     
     func spawnLevel(level: DataLevel) {
         // Will initialise
-        let N = 10;
-        let M = 10;
+        let N = level.Height;
+        let M = level.Width;
         
         // Find the start position && center everything from it
         var pos = game?.position

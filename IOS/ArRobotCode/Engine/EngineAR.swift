@@ -133,6 +133,8 @@ class EngineAR: EngineInterface {
         }
         
         // If wrong tile
+        var pos = matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
+        var type = lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].type
         if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].type == TypeOfTile.Free.rawValue {
             self.valid = false
             self.eventsBehaviourSubject.onNext("invalid")
@@ -165,7 +167,7 @@ class EngineAR: EngineInterface {
         let lvl = getLevel()!
         
         // The actual computation
-        return (i / lvl.Width, i % lvl.Height)
+        return (i / lvl.Width, i % lvl.Width)
     }
     
     private func getLevel() -> DataLevel? {

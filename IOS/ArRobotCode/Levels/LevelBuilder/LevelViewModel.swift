@@ -62,11 +62,14 @@ class LevelViewModel{
     
     public func setHeight(newHeight: String) {
         do {
-            // To do: make it safe
-            try! self.realm.write {
-                try self.level.value().Height = Int(newHeight)!
+            if try self.level.value().Height != Int(newHeight) {
+                try! self.realm.write {
+                    try self.level.value().Height = Int(newHeight)!
+                    self.reAssignTiles()
+                }
+                
+                self.level.onNext(try self.level.value())
             }
-            self.level.onNext(try self.level.value())
         } catch {
             
         }
@@ -75,15 +78,32 @@ class LevelViewModel{
     
     public func setWidth(newWidth: String) {
         do {
-            // To do: make it safe
-            try! self.realm.write {
-                try self.level.value().Width = Int(newWidth)!
+            if try self.level.value().Width != Int(newWidth) {
+                try! self.realm.write {
+                    try self.level.value().Width = Int(newWidth)!
+                    self.reAssignTiles()
+                }
+                self.level.onNext(try self.level.value())
             }
-            self.level.onNext(try self.level.value())
         } catch {
             
         }
     }
     
-    
+    private func reAssignTiles() {
+        do {
+            // Generate a new array of tiles
+            var tiles: List<DataTile> = List<DataTile>()
+            for i in 0..<(try self.level.value().Width * self.level.value().Height) {
+                var newTile = DataTile()
+                newTile.type = TypeOfTile.Free.rawValue
+                tiles.append(newTile)
+            }
+            
+            try self.level.value().Tiles = tiles
+            self.level.onNext(try self.level.value())
+        } catch {
+            
+        }
+    }
 }
