@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 import PopupDialog
+import RxGesture
 
 class GameUISplitViewController: UISplitViewController {
     public var levelsRepository: LevelsRepository!
@@ -104,11 +105,32 @@ class GameUISplitViewController: UISplitViewController {
                 }
             })
             .disposed(by: self.disposeBag)
+        
+        // Back button click
+        self.instructionsVC.backButton.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.navigateToLevelsInterface()
+            })
+            .disposed(by: self.disposeBag)
     }
     
     public func setLevelData(levelsVC: UIViewController, repo: LevelsRepository, at: Int) {
         self.levelsVC = levelsVC
         self.levelsRepository = repo
         self.crtLevelAt = at
+    }
+    
+    func navigateToLevelsInterface() {
+        // Get the storyboard
+        let gameStoryboard = UIStoryboard(name: "Levels", bundle: Bundle.main)
+        
+        // Instantiate the VC
+        guard let levelsSplitViewController = gameStoryboard.instantiateInitialViewController() as? LevelsSplitViewController else {
+            return
+        }
+        
+        // Show
+        present(levelsSplitViewController, animated: true, completion: nil)
     }
 }
