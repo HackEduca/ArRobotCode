@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
       </ContextState>
       <ContextState
@@ -141,6 +144,14 @@
             </PersistentString>
             <PersistentString
                value = "viewControllers.second">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelsRepository.syncAddedDataToServer(a:):LevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ent.code">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

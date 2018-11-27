@@ -18,34 +18,56 @@ enum TypeOfTile: Int, Codable {
 }
 
 class DataTile: Object, Codable {
-    @objc dynamic var type: Int = 0
+    @objc dynamic var `Type`: Int = 0
     
     func swap() {
-        if type == TypeOfTile.Free.rawValue {
-            type = TypeOfTile.Used.rawValue
-            return
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                if Type == TypeOfTile.Free.rawValue {
+                    Type = TypeOfTile.Used.rawValue
+                    return
+                }
+                
+                if Type == TypeOfTile.Used.rawValue {
+                    Type = TypeOfTile.Free.rawValue
+                    return
+                }
+                
+                if Type == TypeOfTile.Start.rawValue {
+                    Type = TypeOfTile.Finish.rawValue
+                    return
+                }
+                
+                Type = TypeOfTile.Free.rawValue
+            }
+        } catch {
+            
         }
         
-        if type == TypeOfTile.Used.rawValue {
-            type = TypeOfTile.Free.rawValue
-            return
-        }
-        
-        if type == TypeOfTile.Start.rawValue {
-            type = TypeOfTile.Finish.rawValue
-            return
-        }
-        
-        type = TypeOfTile.Free.rawValue
         return
     }
     
     func setToStart() {
-        type = TypeOfTile.Start.rawValue
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                Type = TypeOfTile.Start.rawValue
+            }
+        } catch {
+            
+        }
     }
     
     func setToFinish() {
-        type = TypeOfTile.Finish.rawValue
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                Type = TypeOfTile.Finish.rawValue
+            }
+        } catch {
+            
+        }
     }
     
 }

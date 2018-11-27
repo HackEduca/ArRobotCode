@@ -25,6 +25,39 @@ class DataLevel: Object, Codable {
         case Height
         case Tiles
     }
+    
+    public func setName(newName: String) {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                self.Name = newName
+            }
+        } catch {
+            
+        }
+    }
+    
+    public func setWidth(newWidth: Int) {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                self.Width = newWidth
+            }
+        } catch {
+            
+        }
+    }
+    
+    public func setHeight(newHeight: Int) {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                self.Height = newHeight
+            }
+        } catch {
+            
+        }
+    }
 }
 
 extension List : Decodable where Element : Decodable {

@@ -118,7 +118,7 @@ struct GameScene {
         var index = 0
         for i in 0...N - 1 {
             for j in 0...M - 1 {
-                if level.Tiles[index].type == TypeOfTile.Start.rawValue {
+                if level.Tiles[index].Type == TypeOfTile.Start.rawValue {
                     pos!.x -= TILE_SIZE * Float(j)
                     pos!.z -= TILE_SIZE * Float(i)
                 }
@@ -139,7 +139,7 @@ struct GameScene {
                 newTile.isHidden = false
                 
                 // Set color && hidden state
-                switch level.Tiles[index].type {
+                switch level.Tiles[index].Type {
                     case TypeOfTile.Start.rawValue:
                         newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
                     

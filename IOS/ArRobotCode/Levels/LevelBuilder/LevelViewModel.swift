@@ -12,10 +12,9 @@ import RxCocoa
 import RealmSwift
 class LevelViewModel{
     private var levelsRepository: LevelsRepository;
-    private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
     private var levelAt: Int = -1;
-    let realm = try! Realm()
     
+    private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
     public var levelObserver: Observable<DataLevel> {
         return self.level.asObservable()
     }
@@ -28,75 +27,49 @@ class LevelViewModel{
     }
     
     public func swapTile(at: Int) {
-        do {
-            try! self.realm.write {
-                 try self.level.value().Tiles[at].swap()
-            }
-            self.level.onNext(try self.level.value())
-        } catch {
-        
-        }
+        self.levelsRepository.get(at: self.levelAt).Tiles[at].swap()
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
     }
     
     public func setToStartTile(at: Int) {
-        do {
-            try! self.realm.write {
-                try self.level.value().Tiles[at].setToStart()
-            }
-            self.level.onNext(try self.level.value())
-        } catch {
-        }
+        self.levelsRepository.get(at: self.levelAt).Tiles[at].setToStart()
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
     }
     
     public func setName(newName: String) {
-        do {
-            try! self.realm.write {
-                try self.level.value().Name = newName
-            }
-            self.level.onNext(try self.level.value())
-            self.levelsRepository.update(at: self.levelAt, newDataLevel: try self.level.value())
-        } catch {
-            
+        if newName == "" {
+            return;
         }
+        
+        self.levelsRepository.get(at: self.levelAt).setName(newName: newName)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
     }
     
     public func setHeight(newHeight: String) {
-        do {
-            if try self.level.value().Height != Int(newHeight) {
-                try! self.realm.write {
-                    try self.level.value().Height = Int(newHeight)!
-                    self.reAssignTiles()
-                }
-                
-                self.level.onNext(try self.level.value())
-            }
-        } catch {
-            
+        if self.levelsRepository.get(at: self.levelAt).Height == Int(newHeight) {
+            return
         }
+        
+        self.levelsRepository.get(at: self.levelAt).setHeight(newHeight: Int(newHeight)!)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
     }
     
-    
     public func setWidth(newWidth: String) {
-        do {
-            if try self.level.value().Width != Int(newWidth) {
-                try! self.realm.write {
-                    try self.level.value().Width = Int(newWidth)!
-                    self.reAssignTiles()
-                }
-                self.level.onNext(try self.level.value())
-            }
-        } catch {
-            
+        if self.levelsRepository.get(at: self.levelAt).Width == Int(newWidth) {
+            return
         }
+        
+        self.levelsRepository.get(at: self.levelAt).setWidth(newWidth: Int(newWidth)!)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
     }
     
     private func reAssignTiles() {
         do {
             // Generate a new array of tiles
-            var tiles: List<DataTile> = List<DataTile>()
-            for i in 0..<(try self.level.value().Width * self.level.value().Height) {
-                var newTile = DataTile()
-                newTile.type = TypeOfTile.Free.rawValue
+            let tiles: List<DataTile> = List<DataTile>()
+            for _ in 0..<(try self.level.value().Width * self.level.value().Height) {
+                let newTile = DataTile()
+                newTile.Type = TypeOfTile.Free.rawValue
                 tiles.append(newTile)
             }
             

@@ -41,7 +41,7 @@ class EngineAR: EngineInterface {
 
         let level = getLevel()!
         for i in 0...level.Tiles.count - 1 {
-            if level.Tiles[i].type == TypeOfTile.Start.rawValue {
+            if level.Tiles[i].Type == TypeOfTile.Start.rawValue {
                 (self.startPosition.x, self.startPosition.y) = vectorCoordinatesToMatrix(i: i)
                 self.crtPosition = self.startPosition
                 break
@@ -134,8 +134,8 @@ class EngineAR: EngineInterface {
         
         // If wrong tile
         var pos = matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        var type = lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].type
-        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].type == TypeOfTile.Free.rawValue {
+        var type = lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type
+        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Free.rawValue {
             self.valid = false
             self.eventsBehaviourSubject.onNext("invalid")
             return true
@@ -147,7 +147,7 @@ class EngineAR: EngineInterface {
     private func checkIfDone() -> Bool {
         // If final tile
         let lvl = getLevel()!
-        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].type == TypeOfTile.Finish.rawValue {
+        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Finish.rawValue {
             self.done = true
             self.eventsBehaviourSubject.onNext("done")
             return true
