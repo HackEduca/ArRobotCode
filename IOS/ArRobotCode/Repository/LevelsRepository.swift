@@ -166,33 +166,51 @@ class LevelsRepository: Repository {
     }
     
     private func syncAddedDataToServer() {
-        Observable<Int>.interval(5.0, scheduler: MainScheduler.instance).subscribe({ ev in
+        let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+        Observable<Int>
+            .interval(5.0, scheduler: concurrentScheduler)
+            .subscribe({ ev in
+                
             // Loop through all unsynced levels and try to add them
-            self.realm.objects(UnsyncedAddedLevel.self).forEach { (a) in
-                
-                let jsonEncoder = JSONEncoder()
-                var json: String = ""
                 do {
-                    let jsonData = try jsonEncoder.encode(a.level)
-                    json = String(data: jsonData, encoding: String.Encoding.utf8)!
-                } catch {
-                    print("Enconding object to json failed")
-                    return
-                }
-                
-                // Send the post request
-                Alamofire.request("https://domino.serveo.net/levels?", method: .post, parameters: [:], encoding: json, headers: [:])
-                    .responseJSON { res in
-                        if(res.error == nil) {
-                            try! self.realm.write {
-                                // Delete the level from unsynced added level q
-                                print(a.name, " deleted from unsynced added data queue")
-                                self.realm.delete(a)
-                            }
+                    let realm = try Realm()
+                    realm.objects(UnsyncedAddedLevel.self).forEach { (a) in
+                        let levelThreadSafeRef = ThreadSafeReference(to: a)
+                        
+                        let jsonEncoder = JSONEncoder()
+                        var json: String = ""
+                        do {
+                            let jsonData = try jsonEncoder.encode(a.level)
+                            json = String(data: jsonData, encoding: String.Encoding.utf8)!
+                        } catch {
+                            print("Enconding object to json failed")
+                            return
                         }
+                        
+                        // Send the post request
+                        Alamofire.request("https://domino.serveo.net/levels?", method: .post, parameters: [:], encoding: json, headers: [:])
+                            .responseJSON { res in
+                                if(res.error == nil) {
+                                    do {
+                                        let almoRealm = try Realm()
+                                        let lvl = almoRealm.resolve(levelThreadSafeRef)
+                                        try! almoRealm.write {
+                                            // Delete the level from unsynced added level
+                                            print(lvl!.name, " deleted from unsynced added data queue")
+                                            almoRealm.delete(lvl!)
+                                        }
+                                    } catch {
+                                        
+                                    }
+                                }
+                        }
+                    }
                 }
-            }
-        }).disposed(by: self.disposeBag)
+                catch {
+                    
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
     
     private func syncDeletedDataToServer(at: Int) {
