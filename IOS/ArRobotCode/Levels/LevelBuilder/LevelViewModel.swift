@@ -27,13 +27,16 @@ class LevelViewModel{
     }
     
     public func swapTile(at: Int) {
+        var level = self.levelsRepository.get(at: self.levelAt)
         self.levelsRepository.get(at: self.levelAt).Tiles[at].swap()
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
     
     public func setToStartTile(at: Int) {
         self.levelsRepository.get(at: self.levelAt).Tiles[at].setToStart()
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
     
     public func setName(newName: String) {
@@ -43,6 +46,7 @@ class LevelViewModel{
         
         self.levelsRepository.get(at: self.levelAt).setName(newName: newName)
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
     
     public func setHeight(newHeight: String) {
@@ -52,6 +56,7 @@ class LevelViewModel{
         
         self.levelsRepository.get(at: self.levelAt).setHeight(newHeight: Int(newHeight)!)
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
     
     public func setWidth(newWidth: String) {
@@ -61,6 +66,7 @@ class LevelViewModel{
         
         self.levelsRepository.get(at: self.levelAt).setWidth(newWidth: Int(newWidth)!)
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
     
     private func reAssignTiles() {
@@ -75,6 +81,7 @@ class LevelViewModel{
             
             try self.level.value().Tiles = tiles
             self.level.onNext(try self.level.value())
+            self.levelsRepository.triggerUpdate(at: self.levelAt)
         } catch {
             
         }

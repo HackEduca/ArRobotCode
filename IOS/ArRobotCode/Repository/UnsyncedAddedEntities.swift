@@ -9,8 +9,9 @@
 import Foundation
 import RealmSwift
 
-class UnsyncedAddedLevel: Object {
+class UnsyncedLevel: Object {
     @objc dynamic var name = ""
+    @objc dynamic var operation = ""
     @objc dynamic var level: DataLevel?
     
     
