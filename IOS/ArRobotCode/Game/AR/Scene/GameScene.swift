@@ -9,23 +9,29 @@
 import UIKit
 import Foundation
 import SceneKit
+import ARKit
 
 struct GameScene {
-    let TILE_SIZE: Float = 0.15
+    var TILE_SIZE: Float = 70
     
     var scene: SCNScene?
-    var game: SCNNode?
+    var customRoot: SCNNode?
     var tile: SCNNode?
-    
     var player: SCNNode?
+    
+    var planeAnchor: ARPlaneAnchor? // plane that the scene will stand on
+
     public var playerController: PlayerAR!
     
     init() {
         scene = self.initializeScene()
-        game = self.initializeNode(name: "game")
+        
+        customRoot = self.initializeNode(name: "customRoot")
         tile = self.initializeNode(name: "tile")
         player = self.initializeNode(name: "player")
         self.playerController = PlayerAR(player: self.player!, tileSize: TILE_SIZE)
+        
+        self.customRoot!.scale = SCNVector3(0.001, 0.001, 0.001)
     }
     
     func initializeScene() -> SCNScene? {
@@ -98,8 +104,9 @@ struct GameScene {
         return textNode
     }
     
-    func setGamePosition(pos: SCNVector3) {
-        self.game?.position = pos
+    mutating func setGamePosition(pos: SCNVector3, planeAnchor: ARPlaneAnchor) {
+        self.customRoot?.position = pos
+        self.planeAnchor = planeAnchor
     }
     
     func easeOutElastic(_ t: Float) -> Float {
@@ -108,13 +115,18 @@ struct GameScene {
         return result
     }
     
-    func spawnLevel(level: DataLevel) {
+    mutating func spawnLevel(level: DataLevel) {
+        // Scale ship & tiles
+        var scale = (self.planeAnchor?.extent.x)! / ( TILE_SIZE * Float(level.Width) );
+        self.scene?.rootNode.scale = SCNVector3(0.000000001,0.000000001,0.000000001 )
+
+        
         // Will initialise
         let N = level.Height;
         let M = level.Width;
         
         // Find the start position && center everything from it
-        var pos = game?.position
+        var pos = customRoot?.position
         var index = 0
         for i in 0...N - 1 {
             for j in 0...M - 1 {
@@ -154,7 +166,7 @@ struct GameScene {
                 }
 
                 // Add the tile
-                self.scene?.rootNode.addChildNode(newTile)
+                self.customRoot!.addChildNode(newTile)
                 
                 // Prepare for the next one
                 crtPos?.x += TILE_SIZE
@@ -173,7 +185,5 @@ struct GameScene {
         }
         return clone
     }
-    
-
 }
 

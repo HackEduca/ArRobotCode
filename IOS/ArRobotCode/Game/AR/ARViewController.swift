@@ -30,6 +30,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        sceneView.automaticallyUpdatesLighting = true
         
         // Assign the scene
         if let scene = sceneController.scene {
@@ -132,13 +133,18 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         hitResult.worldCoordinates.y,
                         hitResult.worldCoordinates.z
                     )
+                    
+                    
+                    
+                    print("Plane width: ", plane.planeGeometry.width, ", height: ", plane.planeGeometry.height)
+//                    plane.planeGeometr
     
                     // Create an anchor at that position
                     let anchor = ARAnchor(name: "gameCenter", transform: simd_float4x4(hitResult.modelTransform))
                     sceneView.session.add(anchor: anchor)
                     
                     // Move the player to the touch point
-                    sceneController.setGamePosition(pos: hitResult.worldCoordinates)
+                    sceneController.setGamePosition(pos: hitResult.worldCoordinates, planeAnchor: plane.planeAnchor)
                     
                     // Spwan the level
                     sceneController.spawnLevel(level: self.level!)

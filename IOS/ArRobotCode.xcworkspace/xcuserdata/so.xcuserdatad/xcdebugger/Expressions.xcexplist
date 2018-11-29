@@ -84,6 +84,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in GameScene.initializeNode(name:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
          <PersistentStrings>
             <PersistentString
@@ -126,10 +134,19 @@
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "self.game?.scale">
+            </PersistentString>
+            <PersistentString
+               value = "self.scene?.rootNode.scale">
             </PersistentString>
             <PersistentString
                value = "game">
+            </PersistentString>
+            <PersistentString
+               value = "TILE_SIZE">
+            </PersistentString>
+            <PersistentString
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -157,6 +174,14 @@
       </ContextState>
       <ContextState
          contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GameScene.initializeScene():GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.rootNode.name">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
