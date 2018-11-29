@@ -57,7 +57,16 @@ class EngineAR: EngineInterface {
         return self.done
     }
     
+    func isFinished() -> Bool {
+        return !self.valid || self.done
+    }
+    
     func moveFront() {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         DispatchQueue.main.async {
             self.status.text = "Moving in front"
         }
@@ -74,6 +83,11 @@ class EngineAR: EngineInterface {
     }
     
     func moveBack() {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         DispatchQueue.main.async {
             self.status.text = "Moving back"
         }
@@ -90,6 +104,11 @@ class EngineAR: EngineInterface {
     }
     
     func turnLeft() {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         DispatchQueue.main.async {
             self.status.text = "Moving left"
         }
@@ -103,6 +122,11 @@ class EngineAR: EngineInterface {
     }
     
     func turnRight() {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         DispatchQueue.main.async {
             self.status.text = "Moving right"
         }

@@ -98,7 +98,6 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
             .itemSelected
             .subscribe({ pair in
                 self.selectedLevel.value = self.levelsRepository!.get(at: pair.element![1])
-                print("Selected: ", pair.element![1], self.selectedLevel.value)
             })
             .disposed(by: disposeBag)
         
@@ -109,13 +108,6 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
             self.levelsTableView.dataSource!.tableView!(self.levelsTableView, commit: .delete, forRowAt: indexPath)
             return
         }
-        
-        
-//         let updateButton = UITableViewRowAction(style: .default, title: "Update") { (action, indexPath) in
-////            self.tableView.dataSource?.tableView!(self.tableView, commit: .editing, forRowAt: indexPath)
-//            return
-//         }
-        
         return [deleteButton]
     }
     
