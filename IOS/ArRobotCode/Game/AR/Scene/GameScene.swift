@@ -17,7 +17,9 @@ struct GameScene {
     var scene: SCNScene?
     var customRoot: SCNNode?
     var tile: SCNNode?
+    
     var player: SCNNode?
+    var playerRoot: SCNNode?
     
     var planeAnchor: ARPlaneAnchor? // plane that the scene will stand on
 
@@ -29,6 +31,7 @@ struct GameScene {
         customRoot = self.initializeNode(name: "customRoot")
         tile = self.initializeNode(name: "tile")
         player = self.initializeNode(name: "player")
+        playerRoot = self.initializeNode(name: "playerRoot")
         self.playerController = PlayerAR(player: self.player!, tileSize: TILE_SIZE)
         
         self.customRoot!.scale = SCNVector3(0.001, 0.001, 0.001)
@@ -117,31 +120,22 @@ struct GameScene {
     
     mutating func spawnLevel(level: DataLevel) {
         // Scale ship & tiles
-        var scale = (self.planeAnchor?.extent.x)! / ( TILE_SIZE * Float(level.Width) );
-        self.scene?.rootNode.scale = SCNVector3(0.000000001,0.000000001,0.000000001 )
-
+        let scaleX = ((self.planeAnchor?.extent.x)! * 0.97) / ( TILE_SIZE * Float(level.Width) );
+        let scaleZ = ((self.planeAnchor?.extent.z)! * 0.97) / ( TILE_SIZE * Float(level.Height) );
+        self.customRoot?.scale = SCNVector3(min(scaleX, scaleZ), min(scaleX, scaleZ), min(scaleX, scaleZ))
         
         // Will initialise
         let N = level.Height;
         let M = level.Width;
         
-        // Find the start position && center everything from it
+        // Find the start position
         var pos = customRoot?.position
-        var index = 0
-        for i in 0...N - 1 {
-            for j in 0...M - 1 {
-                if level.Tiles[index].Type == TypeOfTile.Start.rawValue {
-                    pos!.x -= TILE_SIZE * Float(j)
-                    pos!.z -= TILE_SIZE * Float(i)
-                }
-                
-                index += 1
-            }
-        }
+        pos?.x -= TILE_SIZE * Float(M / 2)
+        pos?.z -= TILE_SIZE * Float(N / 2)
         var crtPos = pos
         
         // Generate all the tiles
-        index = 0
+        var index = 0
         for _ in 1...N {
             for _ in 1...M {
                 // Create a new tile
@@ -153,6 +147,8 @@ struct GameScene {
                 // Set color && hidden state
                 switch level.Tiles[index].Type {
                     case TypeOfTile.Start.rawValue:
+                        playerRoot?.position.x = (crtPos?.x)!
+                        playerRoot?.position.z = (crtPos?.z)!
                         newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
                     
                     case TypeOfTile.Finish.rawValue:
