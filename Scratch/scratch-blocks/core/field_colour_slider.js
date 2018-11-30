@@ -171,7 +171,7 @@ Blockly.FieldColourSlider.prototype.updateDom_ = function() {
     this.setGradient_(this.brightnessSlider_.getElement(), 'brightness');
 
     // Update the readouts
-    this.hueReadout_.textContent = Math.floor(100 * this.hue_ / 360).toFixed(0);
+    this.hueReadout_.textContent = Math.floor(this.hue_).toFixed(0);
     this.saturationReadout_.textContent = Math.floor(100 * this.saturation_).toFixed(0);
     this.brightnessReadout_.textContent = Math.floor(100 * this.brightness_ / 255).toFixed(0);
   }
@@ -244,7 +244,30 @@ Blockly.FieldColourSlider.prototype.sliderCallbackFactory_ = function(channel) {
         hsv[2] = thisField.brightness_ = channelValue;
         break;
     }
-    var colour = goog.color.hsvToHex(hsv[0], hsv[1], hsv[2]);
+
+    var colour;
+    switch( Math.floor(hsv[0]) ){
+      case 1:
+      colour = "#ff0000";
+      break
+      case 2:
+      colour = "#ffff1a";
+      break
+      case 3:
+      colour = "#40bf80";
+      break
+      case 4:
+      colour = "#3333ff";
+      break
+      case 5:
+      colour = "#8c1aff";
+      default:
+      colour = "#ff0000";
+      break
+    }
+    
+    // var colour2 = goog.color.hsvToHex(hsv[0], hsv[1], hsv[2]);
+    // console.log(colour);
     if (thisField.sourceBlock_) {
       // Call any validation function, and allow it to override.
       colour = thisField.callValidator(colour);
@@ -283,7 +306,7 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   // Init color component values that are used while the editor is open
   // in order to keep the slider values stable.
   var hsv = goog.color.hexToHsv(this.getValue());
-  this.hue_ = hsv[0];
+  this.hue_ = 1;
   this.saturation_ = hsv[1];
   this.brightness_ = hsv[2];
 
@@ -291,10 +314,10 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   div.appendChild(hueElements[0]);
   this.hueReadout_ = hueElements[1];
   this.hueSlider_ = new goog.ui.Slider();
-  this.hueSlider_.setUnitIncrement(72);
-  this.hueSlider_.setStep(72);
-  this.hueSlider_.setMinimum(10);
-  this.hueSlider_.setMaximum(360);
+  this.hueSlider_.setUnitIncrement(1);
+  this.hueSlider_.setStep(1);
+  this.hueSlider_.setMinimum(1);
+  this.hueSlider_.setMaximum(5);
   this.hueSlider_.setMoveToPointEnabled(true);
   this.hueSlider_.render(div);
 

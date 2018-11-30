@@ -172,9 +172,9 @@ class Scratch3SensingBlocks {
     }
 
     movestepsIf (args, util) {
+        console.log("moveIf called: ", color);
+        webkit.messageHandlers.callback.postMessage("moveIf " + args.STEPS);
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("movestepsIf called: ", color);
-        alert("movestepsIf called");
     }
 
     touchingColor (args, util) {
