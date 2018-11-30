@@ -167,8 +167,6 @@ Blockly.FieldColourSlider.prototype.updateDom_ = function() {
   if (this.hueSlider_) {
     // Update the slider backgrounds
     this.setGradient_(this.hueSlider_.getElement(), 'hue');
-    this.setGradient_(this.saturationSlider_.getElement(), 'saturation');
-    this.setGradient_(this.brightnessSlider_.getElement(), 'brightness');
 
     // Update the readouts
     this.hueReadout_.textContent = Math.floor(this.hue_).toFixed(0);
@@ -184,8 +182,6 @@ Blockly.FieldColourSlider.prototype.updateDom_ = function() {
 Blockly.FieldColourSlider.prototype.updateSliderHandles_ = function() {
   if (this.hueSlider_) {
     this.hueSlider_.setValue(this.hue_);
-    this.saturationSlider_.setValue(this.saturation_);
-    this.brightnessSlider_.setValue(this.brightness_);
   }
 };
 
@@ -222,6 +218,7 @@ Blockly.FieldColourSlider.prototype.createLabelDom_ = function(labelText) {
   return [labelContainer, readout];
 };
 
+
 /**
  * Factory for creating the different slider callbacks
  * @param {string} channel - One of "hue", "saturation" or "brightness"
@@ -246,21 +243,23 @@ Blockly.FieldColourSlider.prototype.sliderCallbackFactory_ = function(channel) {
     }
 
     var colour;
+    console.log(hsv[0]);
     switch( Math.floor(hsv[0]) ){
       case 1:
       colour = "#ff0000";
-      break
+      break;
       case 2:
       colour = "#ffff1a";
-      break
+      break;
       case 3:
       colour = "#40bf80";
-      break
+      break;
       case 4:
       colour = "#3333ff";
-      break
+      break;
       case 5:
       colour = "#8c1aff";
+      break;
       default:
       colour = "#ff0000";
       break
@@ -302,6 +301,7 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   Blockly.DropDownDiv.hideWithoutAnimation();
   Blockly.DropDownDiv.clearContent();
   var div = Blockly.DropDownDiv.getContentDiv();
+  var divMock = Blockly.DropDownDiv.getContentDiv();
 
   // Init color component values that are used while the editor is open
   // in order to keep the slider values stable.
@@ -324,33 +324,14 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   var saturationElements = this.createLabelDom_(Blockly.Msg.COLOUR_SATURATION_LABEL);
   //div.appendChild(saturationElements[0]);
   this.saturationReadout_ = saturationElements[1];
-  this.saturationSlider_ = new goog.ui.Slider();
-  this.saturationSlider_.setMoveToPointEnabled(true);
-  this.saturationSlider_.setUnitIncrement(0.01);
-  this.saturationSlider_.setStep(0.001);
-  this.saturationSlider_.setMinimum(0);
-  this.saturationSlider_.setMaximum(1.0);
-  this.saturationSlider_.render(div);
 
   var brightnessElements = this.createLabelDom_(Blockly.Msg.COLOUR_BRIGHTNESS_LABEL);
   // div.appendChild(brightnessElements[0]);
   this.brightnessReadout_ = brightnessElements[1];
-  this.brightnessSlider_ = new goog.ui.Slider();
-  this.brightnessSlider_.setUnitIncrement(2);
-  this.brightnessSlider_.setMinimum(0);
-  this.brightnessSlider_.setMaximum(255);
-  this.brightnessSlider_.setMoveToPointEnabled(true);
-  this.brightnessSlider_.render(div);
 
   Blockly.FieldColourSlider.hueChangeEventKey_ = goog.events.listen(this.hueSlider_,
       goog.ui.Component.EventType.CHANGE,
       this.sliderCallbackFactory_('hue'));
-  Blockly.FieldColourSlider.saturationChangeEventKey_ = goog.events.listen(this.saturationSlider_,
-      goog.ui.Component.EventType.CHANGE,
-      this.sliderCallbackFactory_('saturation'));
-  Blockly.FieldColourSlider.brightnessChangeEventKey_ = goog.events.listen(this.brightnessSlider_,
-      goog.ui.Component.EventType.CHANGE,
-      this.sliderCallbackFactory_('brightness'));
 
   if (Blockly.FieldColourSlider.activateEyedropper_) {
     var button = document.createElement('button');
