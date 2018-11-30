@@ -46,6 +46,7 @@ goog.require('goog.ui.Slider');
  * @constructor
  */
 Blockly.FieldColourSlider = function(colour, opt_validator) {
+  colour = "#ff0000";
   Blockly.FieldColourSlider.superClass_.constructor.call(this, colour, opt_validator);
   this.addArgType('colour');
 };
