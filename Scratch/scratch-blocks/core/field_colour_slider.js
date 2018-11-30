@@ -125,7 +125,7 @@ Blockly.FieldColourSlider.prototype.setValue = function(colour) {
  */
 Blockly.FieldColourSlider.prototype.createColourStops_ = function(channel) {
   var stops = [];
-  for(var n = 0; n <= 360; n += 20) {
+  for(var n = 0; n <= 360; n += 72) {
     switch (channel) {
       case 'hue':
         stops.push(goog.color.hsvToHex(n, this.saturation_, this.brightness_));
@@ -150,17 +150,13 @@ Blockly.FieldColourSlider.prototype.createColourStops_ = function(channel) {
  * @private
  */
 Blockly.FieldColourSlider.prototype.setGradient_ = function(node, channel) {
-  var gradient = this.createColourStops_(channel).join(',');
-  goog.style.setStyle(node, 'background',
-      '-moz-linear-gradient(left, ' + gradient + ')');
-  goog.style.setStyle(node, 'background',
-      '-webkit-linear-gradient(left, ' + gradient + ')');
-  goog.style.setStyle(node, 'background',
-      '-o-linear-gradient(left, ' + gradient + ')');
-  goog.style.setStyle(node, 'background',
-      '-ms-linear-gradient(left, ' + gradient + ')');
-  goog.style.setStyle(node, 'background',
-      'linear-gradient(left, ' + gradient + ')');
+  // var gradient = this.createColourStops_(channel).join(',');
+  var gradient = "left, red 20%, yellow 20%, yellow 40%, green 40%, green 60%, blue 60%, blue 80%, purple 80%"
+  goog.style.setStyle(node, 'background', '-moz-linear-gradient(' + gradient + ")");
+  goog.style.setStyle(node, 'background', '-webkit-linear-gradient(' + gradient + ')');
+  goog.style.setStyle(node, 'background', '-o-linear-gradient(' + gradient + ')');
+  goog.style.setStyle(node, 'background', '-ms-linear-gradient(' + gradient + ')');
+  goog.style.setStyle(node, 'background', 'linear-gradient(' + gradient + ')');
 };
 
 /**
@@ -295,15 +291,15 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   div.appendChild(hueElements[0]);
   this.hueReadout_ = hueElements[1];
   this.hueSlider_ = new goog.ui.Slider();
-  this.hueSlider_.setUnitIncrement(5);
-  this.hueSlider_.setMinimum(0);
+  this.hueSlider_.setUnitIncrement(72);
+  this.hueSlider_.setStep(72);
+  this.hueSlider_.setMinimum(10);
   this.hueSlider_.setMaximum(360);
   this.hueSlider_.setMoveToPointEnabled(true);
   this.hueSlider_.render(div);
 
-  var saturationElements =
-      this.createLabelDom_(Blockly.Msg.COLOUR_SATURATION_LABEL);
-  div.appendChild(saturationElements[0]);
+  var saturationElements = this.createLabelDom_(Blockly.Msg.COLOUR_SATURATION_LABEL);
+  //div.appendChild(saturationElements[0]);
   this.saturationReadout_ = saturationElements[1];
   this.saturationSlider_ = new goog.ui.Slider();
   this.saturationSlider_.setMoveToPointEnabled(true);
@@ -313,9 +309,8 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
   this.saturationSlider_.setMaximum(1.0);
   this.saturationSlider_.render(div);
 
-  var brightnessElements =
-      this.createLabelDom_(Blockly.Msg.COLOUR_BRIGHTNESS_LABEL);
-  div.appendChild(brightnessElements[0]);
+  var brightnessElements = this.createLabelDom_(Blockly.Msg.COLOUR_BRIGHTNESS_LABEL);
+  // div.appendChild(brightnessElements[0]);
   this.brightnessReadout_ = brightnessElements[1];
   this.brightnessSlider_ = new goog.ui.Slider();
   this.brightnessSlider_.setUnitIncrement(2);

@@ -317,6 +317,11 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '<shadow type="sensing_touchingobjectmenu"></shadow>' +
       '</value>' +
     '</block>' +
+    '<block type="sensing_movesteps_if" id="sensing_movesteps_if">' +
+      '<value name="COLOR">' +
+        '<shadow type="colour_picker"></shadow>' +
+      '</value>' +
+    '</block>' +
     '<block type="sensing_touchingcolor" id="sensing_touchingcolor">' +
       '<value name="COLOR">' +
         '<shadow type="colour_picker"></shadow>' +

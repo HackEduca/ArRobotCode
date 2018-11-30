@@ -53,6 +53,7 @@ class Scratch3SensingBlocks {
     getPrimitives () {
         return {
             sensing_touchingobject: this.touchingObject,
+            sensing_movesteps_if: this.movestepsIf,
             sensing_touchingcolor: this.touchingColor,
             sensing_coloristouchingcolor: this.colorTouchingColor,
             sensing_distanceto: this.distanceTo,
@@ -168,6 +169,12 @@ class Scratch3SensingBlocks {
 
     touchingObject (args, util) {
         return util.target.isTouchingObject(args.TOUCHINGOBJECTMENU);
+    }
+
+    movestepsIf (args, util) {
+        const color = Cast.toRgbColorList(args.COLOR);
+        console.log("movestepsIf called: ", color);
+        alert("movestepsIf called");
     }
 
     touchingColor (args, util) {

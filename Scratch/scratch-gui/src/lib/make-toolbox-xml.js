@@ -366,6 +366,16 @@ const sensing = function (isStage) {
                 </value>
             </block>
             ${blockSeparator}
+            <block type="sensing_movesteps_if">
+                <value name="COLOR">
+                    <shadow type="colour_picker"/>
+                </value>
+            </block>
+            <block type="sensing_touchingcolor">
+                <value name="COLOR">
+                    <shadow type="colour_picker"/>
+                </value>
+            </block>
         `}
     </category>
     `;

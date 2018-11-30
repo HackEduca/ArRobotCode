@@ -996,6 +996,16 @@ const specMap = {
             }
         ]
     },
+    'movestepsIf:': {
+        opcode: 'sensing_touchingcolor',
+        argMap: [
+            {
+                type: 'input',
+                inputOp: 'colour_picker',
+                inputName: 'COLOR'
+            }
+        ]
+    },
     'touchingColor:': {
         opcode: 'sensing_touchingcolor',
         argMap: [

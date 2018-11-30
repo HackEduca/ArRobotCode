@@ -71,6 +71,33 @@ Blockly.Blocks['sensing_touchingobjectmenu'] = {
   }
 };
 
+
+Blockly.Blocks['sensing_movesteps_if'] = {
+  /**
+   * Block to Report if its touching a certain Color.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_MOVESTEPS_IF,
+      "args0": [
+        {
+          "type": "field_image",
+          "src": Blockly.mainWorkspace.options.pathToMedia + "move-front.svg",
+          "width": 24,
+          "height": 24
+        },
+        {
+          "type": "input_value",
+          "name": "COLOR"
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "shape_statement"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_touchingcolor'] = {
   /**
    * Block to Report if its touching a certain Color.
@@ -86,7 +113,7 @@ Blockly.Blocks['sensing_touchingcolor'] = {
         }
       ],
       "category": Blockly.Categories.sensing,
-      "extensions": ["colours_sensing", "output_boolean"]
+      "extensions": ["colours_sensing", "shape_statement"]
     });
   }
 };

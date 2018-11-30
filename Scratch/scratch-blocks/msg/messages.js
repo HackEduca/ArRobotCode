@@ -224,6 +224,7 @@ Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
 Blockly.Msg.SENSING_TOUCHINGOBJECT = 'touching %1?';
 Blockly.Msg.SENSING_TOUCHINGOBJECT_POINTER = 'mouse-pointer';
 Blockly.Msg.SENSING_TOUCHINGOBJECT_EDGE = 'edge';
+Blockly.Msg.SENSING_MOVESTEPS_IF = 'move %1 if %2';
 Blockly.Msg.SENSING_TOUCHINGCOLOR = 'touching color %1?';
 Blockly.Msg.SENSING_COLORISTOUCHINGCOLOR = 'color %1 is touching %2?';
 Blockly.Msg.SENSING_DISTANCETO = 'distance to %1';
