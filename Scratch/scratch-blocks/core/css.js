@@ -968,6 +968,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchEyedropper {',
+    'visibility: None',
     'background: none;',
     'outline: none;',
     'border: none;',

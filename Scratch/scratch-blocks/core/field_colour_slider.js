@@ -333,17 +333,17 @@ Blockly.FieldColourSlider.prototype.showEditor_ = function() {
       goog.ui.Component.EventType.CHANGE,
       this.sliderCallbackFactory_('hue'));
 
-  if (Blockly.FieldColourSlider.activateEyedropper_) {
-    var button = document.createElement('button');
-    button.setAttribute('class', 'scratchEyedropper');
-    var image = document.createElement('img');
-    image.src = Blockly.mainWorkspace.options.pathToMedia + Blockly.FieldColourSlider.EYEDROPPER_PATH;
-    button.appendChild(image);
-    div.appendChild(button);
-    Blockly.FieldColourSlider.eyedropperEventData_ =
-        Blockly.bindEventWithChecks_(button, 'mousedown', this,
-            this.activateEyedropperInternal_);
-  }
+  // if (Blockly.FieldColourSlider.activateEyedropper_) {
+  //   var button = document.createElement('button');
+  //   button.setAttribute('class', 'scratchEyedropper');
+  //   var image = document.createElement('img');
+  //   image.src = Blockly.mainWorkspace.options.pathToMedia + Blockly.FieldColourSlider.EYEDROPPER_PATH;
+  //   button.appendChild(image);
+  //   div.appendChild(button);
+  //   Blockly.FieldColourSlider.eyedropperEventData_ =
+  //       Blockly.bindEventWithChecks_(button, 'mousedown', this,
+  //           this.activateEyedropperInternal_);
+  // }
 
   Blockly.DropDownDiv.setColour('#ffffff', '#dddddd');
   Blockly.DropDownDiv.setCategory(this.sourceBlock_.parentBlock_.getCategory());
