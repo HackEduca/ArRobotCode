@@ -350,32 +350,35 @@ const control = function (isStage) {
     // `;
 };
 
+Blockly.Msg["SENSING_MOVESTEPS_BACK_IF"] = "move %1 if %2";
+Blockly.Msg["SENSING_TURNLEFT_IF"] = "turn %1 if %2";
+Blockly.Msg["SENSING_TURNRIGHT_IF"] = "turn %1 if %2";
+
 const sensing = function (isStage) {
     const name = ScratchBlocks.ScratchMsgs.translate('SENSING_ASK_TEXT', 'What\'s your name?');
     return `
     <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">
         ${isStage ? '' : `
-            <block type="sensing_touchingobject">
-                <value name="TOUCHINGOBJECTMENU">
-                    <shadow type="sensing_touchingobjectmenu"/>
-                </value>
-            </block>
-            <block type="sensing_distanceto">
-                <value name="DISTANCETOMENU">
-                    <shadow type="sensing_distancetomenu"/>
-                </value>
-            </block>
-            ${blockSeparator}
             <block type="sensing_movesteps_if">
                 <value name="COLOR">
                     <shadow type="colour_picker"/>
                 </value>
             </block>
-            <block type="sensing_touchingcolor">
+            <block type="sensing_movesteps_back_if">
                 <value name="COLOR">
                     <shadow type="colour_picker"/>
                 </value>
             </block>
+            <block type="sensing_turnleft_if">
+                <value name="COLOR">
+                    <shadow type="colour_picker"/>
+                </value>
+            </block>
+            <block type="sensing_turnright_if">
+            <value name="COLOR">
+                <shadow type="colour_picker"/>
+            </value>
+        </block>
         `}
     </category>
     `;
@@ -810,12 +813,12 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML) {
 
     const everything = [
         xmlOpen,
+        events(isStage, targetId), gap,
         motion(isStage, targetId), gap,
+        sensing(isStage, targetId), gap,
         looks(isStage, targetId), gap,
         sound(isStage, targetId), gap,
-        events(isStage, targetId), gap,
         control(isStage, targetId), gap,
-        sensing(isStage, targetId), gap,
         operators(isStage, targetId), gap,
         variables(isStage, targetId), gap,
         myBlocks(isStage, targetId)

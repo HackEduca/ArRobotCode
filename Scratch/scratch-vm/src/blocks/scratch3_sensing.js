@@ -54,6 +54,9 @@ class Scratch3SensingBlocks {
         return {
             sensing_touchingobject: this.touchingObject,
             sensing_movesteps_if: this.movestepsIf,
+            sensing_movesteps_back_if: this.movestepsBackIf,
+            sensing_turnleft_if: this.turnleftIf,
+            sensing_turnright_if: this.turnrightIf,
             sensing_touchingcolor: this.touchingColor,
             sensing_coloristouchingcolor: this.colorTouchingColor,
             sensing_distanceto: this.distanceTo,
@@ -172,9 +175,27 @@ class Scratch3SensingBlocks {
     }
 
     movestepsIf (args, util) {
-        console.log("moveIf called: ", color);
-        webkit.messageHandlers.callback.postMessage("moveIf " + args.STEPS);
         const color = Cast.toRgbColorList(args.COLOR);
+        console.log("moveIf called: ", color);
+        webkit.messageHandlers.callback.postMessage("moveIf " + color);
+    }
+
+    movestepsBackIf (args, util) {
+        const color = Cast.toRgbColorList(args.COLOR);
+        console.log("moveBackIf called: ", color);
+        webkit.messageHandlers.callback.postMessage("moveBackIf " + color);
+    }
+
+    turnleftIf (args, util) {
+        const color = Cast.toRgbColorList(args.COLOR);
+        console.log("turnleftIf called: ", color);
+        webkit.messageHandlers.callback.postMessage("turnleftIf " + color);
+    }
+
+    turnrightIf (args, util) {
+        const color = Cast.toRgbColorList(args.COLOR);
+        console.log("turnrightIf called: ", color);
+        webkit.messageHandlers.callback.postMessage("turnrightIf " + color);
     }
 
     touchingColor (args, util) {

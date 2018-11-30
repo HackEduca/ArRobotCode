@@ -322,6 +322,21 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '<shadow type="colour_picker"></shadow>' +
       '</value>' +
     '</block>' +
+    '<block type="sensing_movesteps_back_if" id="sensing_movesteps_back_if">' +
+      '<value name="COLOR">' +
+        '<shadow type="colour_picker"></shadow>' +
+      '</value>' +
+    '</block>' +
+    '<block type="sensing_turnleft_if" id="sensing_turnleft_if">' +
+      '<value name="COLOR">' +
+        '<shadow type="colour_picker"></shadow>' +
+      '</value>' +
+    '</block>' +
+    '<block type="sensing_turnright_if" id="sensing_turnright_if">' +
+      '<value name="COLOR">' +
+        '<shadow type="colour_picker"></shadow>' +
+      '</value>' +
+    '</block>' +
     '<block type="sensing_touchingcolor" id="sensing_touchingcolor">' +
       '<value name="COLOR">' +
         '<shadow type="colour_picker"></shadow>' +
