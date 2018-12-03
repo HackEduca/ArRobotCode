@@ -42,6 +42,7 @@ class DataLevel: Object, Codable {
             let realm = try! Realm()
             try! realm.write {
                 self.Width = newWidth
+                self.reAssignTiles()
             }
         } catch {
             
@@ -53,9 +54,24 @@ class DataLevel: Object, Codable {
             let realm = try! Realm()
             try! realm.write {
                 self.Height = newHeight
+                self.reAssignTiles()
             }
         } catch {
             
+        }
+    }
+    
+    private func reAssignTiles(){
+        let tiles: List<DataTile> = List<DataTile>()
+        for i in 0 ..< self.Tiles.count {
+            self.Tiles[i].Type = TypeOfTile.Free.rawValue
+        }
+        
+        while self.Tiles.count > (self.Width * self.Height) {
+            self.Tiles.removeLast()
+        }
+        while self.Tiles.count < (self.Width * self.Height){
+            self.Tiles.append(DataTile())
         }
     }
 }

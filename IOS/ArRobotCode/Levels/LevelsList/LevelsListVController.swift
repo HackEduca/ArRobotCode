@@ -119,9 +119,9 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
                 // Add Level with name from addLevelTextField
                 let data = DataLevel()
                 data.Name = self.addLevelTextField.text!
-                data.Width = 10
-                data.Height = 10
-                for _ in 0..<100 {
+                data.Width = 5
+                data.Height = 5
+                for _ in 0..<25 {
                     data.Tiles.append(DataTile())
                 }
                 self.viewModel.addItem(item: data)

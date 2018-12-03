@@ -107,6 +107,17 @@ class DataTile: Object, Codable {
         }
     }
     
+    func setToFree() {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                Type = TypeOfTile.Free.rawValue
+            }
+        } catch {
+            
+        }
+    }
+    
     func setToStart() {
         do {
             let realm = try! Realm()

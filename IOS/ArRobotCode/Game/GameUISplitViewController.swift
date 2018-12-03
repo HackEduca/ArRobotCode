@@ -76,6 +76,7 @@ class GameUISplitViewController: UISplitViewController {
                     self.engineAR.turnRight()
                     break
                 default:
+                    print(evSplit)
                     print("Invalid response from WebKit")
                 }
                 sleep(1)

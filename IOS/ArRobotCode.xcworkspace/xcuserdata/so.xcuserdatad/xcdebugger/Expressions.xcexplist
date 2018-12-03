@@ -155,6 +155,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "newTiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
@@ -165,6 +173,14 @@
             </PersistentString>
             <PersistentString
                value = "TypeOfTile.Free.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelViewModel.reAssignTiles():LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tiles.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -200,7 +216,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LevelViewModel.setWidth(newWidth:):LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lvl.tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelsRepository.syncWithDataFromLocal():LevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "el.width">
+            </PersistentString>
+            <PersistentString
+               value = "el.name">
+            </PersistentString>
+            <PersistentString
+               value = "el.tiles.count">
+            </PersistentString>
+            <PersistentString
+               value = "el.height">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "GameScene.initializeScene():GameScene.swift">
@@ -211,10 +252,38 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "levelsRepository">
+            </PersistentString>
+            <PersistentString
+               value = "levelsRepository.entities[0].Tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in GameScene.initializeNode(name:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
                value = "node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataLevel.reAssignTiles():DataLevel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.Tiles.count">
+            </PersistentString>
+            <PersistentString
+               value = "(self.Width * self.Height)">
+            </PersistentString>
+            <PersistentString
+               value = "self.Height">
+            </PersistentString>
+            <PersistentString
+               value = "self.Tiles.count ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
