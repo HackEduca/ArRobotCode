@@ -107,11 +107,9 @@ class LevelBuilderViewController: UIViewController {
             .subscribe(onNext: { gesture in
                 if let indexPath = self.tilesCollectionView?.indexPathForItem(at: gesture.location(in: self.tilesCollectionView)) {
                     if(gesture.direction == .left) {
-                        print("Swiping left")
                         self.viewModel.swipeLeftTile(at: indexPath.row)
                     }
                     if(gesture.direction == .right) {
-                        print("Swiping right")
                         self.viewModel.swipeRightTile(at: indexPath.row)
                     }
                 }

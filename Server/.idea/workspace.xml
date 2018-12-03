@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e921154-24e7-48b6-810c-62d3b1eb9f08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/go18_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" afterDir="false" />
@@ -74,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -113,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/Level.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -434,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/IRepository.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -469,6 +461,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>

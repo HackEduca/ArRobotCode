@@ -66,6 +66,11 @@ class DataTile: Object, Codable {
                     return
                 }
                 
+                if(Type == TypeOfTile.UsedA.rawValue) {
+                    Type = TypeOfTile.Used.rawValue
+                    return
+                }
+                
                 if(Type > TypeOfTile.UsedA.rawValue  && Type <= TypeOfTile.UsedE.rawValue) {
                     Type -= 1
                 }
@@ -85,6 +90,11 @@ class DataTile: Object, Codable {
                 
                 if(Type == TypeOfTile.Used.rawValue) {
                     Type = TypeOfTile.UsedA.rawValue
+                    return
+                }
+                
+                if(Type == TypeOfTile.UsedE.rawValue) {
+                    Type = TypeOfTile.Used.rawValue
                     return
                 }
                 

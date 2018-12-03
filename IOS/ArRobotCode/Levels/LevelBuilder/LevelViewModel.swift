@@ -66,8 +66,7 @@ class LevelViewModel{
         }
         
         self.levelsRepository.get(at: self.levelAt).setHeight(newHeight: Int(newHeight)!)
-        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
-        self.levelsRepository.triggerUpdate(at: self.levelAt)
+        self.reAssignTiles()
     }
     
     public func setWidth(newWidth: String) {
@@ -76,8 +75,7 @@ class LevelViewModel{
         }
         
         self.levelsRepository.get(at: self.levelAt).setWidth(newWidth: Int(newWidth)!)
-        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
-        self.levelsRepository.triggerUpdate(at: self.levelAt)
+        self.reAssignTiles()
     }
     
     private func reAssignTiles() {
