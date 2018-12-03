@@ -134,9 +134,7 @@ class LevelsRepository: Repository {
     }
     
     func triggerUpdate(at: Int) {
-        realm.objects(UnsyncedLevel.self).forEach { (a) in
-           print(a)
-        }
+
         // Edit on server
         try! self.realm.write {
             let ual = UnsyncedLevel()
@@ -202,7 +200,6 @@ class LevelsRepository: Repository {
         obs = self.apiClient.send(apiRequest: rq)
         obs.subscribe { (entries) in
             if let ent = entries.element {
-                print(ent)
                 if ent.code == "200" {
                     // Delete request from local queue
                     print("Synced with data from server: OK")

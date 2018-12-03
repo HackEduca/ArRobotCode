@@ -27,8 +27,19 @@ class LevelViewModel{
     }
     
     public func swapTile(at: Int) {
-        var level = self.levelsRepository.get(at: self.levelAt)
         self.levelsRepository.get(at: self.levelAt).Tiles[at].swap()
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
+    }
+    
+    public func swipeLeftTile(at: Int) {
+        self.levelsRepository.get(at: self.levelAt).Tiles[at].cycleRight()
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
+    }
+    
+    public func swipeRightTile(at: Int) {
+        self.levelsRepository.get(at: self.levelAt).Tiles[at].cycleLeft()
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
         self.levelsRepository.triggerUpdate(at: self.levelAt)
     }

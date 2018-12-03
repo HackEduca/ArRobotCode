@@ -3,10 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Start.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "self.scene?.rootNode.scale">
+            </PersistentString>
+            <PersistentString
+               value = "game">
+            </PersistentString>
+            <PersistentString
+               value = "TILE_SIZE">
+            </PersistentString>
+            <PersistentString
+               value = "self.game?.scale">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "GameScene.spawnLevel():GameScene.swift">
@@ -16,6 +30,58 @@
             </PersistentString>
             <PersistentString
                value = "newTile!.geometry!.materials.first!.diffuse.contents">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelsRepository.syncAddedDataToServer(a:):LevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ent.code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemsPerLineOrColumn">
+            </PersistentString>
+            <PersistentString
+               value = "collectionView.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "CGFloat(itemsPerLineOrColumn)">
+            </PersistentString>
+            <PersistentString
+               value = "collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "splitViewController?.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DataTile.swipeLeft():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Free.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataTile.swap():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -31,10 +97,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
+         contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.presentingViewController">
+            </PersistentString>
+            <PersistentString
                value = "splitViewController?.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataTile.swipeRight():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -56,49 +133,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "itemsPerLineOrColumn">
-            </PersistentString>
-            <PersistentString
-               value = "collectionView.frame.width">
-            </PersistentString>
-            <PersistentString
-               value = "CGFloat(itemsPerLineOrColumn)">
-            </PersistentString>
-            <PersistentString
-               value = "collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "EngineAR.checkIfInvalid():EngineAR.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.matrixCoordinatesToVector(0,1)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in GameScene.initializeNode(name:):GameScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "node.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.presentingViewController">
-            </PersistentString>
-            <PersistentString
-               value = "splitViewController?.viewControllers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -117,6 +155,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.UsedA.rawValue ">
+            </PersistentString>
+            <PersistentString
+               value = "TypeOfTile.UsedE.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "TypeOfTile.Free.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PlayerAR.moveFront():PlayerAR.swift">
          <PersistentStrings>
             <PersistentString
@@ -131,24 +183,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.game?.scale">
-            </PersistentString>
-            <PersistentString
-               value = "self.scene?.rootNode.scale">
-            </PersistentString>
-            <PersistentString
-               value = "game">
-            </PersistentString>
-            <PersistentString
-               value = "TILE_SIZE">
-            </PersistentString>
-            <PersistentString
-               value = "TypeOfTile.Start.rawValue">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
       </ContextState>
       <ContextState
          contextName = "EngineAR.init(level:player:):EngineAR.swift">
@@ -165,15 +200,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LevelsRepository.syncAddedDataToServer(a:):LevelsRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "ent.code">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "GameScene.initializeScene():GameScene.swift">
@@ -182,6 +209,17 @@
                value = "scene.rootNode.name">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in GameScene.initializeNode(name:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

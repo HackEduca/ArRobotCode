@@ -149,16 +149,31 @@ struct GameScene {
                     case TypeOfTile.Start.rawValue:
                         playerRoot?.position.x = (crtPos?.x)!
                         playerRoot?.position.z = (crtPos?.z)!
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.yellow
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "pink")
                     
                     case TypeOfTile.Finish.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.green
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "yellow")
                     
                     case TypeOfTile.Used.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIColor.red
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "green")
+                    
+                    case TypeOfTile.UsedA.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "greenA")
+                    
+                    case TypeOfTile.UsedB.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenB")
+                    
+                    case TypeOfTile.UsedC.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenC")
+                    
+                    case TypeOfTile.UsedD.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenD")
+                    
+                    case TypeOfTile.UsedE.rawValue:
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenE")
                     
                     default:
-                        newTile.isHidden = true
+                            newTile.isHidden = true
                 }
 
                 // Add the tile

@@ -15,6 +15,11 @@ enum TypeOfTile: Int, Codable {
     case Used
     case Start
     case Finish
+    case UsedA
+    case UsedB
+    case UsedC
+    case UsedD
+    case UsedE
 }
 
 class DataTile: Object, Codable {
@@ -46,6 +51,50 @@ class DataTile: Object, Codable {
         }
         
         return
+    }
+    
+    func cycleLeft() {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
+                    return
+                }
+                
+                if(Type == TypeOfTile.Used.rawValue) {
+                    Type = TypeOfTile.UsedE.rawValue
+                    return
+                }
+                
+                if(Type > TypeOfTile.UsedA.rawValue  && Type <= TypeOfTile.UsedE.rawValue) {
+                    Type -= 1
+                }
+            }
+        } catch {
+            
+        }
+    }
+    
+    func cycleRight() {
+        do {
+            let realm = try! Realm()
+            try! realm.write {
+                if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
+                    return
+                }
+                
+                if(Type == TypeOfTile.Used.rawValue) {
+                    Type = TypeOfTile.UsedA.rawValue
+                    return
+                }
+                
+                if(Type >= TypeOfTile.UsedA.rawValue  && Type < TypeOfTile.UsedE.rawValue) {
+                    Type += 1
+                }
+            }
+        } catch {
+            
+        }
     }
     
     func setToStart() {

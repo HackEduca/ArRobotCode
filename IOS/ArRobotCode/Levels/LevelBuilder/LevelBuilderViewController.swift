@@ -44,6 +44,7 @@ class LevelBuilderViewController: UIViewController {
         setupCollectionViewTap()
         setupCollectionViewLongTap()
         setupTextFieldBinding()
+        setupCollectionViewSwipe()
     }
     
     private func setupViewModel() {
@@ -96,6 +97,30 @@ class LevelBuilderViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
     }
+    
+    private func setupCollectionViewSwipe() {
+        self.tilesCollectionView.rx
+            .swipeGesture([.left, .right], configuration: { gestureRecognizer, delegate in
+                delegate.simultaneousRecognitionPolicy = .never
+            })
+            .when(.recognized)
+            .subscribe(onNext: { gesture in
+                if let indexPath = self.tilesCollectionView?.indexPathForItem(at: gesture.location(in: self.tilesCollectionView)) {
+                    if(gesture.direction == .left) {
+                        print("Swiping left")
+                        self.viewModel.swipeLeftTile(at: indexPath.row)
+                    }
+                    if(gesture.direction == .right) {
+                        print("Swiping right")
+                        self.viewModel.swipeRightTile(at: indexPath.row)
+                    }
+                }
+               
+                
+            })
+            .disposed(by: self.disposeBag)
+    }
+
     
     func setupTextFieldBinding() {
         // titleTextField:
