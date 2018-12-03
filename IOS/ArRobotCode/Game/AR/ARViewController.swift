@@ -87,18 +87,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     // Add plane callback
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        print("new plane: ", sceneView.session.currentFrame!.anchors.count)
+        if(findingStartPosition == false) {
+            return;
+        }
+        
         DispatchQueue.main.async {
-            
             if let planeAnchor = anchor as? ARPlaneAnchor {
                 self.addPlane(node: node, anchor: planeAnchor)
                 self.feedbackGenerator.impactOccurred()
                 return
-            }
-            
-            if let anchorName = anchor.name as? String {
-//                node.addChildNode(SCNNode(geometry: <#T##SCNGeometry?#>))
-                print(anchorName)
             }
         }
     }
