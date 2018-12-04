@@ -79,7 +79,7 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
         }
     
         // Publish the responnse from webkit only if the instruction is valid
-        let possibleInstructions = ["run","moveFront", "moveBack", "turnLeft", "turnRight"]
+        let possibleInstructions = ["run","moveFront", "moveFrontIf" ,"moveBack", "moveBackIf","turnLeft", "turnLeftIf", "turnRight","turnRightIf"]
         if possibleInstructions.contains(String(responseSplit[0])) {
             self.instructionsBehaviourSubject.onNext(response)
         }

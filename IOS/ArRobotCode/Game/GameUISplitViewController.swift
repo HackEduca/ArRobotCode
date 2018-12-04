@@ -66,19 +66,33 @@ class GameUISplitViewController: UISplitViewController {
                 case "moveFront":
                     self.engineAR.moveFront()
                     break
+                case "moveFrontIf":
+                    self.engineAR.moveFrontIf(ifTileType: String(evSplit[1]))
+                    break
                 case "moveBack":
                     self.engineAR.moveBack()
+                    break
+                case "moveBackIf":
+                    self.engineAR.moveBackIf(ifTileType: String(evSplit[1]))
                     break
                 case "turnLeft":
                     self.engineAR.turnLeft()
                     break
+                case "turnLeftIf":
+                    self.engineAR.turnLeftIf(ifTileType: String(evSplit[1]))
+                    break
                 case "turnRight":
                     self.engineAR.turnRight()
+                    break
+                case "turnRightIf":
+                    self.engineAR.turnRightIf(ifTileType: String(evSplit[1]))
                     break
                 default:
                     print(evSplit)
                     print("Invalid response from WebKit")
                 }
+                
+                // To do: move this inside of each instruction
                 sleep(1)
                 
                 DispatchQueue.main.async {

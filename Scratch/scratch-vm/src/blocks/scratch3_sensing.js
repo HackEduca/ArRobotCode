@@ -191,8 +191,8 @@ class Scratch3SensingBlocks {
 
     movestepsIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("moveIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("moveIf " + this.colorToCode(color));
+        console.log("moveFrontIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("moveFrontIf " + this.colorToCode(color));
     }
 
     movestepsBackIf (args, util) {
@@ -203,14 +203,14 @@ class Scratch3SensingBlocks {
 
     turnleftIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("turnleftIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("turnleftIf " + this.colorToCode(color));
+        console.log("turnLeftIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("turnLeftIf " + this.colorToCode(color));
     }
 
     turnrightIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("turnrightIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("turnrightIf " + this.colorToCode(color));
+        console.log("turnRightIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("turnRightIf " + this.colorToCode(color));
     }
 
     touchingColor (args, util) {

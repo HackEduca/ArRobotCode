@@ -6,7 +6,7 @@
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "self.game?.scale">
             </PersistentString>
             <PersistentString
                value = "self.scene?.rootNode.scale">
@@ -18,7 +18,7 @@
                value = "TILE_SIZE">
             </PersistentString>
             <PersistentString
-               value = "self.game?.scale">
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -163,24 +163,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LevelViewModel.reAssignTiles():LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.UsedA.rawValue ">
+               value = "TypeOfTile.Free.rawValue">
             </PersistentString>
             <PersistentString
                value = "TypeOfTile.UsedE.rawValue">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.Free.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelViewModel.reAssignTiles():LevelViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "tiles.count">
+               value = "TypeOfTile.UsedA.rawValue ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -220,6 +220,20 @@
          <PersistentStrings>
             <PersistentString
                value = "lvl.tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.moveFrontIf(ifTileType:):EngineAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.getLevel()?.Tiles[crtVectorPos]">
+            </PersistentString>
+            <PersistentString
+               value = "Int(ifTileType)">
+            </PersistentString>
+            <PersistentString
+               value = "self.getLevel()?.Tiles[crtVectorPos].Type ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

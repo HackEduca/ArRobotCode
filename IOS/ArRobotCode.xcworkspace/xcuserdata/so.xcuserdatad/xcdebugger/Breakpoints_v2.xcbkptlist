@@ -9,70 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ArRobotCode/Engine/EngineAR.swift"
-            timestampString = "565179164.452929"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "init(levelName:player:status:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArRobotCode/Levels/Entities/DataTile.swift"
-            timestampString = "565524587.898492"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "swap()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ArRobotCode.DataTile.swap() -&gt; ()"
-                  moduleName = "ArRobotCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/so/Desktop/Projects/ArRobotLearnToCodePRoject/IOS/ArRobotCode/Levels/Entities/DataTile.swift"
-                  timestampString = "565514183.037393"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in ArRobotCode.DataTile.swap() -&gt; ()"
-                  moduleName = "ArRobotCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/so/Desktop/Projects/ArRobotLearnToCodePRoject/IOS/ArRobotCode/Levels/Entities/DataTile.swift"
-                  timestampString = "565514183.040073"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ArRobotCode/Levels/Entities/DataLevel.swift"
             timestampString = "565524587.898561"
             startingColumnNumber = "9223372036854775807"
@@ -80,6 +16,22 @@
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "reAssignTiles()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArRobotCode/Engine/EngineAR.swift"
+            timestampString = "565604216.035313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "moveFrontIf(ifTileType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -82,6 +82,17 @@ class EngineAR: EngineInterface {
         checkIfDone()
     }
     
+    func moveFrontIf(ifTileType: String) {
+        let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
+        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3 {
+            moveFront()
+        } else {
+            DispatchQueue.main.async {
+                self.status.text = "Not moving front, tile is of different type"
+            }
+        }
+    }
+    
     func moveBack() {
         // Stop moving is game is finished
         if isFinished() {
@@ -103,6 +114,17 @@ class EngineAR: EngineInterface {
         checkIfDone()
     }
     
+    func moveBackIf(ifTileType: String) {
+        let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
+        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+            moveBack()
+        } else {
+            DispatchQueue.main.async {
+                self.status.text = "Not moving back, tile is of different type"
+            }
+        }
+    }
+    
     func turnLeft() {
         // Stop moving is game is finished
         if isFinished() {
@@ -118,7 +140,17 @@ class EngineAR: EngineInterface {
         if self.crtDXDY == -1 {
             self.crtDXDY = 3
         }
-        
+    }
+    
+    func turnLeftIf(ifTileType: String) {
+        let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
+        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+            turnLeft()
+        } else {
+            DispatchQueue.main.async {
+                self.status.text = "Not turning left, tile is of different type"
+            }
+        }
     }
     
     func turnRight() {
@@ -133,6 +165,17 @@ class EngineAR: EngineInterface {
         self.playerController.turnRight()
         self.crtDXDY += 1
         self.crtDXDY %= 4
+    }
+    
+    func turnRightIf(ifTileType: String) {
+        let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
+        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+            turnRight()
+        } else {
+            DispatchQueue.main.async {
+                self.status.text = "Not turning right, tile is of different type"
+            }
+        }
     }
     
     func resetLevel() {
