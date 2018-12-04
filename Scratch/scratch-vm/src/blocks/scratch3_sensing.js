@@ -174,28 +174,43 @@ class Scratch3SensingBlocks {
         return util.target.isTouchingObject(args.TOUCHINGOBJECTMENU);
     }
 
+     colorToCode(color) {
+        if(color == "255,0,0")
+            return "1";
+        if(color == "255,255,26")
+            return "2";
+        if(color == "64,191,128")
+            return "3";
+        if(color == "51,51,255")
+            return "4";
+        if(color == "140,26,255")
+            return "5";
+
+        return 0;
+    }
+
     movestepsIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("moveIf called: ", color);
-        webkit.messageHandlers.callback.postMessage("moveIf " + color);
+        console.log("moveIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("moveIf " + this.colorToCode(color));
     }
 
     movestepsBackIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("moveBackIf called: ", color);
-        webkit.messageHandlers.callback.postMessage("moveBackIf " + color);
+        console.log("moveBackIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("moveBackIf " + this.colorToCode(color));
     }
 
     turnleftIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("turnleftIf called: ", color);
-        webkit.messageHandlers.callback.postMessage("turnleftIf " + color);
+        console.log("turnleftIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("turnleftIf " + this.colorToCode(color));
     }
 
     turnrightIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
-        console.log("turnrightIf called: ", color);
-        webkit.messageHandlers.callback.postMessage("turnrightIf " + color);
+        console.log("turnrightIf called: ", this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage("turnrightIf " + this.colorToCode(color));
     }
 
     touchingColor (args, util) {
