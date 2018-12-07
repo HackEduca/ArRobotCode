@@ -40,6 +40,7 @@
 		D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EE21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EF21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
+		D3BA70F321BA764800E0742C /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70F221BA764800E0742C /* rocket.json */; };
 		D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */; };
 		D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */; };
 		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
@@ -125,6 +126,7 @@
 		D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAR.swift; sourceTree = "<group>"; };
 		D3BA70EA21BA5CF100E0742C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3BA70F221BA764800E0742C /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
 		D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListViewModel.swift; sourceTree = "<group>"; };
 		D3C55EDD2187791A0007BCC9 /* LevelsListVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListVController.swift; sourceTree = "<group>"; };
 		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				D3E50F322178850D000270EE /* Assets.xcassets */,
 				D3E50F372178850D000270EE /* Info.plist */,
 				D3E50F5921788FF2000270EE /* Tile.sks */,
+				D3BA70F221BA764800E0742C /* rocket.json */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 			);
 			path = ArRobotCode;
@@ -551,6 +554,7 @@
 				D3E50F5A21788FF2000270EE /* Tile.sks in Resources */,
 				D3185F9A219A0EC6002310C6 /* blocks-only.html in Resources */,
 				D3185F93219A0EC5002310C6 /* gui.js in Resources */,
+				D3BA70F321BA764800E0742C /* rocket.json in Resources */,
 				D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */,
 				D3185F94219A0EC5002310C6 /* blocksonly.js in Resources */,
 				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
@@ -686,6 +690,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -705,6 +710,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

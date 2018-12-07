@@ -9,11 +9,13 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Lottie
 
 class MainViewController: UIViewController, GIDSignInUIDelegate {
 
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var enterWorldText: UILabel!
+    @IBOutlet var loginView: UIView!
     
     
     override func viewDidLoad() {
@@ -23,6 +25,14 @@ class MainViewController: UIViewController, GIDSignInUIDelegate {
         signInButton.center = self.view.center
         enterWorldText.center = self.view.center
         enterWorldText.center.y -= 80
+        
+        let animationView = LOTAnimationView(name: "rocket")
+        self.loginView.insertSubview(animationView, at: 0)
+        animationView.loopAnimation = true
+        
+        animationView.play{ (finished) in
+            
+        }
     }
 
 

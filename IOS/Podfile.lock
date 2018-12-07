@@ -74,6 +74,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.0)
   - GTMSessionFetcher/Full (1.2.0):
     - GTMSessionFetcher/Core (= 1.2.0)
+  - lottie-ios (2.5.2)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -100,6 +101,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
+  - lottie-ios
   - ObservableArray-RxSwift
   - PopupDialog
   - RealmSwift
@@ -123,6 +125,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMOAuth2
     - GTMSessionFetcher
+    - lottie-ios
     - nanopb
     - ObservableArray-RxSwift
     - PopupDialog
@@ -147,6 +150,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObservableArray-RxSwift: 905a088f51b1653f7eb55e6887f8a13916618f50
   PopupDialog: 03985b669c29802661c187513bf827340db1ae4d
@@ -156,6 +160,6 @@ SPEC CHECKSUMS:
   RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: b790e42e0c3951e2fe5e0f40140997d8aaa5151d
+PODFILE CHECKSUM: 0d7ba55f553c9dfeff780785c06d7a6500c5358a
 
 COCOAPODS: 1.5.3
