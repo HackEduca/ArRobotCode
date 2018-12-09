@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import RealmSwift
 
-class DataLevel: Object, Codable {
+class DataLevel: Codable {
     @objc dynamic  var UUID: String = NSUUID().uuidString
     @objc dynamic  var Name: String = ""
     @objc dynamic  var Width: Int = 0
     @objc dynamic  var Height: Int = 0
-    var Tiles = List<DataTile>()
+    var Tiles: [DataTile] = []
     
     static func comparer(lhs: DataLevel, rhs: DataLevel) -> Bool {
         return lhs.Name == rhs.Name
@@ -28,42 +27,21 @@ class DataLevel: Object, Codable {
     }
     
     public func setName(newName: String) {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                self.Name = newName
-            }
-        } catch {
-            
-        }
+        self.Name = newName
     }
     
     public func setWidth(newWidth: Int) {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                self.Width = newWidth
-                self.reAssignTiles()
-            }
-        } catch {
-            
-        }
+        self.Width = newWidth
+        self.reAssignTiles()
     }
     
     public func setHeight(newHeight: Int) {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                self.Height = newHeight
-                self.reAssignTiles()
-            }
-        } catch {
-            
-        }
+        self.Height = newHeight
+        self.reAssignTiles()
     }
     
     private func reAssignTiles(){
-        let tiles: List<DataTile> = List<DataTile>()
+        let tiles: [DataTile] = []
         for i in 0 ..< self.Tiles.count {
             self.Tiles[i].Type = TypeOfTile.Free.rawValue
         }
@@ -86,22 +64,3 @@ class DataLevel: Object, Codable {
     }
 
 }
-
-extension List : Decodable where Element : Decodable {
-    public convenience init(from decoder: Decoder) throws {
-        self.init()
-        var container = try decoder.unkeyedContainer()
-        while !container.isAtEnd {
-            let element = try container.decode(Element.self)
-            self.append(element)
-        }
-    } }
-
-extension List : Encodable where Element : Encodable {
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.unkeyedContainer()
-        for element in self {
-            try element.encode(to: container.superEncoder())
-        }
-    } }
-

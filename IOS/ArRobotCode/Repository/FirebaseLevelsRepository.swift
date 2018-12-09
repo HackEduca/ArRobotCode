@@ -9,18 +9,16 @@
 import Foundation
 import RxCocoa
 import RxSwift
-import RealmSwift
 import Alamofire
 import Firebase
 
 class FirebaseLevelsRepository: Repository {
     public let dataSource: Observable<[DataLevel]>
     
-    
     private var entities: [DataLevel] = []
     private var entitiesBehaviourSubject: BehaviorSubject<[DataLevel]> = BehaviorSubject(value: [])
     private let disposeBag = DisposeBag()
-    private let realm = try! Realm()
+
     
     let db: Firestore!
     
@@ -30,7 +28,6 @@ class FirebaseLevelsRepository: Repository {
         self.db = Firestore.firestore()
         
         // Start sync process
-//        syncFromLocal()
         syncFromServer()
     }
     
@@ -88,27 +85,23 @@ class FirebaseLevelsRepository: Repository {
         
         // Propagate changes
         self.entitiesBehaviourSubject.onNext(self.entities)
-        self.syncToLocal()
         
         return true
     }
     
     func update(a: DataLevel) -> Bool {
         var ok: Bool = false
-        try! self.realm.write {
-            for i in 0..<self.entities.count{
-                if self.entities[i].UUID == a.UUID {
-                    // Edit local
-                    self.entities[i] = a
-                    self.entitiesBehaviourSubject.onNext(self.entities)
-                    
-                    // Edit on server
-                    
-                    ok = true
-                    break
-                }
+        for i in 0..<self.entities.count{
+            if self.entities[i].UUID == a.UUID {
+                // Edit local
+                self.entities[i] = a
+                self.entitiesBehaviourSubject.onNext(self.entities)
+                
+                // Edit on server
+                
+                ok = true
+                break
             }
-            
         }
         
         if ok {
@@ -118,16 +111,14 @@ class FirebaseLevelsRepository: Repository {
     }
     
     func update(at: Int, newDataLevel: DataLevel) {
-        try! self.realm.write {
-            if(at >= 0) {
-                // Edit local
-                self.entities[at] = newDataLevel
-                self.entitiesBehaviourSubject.onNext(self.entities)
-                
-                // Edit on server
-                
-                
-            }
+        if(at >= 0) {
+            // Edit local
+            self.entities[at] = newDataLevel
+            self.entitiesBehaviourSubject.onNext(self.entities)
+            
+            // Edit on server
+            
+            
         }
     }
     
@@ -162,17 +153,8 @@ class FirebaseLevelsRepository: Repository {
         return true
     }
     
-    
-    private func syncFromLocal() {
-        realm.objects(DataLevel.self).forEach { (el) in
-            self.entities.append(el);
-            self.entitiesBehaviourSubject.onNext(self.entities)
-        }
-    }
-    
+
     private func syncFromServer() {
-        var serverEntities: [DataLevel] = []
-        
         let docRef = db.collection("levels")
         docRef.getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -191,17 +173,8 @@ class FirebaseLevelsRepository: Repository {
             }
         }
         
-//        self.entities = serverEntities
-        
     }
-    
-    private func syncToLocal() {
-        for entity in entities {
-            try! realm.write {
-                realm.add(entity)
-            }
-        }
-    }
+
     
 }
 

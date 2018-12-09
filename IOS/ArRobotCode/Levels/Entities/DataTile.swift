@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 enum TypeOfTile: Int, Codable {
     case Free
@@ -22,122 +21,79 @@ enum TypeOfTile: Int, Codable {
     case UsedE
 }
 
-class DataTile: Object, Codable {
+class DataTile: Codable {
     @objc dynamic var `Type`: Int = 0
     
     func swap() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                if Type == TypeOfTile.Free.rawValue {
-                    Type = TypeOfTile.Used.rawValue
-                    return
-                }
-                
-                if Type == TypeOfTile.Used.rawValue {
-                    Type = TypeOfTile.Free.rawValue
-                    return
-                }
-                
-                if Type == TypeOfTile.Start.rawValue {
-                    Type = TypeOfTile.Finish.rawValue
-                    return
-                }
-                
-                Type = TypeOfTile.Free.rawValue
-            }
-        } catch {
-            
+        if Type == TypeOfTile.Free.rawValue {
+            Type = TypeOfTile.Used.rawValue
+            return
         }
         
+        if Type == TypeOfTile.Used.rawValue {
+            Type = TypeOfTile.Free.rawValue
+            return
+        }
+        
+        if Type == TypeOfTile.Start.rawValue {
+            Type = TypeOfTile.Finish.rawValue
+            return
+        }
+        
+        Type = TypeOfTile.Free.rawValue
         return
     }
     
     func cycleLeft() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
-                    return
-                }
-                
-                if(Type == TypeOfTile.Used.rawValue) {
-                    Type = TypeOfTile.UsedE.rawValue
-                    return
-                }
-                
-                if(Type == TypeOfTile.UsedA.rawValue) {
-                    Type = TypeOfTile.Used.rawValue
-                    return
-                }
-                
-                if(Type > TypeOfTile.UsedA.rawValue  && Type <= TypeOfTile.UsedE.rawValue) {
-                    Type -= 1
-                }
-            }
-        } catch {
-            
+        if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
+            return
+        }
+        
+        if(Type == TypeOfTile.Used.rawValue) {
+            Type = TypeOfTile.UsedE.rawValue
+            return
+        }
+        
+        if(Type == TypeOfTile.UsedA.rawValue) {
+            Type = TypeOfTile.Used.rawValue
+            return
+        }
+        
+        if(Type > TypeOfTile.UsedA.rawValue  && Type <= TypeOfTile.UsedE.rawValue) {
+            Type -= 1
         }
     }
     
     func cycleRight() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
-                    return
-                }
-                
-                if(Type == TypeOfTile.Used.rawValue) {
-                    Type = TypeOfTile.UsedA.rawValue
-                    return
-                }
-                
-                if(Type == TypeOfTile.UsedE.rawValue) {
-                    Type = TypeOfTile.Used.rawValue
-                    return
-                }
-                
-                if(Type >= TypeOfTile.UsedA.rawValue  && Type < TypeOfTile.UsedE.rawValue) {
-                    Type += 1
-                }
-            }
-        } catch {
-            
+        if(Type == TypeOfTile.Free.rawValue || Type == TypeOfTile.Start.rawValue || Type == TypeOfTile.Finish.rawValue) {
+            return
+        }
+        
+        if(Type == TypeOfTile.Used.rawValue) {
+            Type = TypeOfTile.UsedA.rawValue
+            return
+        }
+        
+        if(Type == TypeOfTile.UsedE.rawValue) {
+            Type = TypeOfTile.Used.rawValue
+            return
+        }
+        
+        if(Type >= TypeOfTile.UsedA.rawValue  && Type < TypeOfTile.UsedE.rawValue) {
+            Type += 1
         }
     }
     
     func setToFree() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                Type = TypeOfTile.Free.rawValue
-            }
-        } catch {
-            
-        }
+      Type = TypeOfTile.Free.rawValue
     }
     
     func setToStart() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                Type = TypeOfTile.Start.rawValue
-            }
-        } catch {
-            
-        }
+        Type = TypeOfTile.Start.rawValue
     }
     
     func setToFinish() {
-        do {
-            let realm = try! Realm()
-            try! realm.write {
-                Type = TypeOfTile.Finish.rawValue
-            }
-        } catch {
-            
-        }
+        Type = TypeOfTile.Finish.rawValue
     }
     
 }

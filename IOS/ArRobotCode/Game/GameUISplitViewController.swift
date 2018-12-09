@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RealmSwift
 import PopupDialog
 import RxGesture
 
@@ -41,8 +40,7 @@ class GameUISplitViewController: UISplitViewController {
         arVC.level = levelsRepository!.get(at: self.crtLevelAt)
         
         // Instantiate engine ar
-        let levelName = self.levelsRepository.get(at: self.crtLevelAt).Name
-        self.engineAR = EngineAR(levelName: levelName, player: self.arVC.sceneController.playerController, status: self.instructionsVC.statusTextView)
+        self.engineAR = EngineAR(level: self.levelsRepository.get(at: self.crtLevelAt), player: self.arVC.sceneController.playerController, status: self.instructionsVC.statusTextView)
         
         // Events from Instructions WebView
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)

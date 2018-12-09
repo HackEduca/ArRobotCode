@@ -20,7 +20,7 @@ class EngineAR: EngineInterface {
     public var eventsBehaviourSubject: BehaviorSubject<String> = BehaviorSubject(value: "")
     
     private var playerController: PlayerAR!
-    private var levelName: String!
+    private var level: DataLevel!
     private var status: UITextView!
     
     private var valid: Bool = true
@@ -33,13 +33,11 @@ class EngineAR: EngineInterface {
     private var crtDXDY = 0
 
     
-    init(levelName: String, player: PlayerAR!, status: UITextView) {
-        self.levelName = levelName
+    init(level: DataLevel, player: PlayerAR!, status: UITextView) {
+        self.level = level
         self.playerController = player
         self.status = status
         
-
-        let level = getLevel()!
         for i in 0...level.Tiles.count - 1 {
             if level.Tiles[i].Type == TypeOfTile.Start.rawValue {
                 (self.startPosition.x, self.startPosition.y) = vectorCoordinatesToMatrix(i: i)
@@ -84,7 +82,7 @@ class EngineAR: EngineInterface {
     
     func moveFrontIf(ifTileType: String) {
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3 {
+        if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3 {
             moveFront()
         } else {
             DispatchQueue.main.async {
@@ -116,7 +114,7 @@ class EngineAR: EngineInterface {
     
     func moveBackIf(ifTileType: String) {
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+        if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             moveBack()
         } else {
             DispatchQueue.main.async {
@@ -144,7 +142,7 @@ class EngineAR: EngineInterface {
     
     func turnLeftIf(ifTileType: String) {
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+        if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             turnLeft()
         } else {
             DispatchQueue.main.async {
@@ -169,7 +167,7 @@ class EngineAR: EngineInterface {
     
     func turnRightIf(ifTileType: String) {
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        if self.getLevel()?.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
+        if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             turnRight()
         } else {
             DispatchQueue.main.async {
@@ -191,9 +189,8 @@ class EngineAR: EngineInterface {
     
     private func checkIfInvalid() -> Bool {
         // If out of bounds
-        let lvl = getLevel()!
-        if(self.crtPosition.x < 0 || self.crtPosition.x >= lvl.Height ||
-            self.crtPosition.y < 0 || self.crtPosition.y >= lvl.Width ) {
+        if(self.crtPosition.x < 0 || self.crtPosition.x >= self.level.Height ||
+            self.crtPosition.y < 0 || self.crtPosition.y >= self.level.Width ) {
             self.valid = false
             self.eventsBehaviourSubject.onNext("invalid")
             return true
@@ -201,8 +198,8 @@ class EngineAR: EngineInterface {
         
         // If wrong tile
         var pos = matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
-        var type = lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type
-        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Free.rawValue {
+        var type = self.level.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type
+        if self.level.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Free.rawValue {
             self.valid = false
             self.eventsBehaviourSubject.onNext("invalid")
             return true
@@ -213,8 +210,7 @@ class EngineAR: EngineInterface {
     
     private func checkIfDone() -> Bool {
         // If final tile
-        let lvl = getLevel()!
-        if lvl.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Finish.rawValue {
+        if self.level.Tiles[ matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y) ].Type == TypeOfTile.Finish.rawValue {
             self.done = true
             self.eventsBehaviourSubject.onNext("done")
             return true
@@ -224,31 +220,13 @@ class EngineAR: EngineInterface {
     }
     
     private func matrixCoordinatesToVector(i: Int, j: Int) -> Int {
-        let lvl = getLevel()!
-        
         // The actual computation
-        return i * lvl.Width + j
+        return i * self.level.Width + j
     }
     
     private func vectorCoordinatesToMatrix(i: Int) -> (Int, Int) {
-        let lvl = getLevel()!
-        
         // The actual computation
-        return (i / lvl.Width, i % lvl.Width)
+        return (i / self.level.Width, i % self.level.Width)
     }
     
-    private func getLevel() -> DataLevel? {
-        do {
-            let realm = try Realm()
-            let pred = NSPredicate(format: "Name = %@", self.levelName)
-            guard let level = realm.objects(DataLevel.self).filter(pred).first else {
-                print("Error at resolving object")
-                return nil
-            }
-            
-            return level
-        } catch {
-            return nil
-        }
-    }
 }
