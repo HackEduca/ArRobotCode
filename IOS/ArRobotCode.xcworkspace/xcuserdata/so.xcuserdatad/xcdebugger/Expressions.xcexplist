@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dict[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
          <PersistentStrings>
             <PersistentString

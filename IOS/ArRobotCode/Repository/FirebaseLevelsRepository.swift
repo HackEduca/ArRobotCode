@@ -75,13 +75,7 @@ class FirebaseLevelsRepository: Repository {
         self.entities.append(a)
         
         // Add on firebase
-        do {
-            var ref: DocumentReference? = nil
-            var dict = try a.asDictionary()
-            self.db.collection("levels").document(a.UUID).setData(try a.asDictionary())
-        } catch {
-        
-        }
+        self.syncAddtoServer(a: a)
         
         // Propagate changes
         self.entitiesBehaviourSubject.onNext(self.entities)
@@ -93,11 +87,12 @@ class FirebaseLevelsRepository: Repository {
         var ok: Bool = false
         for i in 0..<self.entities.count{
             if self.entities[i].UUID == a.UUID {
-                // Edit local
+                // Update local
                 self.entities[i] = a
                 self.entitiesBehaviourSubject.onNext(self.entities)
                 
-                // Edit on server
+                // Update on server
+                self.syncUpdateToServer(a: self.entities[i])
                 
                 ok = true
                 break
@@ -117,25 +112,25 @@ class FirebaseLevelsRepository: Repository {
             self.entitiesBehaviourSubject.onNext(self.entities)
             
             // Edit on server
-            
-            
+            self.syncUpdateToServer(a: self.entities[at])
         }
     }
     
     func triggerUpdate(at: Int) {
         self.entitiesBehaviourSubject.onNext(self.entities)
+        self.syncUpdateToServer(a: self.entities[at])
     }
     
     func delete(Name: String) -> Bool {
         for i in 0..<self.entities.count{
             if self.entities[i].Name == Name {
                 // Delete local
-                let entityToBeDeleted: DataLevel = self.entities[i]
+                let UUID = self.entities[i].UUID
                 self.entities.remove(at: i)
                 self.entitiesBehaviourSubject.onNext(self.entities)
                 
                 // Delete on server
-                
+                self.syncDeleteToServer(UUID: UUID)
                 return true
             }
         }
@@ -144,12 +139,12 @@ class FirebaseLevelsRepository: Repository {
     
     func delete(at: Int) -> Bool {
         // Delete local
-        let entityToBeDeleted: DataLevel = self.entities[at]
+        let UUID = self.entities[at].UUID
         self.entities.remove(at: at)
         self.entitiesBehaviourSubject.onNext(self.entities)
         
         // Delete on server
-
+        self.syncDeleteToServer(UUID: UUID)
         return true
     }
     
@@ -162,8 +157,8 @@ class FirebaseLevelsRepository: Repository {
             } else {
                 for document in querySnapshot!.documents {
                     do {
-                        let level = try?  JSONDecoder().decode(DataLevel.self, withJSONObject: document.data(), options: [])
-                        self.entities.append(level!)
+                        let level = try JSONDecoder().decode(DataLevel.self, withJSONObject: document.data(), options: [])
+                        self.entities.append(level)
                         self.entitiesBehaviourSubject.onNext(self.entities)
                     } catch {
                         
@@ -172,9 +167,29 @@ class FirebaseLevelsRepository: Repository {
                 }
             }
         }
-        
     }
-
+    
+    private func syncAddtoServer(a: DataLevel) {
+        do {
+            self.db.collection("levels").document(a.UUID).setData(try a.asDictionary())
+        } catch {
+            
+        }
+    }
+    
+    private func syncUpdateToServer(a: DataLevel) {
+        do {
+            var dict = try a.asDictionary()
+            print(dict)
+            self.db.collection("levels").document(a.UUID).updateData(try a.asDictionary())
+        } catch {
+            
+        }
+    }
+    
+    private func syncDeleteToServer(UUID: String) {
+         self.db.collection("levels").document(UUID).delete()
+    }
     
 }
 

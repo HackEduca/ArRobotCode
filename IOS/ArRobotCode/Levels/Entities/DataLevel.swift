@@ -21,6 +21,7 @@ class DataLevel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case Name
+        case UUID
         case Width
         case Height
         case Tiles
@@ -56,10 +57,10 @@ class DataLevel: Codable {
     
     func asDictionary() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
-        guard var dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
             throw NSError()
         }
-        dictionary["UUID"] = self.UUID
+
         return dictionary
     }
 
