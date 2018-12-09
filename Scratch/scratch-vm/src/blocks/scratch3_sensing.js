@@ -189,28 +189,37 @@ class Scratch3SensingBlocks {
         return 0;
     }
 
+    sleep_s(secs) {
+        secs = (+new Date) + secs * 1000;
+        while ((+new Date) < secs);
+    }
+
     movestepsIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
         console.log("moveFrontIf called: ", this.colorToCode(color));
         webkit.messageHandlers.callback.postMessage("moveFrontIf " + this.colorToCode(color));
+        this.sleep_s(1);
     }
 
     movestepsBackIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
         console.log("moveBackIf called: ", this.colorToCode(color));
         webkit.messageHandlers.callback.postMessage("moveBackIf " + this.colorToCode(color));
+        this.sleep_s(1);
     }
 
     turnleftIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
         console.log("turnLeftIf called: ", this.colorToCode(color));
         webkit.messageHandlers.callback.postMessage("turnLeftIf " + this.colorToCode(color));
+        this.sleep_s(1);
     }
 
     turnrightIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
         console.log("turnRightIf called: ", this.colorToCode(color));
         webkit.messageHandlers.callback.postMessage("turnRightIf " + this.colorToCode(color));
+        this.sleep_s(1);
     }
 
     touchingColor (args, util) {

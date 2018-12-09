@@ -62,6 +62,11 @@ class Scratch3MotionBlocks {
         };
     }
 
+    sleep_s(secs) {
+        secs = (+new Date) + secs * 1000;
+        while ((+new Date) < secs);
+    }
+
     moveSteps (args, util) {
         console.log("moveFront called!")
         webkit.messageHandlers.callback.postMessage("moveFront " + args.STEPS);
@@ -70,6 +75,8 @@ class Scratch3MotionBlocks {
         const dx = steps * Math.cos(radians);
         const dy = steps * Math.sin(radians);
         util.target.setXY(util.target.x + dx, util.target.y + dy);
+
+        this.sleep_s(1);
     }
 
     moveStepsBack (args, util) {
@@ -80,6 +87,8 @@ class Scratch3MotionBlocks {
         const dx = steps * Math.cos(radians);
         const dy = steps * Math.sin(radians);
         util.target.setXY(util.target.x + dx, util.target.y + dy);
+
+        this.sleep_s(1);
     }
 
     goToXY (args, util) {
@@ -120,6 +129,7 @@ class Scratch3MotionBlocks {
         webkit.messageHandlers.callback.postMessage("turnRight " + args.DEGREES);
         const degrees = Cast.toNumber(args.DEGREES);
         util.target.setDirection(util.target.direction + degrees);
+        this.sleep_s(1);
     }
 
     turnLeft (args, util) {
@@ -127,6 +137,7 @@ class Scratch3MotionBlocks {
         webkit.messageHandlers.callback.postMessage("turnLeft " + args.DEGREES);
         const degrees = Cast.toNumber(args.DEGREES);
         util.target.setDirection(util.target.direction - degrees);
+        this.sleep_s(1);
     }
 
     pointInDirection (args, util) {
