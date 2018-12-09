@@ -81,6 +81,11 @@ class EngineAR: EngineInterface {
     }
     
     func moveFrontIf(ifTileType: String) {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
         if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3 {
             moveFront()
@@ -113,6 +118,11 @@ class EngineAR: EngineInterface {
     }
     
     func moveBackIf(ifTileType: String) {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
         if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             moveBack()
@@ -141,6 +151,11 @@ class EngineAR: EngineInterface {
     }
     
     func turnLeftIf(ifTileType: String) {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
         if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             turnLeft()
@@ -166,6 +181,11 @@ class EngineAR: EngineInterface {
     }
     
     func turnRightIf(ifTileType: String) {
+        // Stop moving is game is finished
+        if isFinished() {
+            return;
+        }
+        
         let crtVectorPos = self.matrixCoordinatesToVector(i: self.crtPosition.x, j: self.crtPosition.y)
         if self.level.Tiles[crtVectorPos].Type == Int(ifTileType)! + 3  {
             turnRight()
