@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class DataLevel: Object, Codable {
-    @objc dynamic  var ID: String = NSUUID().uuidString
+    @objc dynamic  var UUID: String = NSUUID().uuidString
     @objc dynamic  var Name: String = ""
     @objc dynamic  var Width: Int = 0
     @objc dynamic  var Height: Int = 0
@@ -75,6 +75,16 @@ class DataLevel: Object, Codable {
             self.Tiles.append(DataTile())
         }
     }
+    
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard var dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        dictionary["UUID"] = self.UUID
+        return dictionary
+    }
+
 }
 
 extension List : Decodable where Element : Decodable {
@@ -94,3 +104,4 @@ extension List : Encodable where Element : Encodable {
             try element.encode(to: container.superEncoder())
         }
     } }
+
