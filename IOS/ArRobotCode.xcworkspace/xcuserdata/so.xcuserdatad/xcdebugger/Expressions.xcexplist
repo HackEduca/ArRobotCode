@@ -3,38 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.game?.scale">
-            </PersistentString>
-            <PersistentString
-               value = "self.scene?.rootNode.scale">
-            </PersistentString>
-            <PersistentString
-               value = "game">
-            </PersistentString>
-            <PersistentString
-               value = "TILE_SIZE">
-            </PersistentString>
-            <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "dict[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameScene.spawnLevel():GameScene.swift">
+         contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tile">
-            </PersistentString>
-            <PersistentString
-               value = "newTile!.geometry!.materials.first!.diffuse.contents">
+               value = "newTiles.count">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in LevelsRepository.syncAddedDataToServer(a:):LevelsRepository.swift">
@@ -45,43 +27,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "itemsPerLineOrColumn">
-            </PersistentString>
-            <PersistentString
-               value = "collectionView.frame.width">
-            </PersistentString>
-            <PersistentString
-               value = "CGFloat(itemsPerLineOrColumn)">
-            </PersistentString>
-            <PersistentString
-               value = "collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "splitViewController?.viewControllers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in DataTile.swipeLeft():DataTile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "TypeOfTile.Free.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DataTile.swap():DataTile.swift">
+         contextName = "DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
                value = "Type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.checkIfInvalid():EngineAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.matrixCoordinatesToVector(0,1)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "levelsRepository">
+            </PersistentString>
+            <PersistentString
+               value = "levelsRepository.entities[0].Tiles.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -97,90 +65,41 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
+         contextName = "LevelViewModel.setName(newName:):LevelViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.presentingViewController">
+               value = "self.levelsRepository.entities[0].Name">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GameScene.spawnLevel(level:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Start.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "self.scene?.rootNode.scale">
+            </PersistentString>
+            <PersistentString
+               value = "game">
+            </PersistentString>
+            <PersistentString
+               value = "TILE_SIZE">
+            </PersistentString>
+            <PersistentString
+               value = "self.game?.scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelsListVController.initialize():LevelsListVController.swift">
+         <PersistentStrings>
             <PersistentString
                value = "splitViewController?.viewControllers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DataTile.swipeRight():DataTile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Type">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EngineAR.moveFront():EngineAR.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.crtDXDY">
-            </PersistentString>
-            <PersistentString
-               value = "self.crtPosition">
-            </PersistentString>
-            <PersistentString
-               value = "self.level">
-            </PersistentString>
-            <PersistentString
-               value = "self.playerController.player.simdWorldFront">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EngineAR.checkIfInvalid():EngineAR.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.matrixCoordinatesToVector(0,1)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameUISplitViewController.viewDidLoad():GameUISplitViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewControllers">
-            </PersistentString>
-            <PersistentString
-               value = "self.sidePageNavController.viewControllers">
-            </PersistentString>
-            <PersistentString
-               value = "sideVC.viewControllers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "newTiles.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LevelViewModel.reAssignTiles():LevelViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "tiles.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "TypeOfTile.Free.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "TypeOfTile.UsedE.rawValue">
-            </PersistentString>
-            <PersistentString
-               value = "TypeOfTile.UsedA.rawValue ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -199,7 +118,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+         contextName = "LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "EngineAR.init(level:player:):EngineAR.swift">
@@ -216,14 +135,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LevelViewModel.setWidth(newWidth:):LevelViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "lvl.tiles.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "EngineAR.moveFrontIf(ifTileType:):EngineAR.swift">
          <PersistentStrings>
             <PersistentString
@@ -236,9 +147,6 @@
                value = "self.getLevel()?.Tiles[crtVectorPos].Type ">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in LevelsRepository.syncWithDataFromLocal():LevelsRepository.swift">
@@ -258,29 +166,115 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameScene.initializeScene():GameScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "scene.rootNode.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "levelsRepository">
-            </PersistentString>
-            <PersistentString
-               value = "levelsRepository.entities[0].Tiles.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in GameScene.initializeNode(name:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
                value = "node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemsPerLineOrColumn">
+            </PersistentString>
+            <PersistentString
+               value = "collectionView.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "CGFloat(itemsPerLineOrColumn)">
+            </PersistentString>
+            <PersistentString
+               value = "collectionView.frame.width / CGFloat(itemsPerLineOrColumn) - CGFloat(minimumInteritemSpacing)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelViewModel.reAssignTiles():LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.presentingViewController">
+            </PersistentString>
+            <PersistentString
+               value = "splitViewController?.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.UsedA.rawValue ">
+            </PersistentString>
+            <PersistentString
+               value = "TypeOfTile.UsedE.rawValue">
+            </PersistentString>
+            <PersistentString
+               value = "TypeOfTile.Free.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FirebaseLevelsRepository.syncFromServer():FirebaseLevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.data()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameUISplitViewController.viewDidLoad():GameUISplitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "self.sidePageNavController.viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "sideVC.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelViewModel.setWidth(newWidth:):LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lvl.tiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataLevel.asDictionary():DataLevel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GameScene.spawnLevel():GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tile">
+            </PersistentString>
+            <PersistentString
+               value = "newTile!.geometry!.materials.first!.diffuse.contents">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DataTile.swap():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -302,7 +296,43 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
+         contextName = "GameScene.initializeScene():GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.rootNode.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EngineAR.moveFront():EngineAR.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.crtDXDY">
+            </PersistentString>
+            <PersistentString
+               value = "self.crtPosition">
+            </PersistentString>
+            <PersistentString
+               value = "self.level">
+            </PersistentString>
+            <PersistentString
+               value = "self.playerController.player.simdWorldFront">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DataTile.swipeLeft():DataTile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TypeOfTile.Free.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FirebaseLevelsRepository.add(a:):FirebaseLevelsRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

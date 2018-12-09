@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RealmSwift
 class LevelViewModel{
     private var levelsRepository: FirebaseLevelsRepository;
     private var levelAt: Int = -1;

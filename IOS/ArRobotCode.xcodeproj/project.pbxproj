@@ -26,7 +26,6 @@
 		D324C403219C256600C78C4D /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C401219C256500C78C4D /* Plane.swift */; };
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
 		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
-		D363E7F421AD3CDB0091DA5E /* UnsyncedAddedEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */; };
 		D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* PlayerHexa.swift */; };
 		D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* PlayerInterface.swift */; };
 		D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */; };
@@ -114,7 +113,6 @@
 		D324C401219C256500C78C4D /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
-		D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsyncedAddedEntities.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* PlayerHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
 		D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLevelsRepository.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				D3C55EE42188531C0007BCC9 /* Repository.swift */,
-				D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */,
 				D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */,
 			);
 			path = Repository;
@@ -750,7 +747,6 @@
 				D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */,
 				D3F0F71E219D9F830002788C /* GameScene.swift in Sources */,
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
-				D363E7F421AD3CDB0091DA5E /* UnsyncedAddedEntities.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D3BA70EB21BA5CF100E0742C /* MainViewController.swift in Sources */,
