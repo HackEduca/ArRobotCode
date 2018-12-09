@@ -13,13 +13,13 @@ import RxCocoa
 class LevelsListViewModel{
 
     // Private properties
-    private let privateDataSource: LevelsRepository
+    private let privateDataSource: FirebaseLevelsRepository
     //private let disposeBag = DisposeBag()
     
     // Outputs
     public let dataSource: Observable<[DataLevel]>
     
-    init(repo: LevelsRepository) {
+    init(repo: FirebaseLevelsRepository) {
         // Make the output dataSource an Observable of the privateDataSource
         self.privateDataSource = repo
         self.dataSource = privateDataSource.dataSource

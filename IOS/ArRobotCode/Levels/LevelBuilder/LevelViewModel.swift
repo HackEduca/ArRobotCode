@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 class LevelViewModel{
-    private var levelsRepository: LevelsRepository;
+    private var levelsRepository: FirebaseLevelsRepository;
     private var levelAt: Int = -1;
     
     private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
@@ -20,7 +20,7 @@ class LevelViewModel{
     }
     
     
-    init(repository: LevelsRepository, at: Int) {
+    init(repository: FirebaseLevelsRepository, at: Int) {
         self.levelsRepository = repository
         self.levelAt = at
         self.level.onNext(repository.get(at: at))

@@ -14,7 +14,7 @@ import PopupDialog
 import RxGesture
 
 class GameUISplitViewController: UISplitViewController {
-    public var levelsRepository: LevelsRepository!
+    public var levelsRepository: FirebaseLevelsRepository!
     public var crtLevelAt: Int = -1
     
     public var sideVC: SidePageViewController!
@@ -130,7 +130,7 @@ class GameUISplitViewController: UISplitViewController {
             .disposed(by: self.disposeBag)
     }
     
-    public func setLevelData(levelsVC: UIViewController, repo: LevelsRepository, at: Int) {
+    public func setLevelData(levelsVC: UIViewController, repo: FirebaseLevelsRepository, at: Int) {
         self.levelsVC = levelsVC
         self.levelsRepository = repo
         self.crtLevelAt = at

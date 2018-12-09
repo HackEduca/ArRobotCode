@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class DataLevel: Object, Codable {
+    @objc dynamic  var ID: String = NSUUID().uuidString
     @objc dynamic  var Name: String = ""
     @objc dynamic  var Width: Int = 0
     @objc dynamic  var Height: Int = 0

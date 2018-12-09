@@ -13,8 +13,10 @@ protocol Repository {
     
     func getAll() -> [T]
     func get(Name: String) -> T?
+    func get(at: Int) -> T
     func add(a: T) -> Bool
     func update(a: T) -> Bool
     func delete(Name: String) -> Bool
+    func triggerUpdate(at: Int)
     
 }

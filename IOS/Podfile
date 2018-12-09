@@ -15,6 +15,7 @@ target 'ArRobotCode' do
   pod 'PopupDialog'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
   pod 'lottie-ios'
 

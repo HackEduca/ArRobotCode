@@ -17,7 +17,7 @@ class LevelsSplitViewController: UISplitViewController {
     var levelBuilderVC: LevelBuilderViewController?
     
     // Repository with all the levels
-    private var levelsRepository = LevelsRepository()
+    private var levelsRepository = FirebaseLevelsRepository()
     private var at: Int = -1
     
     // For disposing rx
@@ -35,7 +35,7 @@ class LevelsSplitViewController: UISplitViewController {
         
         // Setup selectedLevel Observable
         levelsListVC?.selectedLevelObservable.subscribe(onNext: { selectedLevel in
-            self.at = self.levelsRepository.getAt(Name: selectedLevel.Name)
+            self.at = self.levelsRepository.getAt(ID: selectedLevel.ID)
             self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.at)
         }).disposed(by: disposeBag)
         

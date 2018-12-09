@@ -29,6 +29,7 @@
 		D363E7F421AD3CDB0091DA5E /* UnsyncedAddedEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */; };
 		D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* PlayerHexa.swift */; };
 		D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* PlayerInterface.swift */; };
+		D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */; };
 		D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388336C2189AEDD00D04589 /* APIRequest.swift */; };
 		D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388336E2189B0C000D04589 /* LevelsRequest.swift */; };
 		D38833712189B0F000D04589 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38833702189B0F000D04589 /* APIClient.swift */; };
@@ -46,7 +47,6 @@
 		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
 		D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE121883B8F0007BCC9 /* DataLevel.swift */; };
 		D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE42188531C0007BCC9 /* Repository.swift */; };
-		D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE6218853800007BCC9 /* LevelsRepository.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ARViewController.swift */; };
@@ -117,6 +117,7 @@
 		D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsyncedAddedEntities.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* PlayerHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
+		D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLevelsRepository.swift; sourceTree = "<group>"; };
 		D388336C2189AEDD00D04589 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		D388336E2189B0C000D04589 /* LevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsRequest.swift; sourceTree = "<group>"; };
 		D38833702189B0F000D04589 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		D3C55EE121883B8F0007BCC9 /* DataLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLevel.swift; sourceTree = "<group>"; };
 		D3C55EE42188531C0007BCC9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		D3C55EE6218853800007BCC9 /* LevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsRepository.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			children = (
 				D3C55EE42188531C0007BCC9 /* Repository.swift */,
 				D363E7F321AD3CDB0091DA5E /* UnsyncedAddedEntities.swift */,
-				D3C55EE6218853800007BCC9 /* LevelsRepository.swift */,
+				D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -678,6 +678,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArRobotCode/Pods-ArRobotCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -685,11 +686,18 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ObservableArray-RxSwift/ObservableArray_RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -698,6 +706,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -705,11 +714,18 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObservableArray_RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -732,7 +748,6 @@
 				D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */,
 				D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */,
 				D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */,
-				D3C55EE7218853800007BCC9 /* LevelsRepository.swift in Sources */,
 				D3F0F71E219D9F830002788C /* GameScene.swift in Sources */,
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
 				D363E7F421AD3CDB0091DA5E /* UnsyncedAddedEntities.swift in Sources */,
@@ -754,6 +769,7 @@
 				D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */,
 				D324C403219C256600C78C4D /* Plane.swift in Sources */,
 				D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */,
+				D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

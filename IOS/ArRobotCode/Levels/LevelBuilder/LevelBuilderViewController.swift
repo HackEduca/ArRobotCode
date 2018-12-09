@@ -18,7 +18,7 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     @IBOutlet weak var playLevelButton: UIButton!
     
-    private var levelsRepository: LevelsRepository!
+    private var levelsRepository: FirebaseLevelsRepository!
     private var crtLevelAt: Int = -1
     
     private var minimumLineSpacing:      Int = 5;
@@ -35,7 +35,7 @@ class LevelBuilderViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    public func loadLevel(repository: LevelsRepository, at: Int) {
+    public func loadLevel(repository: FirebaseLevelsRepository, at: Int) {
         self.levelsRepository = repository
         self.crtLevelAt = at
         setupViewModel()
