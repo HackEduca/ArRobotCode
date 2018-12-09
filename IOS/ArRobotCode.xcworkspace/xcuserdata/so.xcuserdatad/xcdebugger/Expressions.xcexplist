@@ -6,7 +6,7 @@
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.game?.scale">
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
             <PersistentString
                value = "self.scene?.rootNode.scale">
@@ -18,7 +18,7 @@
                value = "TILE_SIZE">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "self.game?.scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -95,6 +95,9 @@
                value = "splitViewController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FirebaseLevelsRepository.add(a:):FirebaseLevelsRepository.swift">
       </ContextState>
       <ContextState
          contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
@@ -174,13 +177,13 @@
          contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Free.rawValue">
+               value = "TypeOfTile.UsedA.rawValue ">
             </PersistentString>
             <PersistentString
                value = "TypeOfTile.UsedE.rawValue">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.UsedA.rawValue ">
+               value = "TypeOfTile.Free.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -298,6 +301,14 @@
             </PersistentString>
             <PersistentString
                value = "self.Tiles.count ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LevelViewModel.setName(newName:):LevelViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.levelsRepository.entities[0].Name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

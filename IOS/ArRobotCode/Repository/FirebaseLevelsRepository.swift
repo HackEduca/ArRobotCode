@@ -118,7 +118,7 @@ class FirebaseLevelsRepository: Repository {
     }
     
     func triggerUpdate(at: Int) {
-        
+        self.entitiesBehaviourSubject.onNext(self.entities)
     }
     
     func delete(Name: String) -> Bool {
