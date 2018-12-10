@@ -42,6 +42,9 @@ class GameUISplitViewController: UISplitViewController {
         // Instantiate engine ar
         self.engineAR = EngineAR(level: self.levelsRepository.get(at: self.crtLevelAt), player: self.arVC.sceneController.playerController, status: self.instructionsVC.statusTextView)
         
+        // Reset the level initially
+        self.engineAR.resetLevel()
+        
         // Events
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
         self.instructionsVC.eventsBehaviourSubject.asObserver()
@@ -59,11 +62,9 @@ class GameUISplitViewController: UISplitViewController {
                 }
                 
                 switch evSplit[0] {
-                case "run":
-                    self.engineAR.resetLevel()
-                    print("Game started")
                 case "stop":
                     self.engineAR.stopLevel()
+
                 default:
                     print(evSplit)
                     print("Invalid response from WebKit")
@@ -80,10 +81,6 @@ class GameUISplitViewController: UISplitViewController {
                 guard let event = ev.element else {
                     return
                 }
-                if self.engineAR.isFinished() {
-                    print("Finished -> fast")
-                    return
-                }
                 
                 print("Processing instruction: ", event)
                 var evSplit = event.split(separator: " ")
@@ -91,7 +88,15 @@ class GameUISplitViewController: UISplitViewController {
                     return;
                 }
                 
+                if self.engineAR.isFinished() && evSplit[0] != "run" {
+                    print("Finished -> fast")
+                    return
+                }
+                
                 switch evSplit[0] {
+                case "run":
+                    self.engineAR.resetLevel()
+                    print("Game started")
                 case "moveFront":
                     self.engineAR.moveFront()
                     break

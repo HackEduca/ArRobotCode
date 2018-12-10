@@ -48,11 +48,15 @@ class PlayerAR: PlayerInterface {
     }
     
     func reset() {
-        let positionAction = SCNAction.move(to: SCNVector3(0, 0.01, 0), duration: 0)
-        let rotationAction = SCNAction.rotateTo(x: 0, y: CGFloat(Float.pi), z: 0, duration: 0)
-        
-        player.runAction(positionAction)
+        let rotationAction = SCNAction.rotateTo(x: 0, y: CGFloat(Float.pi), z: 0, duration: 1)
         player.runAction(rotationAction)
+        
+        if self.player.position.x == 0 && self.player.position.z == 0 {
+            return;
+        }
+        
+        let positionAction = SCNAction.move(to: SCNVector3(0, 0.01, 0), duration: 1)
+        player.runAction(positionAction)
     }
 }
 
