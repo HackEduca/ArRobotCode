@@ -86,7 +86,10 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     func sendToJS(message msg: String) {
-        instructionsWebView.evaluateJavaScript("fromIOS('hello from the ios')", completionHandler: nil)
+        instructionsWebView.evaluateJavaScript(msg) { (el, err) in
+            print("Evaluating: ", msg)
+            print(err)
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

@@ -170,7 +170,7 @@ class FirebaseLevelsRepository: Repository {
     }
     
     private func syncAddtoServer(a: DataLevel) {
-        do {
+        do { 
             self.db.collection("levels").document(a.UUID).setData(try a.asDictionary())
         } catch {
             

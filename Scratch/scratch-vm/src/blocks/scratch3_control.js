@@ -104,7 +104,21 @@ class Scratch3ControlBlocks {
     }
 
     forever (args, util) {
-        util.startBranch(1, true);
+        const times = 500;
+
+        // Initialize loop
+        if (typeof util.stackFrame.loopCounter === 'undefined') {
+            util.stackFrame.loopCounter = times;
+        }
+        // Only execute once per frame.
+        // When the branch finishes, `repeat` will be executed again and
+        // the second branch will be taken, yielding for the rest of the frame.
+        // Decrease counter
+        util.stackFrame.loopCounter--;
+        // If we still have some left, start the branch.
+        if (util.stackFrame.loopCounter >= 0) {
+            util.startBranch(1, true);
+        }
     }
 
     wait (args) {

@@ -51,8 +51,8 @@ class GameUISplitViewController: UISplitViewController {
                 guard let event = ev.element else {
                     return
                 }
+                print("Processing: ", event)
                 
-                 print("Processing: ", event)
                 var evSplit = event.split(separator: " ")
                 if evSplit.count == 0 {
                     return;

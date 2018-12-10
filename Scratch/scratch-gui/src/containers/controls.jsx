@@ -28,6 +28,7 @@ class Controls extends React.Component {
         }
     }
     handleStopAllClick (e) {
+        alert("Stopping !");
         e.preventDefault();
         this.props.vm.stopAll();
         analytics.event({
