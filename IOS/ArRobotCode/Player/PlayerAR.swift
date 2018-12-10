@@ -16,6 +16,7 @@ class PlayerAR: PlayerInterface {
     init(player: SCNNode, tileSize: Float) {
         self.player = player
         self.tileSize = tileSize
+        self.player.position = SCNVector3(0, 0.1, 0)
     }
     
     func moveFront() {
@@ -47,8 +48,8 @@ class PlayerAR: PlayerInterface {
     }
     
     func reset() {
-        let positionAction = SCNAction.move(to: SCNVector3(0, 0.01, 0), duration: 1)
-        let rotationAction = SCNAction.rotateTo(x: 0, y: CGFloat(Float.pi), z: 0, duration: 1)
+        let positionAction = SCNAction.move(to: SCNVector3(0, 0.01, 0), duration: 0)
+        let rotationAction = SCNAction.rotateTo(x: 0, y: CGFloat(Float.pi), z: 0, duration: 0)
         
         player.runAction(positionAction)
         player.runAction(rotationAction)

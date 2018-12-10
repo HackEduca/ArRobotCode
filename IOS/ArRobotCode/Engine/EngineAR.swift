@@ -68,6 +68,7 @@ class EngineAR: EngineInterface {
         DispatchQueue.main.async {
             self.status.text = "Moving in front"
         }
+      
         self.playerController.moveFront()
         
         // Move
@@ -194,6 +195,13 @@ class EngineAR: EngineInterface {
                 self.status.text = "Not turning right, tile is of different type"
             }
         }
+    }
+    
+    func stopLevel() {
+        DispatchQueue.main.async {
+            self.status.text = "Finished..."
+        }
+       self.valid = false
     }
     
     func resetLevel() {

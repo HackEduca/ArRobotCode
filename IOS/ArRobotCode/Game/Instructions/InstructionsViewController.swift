@@ -15,6 +15,7 @@ import RxCocoa
 
 class InstructionsViewController: UIViewController {
     public var instructionsBehaviourSubject: BehaviorSubject<String> = BehaviorSubject(value: "")
+    public var eventsBehaviourSubject      : BehaviorSubject<String> = BehaviorSubject(value: "")
     
     @IBOutlet public weak var backButton: UIButton!
     @IBOutlet public weak var statusTextView: UITextView!
@@ -78,10 +79,16 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
             return;
         }
     
-        // Publish the responnse from webkit only if the instruction is valid
-        let possibleInstructions = ["run","moveFront", "moveFrontIf" ,"moveBack", "moveBackIf","turnLeft", "turnLeftIf", "turnRight","turnRightIf"]
+        // Publish instructions
+        let possibleInstructions = ["moveFront", "moveFrontIf" ,"moveBack", "moveBackIf","turnLeft", "turnLeftIf", "turnRight", "turnRightIf"]
         if possibleInstructions.contains(String(responseSplit[0])) {
             self.instructionsBehaviourSubject.onNext(response)
+        }
+        
+        // Publish events
+        let possibleEvents = ["run", "stop"]
+        if possibleEvents.contains(String(responseSplit[0])) {
+            self.eventsBehaviourSubject.onNext(response)
         }
     }
     
@@ -98,7 +105,7 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        print("Alert from WebKIT: " + message)
+        // This is called when I have an alert
         completionHandler()
     }
     

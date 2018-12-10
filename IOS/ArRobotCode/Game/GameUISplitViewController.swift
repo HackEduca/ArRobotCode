@@ -42,8 +42,37 @@ class GameUISplitViewController: UISplitViewController {
         // Instantiate engine ar
         self.engineAR = EngineAR(level: self.levelsRepository.get(at: self.crtLevelAt), player: self.arVC.sceneController.playerController, status: self.instructionsVC.statusTextView)
         
-        // Events from Instructions WebView
+        // Events
         let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+        self.instructionsVC.eventsBehaviourSubject.asObserver()
+            .observeOn(concurrentScheduler)
+            .subscribeOn(concurrentScheduler)
+            .subscribe({ (ev) in
+                guard let event = ev.element else {
+                    return
+                }
+                print("Processing event: ", event)
+                
+                var evSplit = event.split(separator: " ")
+                if evSplit.count == 0 {
+                    return;
+                }
+                
+                switch evSplit[0] {
+                case "run":
+                    self.engineAR.resetLevel()
+                    print("Game started")
+                case "stop":
+                    self.engineAR.stopLevel()
+                default:
+                    print(evSplit)
+                    print("Invalid response from WebKit")
+                }
+
+            })
+            .disposed(by: self.disposeBag)
+        
+        // Instructions
         self.instructionsVC.instructionsBehaviourSubject.asObserver()
             .observeOn(concurrentScheduler)
             .subscribeOn(concurrentScheduler)
@@ -51,16 +80,18 @@ class GameUISplitViewController: UISplitViewController {
                 guard let event = ev.element else {
                     return
                 }
-                print("Processing: ", event)
+                if self.engineAR.isFinished() {
+                    print("Finished -> fast")
+                    return
+                }
                 
+                print("Processing instruction: ", event)
                 var evSplit = event.split(separator: " ")
                 if evSplit.count == 0 {
                     return;
                 }
-
+                
                 switch evSplit[0] {
-                case "run":
-                    self.engineAR.resetLevel()
                 case "moveFront":
                     self.engineAR.moveFront()
                     break
@@ -96,7 +127,6 @@ class GameUISplitViewController: UISplitViewController {
                 DispatchQueue.main.async {
                      self.instructionsVC.statusTextView.text = ""
                 }
-               
         })
         .disposed(by: self.disposeBag)
         
