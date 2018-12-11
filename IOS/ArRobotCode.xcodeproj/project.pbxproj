@@ -26,6 +26,7 @@
 		D324C403219C256600C78C4D /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C401219C256500C78C4D /* Plane.swift */; };
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
 		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
+		D35E0ABB21C04598003E7244 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E0ABA21C04598003E7244 /* MainViewController.swift */; };
 		D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* PlayerHexa.swift */; };
 		D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* PlayerInterface.swift */; };
 		D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */; };
@@ -36,7 +37,7 @@
 		D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E754C21A4519100590B78 /* PlayerAR.swift */; };
 		D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */; };
 		D39A3E9321A6E7E500FA00C5 /* EngineAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */; };
-		D3BA70EB21BA5CF100E0742C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA70EA21BA5CF100E0742C /* MainViewController.swift */; };
+		D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */; };
 		D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EE21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EF21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
@@ -113,6 +114,7 @@
 		D324C401219C256500C78C4D /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
+		D35E0ABA21C04598003E7244 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* PlayerHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
 		D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLevelsRepository.swift; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 		D38E754C21A4519100590B78 /* PlayerAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAR.swift; sourceTree = "<group>"; };
 		D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineInterface.swift; sourceTree = "<group>"; };
 		D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAR.swift; sourceTree = "<group>"; };
-		D3BA70EA21BA5CF100E0742C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BA70F221BA764800E0742C /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
 		D3C55EDB218775130007BCC9 /* LevelsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsListViewModel.swift; sourceTree = "<group>"; };
@@ -337,7 +339,8 @@
 				D3E50F2F2178850C000270EE /* Game.storyboard */,
 				D3F888892187302500D7A080 /* Levels.storyboard */,
 				D3E50F342178850D000270EE /* Main.storyboard */,
-				D3BA70EA21BA5CF100E0742C /* MainViewController.swift */,
+				D35E0ABA21C04598003E7244 /* MainViewController.swift */,
+				D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */,
 				D3E50F2B2178850C000270EE /* art.scnassets */,
 				D3E50F322178850D000270EE /* Assets.xcassets */,
 				D3E50F372178850D000270EE /* Info.plist */,
@@ -749,8 +752,9 @@
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
-				D3BA70EB21BA5CF100E0742C /* MainViewController.swift in Sources */,
+				D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */,
 				D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */,
+				D35E0ABB21C04598003E7244 /* MainViewController.swift in Sources */,
 				D38833712189B0F000D04589 /* APIClient.swift in Sources */,
 				D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */,
 				D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */,

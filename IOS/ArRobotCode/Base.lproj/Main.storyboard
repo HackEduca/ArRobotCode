@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" customClass="MainViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" customClass="AuthViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pjg-DW-LzY" customClass="GIDSignInButton">
@@ -43,6 +43,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52.734375" y="374.67057101024886"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="2Fp-qC-cKx">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="oeW-78-U2T" customClass="MainViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="Eam-M4-puu">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmr-t0-hoW">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="834"/>
+                                <color key="backgroundColor" red="0.95314523963730569" green="0.95314523963730569" blue="0.95314523963730569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="NYb-hP-wzW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Q0-Bbo">
+                                <rect key="frame" x="250" y="0.0" width="862" height="834"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wY8-Q0-Bbo" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="trailing" id="AeB-wx-ChU"/>
+                            <constraint firstItem="wY8-Q0-Bbo" firstAttribute="trailing" secondItem="F4l-5c-ze2" secondAttribute="trailing" id="qLt-jX-GJ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F4l-5c-ze2"/>
+                    </stackView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nq5-7H-s6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901.61870503597129" y="376.97841726618708"/>
         </scene>
     </scenes>
 </document>

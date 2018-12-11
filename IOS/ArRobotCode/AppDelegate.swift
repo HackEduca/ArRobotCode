@@ -67,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func navigateIfAuthenticated() {
         let firebaseAuth = Auth.auth()
         if firebaseAuth.currentUser != nil {
-            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Levels", bundle: nil)
-            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateInitialViewController() as! UIViewController
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "MainViewController") as! UIViewController
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.rootViewController = initialViewControlleripad
             self.window?.makeKeyAndVisible()
