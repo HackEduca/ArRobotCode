@@ -18,6 +18,8 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     @IBOutlet weak var playLevelButton: UIButton!
     
+    @IBOutlet weak var levelsOptionsStackView: UIStackView!
+    
     private var levelsRepository: LevelsRepository!
     private var crtLevelAt: Int = -1
     
@@ -33,6 +35,7 @@ class LevelBuilderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupExtraOptionsIfAdmin()
     }
     
     public func loadLevel(repository: LevelsRepository, at: Int) {
@@ -165,6 +168,41 @@ class LevelBuilderViewController: UIViewController {
                 self.viewModel.setWidth(newWidth: s!)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func setupExtraOptionsIfAdmin() {
+        if UserRepository.shared.getUserProperties()?.Role == "admin" {
+            // Level Public Switch
+            let levelPublicSwitch = UISwitch()
+            levelPublicSwitch.isOn = false
+            self.levelsOptionsStackView.insertArrangedSubview(levelPublicSwitch, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            // Level Order Label
+            let levelOrderLabel = UILabel()
+            levelOrderLabel.text = "Order: 1"
+            self.levelsOptionsStackView.insertArrangedSubview(levelOrderLabel, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            // Level Order Slider
+            let levelOrderSlider = UISlider()
+            levelOrderSlider.minimumValue = 1
+            levelOrderSlider.maximumValue = 25
+            levelOrderSlider.value = 1
+            self.levelsOptionsStackView.insertArrangedSubview(levelOrderSlider, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            levelOrderSlider
+                .rx
+                .tapGesture()
+                .subscribe({ev in
+                    levelOrderLabel.text = "Ord: " + String( Int(levelOrderSlider.value) )
+                })
+                .disposed(by: self.disposeBag)
+            
+            // Level Chapter Text Field
+            let levelChapterTextField = UITextField()
+            levelChapterTextField.placeholder = "Chapter"
+            levelChapterTextField.borderStyle = .roundedRect
+            self.levelsOptionsStackView.insertArrangedSubview(levelChapterTextField, at: self.levelsOptionsStackView.subviews.count - 1)
+        }
     }
 }
 
