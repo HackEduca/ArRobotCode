@@ -15,6 +15,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var levelsTableView: UITableView!
     @IBOutlet weak var addLevelTextField: UITextField!
     @IBOutlet weak var addLevelImageView: UIImageView!
+    @IBOutlet weak var backImageView: UIImageView!
     
     // Will be a reference received from parent controller
     private var levelsRepository: FirebaseLevelsRepository?
@@ -64,6 +65,26 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         setupTableViewBinding()
         setupTableViewItemSelected()
         setupAddingNewLevel()
+        setupGoBack()
+    }
+    
+    private func setupGoBack() {
+        self.backImageView
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe({ev in
+            print("Go back clicked")
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+            // Instantiate the VC
+            guard let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
+                return
+            }
+            
+            // Show
+            self.present(mainViewController, animated: true, completion: nil)
+        }).disposed(by: self.disposeBag)
     }
     
     private func setupViewModel() {

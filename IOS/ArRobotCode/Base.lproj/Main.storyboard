@@ -9,6 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Azd-jY-nT8">
+            <objects>
+                <navigationController id="86J-hL-Oc0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ikY-xu-fAJ">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oeW-78-U2T" kind="relationship" relationship="rootViewController" id="C2u-Rz-b9k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pS-eu-59Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-471"/>
+        </scene>
         <!--Auth View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
@@ -44,19 +60,75 @@
             </objects>
             <point key="canvasLocation" x="52.734375" y="374.67057101024886"/>
         </scene>
+        <!--Levels-->
+        <scene sceneID="5ZU-zI-ndN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Levels" id="zic-kk-1QE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41c-HY-9EG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="1159"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="2Fp-qC-cKx">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="oeW-78-U2T" customClass="MainViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" id="oeW-78-U2T" customClass="MainViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <stackView key="view" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="Eam-M4-puu">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmr-t0-hoW">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="834"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut.png" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-Ai-L2M">
+                                        <rect key="frame" x="10" y="50" width="230" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="Ynv-Rc-nP3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xev-NN-PbM" userLabel="UserLabel">
+                                        <rect key="frame" x="0.0" y="230" width="250" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvz-Vi-WbA">
+                                        <rect key="frame" x="0.0" y="378" width="250" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-3M-jYA">
+                                        <rect key="frame" x="10" y="270" width="230" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="My Characters"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-as-smO">
+                                        <rect key="frame" x="10" y="319" width="230" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="My Levels"/>
+                                        <connections>
+                                            <segue destination="zic-kk-1QE" kind="show" id="yPL-LZ-FRO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.95314523963730569" green="0.95314523963730569" blue="0.95314523963730569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xev-NN-PbM" secondAttribute="trailing" id="1rg-Ue-ZSo"/>
+                                    <constraint firstItem="xev-NN-PbM" firstAttribute="top" secondItem="qYa-Ai-L2M" secondAttribute="bottom" constant="10" id="32G-uK-O4M"/>
+                                    <constraint firstItem="qYa-Ai-L2M" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="8Y9-VL-H4m"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vdl-as-smO" secondAttribute="trailing" constant="10" id="8Zv-tO-ari"/>
+                                    <constraint firstItem="Vdl-as-smO" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Ege-TA-J31"/>
+                                    <constraint firstItem="Ypj-3M-jYA" firstAttribute="top" secondItem="xev-NN-PbM" secondAttribute="bottom" constant="10" id="Grt-1y-Sns"/>
+                                    <constraint firstAttribute="trailing" secondItem="vvz-Vi-WbA" secondAttribute="trailing" id="KoA-jU-HW3"/>
+                                    <constraint firstItem="Ypj-3M-jYA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Mga-Op-gnm"/>
                                     <constraint firstAttribute="width" constant="250" id="NYb-hP-wzW"/>
+                                    <constraint firstAttribute="trailing" secondItem="qYa-Ai-L2M" secondAttribute="trailing" constant="10" id="WgP-D1-O5p"/>
+                                    <constraint firstItem="Vdl-as-smO" firstAttribute="top" secondItem="Ypj-3M-jYA" secondAttribute="bottom" constant="10" id="ZCT-6U-Pg5"/>
+                                    <constraint firstItem="qYa-Ai-L2M" firstAttribute="top" secondItem="Zmr-t0-hoW" secondAttribute="top" constant="50" id="b1a-8o-4eS"/>
+                                    <constraint firstItem="vvz-Vi-WbA" firstAttribute="top" secondItem="Vdl-as-smO" secondAttribute="bottom" constant="20" id="ij5-uA-9PL"/>
+                                    <constraint firstItem="xev-NN-PbM" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="lbF-6M-W1i"/>
+                                    <constraint firstItem="vvz-Vi-WbA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="q2H-rI-Axc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ypj-3M-jYA" secondAttribute="trailing" constant="10" id="qLJ-6L-8Ae"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Q0-Bbo">
@@ -70,10 +142,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F4l-5c-ze2"/>
                     </stackView>
+                    <navigationItem key="navigationItem" id="uTE-yn-z3O"/>
+                    <connections>
+                        <outlet property="myCharactersButton" destination="Ypj-3M-jYA" id="69q-GI-gCi"/>
+                        <outlet property="myLevelsButton" destination="Vdl-as-smO" id="wa2-Fm-0Jb"/>
+                        <outlet property="userLabel" destination="xev-NN-PbM" id="R2l-ZQ-gI6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nq5-7H-s6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901.61870503597129" y="376.97841726618708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="astronaut.png" width="783" height="776"/>
+    </resources>
 </document>

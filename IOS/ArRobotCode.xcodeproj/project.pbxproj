@@ -27,6 +27,7 @@
 		D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */; };
 		D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35DC80C218DE210000B0FFC /* LevelViewModel.swift */; };
 		D35E0ABB21C04598003E7244 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E0ABA21C04598003E7244 /* MainViewController.swift */; };
+		D35E0ABD21C04786003E7244 /* astronaut.png in Resources */ = {isa = PBXBuildFile; fileRef = D35E0ABC21C04786003E7244 /* astronaut.png */; };
 		D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* PlayerHexa.swift */; };
 		D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* PlayerInterface.swift */; };
 		D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */; };
@@ -63,6 +64,7 @@
 		D3F7440E21830EA10096958F /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440D21830EA10096958F /* TileCell.swift */; };
 		D3F74410218312600096958F /* DataTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440F218312600096958F /* DataTile.swift */; };
 		D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F888892187302500D7A080 /* Levels.storyboard */; };
+		D3FB50B321C15269001E0B74 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50B221C15269001E0B74 /* back.png */; };
 		E07EB761F78F427627962263 /* Pods_ArRobotCodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46A38F146B0693217A16C04 /* Pods_ArRobotCodeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,7 @@
 		D35DC80A218DCA3B000B0FFC /* LevelsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSplitViewController.swift; sourceTree = "<group>"; };
 		D35DC80C218DE210000B0FFC /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
 		D35E0ABA21C04598003E7244 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D35E0ABC21C04786003E7244 /* astronaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astronaut.png; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* PlayerHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
 		D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLevelsRepository.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		D3F7440D21830EA10096958F /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		D3F7440F218312600096958F /* DataTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTile.swift; sourceTree = "<group>"; };
 		D3F888892187302500D7A080 /* Levels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levels.storyboard; sourceTree = "<group>"; };
+		D3FB50B221C15269001E0B74 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		E1C3977C63C9ACA352E47E74 /* Pods-ArRobotCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeTests/Pods-ArRobotCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +350,8 @@
 				D3E50F372178850D000270EE /* Info.plist */,
 				D3E50F5921788FF2000270EE /* Tile.sks */,
 				D3BA70F221BA764800E0742C /* rocket.json */,
+				D35E0ABC21C04786003E7244 /* astronaut.png */,
+				D3FB50B221C15269001E0B74 /* back.png */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 			);
 			path = ArRobotCode;
@@ -544,6 +550,7 @@
 				D3185F96219A0EC5002310C6 /* index.html in Resources */,
 				D3185F9C219A0EC6002310C6 /* lib.min.js in Resources */,
 				D3185F9D219A0EC6002310C6 /* player.js in Resources */,
+				D35E0ABD21C04786003E7244 /* astronaut.png in Resources */,
 				D3E50F2C2178850C000270EE /* art.scnassets in Resources */,
 				D3185F97219A0EC6002310C6 /* player.html in Resources */,
 				D3185F95219A0EC5002310C6 /* extension-worker.js in Resources */,
@@ -552,6 +559,7 @@
 				D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */,
 				D3185F9B219A0EC6002310C6 /* compatibilitytesting.js in Resources */,
 				D3E50F5A21788FF2000270EE /* Tile.sks in Resources */,
+				D3FB50B321C15269001E0B74 /* back.png in Resources */,
 				D3185F9A219A0EC6002310C6 /* blocks-only.html in Resources */,
 				D3185F93219A0EC5002310C6 /* gui.js in Resources */,
 				D3BA70F321BA764800E0742C /* rocket.json in Resources */,

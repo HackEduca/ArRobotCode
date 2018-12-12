@@ -23,8 +23,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="io7-1C-7TG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-51-Es8" userLabel="BackImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bWW-cR-Zld"/>
+                                                    <constraint firstAttribute="width" constant="33" id="iU4-Hk-eY6"/>
+                                                </constraints>
+                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Level Name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vow-Vb-BWM" userLabel="AddLevelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
+                                                <rect key="frame" x="33" y="0.0" width="254" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -92,27 +99,13 @@
                     <connections>
                         <outlet property="addLevelImageView" destination="bpY-pG-cKa" id="j1u-Vf-JKn"/>
                         <outlet property="addLevelTextField" destination="vow-Vb-BWM" id="rLM-CL-E3Y"/>
+                        <outlet property="backImageView" destination="RdW-51-Es8" id="95o-jX-hJP"/>
                         <outlet property="levelsTableView" destination="7wZ-2Z-2d2" id="Dz7-Vt-iEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7W-4d-h3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2069" y="-101"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="xzO-Rb-ddx">
-            <objects>
-                <viewController id="6mi-13-PY9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ehZ-R5-QBo">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="WXj-D8-sM6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ITk-sp-fxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1612" y="-1532"/>
         </scene>
         <!--Levels Split View Controller-->
         <scene sceneID="0M5-VA-r87">
@@ -242,5 +235,6 @@
     </scenes>
     <resources>
         <image name="add" width="33.604373931884766" height="33.604373931884766"/>
+        <image name="back.png" width="512" height="512"/>
     </resources>
 </document>

@@ -37,6 +37,7 @@
         <scene sceneID="Co1-re-JSB">
             <objects>
                 <splitViewController storyboardIdentifier="GameUISplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" maximumPrimaryColumnWidth="556" minimumPrimaryColumnWidth="556" preferredPrimaryColumnWidthFraction="1" id="HcK-VT-8rj" customClass="GameUISplitViewController" customModule="ArRobotCode" customModuleProvider="target" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="enM-Lp-spP"/>
                     <size key="freeformSize" width="1112" height="834"/>
                     <connections>
                         <segue destination="w1v-NA-Qf0" kind="relationship" relationship="detailViewController" id="EMx-u5-KjP"/>
