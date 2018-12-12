@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 class LevelViewModel{
-    private var levelsRepository: FirebaseLevelsRepository;
+    private var levelsRepository: LevelsRepository;
     private var levelAt: Int = -1;
     
     private var level: BehaviorSubject<DataLevel> = BehaviorSubject(value: DataLevel())
@@ -19,7 +19,7 @@ class LevelViewModel{
     }
     
     
-    init(repository: FirebaseLevelsRepository, at: Int) {
+    init(repository: LevelsRepository, at: Int) {
         self.levelsRepository = repository
         self.levelAt = at
         self.level.onNext(repository.get(at: at))

@@ -17,7 +17,7 @@ class LevelsSplitViewController: UISplitViewController {
     var levelBuilderVC: LevelBuilderViewController?
     
     // Repository with all the levels
-    private var levelsRepository = FirebaseLevelsRepository()
+    private var levelsRepository = LevelsRepository()
     private var at: Int = -1
     
     // For disposing rx

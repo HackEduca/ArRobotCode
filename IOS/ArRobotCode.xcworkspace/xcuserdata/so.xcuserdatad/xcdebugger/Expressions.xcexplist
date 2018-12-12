@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dict[0]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
@@ -76,10 +71,13 @@
          contextName = "closure #1 in LevelBuilderViewController.loadLevel():LevelBuilderViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in LevelsListVController.setupGoBack():LevelsListVController.swift">
+      </ContextState>
+      <ContextState
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "self.game?.scale">
             </PersistentString>
             <PersistentString
                value = "self.scene?.rootNode.scale">
@@ -91,7 +89,7 @@
                value = "TILE_SIZE">
             </PersistentString>
             <PersistentString
-               value = "self.game?.scale">
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -114,6 +112,14 @@
             </PersistentString>
             <PersistentString
                value = "self.player.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in UserRepository.getUserType():UserRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.data()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -202,6 +208,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in UserRepository.getUserPropertiesFromServer():UserRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.data()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelsListVController.viewDidLoad():LevelsListVController.swift">
          <PersistentStrings>
             <PersistentString
@@ -213,24 +227,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in FirebaseLevelsRepository.syncFromServer():FirebaseLevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.data()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.UsedA.rawValue ">
+               value = "TypeOfTile.Free.rawValue">
             </PersistentString>
             <PersistentString
                value = "TypeOfTile.UsedE.rawValue">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.Free.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in FirebaseLevelsRepository.syncFromServer():FirebaseLevelsRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "document.data()">
+               value = "TypeOfTile.UsedA.rawValue ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -332,7 +346,12 @@
          contextName = "FirebaseLevelsRepository.add(a:):FirebaseLevelsRepository.swift">
       </ContextState>
       <ContextState
-         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dict[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

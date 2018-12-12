@@ -23,9 +23,10 @@ class MainViewController: UIViewController {
     }
     
     func setUserLabel() {
-        let firebaseAuth = Auth.auth()
-        if firebaseAuth.currentUser != nil {
-            self.userLabel.text = "Hi, " + (firebaseAuth.currentUser?.displayName)!
+        if UserRepository.shared.getUser() != nil {
+            self.userLabel.text = "Hi, " + (UserRepository.shared.getUser()?.displayName)!
         }
+        
+        print(UserRepository.shared.getUserProperties()?.Role)
     }
 }
