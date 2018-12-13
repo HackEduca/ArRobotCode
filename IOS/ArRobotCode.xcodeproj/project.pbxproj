@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D4C3F9F8909AE87EBF388AA /* Pods_ArRobotCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B98C4B152FA25D4771F780 /* Pods_ArRobotCode.framework */; };
 		B9C5F2DAFD470FCB1BC0D63A /* Pods_ArRobotCodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9F63EFD1642FFBB03F16D6 /* Pods_ArRobotCodeTests.framework */; };
+		D3015A2421C2656000A0E0A0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3015A2321C2656000A0E0A0 /* Character.swift */; };
+		D3015A2621C266FB00A0E0A0 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3015A2521C266FB00A0E0A0 /* CharactersRepository.swift */; };
 		D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F16022179EF02006B37B4 /* SidePageViewController.swift */; };
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
 		D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */; };
@@ -95,6 +97,8 @@
 		B262C8F5CBA09810F4EFEC74 /* Pods-ArRobotCodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeUITests/Pods-ArRobotCodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B46A38F146B0693217A16C04 /* Pods_ArRobotCodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArRobotCodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9F63EFD1642FFBB03F16D6 /* Pods_ArRobotCodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArRobotCodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3015A2321C2656000A0E0A0 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D3015A2521C266FB00A0E0A0 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		D31F16022179EF02006B37B4 /* SidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePageViewController.swift; sourceTree = "<group>"; };
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISplitViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 				D3C55EE42188531C0007BCC9 /* Repository.swift */,
 				D36BF84021BD1E48009CAC68 /* LevelsRepository.swift */,
 				D3FB50D421C16129001E0B74 /* UserRepository.swift */,
+				D3015A2521C266FB00A0E0A0 /* CharactersRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				D3F7440F218312600096958F /* DataTile.swift */,
 				D3C55EE121883B8F0007BCC9 /* DataLevel.swift */,
 				D3FB50D621C16512001E0B74 /* UserProperties.swift */,
+				D3015A2321C2656000A0E0A0 /* Character.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */,
 				D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */,
 				D35E0ABB21C04598003E7244 /* MainViewController.swift in Sources */,
+				D3015A2621C266FB00A0E0A0 /* CharactersRepository.swift in Sources */,
 				D38833712189B0F000D04589 /* APIClient.swift in Sources */,
 				D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */,
 				D3C55EDE2187791A0007BCC9 /* LevelsListVController.swift in Sources */,
@@ -786,6 +793,7 @@
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */,
 				D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */,
+				D3015A2421C2656000A0E0A0 /* Character.swift in Sources */,
 				D3F74410218312600096958F /* DataTile.swift in Sources */,
 				D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */,
 				D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */,

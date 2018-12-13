@@ -23,6 +23,10 @@ class UserRepository {
         self.getUserPropertiesFromServer()
     }
     
+    func doInit() {
+        
+    }
+    
     func getUser() -> User?{
         return self.firebaseAuth.currentUser
     }
@@ -44,5 +48,4 @@ class UserRepository {
             }
         })
     }
-
 }
