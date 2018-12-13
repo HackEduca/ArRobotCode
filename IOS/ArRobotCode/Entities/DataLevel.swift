@@ -11,8 +11,12 @@ import Foundation
 class DataLevel: Codable {
     @objc dynamic  var UUID: String = NSUUID().uuidString
     @objc dynamic  var Name: String = ""
-    @objc dynamic  var Width: Int = 0
+    @objc dynamic  var Width:  Int = 0
     @objc dynamic  var Height: Int = 0
+    @objc dynamic  var Public: Bool = false
+    @objc dynamic  var Order:  Int = 0
+    @objc dynamic  var Chapter: String = ""
+    
     var Tiles: [DataTile] = []
     
     static func comparer(lhs: DataLevel, rhs: DataLevel) -> Bool {
@@ -24,6 +28,9 @@ class DataLevel: Codable {
         case UUID
         case Width
         case Height
+        case Public
+        case Order
+        case Chapter
         case Tiles
     }
     
@@ -39,6 +46,18 @@ class DataLevel: Codable {
     public func setHeight(newHeight: Int) {
         self.Height = newHeight
         self.reAssignTiles()
+    }
+    
+    public func setPublic(newPublic: Bool) {
+        self.Public = newPublic
+    }
+    
+    public func setOrder(newOrder: Int) {
+        self.Order = newOrder
+    }
+    
+    public func setChapter(newChapter: String) {
+        self.Chapter = newChapter
     }
     
     private func reAssignTiles(){

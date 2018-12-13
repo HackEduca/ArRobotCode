@@ -78,5 +78,35 @@ class LevelViewModel{
         self.level.onNext(self.levelsRepository.get(at: self.levelAt))
         self.levelsRepository.triggerUpdate(at: self.levelAt)
     }
+    
+    public func setPublic(newPublic: Bool) {
+        if self.levelsRepository.get(at: self.levelAt).Public == newPublic {
+            return
+        }
+        
+        self.levelsRepository.get(at: self.levelAt).setPublic(newPublic: newPublic)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
+    }
+    
+    public func setOrder(newOrder: Int) {
+        if self.levelsRepository.get(at: self.levelAt).Order == newOrder {
+            return
+        }
+        
+        self.levelsRepository.get(at: self.levelAt).setOrder(newOrder: newOrder)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
+    }
+    
+    public func setChapter(newChapter: String) {
+        if self.levelsRepository.get(at: self.levelAt).Chapter == newChapter {
+            return
+        }
+        
+        self.levelsRepository.get(at: self.levelAt).setChapter(newChapter: newChapter)
+        self.level.onNext(self.levelsRepository.get(at: self.levelAt))
+        self.levelsRepository.triggerUpdate(at: self.levelAt)
+    }
 
 }

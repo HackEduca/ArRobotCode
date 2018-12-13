@@ -3,13 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dict[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in DataLevel.setTiles(newTiles:):DataLevel.swift">
          <PersistentStrings>
             <PersistentString
                value = "newTiles.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LevelBuilderViewController.setupExtraOptionsIfAdmin():LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "levelPublicSwitch.isOn">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -77,7 +90,7 @@
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.game?.scale">
+               value = "TypeOfTile.Start.rawValue">
             </PersistentString>
             <PersistentString
                value = "self.scene?.rootNode.scale">
@@ -89,7 +102,7 @@
                value = "TILE_SIZE">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.Start.rawValue">
+               value = "self.game?.scale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -98,6 +111,14 @@
          <PersistentStrings>
             <PersistentString
                value = "splitViewController?.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in UserRepository.getUserType():UserRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.data()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -112,14 +133,6 @@
             </PersistentString>
             <PersistentString
                value = "self.player.position">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in UserRepository.getUserType():UserRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "document.data()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -183,6 +196,14 @@
          contextName = "closure #1 in LevelViewModel.setName(newName:):LevelViewModel.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #2 in LevelBuilderViewController.setupExtraOptionsIfAdmin():LevelBuilderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "levelOrderSlider.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LevelBuilderViewController.collectionView(_:layout:sizeForItemAt:):LevelBuilderViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -238,13 +259,13 @@
          contextName = "closure #1 in DataTile.swipeRight():DataTile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TypeOfTile.Free.rawValue">
+               value = "TypeOfTile.UsedA.rawValue ">
             </PersistentString>
             <PersistentString
                value = "TypeOfTile.UsedE.rawValue">
             </PersistentString>
             <PersistentString
-               value = "TypeOfTile.UsedA.rawValue ">
+               value = "TypeOfTile.Free.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -335,6 +356,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LevelViewModel.setHeight(newHeight:):LevelViewModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in DataTile.swipeLeft():DataTile.swift">
          <PersistentStrings>
             <PersistentString
@@ -344,14 +368,6 @@
       </ContextState>
       <ContextState
          contextName = "FirebaseLevelsRepository.add(a:):FirebaseLevelsRepository.swift">
-      </ContextState>
-      <ContextState
-         contextName = "FirebaseLevelsRepository.syncUpdateToServer(a:):FirebaseLevelsRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dict[0]">
-            </PersistentString>
-         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
