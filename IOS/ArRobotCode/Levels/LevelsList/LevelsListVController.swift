@@ -18,7 +18,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var backImageView: UIImageView!
     
     // Will be a reference received from parent controller
-    private var levelsRepository: FirebaseLevelsRepository?
+    private var levelsRepository: LevelsRepository?
     
     private var viewModel: LevelsListViewModel!
     private let cellIdentifier = "LevelCell"
@@ -58,7 +58,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
     }
     
-    public func setupRepository(repository: FirebaseLevelsRepository) {
+    public func setupRepository(repository: LevelsRepository) {
         self.levelsRepository = repository
         setupViewModel()
         setupTableView()

@@ -117,8 +117,10 @@ class LevelsRepository: Repository {
     }
     
     func triggerUpdate(at: Int) {
-        self.entitiesBehaviourSubject.onNext(self.entities)
-        self.syncUpdateToServer(a: self.entities[at])
+        if(at >= 0) {
+            self.entitiesBehaviourSubject.onNext(self.entities)
+            self.syncUpdateToServer(a: self.entities[at])
+        }
     }
     
     func delete(Name: String) -> Bool {

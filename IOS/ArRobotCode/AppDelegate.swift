@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        // Initialise UserRepository
+        UserRepository.shared.getUserProperties()
+        
 //        do {
 //            let firebaseAuth = Auth.auth()
 //            try firebaseAuth.signOut()

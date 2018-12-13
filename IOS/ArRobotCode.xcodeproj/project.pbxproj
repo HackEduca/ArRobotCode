@@ -19,7 +19,7 @@
 		D35E0ABD21C04786003E7244 /* astronaut.png in Resources */ = {isa = PBXBuildFile; fileRef = D35E0ABC21C04786003E7244 /* astronaut.png */; };
 		D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124321807CAA000458C1 /* PlayerHexa.swift */; };
 		D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368124421807CAA000458C1 /* PlayerInterface.swift */; };
-		D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */; };
+		D36BF84121BD1E48009CAC68 /* LevelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BF84021BD1E48009CAC68 /* LevelsRepository.swift */; };
 		D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388336C2189AEDD00D04589 /* APIRequest.swift */; };
 		D388336F2189B0C000D04589 /* LevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388336E2189B0C000D04589 /* LevelsRequest.swift */; };
 		D38833712189B0F000D04589 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38833702189B0F000D04589 /* APIClient.swift */; };
@@ -54,7 +54,6 @@
 		D3F74410218312600096958F /* DataTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440F218312600096958F /* DataTile.swift */; };
 		D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F888892187302500D7A080 /* Levels.storyboard */; };
 		D3FB50B321C15269001E0B74 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50B221C15269001E0B74 /* back.png */; };
-		D3FB50B521C1586B001E0B74 /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB50B421C1586B001E0B74 /* FirebaseUserService.swift */; };
 		D3FB50C921C15A6F001E0B74 /* gui.js in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50B821C15A6E001E0B74 /* gui.js */; };
 		D3FB50CA21C15A6F001E0B74 /* player.js in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50B921C15A6E001E0B74 /* player.js */; };
 		D3FB50CB21C15A6F001E0B74 /* blocksonly.js in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50BB21C15A6E001E0B74 /* blocksonly.js */; };
@@ -66,6 +65,8 @@
 		D3FB50D121C15A6F001E0B74 /* compatibilitytesting.js in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50C521C15A6E001E0B74 /* compatibilitytesting.js */; };
 		D3FB50D221C15A6F001E0B74 /* lib.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50C621C15A6F001E0B74 /* lib.min.js */; };
 		D3FB50D321C15A6F001E0B74 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D3FB50C721C15A6F001E0B74 /* index.html */; };
+		D3FB50D521C16129001E0B74 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB50D421C16129001E0B74 /* UserRepository.swift */; };
+		D3FB50D721C16512001E0B74 /* UserProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB50D621C16512001E0B74 /* UserProperties.swift */; };
 		E07EB761F78F427627962263 /* Pods_ArRobotCodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46A38F146B0693217A16C04 /* Pods_ArRobotCodeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +105,7 @@
 		D35E0ABC21C04786003E7244 /* astronaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astronaut.png; sourceTree = "<group>"; };
 		D368124321807CAA000458C1 /* PlayerHexa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHexa.swift; sourceTree = "<group>"; };
 		D368124421807CAA000458C1 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
-		D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLevelsRepository.swift; sourceTree = "<group>"; };
+		D36BF84021BD1E48009CAC68 /* LevelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsRepository.swift; sourceTree = "<group>"; };
 		D388336C2189AEDD00D04589 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		D388336E2189B0C000D04589 /* LevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsRequest.swift; sourceTree = "<group>"; };
 		D38833702189B0F000D04589 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 		D3F7440F218312600096958F /* DataTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTile.swift; sourceTree = "<group>"; };
 		D3F888892187302500D7A080 /* Levels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levels.storyboard; sourceTree = "<group>"; };
 		D3FB50B221C15269001E0B74 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		D3FB50B421C1586B001E0B74 /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
 		D3FB50B821C15A6E001E0B74 /* gui.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = gui.js; path = "../../../../../Scratch/scratch-gui/build/gui.js"; sourceTree = "<group>"; };
 		D3FB50B921C15A6E001E0B74 /* player.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = player.js; path = "../../../../../Scratch/scratch-gui/build/player.js"; sourceTree = "<group>"; };
 		D3FB50BA21C15A6E001E0B74 /* extension-worker.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "extension-worker.js.map"; path = "../../../../../Scratch/scratch-gui/build/extension-worker.js.map"; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 		D3FB50C621C15A6F001E0B74 /* lib.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = lib.min.js; path = "../../../../../Scratch/scratch-gui/build/lib.min.js"; sourceTree = "<group>"; };
 		D3FB50C721C15A6F001E0B74 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = "../../../../../Scratch/scratch-gui/build/index.html"; sourceTree = "<group>"; };
 		D3FB50C821C15A6F001E0B74 /* gui.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = gui.js.map; path = "../../../../../Scratch/scratch-gui/build/gui.js.map"; sourceTree = "<group>"; };
+		D3FB50D421C16129001E0B74 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D3FB50D621C16512001E0B74 /* UserProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperties.swift; sourceTree = "<group>"; };
 		E1C3977C63C9ACA352E47E74 /* Pods-ArRobotCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeTests/Pods-ArRobotCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,10 +306,9 @@
 		D3C55EE3218853050007BCC9 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D3F888892187302500D7A080 /* Levels.storyboard */,
 				D3C55EE42188531C0007BCC9 /* Repository.swift */,
-				D36BF84021BD1E48009CAC68 /* FirebaseLevelsRepository.swift */,
-				D3FB50B421C1586B001E0B74 /* FirebaseUserService.swift */,
+				D36BF84021BD1E48009CAC68 /* LevelsRepository.swift */,
+				D3FB50D421C16129001E0B74 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -341,6 +342,7 @@
 				D3FB50B621C15950001E0B74 /* Entities */,
 				D388336B2189AECA00D04589 /* API */,
 				D3C55EE3218853050007BCC9 /* Repository */,
+				D3F888892187302500D7A080 /* Levels.storyboard */,
 				D3F888862187261E00D7A080 /* Levels */,
 				D3E50F2F2178850C000270EE /* Game.storyboard */,
 				D3F74409218309760096958F /* Game */,
@@ -432,6 +434,7 @@
 			children = (
 				D3F7440F218312600096958F /* DataTile.swift */,
 				D3C55EE121883B8F0007BCC9 /* DataLevel.swift */,
+				D3FB50D621C16512001E0B74 /* UserProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -768,8 +771,10 @@
 				D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */,
 				D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */,
 				D3F0F71E219D9F830002788C /* GameScene.swift in Sources */,
+				D3FB50D521C16129001E0B74 /* UserRepository.swift in Sources */,
 				D38833732189E21600D04589 /* APIResponse.swift in Sources */,
 				D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */,
+				D3FB50D721C16512001E0B74 /* UserProperties.swift in Sources */,
 				D31F16032179EF02006B37B4 /* SidePageViewController.swift in Sources */,
 				D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */,
 				D388336D2189AEDD00D04589 /* APIRequest.swift in Sources */,
@@ -781,7 +786,6 @@
 				D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */,
 				D368124521807CAA000458C1 /* PlayerHexa.swift in Sources */,
 				D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */,
-				D3FB50B521C1586B001E0B74 /* FirebaseUserService.swift in Sources */,
 				D3F74410218312600096958F /* DataTile.swift in Sources */,
 				D3C55EDC218775130007BCC9 /* LevelsListViewModel.swift in Sources */,
 				D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */,
@@ -789,7 +793,7 @@
 				D368124621807CAA000458C1 /* PlayerInterface.swift in Sources */,
 				D324C403219C256600C78C4D /* Plane.swift in Sources */,
 				D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */,
-				D36BF84121BD1E48009CAC68 /* FirebaseLevelsRepository.swift in Sources */,
+				D36BF84121BD1E48009CAC68 /* LevelsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

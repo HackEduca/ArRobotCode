@@ -17,9 +17,16 @@ class LevelBuilderViewController: UIViewController {
     @IBOutlet weak var widthTextField: UITextField!
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     @IBOutlet weak var playLevelButton: UIButton!
+    @IBOutlet weak var levelsOptionsStackView: UIStackView!
     
-    private var levelsRepository: FirebaseLevelsRepository!
+    private var levelPublicSwitch: UISwitch!
+    private var levelOrderLabel: UILabel!
+    private var levelOrderSlider: UISlider!
+    private var levelChapterTextField: UITextField!
+    
+    private var levelsRepository: LevelsRepository!
     private var crtLevelAt: Int = -1
+    private var firstLevelLoaded: Bool = false
     
     private var minimumLineSpacing:      Int = 5;
     private var minimumInteritemSpacing: Int = 5;
@@ -35,7 +42,7 @@ class LevelBuilderViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    public func loadLevel(repository: FirebaseLevelsRepository, at: Int) {
+    public func loadLevel(repository: LevelsRepository, at: Int) {
         self.levelsRepository = repository
         self.crtLevelAt = at
         setupViewModel()
@@ -45,6 +52,11 @@ class LevelBuilderViewController: UIViewController {
         setupCollectionViewLongTap()
         setupTextFieldBinding()
         setupCollectionViewSwipe()
+        if(!firstLevelLoaded) {
+            firstLevelLoaded = true
+            addExtraOptionsIfAdmin()
+        }
+        setupExtraOptionsIfAdmin()
     }
     
     private func setupViewModel() {
@@ -165,6 +177,96 @@ class LevelBuilderViewController: UIViewController {
                 self.viewModel.setWidth(newWidth: s!)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func addExtraOptionsIfAdmin() {
+        if UserRepository.shared.getUserProperties()?.Role == "admin" {
+            // Level Public Switch
+            self.levelPublicSwitch = UISwitch()
+            self.levelPublicSwitch.isOn = false
+            self.levelsOptionsStackView.insertArrangedSubview(levelPublicSwitch, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            // Level Order Label
+            self.levelOrderLabel = UILabel()
+            self.levelOrderLabel.text = "Order: 1"
+            self.levelsOptionsStackView.insertArrangedSubview(levelOrderLabel, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            // Level Order Slider
+            self.levelOrderSlider = UISlider()
+            self.levelOrderSlider.minimumValue = 1
+            self.levelOrderSlider.maximumValue = 25
+            self.levelOrderSlider.value = 1
+            self.levelsOptionsStackView.insertArrangedSubview(self.levelOrderSlider, at: self.levelsOptionsStackView.subviews.count - 1)
+          
+            // Level Chapter Text Field
+            self.levelChapterTextField = UITextField()
+            self.levelChapterTextField.placeholder = "Chapter"
+            self.levelChapterTextField.borderStyle = .roundedRect
+            self.levelsOptionsStackView.insertArrangedSubview(levelChapterTextField, at: self.levelsOptionsStackView.subviews.count - 1)
+        }
+    }
+    
+    private func setupExtraOptionsIfAdmin() {
+        if UserRepository.shared.getUserProperties()?.Role == "admin" && self.levelPublicSwitch != nil {
+            // Level Public Switch
+            self.viewModel.levelObserver
+                .map({ (DataLevel) -> Bool in
+                    DataLevel.Public
+                })
+                .bind(to:  levelPublicSwitch.rx.isOn)
+                .disposed(by: self.disposeBag)
+            
+            self.levelPublicSwitch.rx
+                .isOn
+                .subscribe(onNext: { s in
+                    self.viewModel.setPublic(newPublic: s)
+            })
+            
+            // Level Order Label
+            self.viewModel.levelObserver
+                .map({ (DataLevel) -> String in
+                    "Ord: " + String( DataLevel.Order )
+                })
+                .bind(to: levelOrderLabel.rx.text)
+                .disposed(by: self.disposeBag)
+            
+            // Level Order Slider
+            self.viewModel.levelObserver
+                .map({ (DataLevel) -> Float in
+                    Float(DataLevel.Order)
+                })
+                .bind(to: levelOrderSlider.rx.value)
+                .disposed(by: self.disposeBag)
+            
+            self.levelOrderSlider
+                .rx
+                .value
+                .subscribe({value in
+                    self.levelOrderLabel.text = "Ord: " + String( Int(value.element!) )
+                    self.viewModel.setOrder(newOrder: Int(value.element!))
+                })
+                .disposed(by: self.disposeBag)
+            
+            // Level Chapter Text Field
+            self.viewModel.levelObserver
+                .map({ (DataLevel) -> String in
+                    DataLevel.Chapter
+                })
+                .bind(to:  levelChapterTextField.rx.text)
+                .disposed(by: self.disposeBag)
+            
+            self.levelChapterTextField.rx
+                .observe(String.self, "text")
+                .subscribe(onNext: { s in
+                    if let text = s {
+                        if text != "" {
+                            self.viewModel.setChapter(newChapter:text)
+                        }
+                    }
+                })
+                .disposed(by: disposeBag)
+        
+        }
     }
 }
 
