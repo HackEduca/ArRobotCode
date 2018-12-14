@@ -101,6 +101,11 @@
                                         <rect key="frame" x="10" y="270" width="230" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="My Characters"/>
+                                        <connections>
+                                            <segue destination="f2w-70-vT4" kind="popoverPresentation" popoverAnchorView="Ypj-3M-jYA" id="fR1-Ba-pr7">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-as-smO">
                                         <rect key="frame" x="10" y="319" width="230" height="39"/>
@@ -152,6 +157,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nq5-7H-s6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901.61870503597129" y="376.97841726618708"/>
+        </scene>
+        <!--Characters View Controller-->
+        <scene sceneID="Snl-4w-8Zd">
+            <objects>
+                <viewController id="f2w-70-vT4" customClass="CharactersViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6G3-b7-S21">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-80-nnO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ko8-QJ-BOG">
+                                    <size key="itemSize" width="188" height="126"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CharacterCell" reuseIdentifier="CharacterCell" id="eC4-42-Lsl" customClass="CharacterCell" customModule="ArRobotCode" customModuleProvider="target">
+                                        <rect key="frame" x="93.5" y="0.0" width="188" height="126"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="188" height="126"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut.png" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-GJ-RrP" userLabel="Image">
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="96"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qx0-ia-xm2">
+                                                    <rect key="frame" x="5" y="94" width="178" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-tD-BdH" userLabel="NameLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="129" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wM-yL-ml9" userLabel="SelectedSwitch">
+                                                            <rect key="frame" x="129" y="0.0" width="51" height="31"/>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="lWB-GJ-RrP" firstAttribute="leading" secondItem="eC4-42-Lsl" secondAttribute="leading" id="5tW-k2-e1E"/>
+                                            <constraint firstAttribute="bottom" secondItem="lWB-GJ-RrP" secondAttribute="bottom" constant="30" id="Qdh-Pr-yCJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="lWB-GJ-RrP" secondAttribute="trailing" id="Vlh-TD-qiK"/>
+                                            <constraint firstItem="lWB-GJ-RrP" firstAttribute="top" secondItem="eC4-42-Lsl" secondAttribute="top" id="XQB-38-va9"/>
+                                            <constraint firstItem="qx0-ia-xm2" firstAttribute="leading" secondItem="eC4-42-Lsl" secondAttribute="leading" constant="5" id="e2b-3w-Dfj"/>
+                                            <constraint firstAttribute="trailing" secondItem="qx0-ia-xm2" secondAttribute="trailing" constant="5" id="hgj-Pj-yfc"/>
+                                            <constraint firstAttribute="bottom" secondItem="qx0-ia-xm2" secondAttribute="bottom" constant="1" id="wkC-6w-d4D"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="Image" destination="lWB-GJ-RrP" id="awC-7w-HDM"/>
+                                            <outlet property="NameLabel" destination="652-tD-BdH" id="HKw-HA-XuZ"/>
+                                            <outlet property="SelectedSwitch" destination="1wM-yL-ml9" id="RIJ-NT-CbW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2gl-qX-OKS" firstAttribute="bottom" secondItem="c7A-80-nnO" secondAttribute="bottom" id="KSV-4Z-2bW"/>
+                            <constraint firstItem="2gl-qX-OKS" firstAttribute="trailing" secondItem="c7A-80-nnO" secondAttribute="trailing" id="S7W-mj-A6W"/>
+                            <constraint firstItem="c7A-80-nnO" firstAttribute="leading" secondItem="2gl-qX-OKS" secondAttribute="leading" id="pXh-oB-fCT"/>
+                            <constraint firstItem="c7A-80-nnO" firstAttribute="top" secondItem="2gl-qX-OKS" secondAttribute="top" id="xhi-Sj-yuW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2gl-qX-OKS"/>
+                    </view>
+                    <connections>
+                        <outlet property="charactersCollectionView" destination="c7A-80-nnO" id="LWb-66-JdH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mh-Kl-ei5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.8561151079136" y="373.38129496402883"/>
         </scene>
     </scenes>
     <resources>
