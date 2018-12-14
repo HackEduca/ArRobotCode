@@ -11,11 +11,13 @@ import Foundation
 class UserProperties: Codable {
      @objc dynamic  var Role: String = ""
      @objc dynamic  var RegisterDate: Int = 0
+    @objc dynamic   var SelectedCharacter: String = ""
     
     
     private enum CodingKeys: String, CodingKey {
         case Role
         case RegisterDate
+        case SelectedCharacter
     }
     
     func asDictionary() throws -> [String: Any] {

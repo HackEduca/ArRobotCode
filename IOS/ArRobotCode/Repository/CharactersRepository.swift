@@ -39,6 +39,7 @@ class CharacterRepository {
             for document in querySnapshot!.documents {
                 do {
                     let character = try JSONDecoder().decode(Character.self, withJSONObject: document.data(), options: [])
+                    character.ID = document.documentID
                     self.characters.append(character)
                 } catch {
                     

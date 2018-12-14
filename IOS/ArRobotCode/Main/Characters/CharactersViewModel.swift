@@ -47,7 +47,11 @@ final class CharactersViewModel {
             var cells: [CellInfo] = []
             for character in characters {
                 var chosen = false
-                var crtCellInfo = CellInfo(character: character, chosen: false)
+                if userProperties.SelectedCharacter == character.ID {
+                    chosen = true
+                }
+                
+                var crtCellInfo = CellInfo(character: character, chosen: chosen)
                 
                 cells.append(crtCellInfo)
             }
