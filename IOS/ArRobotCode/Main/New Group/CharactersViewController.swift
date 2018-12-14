@@ -46,8 +46,11 @@ class CharactersViewController: UIViewController {
                     .rx
                     .isOn
                     .subscribe({ el in
-                        self.viewModel.selectCharacter(at: row)
+                        if el.element! == true {
+                            self.viewModel.selectCharacter(at: row)
+                        }
                 })
+                .disposed(by: self.disposeBag)
                 return cell;
                 
             }

@@ -82,7 +82,9 @@ final class CharactersViewModel {
                     UserRepository.shared.setUserSelectedCharacter(newCharacterID: characters[at].ID)
                     
                     // Update the view
-
+                    userProperties.SelectedCharacter = characters[at].ID
+                    self.input.userProperties.onNext(userProperties)
+                    
                 }
             })
             .disposed(by: self.disposeBag)
