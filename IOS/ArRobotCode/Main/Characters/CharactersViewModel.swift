@@ -84,8 +84,8 @@ final class CharactersViewModel {
                     // Update the view
                     userProperties.SelectedCharacter = characters[at].ID
                     self.input.userProperties.onNext(userProperties)
-                    
                 }
+
             })
             .disposed(by: self.disposeBag)
     }

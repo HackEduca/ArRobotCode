@@ -23,6 +23,7 @@ class CharactersViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupCollectionViewTap()
         passDataToViewModel()
         setupCollectionView()
         setupCollectionViewBinding()
@@ -42,15 +43,6 @@ class CharactersViewController: UIViewController {
             .bind(to: self.charactersCollectionView.rx.items) { view, row, element in
                 let cell = self.charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: IndexPath(row: row, section: 0)) as! CharacterCell
                 cell.setProperties(charact: element.character, isSelected: element.chosen)
-                cell.SelectedSwitch
-                    .rx
-                    .isOn
-                    .subscribe({ el in
-                        if el.element! == true {
-                            self.viewModel.selectCharacter(at: row)
-                        }
-                })
-                .disposed(by: self.disposeBag)
                 return cell;
                 
             }
@@ -58,6 +50,18 @@ class CharactersViewController: UIViewController {
         
         charactersCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+    }
+    
+    private func setupCollectionViewTap() {
+        self.charactersCollectionView.rx
+            .anyGesture(.tap())
+            .when(.recognized)
+            .subscribe(onNext: { gesture in
+                if let index = self.charactersCollectionView!.indexPathForItem(at: gesture.location(in: self.charactersCollectionView)) {
+                    self.viewModel.selectCharacter(at: index.row)
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

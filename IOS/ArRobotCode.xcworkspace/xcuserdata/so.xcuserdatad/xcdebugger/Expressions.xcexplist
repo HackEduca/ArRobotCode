@@ -46,6 +46,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in CharactersViewController.setupCollectionViewBinding():CharactersViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "el.element">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LevelsSplitViewController.viewDidLoad():LevelsSplitViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -80,6 +88,9 @@
       </ContextState>
       <ContextState
          contextName = "closure #1 in LevelsListVController.setupGoBack():LevelsListVController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in CharactersViewModel.selectCharacter(at:):CharactersViewModel.swift">
       </ContextState>
       <ContextState
          contextName = "GameScene.spawnLevel(level:):GameScene.swift">

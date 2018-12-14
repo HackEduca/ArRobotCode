@@ -19,7 +19,9 @@ class CharacterCell : UICollectionViewCell{
     func setProperties(charact: Character, isSelected: Bool) {
         self.Image.image = UIImage(named: charact.Picture)
         self.NameLabel.text = charact.Name
+        
         self.SelectedSwitch.isOn = isSelected
+        self.SelectedSwitch.isEnabled = false
     }
 }
 
