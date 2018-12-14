@@ -52,7 +52,6 @@ final class CharactersViewModel {
                 }
                 
                 var crtCellInfo = CellInfo(character: character, chosen: chosen)
-                
                 cells.append(crtCellInfo)
             }
             
@@ -60,7 +59,33 @@ final class CharactersViewModel {
         }
         
         self.output = Output(listOfCellInfo: out)
-        
+    }
+    
+    func selectCharacter(at: Int) {
+        Observable
+            .combineLatest(self.listOfCharactersSubject.asObservable(),
+                           self.userPropertiesSubject.asObservable(),
+                           resultSelector: { value1, value2 in (value1, value2)}
+            )
+            .take(1)
+            .subscribe({el in
+                if let element = el.element {
+                    let characters = element.0
+                    let userProperties = element.1
+                    
+                    // If the same character is selected
+                    if userProperties.SelectedCharacter == characters[at].ID {
+                        return
+                    }
+                    
+                    // Select the new character
+                    UserRepository.shared.setUserSelectedCharacter(newCharacterID: characters[at].ID)
+                    
+                    // Update the view
+
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
    
 }

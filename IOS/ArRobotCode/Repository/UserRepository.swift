@@ -35,6 +35,11 @@ class UserRepository {
         return self.userProperties
     }
     
+    func setUserSelectedCharacter(newCharacterID: String) {
+        self.userProperties?.SelectedCharacter = newCharacterID
+        self.saveUserPropertiesToServer()
+    }
+    
     private func getUserPropertiesFromServer() {
         let docRef = db.collection("users").document(self.getUser()!.uid)
         
@@ -48,4 +53,13 @@ class UserRepository {
             }
         })
     }
+    
+    private func saveUserPropertiesToServer() {
+        do {
+            self.db.collection("users").document(self.getUser()!.uid).updateData(try userProperties!.asDictionary())
+        } catch {
+            
+        }
+    }
+    
 }

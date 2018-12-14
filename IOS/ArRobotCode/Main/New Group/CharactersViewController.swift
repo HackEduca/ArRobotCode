@@ -42,6 +42,12 @@ class CharactersViewController: UIViewController {
             .bind(to: self.charactersCollectionView.rx.items) { view, row, element in
                 let cell = self.charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: IndexPath(row: row, section: 0)) as! CharacterCell
                 cell.setProperties(charact: element.character, isSelected: element.chosen)
+                cell.SelectedSwitch
+                    .rx
+                    .isOn
+                    .subscribe({ el in
+                        self.viewModel.selectCharacter(at: row)
+                })
                 return cell;
                 
             }
