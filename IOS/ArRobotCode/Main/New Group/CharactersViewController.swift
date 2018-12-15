@@ -30,13 +30,13 @@ class CharactersViewController: UIViewController {
     }
     
     private func passDataToViewModel() {
-        CharacterRepository.shared.charactersSubject
+        CharacterRepository.shared.charactersObservable
             .subscribe({ev in
                 self.viewModel.input.listOfCharacters.onNext(ev.element!)
             })
             .disposed(by: self.disposeBag)
         
-        UserRepository.shared.userPropertiesSubject
+        UserRepository.shared.userPropertiesObservable
             .subscribe({ev in
                 self.viewModel.input.userProperties.onNext(ev.element!)
             })

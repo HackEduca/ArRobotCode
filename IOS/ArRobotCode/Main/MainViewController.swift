@@ -35,8 +35,8 @@ class MainViewController: UIViewController {
     
     func updateUserCharacterImage() {
     
-        Observable.combineLatest(CharacterRepository.shared.charactersSubject.asObservable(),
-                                UserRepository.shared.userPropertiesSubject.asObservable(),
+        Observable.combineLatest(CharacterRepository.shared.charactersObservable,
+                                UserRepository.shared.userPropertiesObservable,
                                 resultSelector: { value1, value2 in
         }).subscribe({ ev in
             let characterID = UserRepository.shared.getUserProperties()?.SelectedCharacter
