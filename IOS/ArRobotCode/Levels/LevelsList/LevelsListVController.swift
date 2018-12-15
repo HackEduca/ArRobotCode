@@ -25,7 +25,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
     private let disposeBag = DisposeBag()
     
     // Observer for the selected level
-    public let selectedLevel: Variable<DataLevel> = Variable(DataLevel())
+    public let selectedLevel = PublishSubject<DataLevel>()
     public var selectedLevelObservable: Observable<DataLevel> {
             return selectedLevel.asObservable()
     }
@@ -118,7 +118,8 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
         self.levelsTableView.rx
             .itemSelected
             .subscribe({ pair in
-                self.selectedLevel.value = self.levelsRepository!.get(at: pair.element![1])
+                var lvl = self.levelsRepository!.get(at: pair.element![1])
+                self.selectedLevel.onNext( lvl )
             })
             .disposed(by: disposeBag)
         
