@@ -8,9 +8,10 @@
 
 import Foundation
 import Firebase
-
+import RxSwift
 class UserRepository {
-    static let shared = UserRepository()
+   public static let shared = UserRepository()
+   public let userPropertiesSubject = ReplaySubject<UserProperties>.create(bufferSize: 1)
     
     private let firebaseAuth: Auth!
     private let db: Firestore!
@@ -47,6 +48,7 @@ class UserRepository {
             if let document = document, document.exists {
                 do {
                     self.userProperties = try JSONDecoder().decode(UserProperties.self, withJSONObject: document.data(), options: [])
+                    self.userPropertiesSubject.onNext(self.userProperties!)
                 } catch {
                     print(error)
                 }
@@ -57,6 +59,7 @@ class UserRepository {
     private func saveUserPropertiesToServer() {
         do {
             self.db.collection("users").document(self.getUser()!.uid).updateData(try userProperties!.asDictionary())
+            self.getUserPropertiesFromServer()
         } catch {
             
         }

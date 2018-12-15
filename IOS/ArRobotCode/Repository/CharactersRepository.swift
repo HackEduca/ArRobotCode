@@ -8,9 +8,10 @@
 
 import Foundation
 import Firebase
-
+import RxSwift
 class CharacterRepository {
-    static let shared = CharacterRepository()
+    public static let shared = CharacterRepository()
+    public let charactersSubject = ReplaySubject<[Character]>.create(bufferSize: 1)
     
     private let db: Firestore!
     private var characters: [Character] = []
@@ -26,9 +27,7 @@ class CharacterRepository {
     }
     
     func getCharcters() ->[Character] {
-        return self.characters.sorted(by: { (characterA, characterB) -> Bool in
-            return characterA.LevelRequired < characterB.LevelRequired
-        })
+        return self.characters
     }
     
     private func getCharactersFromServer() {
@@ -44,8 +43,15 @@ class CharacterRepository {
                 } catch {
                     
                 }
-                
+
             }
+            
+            self.characters = self.characters.sorted(by: { (characterA, characterB) -> Bool in
+                return characterA.LevelRequired < characterB.LevelRequired
+            })
+            self.charactersSubject.onNext(self.characters)
+
         })
+        
     }
 }

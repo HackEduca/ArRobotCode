@@ -54,6 +54,7 @@
 		D3F0ED06217DB57900054F87 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */; };
 		D3F0F71B219D9D0D0002788C /* plane_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F0F71A219D9D0D0002788C /* plane_grid.png */; };
 		D3F0F71E219D9F830002788C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0F71D219D9F830002788C /* GameScene.swift */; };
+		D3F4BC0321C3D3390094A9B8 /* astronaut-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F4BC0221C3D3390094A9B8 /* astronaut-girl.png */; };
 		D3F7440C21830A2E0096958F /* LevelBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */; };
 		D3F7440E21830EA10096958F /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440D21830EA10096958F /* TileCell.swift */; };
 		D3F74410218312600096958F /* DataTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7440F218312600096958F /* DataTile.swift */; };
@@ -149,6 +150,7 @@
 		D3F0ED05217DB57900054F87 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		D3F0F71A219D9D0D0002788C /* plane_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_grid.png; sourceTree = "<group>"; };
 		D3F0F71D219D9F830002788C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D3F4BC0221C3D3390094A9B8 /* astronaut-girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "astronaut-girl.png"; path = "../../../../astronaut-girl.png"; sourceTree = "<group>"; };
 		D3F4BDBA13353D4679E0430E /* Pods-ArRobotCodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArRobotCodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArRobotCodeUITests/Pods-ArRobotCodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F7440B21830A2E0096958F /* LevelBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilderViewController.swift; sourceTree = "<group>"; };
 		D3F7440D21830EA10096958F /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				D3E50F5921788FF2000270EE /* Tile.sks */,
 				D3BA70F221BA764800E0742C /* rocket.json */,
 				D35E0ABC21C04786003E7244 /* astronaut.png */,
+				D3F4BC0221C3D3390094A9B8 /* astronaut-girl.png */,
 				D3FB50B221C15269001E0B74 /* back.png */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */,
@@ -603,6 +606,7 @@
 				D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */,
 				D3FB50CE21C15A6F001E0B74 /* static in Resources */,
 				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
+				D3F4BC0321C3D3390094A9B8 /* astronaut-girl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

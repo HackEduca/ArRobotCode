@@ -30,9 +30,19 @@ class CharactersViewController: UIViewController {
     }
     
     private func passDataToViewModel() {
-        self.viewModel.input.listOfCharacters.onNext(CharacterRepository.shared.getCharcters())
-        self.viewModel.input.userProperties.onNext(UserRepository.shared.getUserProperties()!)
+        CharacterRepository.shared.charactersSubject
+            .subscribe({ev in
+                self.viewModel.input.listOfCharacters.onNext(ev.element!)
+            })
+            .disposed(by: self.disposeBag)
+        
+        UserRepository.shared.userPropertiesSubject
+            .subscribe({ev in
+                self.viewModel.input.userProperties.onNext(ev.element!)
+            })
+            .disposed(by: self.disposeBag)
     }
+    
     private func setupCollectionView() {
         self.charactersCollectionView.delegate = nil
         self.charactersCollectionView.dataSource = nil
