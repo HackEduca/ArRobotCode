@@ -18,7 +18,6 @@ class LevelViewModel{
         return self.level.asObservable()
     }
     
-    
     init(repository: LevelsRepository, at: Int) {
         self.levelsRepository = repository
         self.levelAt = at

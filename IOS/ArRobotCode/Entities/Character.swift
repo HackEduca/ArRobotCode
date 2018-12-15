@@ -1,23 +1,23 @@
 //
-//  UserProperties.swift
+//  Character.swift
 //  ArRobotCode
 //
-//  Created by Sorin Sebastian Mircea on 12/12/2018.
+//  Created by Sorin Sebastian Mircea on 13/12/2018.
 //  Copyright © 2018 Sorin Sebastian Mircea. All rights reserved.
 //
 
 import Foundation
 
-class UserProperties: Codable {
-     @objc dynamic  var Role: String = ""
-     @objc dynamic  var RegisterDate: Int = 0
-    @objc dynamic   var SelectedCharacter: String = ""
-    
+class Character: Codable {
+    @objc dynamic  var ID: String = ""
+    @objc dynamic  var LevelRequired: Int = 0
+    @objc dynamic  var Name: String = ""
+    @objc dynamic  var Picture: String = "default.png"
     
     private enum CodingKeys: String, CodingKey {
-        case Role
-        case RegisterDate
-        case SelectedCharacter
+        case LevelRequired
+        case Name
+        case Picture
     }
     
     func asDictionary() throws -> [String: Any] {
