@@ -151,6 +151,7 @@
                     <connections>
                         <outlet property="myCharactersButton" destination="Ypj-3M-jYA" id="69q-GI-gCi"/>
                         <outlet property="myLevelsButton" destination="Vdl-as-smO" id="wa2-Fm-0Jb"/>
+                        <outlet property="userCharacterImage" destination="qYa-Ai-L2M" id="jup-7d-Y3F"/>
                         <outlet property="userLabel" destination="xev-NN-PbM" id="R2l-ZQ-gI6"/>
                     </connections>
                 </viewController>

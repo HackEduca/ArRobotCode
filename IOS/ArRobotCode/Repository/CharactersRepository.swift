@@ -30,6 +30,16 @@ class CharacterRepository {
         return self.characters
     }
     
+    func getCharacter(byID: String) -> Character? {
+        for character in self.characters {
+            if character.ID == byID {
+                return character
+            }
+        }
+        
+        return nil
+    }
+    
     private func getCharactersFromServer() {
         let docRef = db.collection("characters")
         self.characters = []
@@ -43,7 +53,6 @@ class CharacterRepository {
                 } catch {
                     
                 }
-
             }
             
             self.characters = self.characters.sorted(by: { (characterA, characterB) -> Bool in
@@ -52,6 +61,5 @@ class CharacterRepository {
             self.charactersSubject.onNext(self.characters)
 
         })
-        
     }
 }
