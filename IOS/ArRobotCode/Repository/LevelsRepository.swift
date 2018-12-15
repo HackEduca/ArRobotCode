@@ -63,7 +63,7 @@ class LevelsRepository: Repository {
     }
     
     func get(at: Int) -> DataLevel {
-        if(at < 0) {
+        if(at < 0 || at >= self.entities.count) {
             return DataLevel()
         }
         
@@ -117,7 +117,7 @@ class LevelsRepository: Repository {
     }
     
     func triggerUpdate(at: Int) {
-        if(at >= 0) {
+        if(at >= 0 && at < self.entities.count) {
             self.entitiesSubject.onNext(self.entities)
             self.syncUpdateToServer(a: self.entities[at])
         }

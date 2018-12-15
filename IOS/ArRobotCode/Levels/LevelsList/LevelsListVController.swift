@@ -143,6 +143,7 @@ class LevelsListVController: UIViewController, UITableViewDelegate {
                 data.Name = self.addLevelTextField.text!
                 data.Width = 5
                 data.Height = 5
+                data.ByUserID = UserRepository.shared.getUser()!.uid
                 for _ in 0..<25 {
                     data.Tiles.append(DataTile())
                 }

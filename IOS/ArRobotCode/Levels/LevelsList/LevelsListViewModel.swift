@@ -22,7 +22,19 @@ class LevelsListViewModel{
     init(repo: LevelsRepository) {
         // Make the output dataSource an Observable of the privateDataSource
         self.privateDataSource = repo
-        self.dataSource = privateDataSource.dataSource
+        
+        // Filter the levels that are showed
+        self.dataSource = privateDataSource.dataSource.map({ (data) -> [DataLevel] in
+            var filteredLevels: [DataLevel] = []
+            
+            for level in data {
+                if UserRepository.shared.getUserProperties()?.Role == "admin" ||  UserRepository.shared.getUser()!.uid == level.ByUserID {
+                    filteredLevels.append(level)
+                }
+            }
+            
+            return filteredLevels
+        })
     }
     
     public func addItem(item: DataLevel) {
