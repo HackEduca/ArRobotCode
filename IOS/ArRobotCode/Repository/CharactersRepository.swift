@@ -11,10 +11,15 @@ import Firebase
 import RxSwift
 class CharacterRepository {
     public static let shared = CharacterRepository()
-    public let charactersSubject = ReplaySubject<[Character]>.create(bufferSize: 1)
-    
+    public var charactersObservable: Observable<[Character]> {
+        get {
+            return self.charactersSubject.asObservable()
+        }
+    }
+
     private let db: Firestore!
     private var characters: [Character] = []
+    private let charactersSubject = ReplaySubject<[Character]>.create(bufferSize: 1)
     
     // Make constructor private
     private init() {

@@ -18,7 +18,7 @@ class LevelsSplitViewController: UISplitViewController {
     
     // Repository with all the levels
     private var levelsRepository = LevelsRepository()
-    private var at: Int = -1
+    public var at: Int = 0
     
     // For disposing rx
     private let disposeBag = DisposeBag()
@@ -34,6 +34,7 @@ class LevelsSplitViewController: UISplitViewController {
         levelsListVC?.setupRepository(repository: levelsRepository)
         
         // Setup selectedLevel Observable
+        self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: -1)
         levelsListVC?.selectedLevelObservable.subscribe(onNext: { selectedLevel in
             self.at = self.levelsRepository.getAt(ID: selectedLevel.UUID)
             self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.at)
@@ -65,5 +66,17 @@ class LevelsSplitViewController: UISplitViewController {
         
         // Show
         present(gameUISplitViewController, animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.levelsRepository
+            .dataSource
+            .take(1)
+            .subscribe({ev in
+             self.levelBuilderVC?.loadLevel(repository: self.levelsRepository, at: self.at)
+        }).disposed(by: self.disposeBag)
+       
     }
 }

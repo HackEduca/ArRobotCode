@@ -13,18 +13,18 @@ import Alamofire
 import Firebase
 
 class LevelsRepository: Repository {
-    public let dataSource: Observable<[DataLevel]>
-    
-    private var entities: [DataLevel] = []
-    private var entitiesBehaviourSubject: BehaviorSubject<[DataLevel]> = BehaviorSubject(value: [])
-    private let disposeBag = DisposeBag()
-
+    public static let shared = LevelsRepository()
+    public var dataSource: Observable<[DataLevel]> {
+        return self.entitiesSubject.asObservable()
+    }
     
     let db: Firestore!
-    
+    private let disposeBag = DisposeBag()
+   
+    private var entities: [DataLevel] = []
+    private var entitiesSubject = ReplaySubject<[DataLevel]>.create(bufferSize: 1)
     
     init() {
-        dataSource = entitiesBehaviourSubject.asObservable()
         self.db = Firestore.firestore()
         
         // Start sync process
@@ -78,7 +78,7 @@ class LevelsRepository: Repository {
         self.syncAddtoServer(a: a)
         
         // Propagate changes
-        self.entitiesBehaviourSubject.onNext(self.entities)
+        self.entitiesSubject.onNext(self.entities)
         
         return true
     }
@@ -89,7 +89,7 @@ class LevelsRepository: Repository {
             if self.entities[i].UUID == a.UUID {
                 // Update local
                 self.entities[i] = a
-                self.entitiesBehaviourSubject.onNext(self.entities)
+                self.entitiesSubject.onNext(self.entities)
                 
                 // Update on server
                 self.syncUpdateToServer(a: self.entities[i])
@@ -109,7 +109,7 @@ class LevelsRepository: Repository {
         if(at >= 0) {
             // Edit local
             self.entities[at] = newDataLevel
-            self.entitiesBehaviourSubject.onNext(self.entities)
+            self.entitiesSubject.onNext(self.entities)
             
             // Edit on server
             self.syncUpdateToServer(a: self.entities[at])
@@ -118,7 +118,7 @@ class LevelsRepository: Repository {
     
     func triggerUpdate(at: Int) {
         if(at >= 0) {
-            self.entitiesBehaviourSubject.onNext(self.entities)
+            self.entitiesSubject.onNext(self.entities)
             self.syncUpdateToServer(a: self.entities[at])
         }
     }
@@ -129,7 +129,7 @@ class LevelsRepository: Repository {
                 // Delete local
                 let UUID = self.entities[i].UUID
                 self.entities.remove(at: i)
-                self.entitiesBehaviourSubject.onNext(self.entities)
+                self.entitiesSubject.onNext(self.entities)
                 
                 // Delete on server
                 self.syncDeleteToServer(UUID: UUID)
@@ -143,7 +143,7 @@ class LevelsRepository: Repository {
         // Delete local
         let UUID = self.entities[at].UUID
         self.entities.remove(at: at)
-        self.entitiesBehaviourSubject.onNext(self.entities)
+        self.entitiesSubject.onNext(self.entities)
         
         // Delete on server
         self.syncDeleteToServer(UUID: UUID)
@@ -161,12 +161,11 @@ class LevelsRepository: Repository {
                     do {
                         let level = try JSONDecoder().decode(DataLevel.self, withJSONObject: document.data(), options: [])
                         self.entities.append(level)
-                        self.entitiesBehaviourSubject.onNext(self.entities)
                     } catch {
                         
                     }
-                    
                 }
+                 self.entitiesSubject.onNext(self.entities)
             }
         }
     }
@@ -182,7 +181,6 @@ class LevelsRepository: Repository {
     private func syncUpdateToServer(a: DataLevel) {
         do {
             var dict = try a.asDictionary()
-            print(dict)
             self.db.collection("levels").document(a.UUID).updateData(try a.asDictionary())
         } catch {
             

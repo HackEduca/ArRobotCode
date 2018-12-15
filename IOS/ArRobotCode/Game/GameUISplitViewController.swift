@@ -178,7 +178,11 @@ class GameUISplitViewController: UISplitViewController {
             return
         }
         
+        // Configure the initial level to be showed
+        levelsSplitViewController.at = self.crtLevelAt
+        
         // Show
         present(levelsSplitViewController, animated: true, completion: nil)
+
     }
 }

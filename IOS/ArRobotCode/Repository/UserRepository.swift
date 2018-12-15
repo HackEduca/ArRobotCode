@@ -10,12 +10,18 @@ import Foundation
 import Firebase
 import RxSwift
 class UserRepository {
-   public static let shared = UserRepository()
-   public let userPropertiesSubject = ReplaySubject<UserProperties>.create(bufferSize: 1)
+    public static let shared = UserRepository()
+    public var userPropertiesObservable: Observable<UserProperties> {
+         get {
+             return self.userPropertiesSubject.asObservable()
+         }
+    }
     
     private let firebaseAuth: Auth!
     private let db: Firestore!
+    
     private var userProperties: UserProperties?
+    private let userPropertiesSubject = ReplaySubject<UserProperties>.create(bufferSize: 1)
     
     // Make constructor private
     private init() {
