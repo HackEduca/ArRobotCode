@@ -60,11 +60,14 @@ class PublicLevelsViewController: UIViewController {
     private func setupCollectionView() {
         self.publicLevelsCollectionView.delegate = nil
         self.publicLevelsCollectionView.dataSource = nil
+        
+        publicLevelsCollectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
     }
     
     private func setupCollectionViewBinding() {
-        
-        let ds = RxCollectionViewSectionedReloadDataSource<SectionModel<String, Double>>(configureCell: { (ds, cv, indexPath, element)-> UICollectionViewCell in
+        // Create the data source (spawning all types of cells)
+        let ds = RxCollectionViewSectionedReloadDataSource<SectionModel<String, DataLevel>>(configureCell: { (ds, cv, indexPath, element)-> UICollectionViewCell in
             let cell = cv.dequeueReusableCell(withReuseIdentifier: "PublicLevelCell", for: indexPath) as! PublicLevelCell
             cell.setProperties(levelName: "\(element) @ row \(indexPath.row)")
             return cell
@@ -74,33 +77,9 @@ class PublicLevelsViewController: UIViewController {
             return cell
         })
     
-        
-        let items = Observable.just([
-            SectionModel(model: "First section", items: [
-                1.0,
-                2.0,
-                3.0,
-                4.0,
-                5.0
-                ]),
-            SectionModel(model: "Second section", items: [
-                1.0,
-                2.0,
-                3.0
-                ]),
-            SectionModel(model: "Third section", items: [
-                1.0,
-                2.0,
-                3.0
-                ])
-            ])
-        
-            items
+        // Bind view model data to view
+        self.viewModel.output.listOfCells
             .bind(to: publicLevelsCollectionView.rx.items(dataSource: ds))
-            .disposed(by: disposeBag)
-        
-
-        publicLevelsCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
     }
     
@@ -117,7 +96,6 @@ class PublicLevelsViewController: UIViewController {
     }
 
 }
-
 
 extension PublicLevelsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
