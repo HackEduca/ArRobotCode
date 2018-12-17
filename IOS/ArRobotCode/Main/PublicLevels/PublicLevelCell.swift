@@ -9,5 +9,10 @@
 import UIKit
 
 class PublicLevelCell: UICollectionViewCell {
+    @IBOutlet weak var levelNameLabel: UILabel!
     
+    
+    func setProperties(levelName: String) {
+        self.levelNameLabel.text = levelName
+    }
 }

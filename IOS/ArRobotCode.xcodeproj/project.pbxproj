@@ -45,6 +45,7 @@
 		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
 		D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE121883B8F0007BCC9 /* DataLevel.swift */; };
 		D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE42188531C0007BCC9 /* Repository.swift */; };
+		D3D4035621C56DE60081372C /* PublicLevelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ARViewController.swift */; };
@@ -138,6 +139,7 @@
 		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		D3C55EE121883B8F0007BCC9 /* DataLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLevel.swift; sourceTree = "<group>"; };
 		D3C55EE42188531C0007BCC9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelsViewModel.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				D35294F821C5066E00D5BEC0 /* PublicLevelsViewController.swift */,
 				D35294FB21C5074D00D5BEC0 /* PublicLevelCell.swift */,
 				D35294FD21C5075500D5BEC0 /* PublicHeaderCell.swift */,
+				D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */,
 			);
 			path = PublicLevels;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArRobotCode/Pods-ArRobotCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -756,6 +760,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -773,6 +778,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -784,6 +790,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -811,6 +818,7 @@
 				D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */,
 				D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */,
 				D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */,
+				D3D4035621C56DE60081372C /* PublicLevelsViewModel.swift in Sources */,
 				D35294FE21C5075500D5BEC0 /* PublicHeaderCell.swift in Sources */,
 				D3015A2D21C272A100A0E0A0 /* CharacterCell.swift in Sources */,
 				D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */,

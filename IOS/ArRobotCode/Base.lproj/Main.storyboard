@@ -265,40 +265,67 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BDD-3f-edk">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PublicHeaderCell" id="R1A-sZ-5g0" customClass="PublicHeaderCell" customModule="ArRobotCode" customModuleProvider="target">
-                                        <rect key="frame" x="8.5" y="0.0" width="805" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="805" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHk-0S-13k" userLabel="LevelNameLabel">
-                                                    <rect key="frame" x="8" y="0.0" width="797" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <size key="customSize" width="805" height="50"/>
-                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PublicLevelCell" id="8Uh-Vt-gVv" customClass="PublicLevelCell" customModule="ArRobotCode" customModuleProvider="target">
-                                        <rect key="frame" x="311" y="60" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-kb-DqG">
+                                                    <rect key="frame" x="0.0" y="90" width="200" height="110"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wT-wg-kMO" userLabel="LevelNameLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="KIi-FP-915"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.53354386340000004" green="0.86458094350000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="KcC-kb-DqG" firstAttribute="leading" secondItem="8Uh-Vt-gVv" secondAttribute="leading" id="3lF-ie-CmZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="KcC-kb-DqG" secondAttribute="bottom" id="Ibr-TF-oNv"/>
+                                            <constraint firstAttribute="trailing" secondItem="KcC-kb-DqG" secondAttribute="trailing" id="Xl2-kt-0mx"/>
+                                        </constraints>
                                         <size key="customSize" width="200" height="200"/>
+                                        <connections>
+                                            <outlet property="levelNameLabel" destination="6wT-wg-kMO" id="1Z2-cZ-hB6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PublicHeaderCell" id="j7j-NC-v0V" customClass="PublicHeaderCell" customModule="ArRobotCode" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="822" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-gp-rJj" userLabel="Chapter">
+                                            <rect key="frame" x="0.0" y="0.0" width="822" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nj5-gp-rJj" firstAttribute="top" secondItem="j7j-NC-v0V" secondAttribute="top" id="Mod-n9-NU2"/>
+                                        <constraint firstAttribute="trailing" secondItem="nj5-gp-rJj" secondAttribute="trailing" id="dXD-Xy-QA9"/>
+                                        <constraint firstItem="nj5-gp-rJj" firstAttribute="leading" secondItem="j7j-NC-v0V" secondAttribute="leading" id="gRy-qb-4ZN"/>
+                                        <constraint firstAttribute="bottom" secondItem="nj5-gp-rJj" secondAttribute="bottom" id="xO3-Fh-zm6"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="chapterNameLabel" destination="nj5-gp-rJj" id="j8c-pw-La8"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -308,7 +335,11 @@
                             <constraint firstItem="bwV-oI-6pn" firstAttribute="leading" secondItem="kiq-RR-kYI" secondAttribute="leadingMargin" id="dqW-qV-g1F"/>
                             <constraint firstAttribute="bottomMargin" secondItem="bwV-oI-6pn" secondAttribute="bottom" id="pNo-t6-r8h"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="9yQ-Bs-17U"/>
                     </view>
+                    <connections>
+                        <outlet property="publicLevelsCollectionView" destination="bwV-oI-6pn" id="fwk-Cx-Oc9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hc-gq-jGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
