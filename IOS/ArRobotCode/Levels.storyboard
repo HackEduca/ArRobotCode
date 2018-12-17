@@ -199,7 +199,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Q9c-QL-Cf3" secondAttribute="bottom" id="qdb-GS-PN5"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="tileImageView" destination="Q9c-QL-Cf3" id="6tk-uq-cen"/>
+                                                    <outlet property="tileImageView" destination="Q9c-QL-Cf3" id="FDI-1c-Fyz"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

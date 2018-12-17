@@ -8,6 +8,10 @@
 
 import UIKit
 
-class PublicHeaderCell: UICollectionViewCell {
+class PublicHeaderCell: UICollectionReusableView {
+    @IBOutlet weak var chapterNameLabel: UILabel!
     
+    func setProperties(chapterName: String) {
+        self.chapterNameLabel.text = chapterName
+    }
 }

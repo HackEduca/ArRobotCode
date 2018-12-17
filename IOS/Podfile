@@ -18,7 +18,8 @@ target 'ArRobotCode' do
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
   pod 'lottie-ios'
-
+  pod 'RxDataSources'
+  
   target 'ArRobotCodeTests' do
     inherit! :search_paths
     # Pods for testing

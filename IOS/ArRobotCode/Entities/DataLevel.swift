@@ -16,6 +16,7 @@ class DataLevel: Codable {
     @objc dynamic  var Public: Bool = false
     @objc dynamic  var Order:  Int = 0
     @objc dynamic  var Chapter: String = ""
+    @objc dynamic  var ByUserID: String = ""
     
     var Tiles: [DataTile] = []
     
@@ -32,6 +33,7 @@ class DataLevel: Codable {
         case Order
         case Chapter
         case Tiles
+        case ByUserID
     }
     
     public func setName(newName: String) {

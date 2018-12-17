@@ -35,6 +35,7 @@
 		D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E754C21A4519100590B78 /* PlayerAR.swift */; };
 		D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */; };
 		D39A3E9321A6E7E500FA00C5 /* EngineAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */; };
+		D3B4E1EF21C7A2190032F7A5 /* completed.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B4E1EE21C7A2190032F7A5 /* completed.png */; };
 		D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */; };
 		D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EE21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
@@ -45,6 +46,7 @@
 		D3C55EE021877A020007BCC9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */; };
 		D3C55EE221883B8F0007BCC9 /* DataLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE121883B8F0007BCC9 /* DataLevel.swift */; };
 		D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C55EE42188531C0007BCC9 /* Repository.swift */; };
+		D3D4035621C56DE60081372C /* PublicLevelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */; };
 		D3E50F2A2178850C000270EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F292178850C000270EE /* AppDelegate.swift */; };
 		D3E50F2C2178850C000270EE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E50F2B2178850C000270EE /* art.scnassets */; };
 		D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E50F2D2178850C000270EE /* ARViewController.swift */; };
@@ -130,6 +132,7 @@
 		D38E754C21A4519100590B78 /* PlayerAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAR.swift; sourceTree = "<group>"; };
 		D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineInterface.swift; sourceTree = "<group>"; };
 		D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAR.swift; sourceTree = "<group>"; };
+		D3B4E1EE21C7A2190032F7A5 /* completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = completed.png; path = ../../../../../Downloads/completed.png; sourceTree = "<group>"; };
 		D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BA70F221BA764800E0742C /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		D3C55EDF21877A020007BCC9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		D3C55EE121883B8F0007BCC9 /* DataLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLevel.swift; sourceTree = "<group>"; };
 		D3C55EE42188531C0007BCC9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelsViewModel.swift; sourceTree = "<group>"; };
 		D3E50F262178850C000270EE /* ArRobotCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArRobotCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E50F292178850C000270EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E50F2B2178850C000270EE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				D35294F821C5066E00D5BEC0 /* PublicLevelsViewController.swift */,
 				D35294FB21C5074D00D5BEC0 /* PublicLevelCell.swift */,
 				D35294FD21C5075500D5BEC0 /* PublicHeaderCell.swift */,
+				D3D4035521C56DE60081372C /* PublicLevelsViewModel.swift */,
 			);
 			path = PublicLevels;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				D35E0ABC21C04786003E7244 /* astronaut.png */,
 				D3F4BC0221C3D3390094A9B8 /* astronaut-girl.png */,
 				D3FB50B221C15269001E0B74 /* back.png */,
+				D3B4E1EE21C7A2190032F7A5 /* completed.png */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */,
 			);
@@ -621,6 +627,7 @@
 				D3BA70F321BA764800E0742C /* rocket.json in Resources */,
 				D3FB50D021C15A6F001E0B74 /* blocks-only.html in Resources */,
 				D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */,
+				D3B4E1EF21C7A2190032F7A5 /* completed.png in Resources */,
 				D3FB50CE21C15A6F001E0B74 /* static in Resources */,
 				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
 				D3F4BC0321C3D3390094A9B8 /* astronaut-girl.png in Resources */,
@@ -745,6 +752,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArRobotCode/Pods-ArRobotCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -756,6 +764,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -773,6 +782,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -784,6 +794,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -811,6 +822,7 @@
 				D3E50F2E2178850C000270EE /* ARViewController.swift in Sources */,
 				D35DC80B218DCA3B000B0FFC /* LevelsSplitViewController.swift in Sources */,
 				D3C55EE52188531C0007BCC9 /* Repository.swift in Sources */,
+				D3D4035621C56DE60081372C /* PublicLevelsViewModel.swift in Sources */,
 				D35294FE21C5075500D5BEC0 /* PublicHeaderCell.swift in Sources */,
 				D3015A2D21C272A100A0E0A0 /* CharacterCell.swift in Sources */,
 				D35DC80D218DE210000B0FFC /* LevelViewModel.swift in Sources */,
