@@ -20,6 +20,7 @@ class GameUISplitViewController: UISplitViewController {
     public var instructionsVC: InstructionsViewController!
     public var arVC: ARViewController!
     
+    public var isBackMain = false
     public var engineAR: EngineAR!
     
     // The parent
@@ -158,7 +159,11 @@ class GameUISplitViewController: UISplitViewController {
         self.instructionsVC.backButton.rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext: { _ in
-                self.navigateToLevelsInterface()
+                if self.isBackMain == true {
+                    self.navigateToMainInterface()
+                } else {
+                    self.navigateToLevelsInterface()
+                }
             })
             .disposed(by: self.disposeBag)
     }
@@ -183,6 +188,18 @@ class GameUISplitViewController: UISplitViewController {
         
         // Show
         present(levelsSplitViewController, animated: true, completion: nil)
-
+    }
+    
+    func navigateToMainInterface() {
+        // Get the storyboard
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate the VC
+        guard let mainController = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
+            return
+        }
+        
+        // Show
+        present(mainController, animated: true, completion: nil)
     }
 }

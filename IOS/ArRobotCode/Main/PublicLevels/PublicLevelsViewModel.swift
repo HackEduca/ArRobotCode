@@ -39,12 +39,13 @@ final class PublicLevelsViewModel {
     
     // Private members
     private let listOfLevelsSubject     = ReplaySubject<[DataLevel]>.create(bufferSize: 1)
-    private let outputSubject           = ReplaySubject<[CellInfo]>.create(bufferSize: 1)
     private let disposeBag              = DisposeBag()
+    private var listOfCells: [SectionModel<String, DataLevel>]  = []
     
     init() {
         self.input = Input(listOfLevels: self.listOfLevelsSubject.asObserver())
-    
+        self.listOfCells = []
+        
         let out = self.listOfLevelsSubject.map { (levels) -> [SectionModel<String, DataLevel>] in
             if levels.count == 0 {
                 return []
@@ -75,6 +76,15 @@ final class PublicLevelsViewModel {
         }
         
         self.output = Output(listOfCells: out)
+        
+        // Keep a non observable copy
+        self.output.listOfCells.subscribe({ ev in
+            self.listOfCells = ev.element!
+        }).disposed(by: self.disposeBag)
+    }
+    
+    func getLevel(atSection: Int, atRow: Int) -> DataLevel {
+        return self.listOfCells[atSection].items[atRow]
     }
     
 }

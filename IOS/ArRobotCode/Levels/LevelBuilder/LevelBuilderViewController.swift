@@ -28,9 +28,8 @@ class LevelBuilderViewController: UIViewController {
     private var crtLevelAt: Int = -1
     private var firstLevelLoaded: Bool = false
     
-    private var minimumLineSpacing:      Int = 5;
-    private var minimumInteritemSpacing: Int = 5;
-    private var itemsPerLineOrColumn: Int = 10;
+    private var minimumLineSpacing:      Int = 1;
+    private var minimumInteritemSpacing: Int = 1;
     
     private var viewModel: LevelViewModel!
     private let cellIdentifier = "LevelTile"

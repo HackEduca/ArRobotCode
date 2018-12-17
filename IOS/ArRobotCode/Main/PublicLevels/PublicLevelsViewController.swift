@@ -89,10 +89,29 @@ class PublicLevelsViewController: UIViewController {
             .when(.recognized)
             .subscribe(onNext: { gesture in
                 if let index = self.publicLevelsCollectionView!.indexPathForItem(at: gesture.location(in: self.publicLevelsCollectionView)) {
-                    print("Clicked on: ", index.row)
+                    self.navigateToGameInterface(toLevel: self.viewModel.getLevel(atSection: index.section, atRow: index.row))
                 }
             })
             .disposed(by: self.disposeBag)
+    }
+    
+    func navigateToGameInterface(toLevel: DataLevel) {
+        // Get the storyboard
+        let gameStoryboard = UIStoryboard(name: "Game", bundle: Bundle.main)
+        
+        // Instantiate the VC
+        guard let gameUISplitViewController = gameStoryboard.instantiateInitialViewController() as? GameUISplitViewController else {
+            return
+        }
+        
+        // Send data
+        self.navigationItem.title = "Very here"
+
+        gameUISplitViewController.setLevelData(levelsVC: self, repo: LevelsRepository.shared, at: LevelsRepository.shared.getAt(ID: toLevel.UUID))
+        gameUISplitViewController.isBackMain = true
+
+        // Show
+        present(gameUISplitViewController, animated: true, completion: nil)
     }
 
 }
