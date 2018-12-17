@@ -68,7 +68,10 @@ final class PublicLevelsViewModel {
                     cells.append(SectionModel<String, DataLevel>(model: lvlsByChapter[i].Chapter, items: []))
                 }
                 
-                cells[sectionNumber].items.append(lvlsByChapter[i])
+                if lvlsByChapter[i].Public == true {
+                    cells[sectionNumber].items.append(lvlsByChapter[i])
+                }
+            
                 i += 1
             }
             

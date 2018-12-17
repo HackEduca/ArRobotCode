@@ -13,6 +13,7 @@ export const createUser = functions.auth.user().onCreate((user) => {
     return admin.firestore().collection('users').doc(user.uid).create({
         'Role': 'user',
         'RegisterDate': Date.now(),
-        'SelectedCharacter': 'dJRKyr9CJeZtIg47beK1'
+        'SelectedCharacter': 'dJRKyr9CJeZtIg47beK1',
+        'CompletedLevels': []
     })
 });

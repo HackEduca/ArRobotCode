@@ -19,6 +19,7 @@ class CharactersViewController: UIViewController {
     private var minimumLineSpacing:      Int = 5;
     private var minimumInteritemSpacing: Int = 5;
     
+    private var charactersCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +33,7 @@ class CharactersViewController: UIViewController {
     private func passDataToViewModel() {
         CharacterRepository.shared.charactersObservable
             .subscribe({ev in
+                self.charactersCount = ev.element!.count
                 self.viewModel.input.listOfCharacters.onNext(ev.element!)
             })
             .disposed(by: self.disposeBag)
@@ -78,7 +80,7 @@ class CharactersViewController: UIViewController {
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var sz = CGSize(width: collectionView.frame.width / CGFloat(2) - CGFloat(minimumInteritemSpacing),
-                        height: collectionView.frame.height / CGFloat(CharacterRepository.shared.getCharcters().count / 2) - CGFloat(minimumLineSpacing) - 1)
+                        height: collectionView.frame.height / CGFloat(self.charactersCount / 2) - CGFloat(minimumLineSpacing) - 1)
         
         return sz
     }

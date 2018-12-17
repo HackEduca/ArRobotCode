@@ -180,28 +180,28 @@ class LevelBuilderViewController: UIViewController {
     
     private func addExtraOptionsIfAdmin() {
         if UserRepository.shared.getUserProperties()?.Role == "admin" {
-            // Level Public Switch
-            self.levelPublicSwitch = UISwitch()
-            self.levelPublicSwitch.isOn = false
-            self.levelsOptionsStackView.insertArrangedSubview(levelPublicSwitch, at: self.levelsOptionsStackView.subviews.count - 1)
-            
-            // Level Order Label
-            self.levelOrderLabel = UILabel()
-            self.levelOrderLabel.text = "Order: 1"
-            self.levelsOptionsStackView.insertArrangedSubview(levelOrderLabel, at: self.levelsOptionsStackView.subviews.count - 1)
-            
-            // Level Order Slider
-            self.levelOrderSlider = UISlider()
-            self.levelOrderSlider.minimumValue = 1
-            self.levelOrderSlider.maximumValue = 25
-            self.levelOrderSlider.value = 1
-            self.levelsOptionsStackView.insertArrangedSubview(self.levelOrderSlider, at: self.levelsOptionsStackView.subviews.count - 1)
-          
             // Level Chapter Text Field
             self.levelChapterTextField = UITextField()
             self.levelChapterTextField.placeholder = "Chapter"
             self.levelChapterTextField.borderStyle = .roundedRect
             self.levelsOptionsStackView.insertArrangedSubview(levelChapterTextField, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+            // Level Public Switch
+            self.levelPublicSwitch = UISwitch()
+            self.levelPublicSwitch.isOn = false
+            self.levelsOptionsStackView.insertArrangedSubview(levelPublicSwitch, at: self.levelsOptionsStackView.subviews.count - 1)
+            
+//            // Level Order Label
+//            self.levelOrderLabel = UILabel()
+//            self.levelOrderLabel.text = "Order: 1"
+//            self.levelsOptionsStackView.insertArrangedSubview(levelOrderLabel, at: self.levelsOptionsStackView.subviews.count - 1)
+//
+//            // Level Order Slider
+//            self.levelOrderSlider = UISlider()
+//            self.levelOrderSlider.minimumValue = 1
+//            self.levelOrderSlider.maximumValue = 25
+//            self.levelOrderSlider.value = 1
+//            self.levelsOptionsStackView.insertArrangedSubview(self.levelOrderSlider, at: self.levelsOptionsStackView.subviews.count - 1)
         }
     }
     
@@ -219,32 +219,33 @@ class LevelBuilderViewController: UIViewController {
                 .isOn
                 .subscribe(onNext: { s in
                     self.viewModel.setPublic(newPublic: s)
-            })
+                })
+                .disposed(by: self.disposeBag)
             
             // Level Order Label
-            self.viewModel.levelObserver
-                .map({ (DataLevel) -> String in
-                    "Ord: " + String( DataLevel.Order )
-                })
-                .bind(to: levelOrderLabel.rx.text)
-                .disposed(by: self.disposeBag)
-            
-            // Level Order Slider
-            self.viewModel.levelObserver
-                .map({ (DataLevel) -> Float in
-                    Float(DataLevel.Order)
-                })
-                .bind(to: levelOrderSlider.rx.value)
-                .disposed(by: self.disposeBag)
-            
-            self.levelOrderSlider
-                .rx
-                .value
-                .subscribe({value in
-                    self.levelOrderLabel.text = "Ord: " + String( Int(value.element!) )
-                    self.viewModel.setOrder(newOrder: Int(value.element!))
-                })
-                .disposed(by: self.disposeBag)
+//            self.viewModel.levelObserver
+//                .map({ (DataLevel) -> String in
+//                    "Ord: " + String( DataLevel.Order )
+//                })
+//                .bind(to: levelOrderLabel.rx.text)
+//                .disposed(by: self.disposeBag)
+//
+//            // Level Order Slider
+//            self.viewModel.levelObserver
+//                .map({ (DataLevel) -> Float in
+//                    Float(DataLevel.Order)
+//                })
+//                .bind(to: levelOrderSlider.rx.value)
+//                .disposed(by: self.disposeBag)
+//
+//            self.levelOrderSlider
+//                .rx
+//                .value
+//                .subscribe({value in
+//                    self.levelOrderLabel.text = "Ord: " + String( Int(value.element!) )
+//                    self.viewModel.setOrder(newOrder: Int(value.element!))
+//                })
+//                .disposed(by: self.disposeBag)
             
             // Level Chapter Text Field
             self.viewModel.levelObserver

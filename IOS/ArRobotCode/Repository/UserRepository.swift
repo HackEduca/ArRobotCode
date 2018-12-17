@@ -48,18 +48,21 @@ class UserRepository {
     }
     
     private func getUserPropertiesFromServer() {
-        let docRef = db.collection("users").document(self.getUser()!.uid)
-        
-        docRef.getDocument(completion: { (document, err) in
-            if let document = document, document.exists {
-                do {
-                    self.userProperties = try JSONDecoder().decode(UserProperties.self, withJSONObject: document.data(), options: [])
-                    self.userPropertiesSubject.onNext(self.userProperties!)
-                } catch {
-                    print(error)
+        if let user = self.getUser() {
+            let docRef = db.collection("users").document(user.uid)
+            
+            docRef.getDocument(completion: { (document, err) in
+                if let document = document, document.exists {
+                    do {
+                        self.userProperties = try JSONDecoder().decode(UserProperties.self, withJSONObject: document.data(), options: [])
+                        self.userPropertiesSubject.onNext(self.userProperties!)
+                    } catch {
+                        print(error)
+                    }
                 }
-            }
-        })
+            })
+        }
+        
     }
     
     private func saveUserPropertiesToServer() {

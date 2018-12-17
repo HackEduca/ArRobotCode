@@ -40,8 +40,10 @@ class MainViewController: UIViewController {
                                 resultSelector: { value1, value2 in
         }).subscribe({ ev in
             let characterID = UserRepository.shared.getUserProperties()?.SelectedCharacter
-            let characterPicture = CharacterRepository.shared.getCharacter(byID: characterID!)?.Picture
-            self.userCharacterImage.image = UIImage(named: characterPicture!)
+            CharacterRepository.shared.getCharacter(byID: characterID!).subscribe({ev in
+                self.userCharacterImage.image = UIImage(named: ev.element!!.Picture)
+            }).disposed(by: self.disposeBag)
+            
         }).disposed(by: self.disposeBag)
        
     }

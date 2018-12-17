@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         UserRepository.shared.doInit()
         CharacterRepository.shared.doInit()
         
+        
 //        do {
 //            let firebaseAuth = Auth.auth()
 //            try firebaseAuth.signOut()
