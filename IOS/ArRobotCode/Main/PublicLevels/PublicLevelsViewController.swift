@@ -69,7 +69,7 @@ class PublicLevelsViewController: UIViewController {
         // Create the data source (spawning all types of cells)
         let ds = RxCollectionViewSectionedReloadDataSource<SectionModel<String, DataLevel>>(configureCell: { (ds, cv, indexPath, element)-> UICollectionViewCell in
             let cell = cv.dequeueReusableCell(withReuseIdentifier: "PublicLevelCell", for: indexPath) as! PublicLevelCell
-            cell.setProperties(levelName: element.Name)
+            cell.setProperties(lvl: element)
             return cell
         }, configureSupplementaryView: { (ds, cv, element, indexPath) -> UICollectionReusableView in
             let cell = cv.dequeueReusableSupplementaryView(ofKind: element, withReuseIdentifier: "PublicHeaderCell", for: indexPath) as! PublicHeaderCell
