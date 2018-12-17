@@ -35,6 +35,7 @@
 		D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E754C21A4519100590B78 /* PlayerAR.swift */; };
 		D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */; };
 		D39A3E9321A6E7E500FA00C5 /* EngineAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */; };
+		D3B4E1EF21C7A2190032F7A5 /* completed.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B4E1EE21C7A2190032F7A5 /* completed.png */; };
 		D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */; };
 		D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EE21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
@@ -131,6 +132,7 @@
 		D38E754C21A4519100590B78 /* PlayerAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAR.swift; sourceTree = "<group>"; };
 		D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineInterface.swift; sourceTree = "<group>"; };
 		D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAR.swift; sourceTree = "<group>"; };
+		D3B4E1EE21C7A2190032F7A5 /* completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = completed.png; path = ../../../../../Downloads/completed.png; sourceTree = "<group>"; };
 		D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BA70F221BA764800E0742C /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				D35E0ABC21C04786003E7244 /* astronaut.png */,
 				D3F4BC0221C3D3390094A9B8 /* astronaut-girl.png */,
 				D3FB50B221C15269001E0B74 /* back.png */,
+				D3B4E1EE21C7A2190032F7A5 /* completed.png */,
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */,
 			);
@@ -624,6 +627,7 @@
 				D3BA70F321BA764800E0742C /* rocket.json in Resources */,
 				D3FB50D021C15A6F001E0B74 /* blocks-only.html in Resources */,
 				D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */,
+				D3B4E1EF21C7A2190032F7A5 /* completed.png in Resources */,
 				D3FB50CE21C15A6F001E0B74 /* static in Resources */,
 				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
 				D3F4BC0321C3D3390094A9B8 /* astronaut-girl.png in Resources */,

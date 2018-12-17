@@ -24,7 +24,7 @@ class LevelsRepository: Repository {
     private var entities: [DataLevel] = []
     private var entitiesSubject = ReplaySubject<[DataLevel]>.create(bufferSize: 1)
     
-    init() {
+    private init() {
         self.db = Firestore.firestore()
         
         // Start sync process

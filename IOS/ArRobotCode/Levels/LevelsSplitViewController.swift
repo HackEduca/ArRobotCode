@@ -17,7 +17,7 @@ class LevelsSplitViewController: UISplitViewController {
     var levelBuilderVC: LevelBuilderViewController?
     
     // Repository with all the levels
-    private var levelsRepository = LevelsRepository()
+    private var levelsRepository = LevelsRepository.shared
     public var at: Int = 0
     
     // For disposing rx
