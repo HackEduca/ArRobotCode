@@ -47,6 +47,25 @@ class UserRepository {
         self.saveUserPropertiesToServer()
     }
     
+    func addCompletedLevel(levelID: String) {
+        // To check, if userProperties is null !!!
+        
+        var found = false
+        if let userProperties = self.userProperties {
+            for levelCompleted in userProperties.CompletedLevels {
+                if levelCompleted == levelID {
+                    found = true
+                    break
+                }
+            }
+            
+            if found == false {
+                self.userProperties?.CompletedLevels.append(levelID)
+                self.saveUserPropertiesToServer()
+            }
+        }
+    }
+    
     private func getUserPropertiesFromServer() {
         if let user = self.getUser() {
             let docRef = db.collection("users").document(user.uid)

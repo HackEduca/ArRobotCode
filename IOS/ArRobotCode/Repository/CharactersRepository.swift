@@ -53,8 +53,6 @@ class CharacterRepository {
                     character.ID = document.documentID
                     characters.append(character)
                 } catch {
-                    var rl = err
-                    var a = 3
                 }
             }
             

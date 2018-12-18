@@ -355,6 +355,7 @@
                                         </constraints>
                                         <size key="customSize" width="406" height="312"/>
                                         <connections>
+                                            <outlet property="completedImageView" destination="LDh-0Y-NOF" id="RcR-Yx-jC8"/>
                                             <outlet property="levelNameLabel" destination="6wT-wg-kMO" id="1Z2-cZ-hB6"/>
                                             <outlet property="tilesCollectionView" destination="fs5-FM-aqn" id="IbT-bb-jch"/>
                                         </connections>

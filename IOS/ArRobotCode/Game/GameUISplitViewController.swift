@@ -147,6 +147,9 @@ class GameUISplitViewController: UISplitViewController {
                     let popUP = PopupDialog(title: "Sorry", message: "You can try again")
                     self.present(popUP, animated: true, completion: nil)
                 case "done":
+                    // Mark level as completed
+                    UserRepository.shared.addCompletedLevel(levelID: self.levelsRepository.get(at: self.crtLevelAt).UUID)
+                    
                     let popUP = PopupDialog(title: "Congrats", message: "Well done, you can advance to the next level")
                     self.present(popUP, animated: true, completion: nil)
                 default :

@@ -55,6 +55,12 @@ class PublicLevelsViewController: UIViewController {
                 self.viewModel.input.listOfLevels.onNext(ev.element!)
             })
             .disposed(by: self.disposeBag)
+        
+        UserRepository.shared.userPropertiesObservable
+            .subscribe({ev in
+                self.viewModel.input.userProperties.onNext(ev.element!)
+            })
+            .disposed(by: self.disposeBag)
     }
     
     private func setupCollectionView() {
@@ -67,9 +73,9 @@ class PublicLevelsViewController: UIViewController {
     
     private func setupCollectionViewBinding() {
         // Create the data source (spawning all types of cells)
-        let ds = RxCollectionViewSectionedReloadDataSource<SectionModel<String, DataLevel>>(configureCell: { (ds, cv, indexPath, element)-> UICollectionViewCell in
+        let ds = RxCollectionViewSectionedReloadDataSource<SectionModel<String, PublicLevelsViewModel.CellInfo>>(configureCell: { (ds, cv, indexPath, element)-> UICollectionViewCell in
             let cell = cv.dequeueReusableCell(withReuseIdentifier: "PublicLevelCell", for: indexPath) as! PublicLevelCell
-            cell.setProperties(lvl: element)
+            cell.setProperties(lvl: element.level, isCompleted: element.isCompleted)
             return cell
         }, configureSupplementaryView: { (ds, cv, element, indexPath) -> UICollectionReusableView in
             let cell = cv.dequeueReusableSupplementaryView(ofKind: element, withReuseIdentifier: "PublicHeaderCell", for: indexPath) as! PublicHeaderCell
@@ -89,7 +95,12 @@ class PublicLevelsViewController: UIViewController {
             .when(.recognized)
             .subscribe(onNext: { gesture in
                 if let index = self.publicLevelsCollectionView!.indexPathForItem(at: gesture.location(in: self.publicLevelsCollectionView)) {
-                    self.navigateToGameInterface(toLevel: self.viewModel.getLevel(atSection: index.section, atRow: index.row))
+                    self.viewModel.getLevel(atSection: index.section, atRow: index.row).take(1).subscribe({ev in
+                        if let element = ev.element {
+                             self.navigateToGameInterface(toLevel: element.level)
+                        }
+                    }).disposed(by: self.disposeBag)
+                    
                 }
             })
             .disposed(by: self.disposeBag)

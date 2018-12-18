@@ -12,13 +12,15 @@ import RxDataSources
 class PublicLevelCell: UICollectionViewCell {
     @IBOutlet weak var tilesCollectionView: UICollectionView!
     @IBOutlet weak var levelNameLabel: UILabel!
-
+    @IBOutlet weak var completedImageView: UIImageView!
+    
     let disposeBag = DisposeBag()
     private var minimumLineSpacing:      Int = 1;
     private var minimumInteritemSpacing: Int = 1;
     private var level: DataLevel!
     
-    func setProperties(lvl: DataLevel) {
+    func setProperties(lvl: DataLevel, isCompleted: Bool) {
+        self.completedImageView.isHidden = !isCompleted
         self.level = lvl
         
         // Setup Label
