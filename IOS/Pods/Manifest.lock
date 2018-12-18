@@ -8,6 +8,7 @@ PODS:
   - BoringSSL/Interface (10.0.6)
   - Differentiator (3.1.0)
   - DynamicBlurView (3.0.1)
+  - EasyTipView (2.0.1)
   - Firebase/Auth (5.11.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
@@ -160,6 +161,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - EasyTipView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -179,6 +181,7 @@ SPEC REPOS:
     - BoringSSL
     - Differentiator
     - DynamicBlurView
+    - EasyTipView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -215,6 +218,7 @@ SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
+  EasyTipView: 1515544456d6e943240012e9be5d25d1bb766603
   Firebase: b48f9e653da971ecce5b8c749684bc8bb2d26bd3
   FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
@@ -246,6 +250,6 @@ SPEC CHECKSUMS:
   RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: fb9e5696b3716978e717850acd6012f386092fec
+PODFILE CHECKSUM: d8158f3295cac65e1ef05518c1ed4b46190b6f68
 
 COCOAPODS: 1.5.3

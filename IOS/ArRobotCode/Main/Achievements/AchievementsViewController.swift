@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxGesture
+import EasyTipView
 
 class AchievementsViewController: UIViewController {
     @IBOutlet weak var achievementsCollectionView: UICollectionView!
@@ -20,6 +21,7 @@ class AchievementsViewController: UIViewController {
     private var minimumInteritemSpacing: Int = 1;
     
     private var achievementsCount: Int = 0;
+    private var lastTooltip: EasyTipView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class AchievementsViewController: UIViewController {
         passDataToViewModel()
         setupCollectionView()
         setupCollectionViewBinding()
+        setTooltipPreferences()
     }
     
     private func passDataToViewModel() {
@@ -71,10 +74,31 @@ class AchievementsViewController: UIViewController {
             .when(.recognized)
             .subscribe(onNext: { gesture in
                 if let index = self.achievementsCollectionView.indexPathForItem(at: gesture.location(in: self.achievementsCollectionView)) {
-                    print("Tapped on: ", index.row)
+    
+                    let cell = self.achievementsCollectionView!.cellForItem(at: index) as! AchievementCell
+                    self.viewModel.getAchievement(atRow: index.row).take(1).subscribe({ ev in
+                        if let element = ev.element {
+                            // Create a pop up showing the description of the acievement
+                            if self.lastTooltip != nil {
+                                self.lastTooltip?.dismiss()
+                            }
+                            
+                            self.lastTooltip = EasyTipView(text: element.achievement.Description, preferences: EasyTipView.globalPreferences, delegate: nil)
+                            self.lastTooltip?.show(animated: true, forView: cell.achievementImage, withinSuperview: self.parent?.view)
+                        }
+                    }).disposed(by: self.disposeBag)
                 }
             })
             .disposed(by: self.disposeBag)
+    }
+    
+    private func setTooltipPreferences() {
+        var preferences = EasyTipView.Preferences()
+        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 13)!
+        preferences.drawing.foregroundColor = UIColor.white
+        preferences.drawing.backgroundColor = UIColor(hue:0.46, saturation:0.99, brightness:0.6, alpha:1)
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.right
+        EasyTipView.globalPreferences = preferences
     }
 }
 
@@ -84,6 +108,11 @@ extension AchievementsViewController: UICollectionViewDelegate, UICollectionView
                         height: collectionView.frame.height / CGFloat(self.achievementsCount / 2) - CGFloat(minimumLineSpacing) - 1)
         return sz
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 0)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(minimumLineSpacing)

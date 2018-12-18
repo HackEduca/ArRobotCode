@@ -69,4 +69,10 @@ final class AchievementsViewModel {
         
         self.output = Output(listOfCellInfo: out)
     }
+    
+    func getAchievement(atRow: Int) -> Observable<CellInfo> {
+        return self.output.listOfCellInfo.asObservable().map({ (cells) -> CellInfo in
+            return cells[atRow]
+        })
+    }
 }

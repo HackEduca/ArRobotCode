@@ -19,6 +19,7 @@ target 'ArRobotCode' do
   pod 'GoogleSignIn'
   pod 'lottie-ios'
   pod 'RxDataSources'
+  pod 'EasyTipView'
   
   target 'ArRobotCodeTests' do
     inherit! :search_paths

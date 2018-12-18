@@ -103,8 +103,6 @@ final class PublicLevelsViewModel {
         return self.output.listOfCells.asObservable().map({ (cells) -> CellInfo in
             return cells[atSection].items[atRow]
         })
-
     }
-    
 }
 
