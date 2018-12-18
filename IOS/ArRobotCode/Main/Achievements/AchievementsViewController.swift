@@ -90,6 +90,12 @@ class AchievementsViewController: UIViewController {
                 }
             })
             .disposed(by: self.disposeBag)
+        
+        self.achievementsCollectionView.rx.contentOffset.subscribe({_ in
+            self.lastTooltip?.dismiss()
+            self.lastTooltip = nil
+        })
+            .disposed(by: self.disposeBag)
     }
     
     private func setTooltipPreferences() {
