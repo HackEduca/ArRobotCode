@@ -16,12 +16,18 @@ class CharacterCell : UICollectionViewCell{
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var SelectedSwitch: UISwitch!
     
-    func setProperties(charact: Character, isSelected: Bool) {
+    func setProperties(charact: Character, isSelected: Bool, levelsToUnlock: Int) {
         self.Image.image = UIImage(named: charact.Picture)
-        self.NameLabel.text = charact.Name
-        
-        self.SelectedSwitch.isOn = isSelected
-        self.SelectedSwitch.isEnabled = false
+        if levelsToUnlock == 0 {
+            self.NameLabel.text = charact.Name
+            self.SelectedSwitch.isOn = isSelected
+            self.SelectedSwitch.isEnabled = false
+            self.SelectedSwitch.isHidden = false
+        } else {
+            self.NameLabel.text = String(levelsToUnlock) + " to do"
+            self.SelectedSwitch.isHidden = true
+        }
+    
     }
 }
 

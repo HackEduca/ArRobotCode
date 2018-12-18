@@ -25,6 +25,7 @@ final class CharactersViewModel {
     struct CellInfo {
         let character: Character
         let chosen: Bool
+        let levelsToUnlock: Int
     }
     
     // Private members
@@ -51,7 +52,7 @@ final class CharactersViewModel {
                     chosen = true
                 }
                 
-                var crtCellInfo = CellInfo(character: character, chosen: chosen)
+                var crtCellInfo = CellInfo(character: character, chosen: chosen, levelsToUnlock: max(0, character.LevelsRequired - userProperties.CompletedLevels.count))
                 cells.append(crtCellInfo)
             }
             
@@ -75,6 +76,11 @@ final class CharactersViewModel {
                     
                     // If the same character is selected
                     if userProperties.SelectedCharacter == characters[at].ID {
+                        return
+                    }
+                    
+                    // If the caracter selected is not unlocked
+                    if max(0, characters[at].LevelsRequired - userProperties.CompletedLevels.count) > 0 {
                         return
                     }
                     

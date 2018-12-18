@@ -57,7 +57,7 @@ class CharacterRepository {
             }
             
             characters = characters.sorted(by: { (characterA, characterB) -> Bool in
-                return characterA.LevelRequired < characterB.LevelRequired
+                return characterA.LevelsRequired < characterB.LevelsRequired
             })
             self.charactersSubject.onNext(characters)
         })

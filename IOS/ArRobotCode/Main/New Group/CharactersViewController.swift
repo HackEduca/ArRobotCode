@@ -54,7 +54,7 @@ class CharactersViewController: UIViewController {
         viewModel.output.listOfCellInfo
             .bind(to: self.charactersCollectionView.rx.items) { view, row, element in
                 let cell = self.charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: IndexPath(row: row, section: 0)) as! CharacterCell
-                cell.setProperties(charact: element.character, isSelected: element.chosen)
+                cell.setProperties(charact: element.character, isSelected: element.chosen, levelsToUnlock: element.levelsToUnlock)
                 return cell;
                 
             }

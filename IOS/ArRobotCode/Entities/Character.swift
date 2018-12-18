@@ -10,12 +10,12 @@ import Foundation
 
 class Character: Codable {
     @objc dynamic  var ID: String = ""
-    @objc dynamic  var LevelRequired: Int = 0
+    @objc dynamic  var LevelsRequired: Int = 0
     @objc dynamic  var Name: String = ""
     @objc dynamic  var Picture: String = "default.png"
     
     private enum CodingKeys: String, CodingKey {
-        case LevelRequired
+        case LevelsRequired
         case Name
         case Picture
     }
