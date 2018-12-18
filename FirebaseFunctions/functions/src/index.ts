@@ -14,6 +14,7 @@ export const createUser = functions.auth.user().onCreate((user) => {
         'Role': 'user',
         'RegisterDate': Date.now(),
         'SelectedCharacter': 'dJRKyr9CJeZtIg47beK1',
-        'CompletedLevels': []
+        'CompletedLevels': [],
+        'Achievements' : []
     })
 });

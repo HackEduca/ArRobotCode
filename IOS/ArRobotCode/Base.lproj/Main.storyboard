@@ -66,7 +66,7 @@
                 <viewControllerPlaceholder storyboardName="Levels" id="zic-kk-1QE" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41c-HY-9EG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="803"/>
+            <point key="canvasLocation" x="847" y="805"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="2Fp-qC-cKx">
@@ -115,6 +115,12 @@
                                             <segue destination="zic-kk-1QE" kind="show" id="yPL-LZ-FRO"/>
                                         </connections>
                                     </button>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-qn-bDk">
+                                        <rect key="frame" x="0.0" y="416" width="250" height="418"/>
+                                        <connections>
+                                            <segue destination="Rmz-1V-f4k" kind="embed" id="hzv-Ze-0T1"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95314523963730569" green="0.95314523963730569" blue="0.95314523963730569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -123,10 +129,13 @@
                                     <constraint firstItem="qYa-Ai-L2M" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="8Y9-VL-H4m"/>
                                     <constraint firstAttribute="trailing" secondItem="Vdl-as-smO" secondAttribute="trailing" constant="10" id="8Zv-tO-ari"/>
                                     <constraint firstItem="Vdl-as-smO" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Ege-TA-J31"/>
+                                    <constraint firstAttribute="bottom" secondItem="WAM-qn-bDk" secondAttribute="bottom" id="G2u-mZ-yPd"/>
                                     <constraint firstItem="Ypj-3M-jYA" firstAttribute="top" secondItem="xev-NN-PbM" secondAttribute="bottom" constant="10" id="Grt-1y-Sns"/>
                                     <constraint firstAttribute="trailing" secondItem="vvz-Vi-WbA" secondAttribute="trailing" id="KoA-jU-HW3"/>
                                     <constraint firstItem="Ypj-3M-jYA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Mga-Op-gnm"/>
+                                    <constraint firstItem="WAM-qn-bDk" firstAttribute="top" secondItem="vvz-Vi-WbA" secondAttribute="bottom" constant="8" id="N8a-iQ-o4A"/>
                                     <constraint firstAttribute="width" constant="250" id="NYb-hP-wzW"/>
+                                    <constraint firstItem="WAM-qn-bDk" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="OWP-r2-IXL"/>
                                     <constraint firstAttribute="trailing" secondItem="qYa-Ai-L2M" secondAttribute="trailing" constant="10" id="WgP-D1-O5p"/>
                                     <constraint firstItem="Vdl-as-smO" firstAttribute="top" secondItem="Ypj-3M-jYA" secondAttribute="bottom" constant="10" id="ZCT-6U-Pg5"/>
                                     <constraint firstItem="qYa-Ai-L2M" firstAttribute="top" secondItem="Zmr-t0-hoW" secondAttribute="top" constant="50" id="b1a-8o-4eS"/>
@@ -134,6 +143,7 @@
                                     <constraint firstItem="xev-NN-PbM" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="lbF-6M-W1i"/>
                                     <constraint firstItem="vvz-Vi-WbA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="q2H-rI-Axc"/>
                                     <constraint firstAttribute="trailing" secondItem="Ypj-3M-jYA" secondAttribute="trailing" constant="10" id="qLJ-6L-8Ae"/>
+                                    <constraint firstAttribute="trailing" secondItem="WAM-qn-bDk" secondAttribute="trailing" id="uyq-dg-UjM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Q0-Bbo">
@@ -400,6 +410,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hc-gq-jGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1175.7194244604316" y="1117.9856115107914"/>
+        </scene>
+        <!--Achievements View Controller-->
+        <scene sceneID="E2I-NI-NvG">
+            <objects>
+                <viewController id="Rmz-1V-f4k" customClass="AchievementsViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Md-iI-wWE">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="418"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SLv-qU-hs0">
+                                <rect key="frame" x="3" y="3" width="244" height="412"/>
+                                <color key="backgroundColor" red="0.95283776521682739" green="0.95300072431564331" blue="0.95282751321792603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YhS-Jm-SfF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AchievementCell" reuseIdentifier="AchievementCell" id="uPP-7c-SKU" customClass="AchievementCell" customModule="ArRobotCode" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-Q8-BBN" userLabel="AchievementImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="leading" secondItem="uPP-7c-SKU" secondAttribute="leading" id="6Bg-af-0sM"/>
+                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="top" secondItem="uPP-7c-SKU" secondAttribute="top" id="JVx-po-r7Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="fCg-Q8-BBN" secondAttribute="trailing" id="XAc-hv-RNt"/>
+                                            <constraint firstAttribute="bottom" secondItem="fCg-Q8-BBN" secondAttribute="bottom" id="Za3-8C-PKg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="achievementImage" destination="fCg-Q8-BBN" id="3Ag-Fw-LJC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95283776521682739" green="0.95300072431564331" blue="0.95282751321792603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SLv-qU-hs0" firstAttribute="leading" secondItem="4Md-iI-wWE" secondAttribute="leading" constant="3" id="ZOF-Js-opm"/>
+                            <constraint firstAttribute="bottom" secondItem="SLv-qU-hs0" secondAttribute="bottom" constant="3" id="hN1-es-iNn"/>
+                            <constraint firstAttribute="trailing" secondItem="SLv-qU-hs0" secondAttribute="trailing" constant="3" id="ldI-BQ-oQ0"/>
+                            <constraint firstItem="SLv-qU-hs0" firstAttribute="top" secondItem="4Md-iI-wWE" secondAttribute="top" constant="3" id="vfW-TL-f9N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GXr-Y7-IqG"/>
+                    </view>
+                    <connections>
+                        <outlet property="achievementsCollectionView" destination="SLv-qU-hs0" id="BVT-U0-hTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="439-DR-Dkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="968"/>
         </scene>
     </scenes>
     <resources>

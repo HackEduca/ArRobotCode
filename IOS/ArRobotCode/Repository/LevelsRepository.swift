@@ -31,6 +31,10 @@ class LevelsRepository: Repository {
         syncFromServer()
     }
     
+    func doInit() {
+        
+    }
+    
     func getAll() -> [DataLevel] {
         return self.entities;
     }

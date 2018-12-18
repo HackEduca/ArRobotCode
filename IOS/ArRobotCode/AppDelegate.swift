@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Initialise Singleton Repositories
         UserRepository.shared.doInit()
+        LevelsRepository.shared.doInit()
         CharacterRepository.shared.doInit()
+        AchievementsRepository.shared.doInit()
         
         
 //        do {

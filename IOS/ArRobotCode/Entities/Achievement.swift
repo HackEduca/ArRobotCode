@@ -1,26 +1,23 @@
 //
-//  UserProperties.swift
+//  Achievement.swift
 //  ArRobotCode
 //
-//  Created by Sorin Sebastian Mircea on 12/12/2018.
+//  Created by Sorin Sebastian Mircea on 18/12/2018.
 //  Copyright © 2018 Sorin Sebastian Mircea. All rights reserved.
 //
 
 import Foundation
 
-class UserProperties: Codable {
-     @objc dynamic  var Role: String = ""
-     @objc dynamic  var RegisterDate: Int = 0
-     @objc dynamic   var SelectedCharacter: String = ""
-     var CompletedLevels: [String] = []
-     var Achievements: [String] = []
+class Achievement: Codable {
+    @objc dynamic  var ID: String = ""
+    @objc dynamic  var Description: String = ""
+    @objc dynamic  var Name: String = ""
+    @objc dynamic  var Picture: String = "default.png"
     
     private enum CodingKeys: String, CodingKey {
-        case Role
-        case RegisterDate
-        case SelectedCharacter
-        case CompletedLevels
-        case Achievements
+       case Description
+       case Name
+       case Picture
     }
     
     func asDictionary() throws -> [String: Any] {
