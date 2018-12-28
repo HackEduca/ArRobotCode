@@ -20,6 +20,14 @@
 		D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D31F1606217A3DB5006B37B4 /* Readme.rtf */; };
 		D324C3F7219C09E700C78C4D /* GameUISplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */; };
 		D324C403219C256600C78C4D /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324C401219C256500C78C4D /* Plane.swift */; };
+		D33D61BA21D6495700F588F7 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61B821D6495300F588F7 /* finish.png */; };
+		D33D61BB21D6495700F588F7 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61B921D6495700F588F7 /* start.png */; };
+		D33D61C021D6752000F588F7 /* TileC.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61BC21D6751400F588F7 /* TileC.png */; };
+		D33D61C121D6752000F588F7 /* TileA.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61BD21D6751800F588F7 /* TileA.png */; };
+		D33D61C321D6752000F588F7 /* TileD.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61BF21D6752000F588F7 /* TileD.png */; };
+		D33D61C721D6758600F588F7 /* TileB.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61C621D6758600F588F7 /* TileB.png */; };
+		D33D61CA21D677AF00F588F7 /* TileF.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61C821D677AA00F588F7 /* TileF.png */; };
+		D33D61CB21D677AF00F588F7 /* TileE.png in Resources */ = {isa = PBXBuildFile; fileRef = D33D61C921D677AF00F588F7 /* TileE.png */; };
 		D35294F921C5066E00D5BEC0 /* PublicLevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35294F821C5066E00D5BEC0 /* PublicLevelsViewController.swift */; };
 		D35294FC21C5074D00D5BEC0 /* PublicLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35294FB21C5074D00D5BEC0 /* PublicLevelCell.swift */; };
 		D35294FE21C5075500D5BEC0 /* PublicHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35294FD21C5075500D5BEC0 /* PublicHeaderCell.swift */; };
@@ -138,6 +146,14 @@
 		D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISplitViewController.swift; sourceTree = "<group>"; };
 		D324C401219C256500C78C4D /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		D33D61B621D6421500F588F7 /* Moon.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Moon.scn; sourceTree = "<group>"; };
+		D33D61B821D6495300F588F7 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		D33D61B921D6495700F588F7 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
+		D33D61BC21D6751400F588F7 /* TileC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileC.png; sourceTree = "<group>"; };
+		D33D61BD21D6751800F588F7 /* TileA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileA.png; sourceTree = "<group>"; };
+		D33D61BF21D6752000F588F7 /* TileD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileD.png; sourceTree = "<group>"; };
+		D33D61C621D6758600F588F7 /* TileB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileB.png; sourceTree = "<group>"; };
+		D33D61C821D677AA00F588F7 /* TileF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileF.png; sourceTree = "<group>"; };
+		D33D61C921D677AF00F588F7 /* TileE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileE.png; sourceTree = "<group>"; };
 		D35294F821C5066E00D5BEC0 /* PublicLevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelsViewController.swift; sourceTree = "<group>"; };
 		D35294FB21C5074D00D5BEC0 /* PublicLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelCell.swift; sourceTree = "<group>"; };
 		D35294FD21C5075500D5BEC0 /* PublicHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicHeaderCell.swift; sourceTree = "<group>"; };
@@ -330,6 +346,21 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		D33D61B721D6490F00F588F7 /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				D33D61BD21D6751800F588F7 /* TileA.png */,
+				D33D61C621D6758600F588F7 /* TileB.png */,
+				D33D61BC21D6751400F588F7 /* TileC.png */,
+				D33D61BF21D6752000F588F7 /* TileD.png */,
+				D33D61C921D677AF00F588F7 /* TileE.png */,
+				D33D61C821D677AA00F588F7 /* TileF.png */,
+				D33D61B821D6495300F588F7 /* finish.png */,
+				D33D61B921D6495700F588F7 /* start.png */,
+			);
+			path = Tiles;
+			sourceTree = "<group>";
+		};
 		D35294FA21C5070700D5BEC0 /* PublicLevels */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +500,7 @@
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */,
 				D3E8203E21D544E500E432E4 /* LoadingGear.gif */,
+				D33D61B721D6490F00F588F7 /* Tiles */,
 				D3E8204021D5487900E432E4 /* Models */,
 				D3E8202B21D53F0F00E432E4 /* Characters */,
 				D318523321D539CC00EAAD12 /* Fonts */,
@@ -702,6 +734,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33D61CA21D677AF00F588F7 /* TileF.png in Resources */,
 				D3E8203921D5430700E432E4 /* Clowy.png in Resources */,
 				D3FB50C921C15A6F001E0B74 /* gui.js in Resources */,
 				D3FB50CD21C15A6F001E0B74 /* extension-worker.js in Resources */,
@@ -709,11 +742,14 @@
 				D3FB50CB21C15A6F001E0B74 /* blocksonly.js in Resources */,
 				D3FB50CC21C15A6F001E0B74 /* compatibility-testing.html in Resources */,
 				D3789F0121C9087A00E607C2 /* star.png in Resources */,
+				D33D61C121D6752000F588F7 /* TileA.png in Resources */,
 				D3FB50CA21C15A6F001E0B74 /* player.js in Resources */,
 				D3E8203F21D544E500E432E4 /* LoadingGear.gif in Resources */,
 				D3FB50CF21C15A6F001E0B74 /* player.html in Resources */,
+				D33D61C721D6758600F588F7 /* TileB.png in Resources */,
 				D3A0B03621D626E8000BA47C /* EarthMaterials.mtl in Resources */,
 				D3F0F71B219D9D0D0002788C /* plane_grid.png in Resources */,
+				D33D61CB21D677AF00F588F7 /* TileE.png in Resources */,
 				D3E8203321D5408E00E432E4 /* Max.png in Resources */,
 				D3789EFF21C9087A00E607C2 /* gold-medal.png in Resources */,
 				D31F1607217A3DB5006B37B4 /* Readme.rtf in Resources */,
@@ -728,17 +764,21 @@
 				D3E50F332178850D000270EE /* Assets.xcassets in Resources */,
 				D3E8203B21D543A500E432E4 /* Bob.png in Resources */,
 				D3F8888A2187302500D7A080 /* Levels.storyboard in Resources */,
+				D33D61C021D6752000F588F7 /* TileC.png in Resources */,
 				D3789EFD21C9087A00E607C2 /* buildYourOwn.png in Resources */,
 				D3E8203D21D5440500E432E4 /* Jim.png in Resources */,
 				D3E50F5A21788FF2000270EE /* Tile.sks in Resources */,
 				D3789EFE21C9087A00E607C2 /* fullhouse.png in Resources */,
 				D3FB50B321C15269001E0B74 /* back.png in Resources */,
+				D33D61C321D6752000F588F7 /* TileD.png in Resources */,
 				D3BA70F321BA764800E0742C /* rocket.json in Resources */,
 				D3FB50D021C15A6F001E0B74 /* blocks-only.html in Resources */,
 				D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */,
+				D33D61BB21D6495700F588F7 /* start.png in Resources */,
 				D3E8203121D53FEE00E432E4 /* Kim.png in Resources */,
 				D3FB50CE21C15A6F001E0B74 /* static in Resources */,
 				D3E8203721D5425B00E432E4 /* MrRobot.png in Resources */,
+				D33D61BA21D6495700F588F7 /* finish.png in Resources */,
 				D3E50F312178850C000270EE /* Game.storyboard in Resources */,
 				D3789F0021C9087A00E607C2 /* starv2.png in Resources */,
 				D318523521D539DC00EAAD12 /* OpenSansLight.ttf in Resources */,
