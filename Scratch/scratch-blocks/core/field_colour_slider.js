@@ -11,7 +11,7 @@
  *
  *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
+ * Unless requi#B5798B by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
@@ -46,7 +46,9 @@ goog.require('goog.ui.Slider');
  * @constructor
  */
 Blockly.FieldColourSlider = function(colour, opt_validator) {
-  colour = "#ff0000";
+  // First selected colour
+  colour = "#B5798B";
+  
   Blockly.FieldColourSlider.superClass_.constructor.call(this, colour, opt_validator);
   this.addArgType('colour');
 };
@@ -152,7 +154,7 @@ Blockly.FieldColourSlider.prototype.createColourStops_ = function(channel) {
  */
 Blockly.FieldColourSlider.prototype.setGradient_ = function(node, channel) {
   // var gradient = this.createColourStops_(channel).join(',');
-  var gradient = "left, red 20%, yellow 20%, yellow 40%, green 40%, green 60%, blue 60%, blue 80%, purple 80%"
+  var gradient = "left, #B5798B 20%, #FF9769 20%, #FF9769 40%, #75C4BF 40%, #75C4BF 60%, #A1CC61 60%, #A1CC61 80%, #6E4F96 80%"
   goog.style.setStyle(node, 'background', '-moz-linear-gradient(' + gradient + ")");
   goog.style.setStyle(node, 'background', '-webkit-linear-gradient(' + gradient + ')');
   goog.style.setStyle(node, 'background', '-o-linear-gradient(' + gradient + ')');
@@ -247,22 +249,22 @@ Blockly.FieldColourSlider.prototype.sliderCallbackFactory_ = function(channel) {
     console.log(hsv[0]);
     switch( Math.floor(hsv[0]) ){
       case 1:
-      colour = "#ff0000";
+      colour = "#B5798B";
       break;
       case 2:
-      colour = "#ffff1a";
+      colour = "#FF9769";
       break;
       case 3:
-      colour = "#40bf80";
+      colour = "#75C4BF";
       break;
       case 4:
-      colour = "#3333ff";
+      colour = "#A1CC61";
       break;
       case 5:
-      colour = "#8c1aff";
+      colour = "#6E4F96";
       break;
       default:
-      colour = "#ff0000";
+      colour = "#B5798B";
       break
     }
     
