@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSansLight.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Azd-jY-nT8">
@@ -79,28 +87,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmr-t0-hoW">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="834"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut.png" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-Ai-L2M">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingGear.gif" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-Ai-L2M">
                                         <rect key="frame" x="10" y="50" width="230" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="Ynv-Rc-nP3"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xev-NN-PbM" userLabel="UserLabel">
-                                        <rect key="frame" x="0.0" y="230" width="250" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="0.0" y="230" width="250" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvz-Vi-WbA">
-                                        <rect key="frame" x="0.0" y="378" width="250" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <size key="shadowOffset" width="1" height="-1"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-3M-jYA">
-                                        <rect key="frame" x="10" y="270" width="230" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="My Characters"/>
+                                        <rect key="frame" x="10" y="275.5" width="230" height="35"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="19"/>
+                                        <state key="normal" title="Characters">
+                                            <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="f2w-70-vT4" kind="popoverPresentation" popoverAnchorView="Ypj-3M-jYA" id="fR1-Ba-pr7">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -108,15 +115,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-as-smO">
-                                        <rect key="frame" x="10" y="319" width="230" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="My Levels"/>
+                                        <rect key="frame" x="10" y="320.5" width="230" height="35"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="19"/>
+                                        <state key="normal" title="Levels"/>
                                         <connections>
                                             <segue destination="zic-kk-1QE" kind="show" id="yPL-LZ-FRO"/>
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-qn-bDk">
-                                        <rect key="frame" x="0.0" y="416" width="250" height="418"/>
+                                        <rect key="frame" x="0.0" y="365.5" width="250" height="468.5"/>
                                         <connections>
                                             <segue destination="Rmz-1V-f4k" kind="embed" id="hzv-Ze-0T1"/>
                                         </connections>
@@ -128,20 +136,17 @@
                                     <constraint firstItem="xev-NN-PbM" firstAttribute="top" secondItem="qYa-Ai-L2M" secondAttribute="bottom" constant="10" id="32G-uK-O4M"/>
                                     <constraint firstItem="qYa-Ai-L2M" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="8Y9-VL-H4m"/>
                                     <constraint firstAttribute="trailing" secondItem="Vdl-as-smO" secondAttribute="trailing" constant="10" id="8Zv-tO-ari"/>
+                                    <constraint firstItem="WAM-qn-bDk" firstAttribute="top" secondItem="Vdl-as-smO" secondAttribute="bottom" constant="10" id="DX4-Vl-jZ7"/>
                                     <constraint firstItem="Vdl-as-smO" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Ege-TA-J31"/>
                                     <constraint firstAttribute="bottom" secondItem="WAM-qn-bDk" secondAttribute="bottom" id="G2u-mZ-yPd"/>
                                     <constraint firstItem="Ypj-3M-jYA" firstAttribute="top" secondItem="xev-NN-PbM" secondAttribute="bottom" constant="10" id="Grt-1y-Sns"/>
-                                    <constraint firstAttribute="trailing" secondItem="vvz-Vi-WbA" secondAttribute="trailing" id="KoA-jU-HW3"/>
                                     <constraint firstItem="Ypj-3M-jYA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" constant="10" id="Mga-Op-gnm"/>
-                                    <constraint firstItem="WAM-qn-bDk" firstAttribute="top" secondItem="vvz-Vi-WbA" secondAttribute="bottom" constant="8" id="N8a-iQ-o4A"/>
                                     <constraint firstAttribute="width" constant="250" id="NYb-hP-wzW"/>
                                     <constraint firstItem="WAM-qn-bDk" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="OWP-r2-IXL"/>
                                     <constraint firstAttribute="trailing" secondItem="qYa-Ai-L2M" secondAttribute="trailing" constant="10" id="WgP-D1-O5p"/>
                                     <constraint firstItem="Vdl-as-smO" firstAttribute="top" secondItem="Ypj-3M-jYA" secondAttribute="bottom" constant="10" id="ZCT-6U-Pg5"/>
                                     <constraint firstItem="qYa-Ai-L2M" firstAttribute="top" secondItem="Zmr-t0-hoW" secondAttribute="top" constant="50" id="b1a-8o-4eS"/>
-                                    <constraint firstItem="vvz-Vi-WbA" firstAttribute="top" secondItem="Vdl-as-smO" secondAttribute="bottom" constant="20" id="ij5-uA-9PL"/>
                                     <constraint firstItem="xev-NN-PbM" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="lbF-6M-W1i"/>
-                                    <constraint firstItem="vvz-Vi-WbA" firstAttribute="leading" secondItem="Zmr-t0-hoW" secondAttribute="leading" id="q2H-rI-Axc"/>
                                     <constraint firstAttribute="trailing" secondItem="Ypj-3M-jYA" secondAttribute="trailing" constant="10" id="qLJ-6L-8Ae"/>
                                     <constraint firstAttribute="trailing" secondItem="WAM-qn-bDk" secondAttribute="trailing" id="uyq-dg-UjM"/>
                                 </constraints>
@@ -329,7 +334,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wT-wg-kMO" userLabel="LevelNameLabel">
                                                                     <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                    <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -375,11 +380,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="822" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-gp-rJj" userLabel="Chapter">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-gp-rJj" userLabel="Chapter">
                                             <rect key="frame" x="0.0" y="0.0" width="822" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="40"/>
+                                            <color key="textColor" red="0.13062700629234314" green="0.4006822407245636" blue="0.40186625719070435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -416,11 +422,11 @@
             <objects>
                 <viewController id="Rmz-1V-f4k" customClass="AchievementsViewController" customModule="ArRobotCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Md-iI-wWE">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="468.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SLv-qU-hs0">
-                                <rect key="frame" x="3" y="3" width="244" height="412"/>
+                                <rect key="frame" x="3" y="3" width="244" height="462.5"/>
                                 <color key="backgroundColor" red="0.95283776521682739" green="0.95300072431564331" blue="0.95282751321792603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YhS-Jm-SfF">
                                     <size key="itemSize" width="50" height="50"/>
@@ -442,10 +448,10 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="leading" secondItem="uPP-7c-SKU" secondAttribute="leading" id="6Bg-af-0sM"/>
-                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="top" secondItem="uPP-7c-SKU" secondAttribute="top" id="JVx-po-r7Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="fCg-Q8-BBN" secondAttribute="trailing" id="XAc-hv-RNt"/>
-                                            <constraint firstAttribute="bottom" secondItem="fCg-Q8-BBN" secondAttribute="bottom" id="Za3-8C-PKg"/>
+                                            <constraint firstAttribute="bottom" secondItem="fCg-Q8-BBN" secondAttribute="bottom" id="KZZ-Fm-i2G"/>
+                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="top" secondItem="uPP-7c-SKU" secondAttribute="top" id="dGr-2d-pAZ"/>
+                                            <constraint firstItem="fCg-Q8-BBN" firstAttribute="leading" secondItem="uPP-7c-SKU" secondAttribute="leading" id="ebB-mc-FwY"/>
+                                            <constraint firstAttribute="trailing" secondItem="fCg-Q8-BBN" secondAttribute="trailing" id="sss-K4-XfZ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="achievementImage" destination="fCg-Q8-BBN" id="3Ag-Fw-LJC"/>
@@ -473,6 +479,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoadingGear.gif" width="200" height="200"/>
         <image name="astronaut.png" width="783" height="776"/>
         <image name="completed.png" width="512" height="512"/>
     </resources>

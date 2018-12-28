@@ -13,39 +13,51 @@ class TileCell: UICollectionViewCell {
     
     public func setTile(tile: DataTile) {
         if tile.Type == TypeOfTile.Free.rawValue{
-             tileImageView.image = UIImage(named: "gray")
+            tileImageView.image = UIImage(named: "gray")
+            tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.Used.rawValue {
-            tileImageView.image = UIImage(named: "green")
+            tileImageView.image = UIImage(named: "TileA.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.Start.rawValue {
-            tileImageView.image = UIImage(named: "pink")
+            tileImageView.image = UIImage(named: "start.png")
+            tileImageView.contentMode = .scaleAspectFit
+            self.backgroundColor = UIColor(red: 220 / 255.0, green: 220 / 255.0, blue: 218 / 255.0, alpha: 1.0)
         }
         
         if tile.Type == TypeOfTile.Finish.rawValue {
-            tileImageView.image = UIImage(named: "yellow")
+            tileImageView.image = UIImage(named: "finish.png")
+            tileImageView.contentMode = .scaleAspectFit
+            self.backgroundColor = UIColor(red: 220 / 255.0, green: 220 / 255.0, blue: 218 / 255.0, alpha: 1.0)
+        
         }
         
         if tile.Type == TypeOfTile.UsedA.rawValue {
-            tileImageView.image = UIImage(named: "greenA")
+            tileImageView.image = UIImage(named: "TileB.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.UsedB.rawValue {
-            tileImageView.image = UIImage(named: "greenB")
+            tileImageView.image = UIImage(named: "TileC.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.UsedC.rawValue {
-            tileImageView.image = UIImage(named: "greenC")
+            tileImageView.image = UIImage(named: "TileD.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.UsedD.rawValue {
-            tileImageView.image = UIImage(named: "greenD")
+            tileImageView.image = UIImage(named: "TileE.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
         if tile.Type == TypeOfTile.UsedE.rawValue {
-            tileImageView.image = UIImage(named: "greenE")
+            tileImageView.image = UIImage(named: "TileF.png")
+             tileImageView.contentMode = .scaleToFill
         }
         
        

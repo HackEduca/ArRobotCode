@@ -175,15 +175,15 @@ class Scratch3SensingBlocks {
     }
 
      colorToCode(color) {
-        if(color == "255,0,0")
+        if(color == "181,121,139")
             return "1";
-        if(color == "255,255,26")
+        if(color == "255,151,105")
             return "2";
-        if(color == "64,191,128")
+        if(color == "117,196,191")
             return "3";
-        if(color == "51,51,255")
+        if(color == "161,204,97")
             return "4";
-        if(color == "140,26,255")
+        if(color == "110,79,150")
             return "5";
 
         return 0;
