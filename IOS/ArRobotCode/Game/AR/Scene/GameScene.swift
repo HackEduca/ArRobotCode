@@ -20,6 +20,10 @@ struct GameScene {
     
     var player: SCNNode?
     var playerRoot: SCNNode?
+    var finish: SCNNode?
+    
+    var earth: SCNNode?
+    var moon: SCNNode?
     
     var planeAnchor: ARPlaneAnchor? // plane that the scene will stand on
 
@@ -32,6 +36,8 @@ struct GameScene {
         tile = self.initializeNode(name: "tile")
         player = self.initializeNode(name: "player")
         playerRoot = self.initializeNode(name: "playerRoot")
+        earth = self.initializeNode(name: "earth")
+        moon = self.initializeNode(name: "moon")
         self.playerController = PlayerAR(player: self.player!, tileSize: TILE_SIZE)
         
         self.customRoot!.scale = SCNVector3(0.001, 0.001, 0.001)
@@ -153,7 +159,7 @@ struct GameScene {
                     
                     case TypeOfTile.Finish.rawValue:
                         newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "yellow")
-                    
+                        self.finish = newTile
                     case TypeOfTile.Used.rawValue:
                         newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "green")
                     
@@ -186,6 +192,22 @@ struct GameScene {
             crtPos?.x = (pos?.x)!
             crtPos?.z += TILE_SIZE
         }
+        
+        let rotateLeftAction = SCNAction.rotateBy(x: 0, y: CGFloat(Float.pi), z: 0, duration: 5)
+        let rotateLeftContinously = SCNAction.repeatForever(rotateLeftAction)
+        
+        // Make Earth Visible & Move it above starting position
+        self.earth?.isHidden = false
+        self.earth?.position = SCNVector3(self.playerRoot!.position.x, self.playerRoot!.position.y + 100, self.playerRoot!.position.z)
+        self.earth!.runAction(rotateLeftContinously)
+        
+        // Make Moon Visible & Move it above finishing position
+        self.moon?.isHidden = false
+        self.moon?.position = SCNVector3(self.finish!.position.x, self.finish!.position.y + 100, self.finish!.position.z)
+        self.moon!.runAction(rotateLeftContinously)
+        
+        // Make the Player visible
+        self.player!.isHidden = false
     }
     
     fileprivate func deepCopyNode(node: SCNNode) -> SCNNode {

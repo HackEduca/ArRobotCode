@@ -134,7 +134,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     
                     
                     print("Plane width: ", plane.planeGeometry.width, ", height: ", plane.planeGeometry.height)
-//                    plane.planeGeometr
     
                     // Create an anchor at that position
                     let anchor = ARAnchor(name: "gameCenter", transform: simd_float4x4(hitResult.modelTransform))

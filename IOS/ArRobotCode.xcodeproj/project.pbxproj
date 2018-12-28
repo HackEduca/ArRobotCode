@@ -47,6 +47,8 @@
 		D38E754D21A4519100590B78 /* PlayerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E754C21A4519100590B78 /* PlayerAR.swift */; };
 		D39A3E9121A6E66000FA00C5 /* EngineInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */; };
 		D39A3E9321A6E7E500FA00C5 /* EngineAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */; };
+		D3A0B03621D626E8000BA47C /* EarthMaterials.mtl in Resources */ = {isa = PBXBuildFile; fileRef = D3A0B03421D626E8000BA47C /* EarthMaterials.mtl */; };
+		D3A0B03921D6273B000BA47C /* MoonMaterials.mtl in Resources */ = {isa = PBXBuildFile; fileRef = D3A0B03721D62738000BA47C /* MoonMaterials.mtl */; };
 		D3BA70EB21BA5CF100E0742C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */; };
 		D3BA70ED21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
 		D3BA70EE21BA639900E0742C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */; };
@@ -135,6 +137,7 @@
 		D31F1606217A3DB5006B37B4 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		D324C3F6219C09E700C78C4D /* GameUISplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUISplitViewController.swift; sourceTree = "<group>"; };
 		D324C401219C256500C78C4D /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		D33D61B621D6421500F588F7 /* Moon.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Moon.scn; sourceTree = "<group>"; };
 		D35294F821C5066E00D5BEC0 /* PublicLevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelsViewController.swift; sourceTree = "<group>"; };
 		D35294FB21C5074D00D5BEC0 /* PublicLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicLevelCell.swift; sourceTree = "<group>"; };
 		D35294FD21C5075500D5BEC0 /* PublicHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicHeaderCell.swift; sourceTree = "<group>"; };
@@ -162,6 +165,9 @@
 		D38E754C21A4519100590B78 /* PlayerAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAR.swift; sourceTree = "<group>"; };
 		D39A3E9021A6E66000FA00C5 /* EngineInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineInterface.swift; sourceTree = "<group>"; };
 		D39A3E9221A6E7E500FA00C5 /* EngineAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineAR.swift; sourceTree = "<group>"; };
+		D3A0B03421D626E8000BA47C /* EarthMaterials.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EarthMaterials.mtl; sourceTree = "<group>"; };
+		D3A0B03721D62738000BA47C /* MoonMaterials.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoonMaterials.mtl; sourceTree = "<group>"; };
+		D3A0B03F21D629FD000BA47C /* Earth.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = Earth.scn; path = ../../../../../../Downloads/archive/Earth.scn; sourceTree = "<group>"; };
 		D3BA70EA21BA5CF100E0742C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BA70F221BA764800E0742C /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
@@ -463,6 +469,7 @@
 				D31F1606217A3DB5006B37B4 /* Readme.rtf */,
 				D3BA70EC21BA639900E0742C /* GoogleService-Info.plist */,
 				D3E8203E21D544E500E432E4 /* LoadingGear.gif */,
+				D3E8204021D5487900E432E4 /* Models */,
 				D3E8202B21D53F0F00E432E4 /* Characters */,
 				D318523321D539CC00EAAD12 /* Fonts */,
 			);
@@ -499,6 +506,17 @@
 				D3E8203021D53FEE00E432E4 /* Kim.png */,
 			);
 			path = Characters;
+			sourceTree = "<group>";
+		};
+		D3E8204021D5487900E432E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3A0B03721D62738000BA47C /* MoonMaterials.mtl */,
+				D33D61B621D6421500F588F7 /* Moon.scn */,
+				D3A0B03421D626E8000BA47C /* EarthMaterials.mtl */,
+				D3A0B03F21D629FD000BA47C /* Earth.scn */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D3F0F71C219D9F630002788C /* Scene */ = {
@@ -694,6 +712,7 @@
 				D3FB50CA21C15A6F001E0B74 /* player.js in Resources */,
 				D3E8203F21D544E500E432E4 /* LoadingGear.gif in Resources */,
 				D3FB50CF21C15A6F001E0B74 /* player.html in Resources */,
+				D3A0B03621D626E8000BA47C /* EarthMaterials.mtl in Resources */,
 				D3F0F71B219D9D0D0002788C /* plane_grid.png in Resources */,
 				D3E8203321D5408E00E432E4 /* Max.png in Resources */,
 				D3789EFF21C9087A00E607C2 /* gold-medal.png in Resources */,
@@ -704,6 +723,7 @@
 				D3E50F2C2178850C000270EE /* art.scnassets in Resources */,
 				D318523221D5367D00EAAD12 /* completed.png in Resources */,
 				D3E50F362178850D000270EE /* Main.storyboard in Resources */,
+				D3A0B03921D6273B000BA47C /* MoonMaterials.mtl in Resources */,
 				D3E8202F21D53F2600E432E4 /* princessSara.png in Resources */,
 				D3E50F332178850D000270EE /* Assets.xcassets in Resources */,
 				D3E8203B21D543A500E432E4 /* Bob.png in Resources */,
