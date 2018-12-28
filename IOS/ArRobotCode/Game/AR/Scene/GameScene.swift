@@ -155,32 +155,33 @@ struct GameScene {
                     case TypeOfTile.Start.rawValue:
                         playerRoot?.position.x = (crtPos?.x)!
                         playerRoot?.position.z = (crtPos?.z)!
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "pink")
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "yellow")
                     
                     case TypeOfTile.Finish.rawValue:
                         newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "yellow")
                         self.finish = newTile
                     case TypeOfTile.Used.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "green")
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "TileA.png")
                     
                     case TypeOfTile.UsedA.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named: "greenA")
+                        newTile.geometry!.materials.first!.diffuse.contents  = UIImage(named:"TileB.png")
                     
                     case TypeOfTile.UsedB.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenB")
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "TileC.png")
                     
                     case TypeOfTile.UsedC.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenC")
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "TileD.png")
                     
                     case TypeOfTile.UsedD.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenD")
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "TileE.png")
                     
                     case TypeOfTile.UsedE.rawValue:
-                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "greenE")
+                        newTile.geometry!.materials.first!.diffuse.contents = UIImage(named: "TileF.png")
                     
                     default:
                             newTile.isHidden = true
                 }
+                newTile.scale = SCNVector3(newTile.scale.x * 0.97, newTile.scale.y * 0.97, newTile.scale.z * 0.97)
 
                 // Add the tile
                 self.customRoot!.addChildNode(newTile)
@@ -203,7 +204,7 @@ struct GameScene {
         
         // Make Moon Visible & Move it above finishing position
         self.moon?.isHidden = false
-        self.moon?.position = SCNVector3(self.finish!.position.x, self.finish!.position.y + 100, self.finish!.position.z)
+        self.moon?.position = SCNVector3(self.finish!.position.x, self.finish!.position.y + 70, self.finish!.position.z)
         self.moon!.runAction(rotateLeftContinously)
         
         // Make the Player visible
