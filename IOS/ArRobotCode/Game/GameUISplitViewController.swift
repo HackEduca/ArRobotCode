@@ -62,7 +62,7 @@ class GameUISplitViewController: UISplitViewController {
                     return;
                 }
                 
-                switch evSplit[0] {
+                switch evSplit[1] {
                 case "stop":
                     self.engineAR.stopLevel()
 
@@ -89,12 +89,12 @@ class GameUISplitViewController: UISplitViewController {
                     return;
                 }
                 
-                if self.engineAR.isFinished() && evSplit[0] != "run" {
+                if self.engineAR.isFinished() && evSplit[1] != "run" {
                     print("Finished -> fast")
                     return
                 }
                 
-                switch evSplit[0] {
+                switch evSplit[1] {
                 case "run":
                     self.engineAR.resetLevel()
                     print("Game started")

@@ -1,0 +1,4 @@
+// Glow a block with given ide
+Blockly.getMainWorkspace().glowBlock('(*:tmLkK!Z5g@uDFMtcR', true);
+
+target -> sprite -> blocks -> _script

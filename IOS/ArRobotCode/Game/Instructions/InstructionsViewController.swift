@@ -81,13 +81,13 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     
         // Publish instructions
         let possibleInstructions = ["run","moveFront", "moveFrontIf" ,"moveBack", "moveBackIf","turnLeft", "turnLeftIf", "turnRight", "turnRightIf"]
-        if possibleInstructions.contains(String(responseSplit[0])) {
+        if possibleInstructions.contains(String(responseSplit[1])) {
             self.instructionsBehaviourSubject.onNext(response)
         }
         
         // Publish events
         let possibleEvents = ["run","stop"]
-        if possibleEvents.contains(String(responseSplit[0])) {
+        if possibleEvents.contains(String(responseSplit[1])) {
             self.eventsBehaviourSubject.onNext(response)
         }
     }
