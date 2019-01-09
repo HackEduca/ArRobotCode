@@ -107,25 +107,25 @@ class GameUISplitViewController: UISplitViewController {
                     self.engineAR.moveFront()
                     break
                 case "moveFrontIf":
-                    self.engineAR.moveFrontIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.moveFrontIf(ifTileType: String(evSplit[2]))
                     break
                 case "moveBack":
                     self.engineAR.moveBack()
                     break
                 case "moveBackIf":
-                    self.engineAR.moveBackIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.moveBackIf(ifTileType: String(evSplit[2]))
                     break
                 case "turnLeft":
                     self.engineAR.turnLeft()
                     break
                 case "turnLeftIf":
-                    self.engineAR.turnLeftIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.turnLeftIf(ifTileType: String(evSplit[2]))
                     break
                 case "turnRight":
                     self.engineAR.turnRight()
                     break
                 case "turnRightIf":
-                    self.engineAR.turnRightIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.turnRightIf(ifTileType: String(evSplit[2]))
                     break
                 default:
                     print(evSplit)

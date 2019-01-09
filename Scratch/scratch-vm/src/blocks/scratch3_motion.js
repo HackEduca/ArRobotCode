@@ -69,7 +69,7 @@ class Scratch3MotionBlocks {
 
     moveSteps (args, util) {
         console.log("moveFront called!");
-        var crtBlockId = this.runtime.threads[0].stack[0];
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
 
         webkit.messageHandlers.callback.postMessage(crtBlockId + " moveFront " + args.STEPS);
         const steps = Cast.toNumber(args.STEPS);
@@ -83,7 +83,7 @@ class Scratch3MotionBlocks {
 
     moveStepsBack (args, util) {
         console.log("moveBack called!");
-        var crtBlockId = this.runtime.threads[0].stack[0]
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
 
         webkit.messageHandlers.callback.postMessage(crtBlockId + " moveBack " + args.STEPS);
         const steps = Cast.toNumber(args.STEPS);
