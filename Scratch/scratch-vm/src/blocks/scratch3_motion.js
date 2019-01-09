@@ -68,8 +68,10 @@ class Scratch3MotionBlocks {
     }
 
     moveSteps (args, util) {
-        console.log("moveFront called!")
-        webkit.messageHandlers.callback.postMessage("moveFront " + args.STEPS);
+        console.log("moveFront called!");
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " moveFront " + args.STEPS);
         const steps = Cast.toNumber(args.STEPS);
         const radians = MathUtil.degToRad(90 - util.target.direction);
         const dx = steps * Math.cos(radians);
@@ -80,8 +82,10 @@ class Scratch3MotionBlocks {
     }
 
     moveStepsBack (args, util) {
-        console.log("moveBack called!")
-        webkit.messageHandlers.callback.postMessage("moveBack " + args.STEPS);
+        console.log("moveBack called!");
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " moveBack " + args.STEPS);
         const steps = Cast.toNumber(args.STEPS);
         const radians = MathUtil.degToRad(90 - util.target.direction);
         const dx = steps * Math.cos(radians);
@@ -126,7 +130,9 @@ class Scratch3MotionBlocks {
 
     turnRight (args, util) {
         console.log("turnRight called!")
-        webkit.messageHandlers.callback.postMessage("turnRight " + args.DEGREES);
+        var crtBlockId = this.runtime.threads[0].stack[0]
+
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " turnRight " + args.DEGREES);
         const degrees = Cast.toNumber(args.DEGREES);
         util.target.setDirection(util.target.direction + degrees);
         // this.sleep_s(1);
@@ -134,7 +140,9 @@ class Scratch3MotionBlocks {
 
     turnLeft (args, util) {
         console.log("turnLeft called!")
-        webkit.messageHandlers.callback.postMessage("turnLeft " + args.DEGREES);
+        var crtBlockId = this.runtime.threads[0].stack[0]
+
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " turnLeft " + args.DEGREES);
         const degrees = Cast.toNumber(args.DEGREES);
         util.target.setDirection(util.target.direction - degrees);
         // this.sleep_s(1);

@@ -28,7 +28,7 @@ class Controls extends React.Component {
         }
     }
     handleStopAllClick (e) {
-        webkit.messageHandlers.callback.postMessage("stop");
+        webkit.messageHandlers.callback.postMessage("00 stop");
         e.preventDefault();
         this.props.vm.stopAll();
         analytics.event({

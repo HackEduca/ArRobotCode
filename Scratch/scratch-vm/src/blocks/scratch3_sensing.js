@@ -196,29 +196,37 @@ class Scratch3SensingBlocks {
 
     movestepsIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
         console.log("moveFrontIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("moveFrontIf " + this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " moveFrontIf " + this.colorToCode(color));
         // this.sleep_s(1);
     }
 
     movestepsBackIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
         console.log("moveBackIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("moveBackIf " + this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " moveBackIf " + this.colorToCode(color));
         // this.sleep_s(1);
     }
 
     turnleftIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
         console.log("turnLeftIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("turnLeftIf " + this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " turnLeftIf " + this.colorToCode(color));
         // this.sleep_s(1);
     }
 
     turnrightIf (args, util) {
         const color = Cast.toRgbColorList(args.COLOR);
+        var crtBlockId = this.runtime.threads[0].stack[ this.runtime.threads[0].stack.length - 1 ];
+
         console.log("turnRightIf called: ", this.colorToCode(color));
-        webkit.messageHandlers.callback.postMessage("turnRightIf " + this.colorToCode(color));
+        webkit.messageHandlers.callback.postMessage(crtBlockId + " turnRightIf " + this.colorToCode(color));
         // this.sleep_s(1);
     }
 

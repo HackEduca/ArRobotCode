@@ -81,21 +81,20 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     
         // Publish instructions
         let possibleInstructions = ["run","moveFront", "moveFrontIf" ,"moveBack", "moveBackIf","turnLeft", "turnLeftIf", "turnRight", "turnRightIf"]
-        if possibleInstructions.contains(String(responseSplit[0])) {
+        if possibleInstructions.contains(String(responseSplit[1])) {
             self.instructionsBehaviourSubject.onNext(response)
         }
         
         // Publish events
         let possibleEvents = ["run","stop"]
-        if possibleEvents.contains(String(responseSplit[0])) {
+        if possibleEvents.contains(String(responseSplit[1])) {
             self.eventsBehaviourSubject.onNext(response)
         }
     }
     
     func sendToJS(message msg: String) {
         instructionsWebView.evaluateJavaScript(msg) { (el, err) in
-            print("Evaluating: ", msg)
-            print(err)
+            print("Sending to Scratch Web: ", msg)
         }
     }
     

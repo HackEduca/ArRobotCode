@@ -62,7 +62,7 @@ class GameUISplitViewController: UISplitViewController {
                     return;
                 }
                 
-                switch evSplit[0] {
+                switch evSplit[1] {
                 case "stop":
                     self.engineAR.stopLevel()
 
@@ -89,12 +89,17 @@ class GameUISplitViewController: UISplitViewController {
                     return;
                 }
                 
-                if self.engineAR.isFinished() && evSplit[0] != "run" {
+                if self.engineAR.isFinished() && evSplit[1] != "run" {
                     print("Finished -> fast")
                     return
                 }
                 
-                switch evSplit[0] {
+                // Make block glow
+                DispatchQueue.main.async {
+                    self.instructionsVC.sendToJS(message: "Blockly.getMainWorkspace().glowBlock(\"" + evSplit[0] + "\", true);")
+                }
+                
+                switch evSplit[1] {
                 case "run":
                     self.engineAR.resetLevel()
                     print("Game started")
@@ -102,25 +107,25 @@ class GameUISplitViewController: UISplitViewController {
                     self.engineAR.moveFront()
                     break
                 case "moveFrontIf":
-                    self.engineAR.moveFrontIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.moveFrontIf(ifTileType: String(evSplit[2]))
                     break
                 case "moveBack":
                     self.engineAR.moveBack()
                     break
                 case "moveBackIf":
-                    self.engineAR.moveBackIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.moveBackIf(ifTileType: String(evSplit[2]))
                     break
                 case "turnLeft":
                     self.engineAR.turnLeft()
                     break
                 case "turnLeftIf":
-                    self.engineAR.turnLeftIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.turnLeftIf(ifTileType: String(evSplit[2]))
                     break
                 case "turnRight":
                     self.engineAR.turnRight()
                     break
                 case "turnRightIf":
-                    self.engineAR.turnRightIf(ifTileType: String(evSplit[1]))
+                    self.engineAR.turnRightIf(ifTileType: String(evSplit[2]))
                     break
                 default:
                     print(evSplit)
@@ -129,6 +134,11 @@ class GameUISplitViewController: UISplitViewController {
                 
                 // To do: move this inside of each instruction
                 sleep(1)
+                
+                // Stop glowing
+                DispatchQueue.main.async {
+                    self.instructionsVC.sendToJS(message: "Blockly.getMainWorkspace().glowBlock(\"" + evSplit[0] + "\", false);")
+                }
                 
                 DispatchQueue.main.async {
                      self.instructionsVC.statusTextView.text = ""
