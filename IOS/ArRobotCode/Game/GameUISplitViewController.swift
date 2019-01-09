@@ -94,6 +94,11 @@ class GameUISplitViewController: UISplitViewController {
                     return
                 }
                 
+                // Make block glow
+                DispatchQueue.main.async {
+                    self.instructionsVC.sendToJS(message: "Blockly.getMainWorkspace().glowBlock(\"" + evSplit[0] + "\", true);")
+                }
+                
                 switch evSplit[1] {
                 case "run":
                     self.engineAR.resetLevel()
@@ -129,6 +134,11 @@ class GameUISplitViewController: UISplitViewController {
                 
                 // To do: move this inside of each instruction
                 sleep(1)
+                
+                // Stop glowing
+                DispatchQueue.main.async {
+                    self.instructionsVC.sendToJS(message: "Blockly.getMainWorkspace().glowBlock(\"" + evSplit[0] + "\", false);")
+                }
                 
                 DispatchQueue.main.async {
                      self.instructionsVC.statusTextView.text = ""

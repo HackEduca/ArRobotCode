@@ -1,5 +1,10 @@
 const Cast = require('../util/cast');
 
+function fromIOS(msg) {
+    alert("Received: " + msg);
+  }
+
+  
 class Scratch3DataBlocks {
     constructor (runtime) {
         /**

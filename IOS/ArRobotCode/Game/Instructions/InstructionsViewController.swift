@@ -94,8 +94,7 @@ extension InstructionsViewController: WKScriptMessageHandler, WKNavigationDelega
     
     func sendToJS(message msg: String) {
         instructionsWebView.evaluateJavaScript(msg) { (el, err) in
-            print("Evaluating: ", msg)
-            print(err)
+            print("Sending to Scratch Web: ", msg)
         }
     }
     
