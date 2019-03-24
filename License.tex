@@ -1,0 +1,191 @@
+\documentclass[12 pct]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[left=1.5in, right=1.5in, top=1in, bottom=1in]{geometry}
+\graphicspath{ {/Users/so/Desktop/Projects/ArRobotLearnToCodePRoject/} }
+\setcounter{section}{-1}
+
+\begin{document}
+
+\title{%
+  Alternative methods of learning using Augmented Reality\\
+  \large Practical application \\
+    and comparisons with other techniques}
+
+\author{Mircea Sorin-Sebastian, coord. Cojocar Dan}
+
+\maketitle
+
+\begin{abstract}
+The way that people acquire new knowledge and interact with the information has remained more or less the same in the modern history of humans, from paper based books to digital ebooks. The interaction with the information is practically non-existent, even more, the medium of showing the information is only two-dimensional, making the understanding of real world, three-dimensional concepts more difficult. Augmented reality, as a technology, has greatly improved in the past few years and now has the power to redesign the process of learning and teaching in ways that are still not contoured. 
+\end{abstract}
+
+\tableofcontents
+
+
+
+\chapter{Augmented Reality}
+
+\section{Introduction}
+The meaning of the word augment is to add or enhance something. In the cause of Augmented Reality, graphics, sounds and different feedback are added into our world to create an enhanced experience.
+
+This approach is opposite to the one that Virtual Reality takes, which is to completely replace the reality with a computer generated one.
+
+\section{Categories of Augmented Reality}
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.36\linewidth}
+    \includegraphics[width=\linewidth]{marker-based}
+     \caption{Marker based}
+     
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{marker-less}
+    \caption{Markerless}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{projection-based}
+    \caption{Projection}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{super-imposition}
+    \caption{Superimposition}
+  \end{subfigure}
+  \caption{Categories of augmented reality}
+  \label{fig:coffee3}
+\end{figure}
+Having their own use cases, advantages and disadvantages, several types of augmented reality approaches exist.
+
+\subsection*{Marker based}
+Uses a camera enabled device and some type of visual markers (like QR codes or certain feature points) to recognise this zones and execute certain actions like imposing a virtual object over the marker.
+
+\subsection*{Markerless}
+Also known as location-based AR, it uses GPS, digital compass, velocity meter and accelerometer to track and recognise the position of the phone, making possible the instantiation of virtual objects that appear to remain in place even if the user moves through the world.
+
+\subsection*{Projection based}
+The augmentation is realised by projecting light onto objects (the projection can also be done in mid-air with the help of laser plasma technology), though augmenting it. One use-case would be creating an interactive virtual keyboard.
+
+
+\subsection*{Superimposition based}
+In this approach the original view is either fully or partially replaced with a newly generated augmented view. For this to happen, the object that needs to be replaced must first be detected, so image processing plays a vital role.
+
+
+\section{Types of devices}
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{head-up}
+     \caption{Head Up Display}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{helmet-mounted}
+    \caption{Helmet Mounted Display}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{holographic-display}
+    \caption{Holographic Display}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{smart-glasses}
+    \caption{Smart glasses}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{hand-held}
+    \caption{Handheld}
+  \end{subfigure}
+  \caption{Types of AR enabled devices}
+  \label{fig:coffee3}
+\end{figure}
+
+\subsection*{Head up displays}
+Mainly invented for mission critical applications like flight controllers and weapon system dashboards where crucial information needs to be presented directly in the visual field of the user. In this case the projected information is collimated (parallel light rays), focused on infinity so that the user’s eyes do not need to refocus to view outside the world.
+A regular HUD is composed out of a projector unit, a viewing glass and a computer that generates the data that needs to be shown.
+
+\subsection*{Helmet mounted displays}
+Represents the next logical step from the head up displays, moving the display from a fixed position to a mobile one, mounted directly on the helmet.
+
+\subsection*{Holographic displays}
+They use light diffraction to generate three dimensional forms of object in real space
+
+\subsection*{Smart glasses}
+As the use case of Augmented Reality transitioned from critical application (mostly used by army) to  applications available for the general mass of user, helmet mounted displays shifted toward a lighter form-factor, integrated directly in smart glasses. 
+
+\subsection*{Handheld AR}
+The majority of mobile devices enter in this category, as both major mobile software providers, Apple and Android offer augmented reality support (ARKit and ARCore). The advantage of this approach is that it makes augmented reality accessible to anyone with a decent smartphone, the drawback being the fact the user experience is not always satisfying as you need to to always hold and pin-point the device towards the zone you want to interact with.
+
+\section{ARKit}
+Primarily it does three essential things behind the scenes: tracking, scene understanding, and rendering, thus taking the heavy lift from the developer (as you only need to anchor virtual objects to the real world, and they stay glued to the physical position they were placed).
+
+ArKit uses a technique called visual-inertial odometry (VIO). In more details, the position of the phone is tracked via the Visual system (camera), by matching a point in the real world (called feature point) to a pixel on the camera sensor for each frame. In parallel the pose is also tracked by the Inertial system  (also called IMU) formed of an accelerometer and gyroscope. These two outputs are combined via a Kalman filter to determine which of the two system provides the best estimate of the real position.
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{feature-points}
+\centering
+\label{fig:feature-points}
+\caption{ARKit feature points}
+\end{figure}
+
+
+The Visual system is refreshed every time a new frame is captured by the camera (30 times per second), while the inertial system outputs 1000 readings per second. Both the systems alone would accumulate errors in certain condition, but the fact that there are no interdependencies between them leads to an overall much better performance. For example, the visual systems outputs weak results if the image is shaken, if the light is weak or the targeted object has a smooth surface (without particularities, like glass, or a perfectly white wall), during this time the Inertial part carries the load, and vice-versa in the case that the device is still (so there is no inertial data), the camera has the possibility to capture more accurate data, thus receiving priority as being closer to the truth from the Kalman filter.
+
+
+
+
+\subsection*{Plane detection}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{plane-detection}
+\centering
+\label{fig:plane-detection}
+\caption{ARKit plane detection, spawning blue squares}
+\end{figure}
+
+In order to create an AR experience that can blend with reality, the ability to place an object on the ground represents one of the critical requirements. 
+
+This can be achieved using the feature points detected by the Visual system, each three points are considered to define a plane, and after doing multiple such calculations, the plane that represents the ground can be estimated.
+
+
+
+
+
+
+
+
+
+
+\chapter{Strategies of learning using Augmented Reality}
+For proving the concept of hiding information using high frequency signals, an python application was implemented
+\section{Chosen method}
+
+
+\section{Limitations}
+\subsection{Hardware limitations}
+\subsection{Software limitations}
+
+\section{Further improvements}
+
+\chapter{Applications}
+\section{Other techniques}
+\subsection{LSB \emph{(least significant byte}) method}
+\subsection{Phase coding}
+\section{Advantages/disadvantages}
+
+
+
+\begin{thebibliography}{3}
+\bibitem{note1}
+ Saidin, Nor & Abd halim, Noor & Yahaya, Noraffandy. (2015). A Review of Research on Augmented Reality in Education: Advantages and Applications. International Education Studies. 8. 10.5539/ies.v8n13p1. 
+\bibitem{note2}
+Popelka, Ondřej & Procházka, David & Kolomaznik, Jan & Landa, Jaromir & Koubek, Tomas. (2012). Adaptive Real-Time Object Recognition for Augmented Reality. 
+\bibitem{note3}
+Silva, Rodrigo & Rodrigues, Paulo & Mazala, Diego & Giraldi, Gilson. (2004).Applying Object Recognition and Tracking to Augmented Reality for Information Visualization. 
+\bibitem{note4}
+Kesim, Mehmet & Ozarslan, Yasin. (2012). Augmented Reality in Education: Current Technologies and the Potential for Education. Procedia - Social and Behavioral Sciences. 47. 297–302. 10.1016/j.sbspro.2012.06.654. 
+\end{thebibliography}
+
+
+\end{document}
