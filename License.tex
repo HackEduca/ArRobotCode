@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{wrapfig}
+\usepackage{article}
 \usepackage[left=1.5in, right=1.5in, top=1in, bottom=1in]{geometry}
 \graphicspath{ {/Users/so/Desktop/Projects/ArRobotLearnToCodePRoject/} }
 \setcounter{section}{-1}
@@ -123,8 +124,8 @@ Primarily it does three essential things behind the scenes: tracking, scene unde
 
 ArKit uses a technique called visual-inertial odometry (VIO). In more details, the position of the phone is tracked via the Visual system (camera), by matching a point in the real world (called feature point) to a pixel on the camera sensor for each frame. In parallel the pose is also tracked by the Inertial system  (also called IMU) formed of an accelerometer and gyroscope. These two outputs are combined via a Kalman filter to determine which of the two system provides the best estimate of the real position.
 
-\begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{feature-points}
+\begin{figure}[]
+\includegraphics[width=1\textwidth]{feature-points}
 \centering
 \label{fig:feature-points}
 \caption{ARKit feature points}
@@ -148,25 +149,45 @@ In order to create an AR experience that can blend with reality, the ability to 
 
 This can be achieved using the feature points detected by the Visual system, each three points are considered to define a plane, and after doing multiple such calculations, the plane that represents the ground can be estimated.
 
+\chapter{Improvements in learning by using Augmented Reality}
+\section{Introduction}
+According to Shapley et al. (2011), lessons that are supported by technology will lead to more innovative forms of teaching and learning. This is because the use of technology involves real-world problems, current informational resources, simulations of concepts, and communication with professionals in the filed. In addition, learning using technology is believed to complement the traditional forms of teaching and learning (Yasak et al., 2010)
+
+In recent years, as augmented reality emerged as a new technology, its potential for applications in education was discovered and the interest grew constantly. In research conducted by Teoh and Neo (2007), the respondents reported that it was boring to just hear the lecturer talking in front of them. The students believed that the integration of technology would help them in their learning process. 
+
+\section{Impact of using Augmented Reality in learning}
+One of the aspects that discourage future students in following a science path is the thought that grasping abstract aspects it is going to impose them real problems. The majority of difficulties that appear are related with understanding multi-dimensional data.
+
+Augmented reality is a great way of visualising three-dimensional objects, as it replaces classical wood or cartoon physical shapes that are used by teachers with virtual, augmented objects. Also, there are situations that not only require a three dimensional way of showing objects, but to also provide a way to observe dynamical interactions with a studied item.
+
+The use of AR would also increase the time that students can spend studying different objects that otherwise would only be accessible inside the school hours, thus providing an unrestrained amount of study time.
+
+\begin{table}[H]
+\centering
+ \begin{tabular}{||p{20mm} p{30mm} p{40mm} p{30mm}||} 
+ \hline
+ Author/s & Field & Purpose of AR Use & AR Features Used \\ [0.5ex] 
+ \hline\hline
+ Chang et al. 2011) & Medical education (surgical training) & To provide training and to plan and guide surgical procedures & AR image-guided therapy \\ 
+ Yeom (2011) & Medical education (anatomy) & To teach and test anatomy knowledge (of the abdomen in particular)  & nteractive 3D anatomy pictures and haptic feedback \\
+ Hedegaard et al.(2007) & Medical education using the electrocardiogram (ECG/EKG) AR system (called the EKGAR system) & To extend medical students’ spatial awareness in relation to specific myocardial diseases by enabling users to navigate through and slice open 3D representations of a patient’s heart & Vision-based 3D tracking technologies and interactive features \\
+ Singal et al. (2012) & Chemistry education & To provide an efficient way to represent and interact with molecules, leading to a better understanding of the spatial relation between molecules & AR technology for exhibiting the models \\
+ Cerqueira and Kirner (2012) & Mathematics & To teach geometry through the use of 3D geometrical concepts & Head-mounted display and personal interaction panel  \\ 
+ Mathison and Gabriel (2012) & Biology (School in the Park project) & To teach participants that habitats are connected like links in a chain (food chain) & AR experience  \\
+ Coffin et al. (2008) &  Physics & To overlay graphics on top of the physical props to visualize these forces (speed, velocity, acceleration, pressure, friction, energy changes) invisible to the human eye  & Augmented video, videoconferencing, tracked physical props (e.g. toy cars) \\
+ Fleck Simon (2013) & Astronomy  & To show augmented views of the celestial bodies and support learning using spatial visual guides and views from a terrestrial observer & AR learning environment \\
+ Martin et al. (2011) & History & To gather information and enhance the experience of visitors to cultural organisations (museums and games archaeological sites) & Mobile AR educational \\
+ \hline
+ \end{tabular}
+  \caption{Meta-analysis of research on the use of AR in different fields of education. Cited from  \cite{note1}}\label{tab:a}
+\end{table}
+
+
+\section{Improving the understanding of Visual Abstract Concepts}
 
 
 
 
-
-
-
-
-
-\chapter{Strategies of learning using Augmented Reality}
-For proving the concept of hiding information using high frequency signals, an python application was implemented
-\section{Chosen method}
-
-
-\section{Limitations}
-\subsection{Hardware limitations}
-\subsection{Software limitations}
-
-\section{Further improvements}
 
 \chapter{Applications}
 \section{Other techniques}
@@ -176,9 +197,10 @@ For proving the concept of hiding information using high frequency signals, an p
 
 
 
+
 \begin{thebibliography}{3}
 \bibitem{note1}
- Saidin, Nor & Abd halim, Noor & Yahaya, Noraffandy. (2015). A Review of Research on Augmented Reality in Education: Advantages and Applications. International Education Studies. 8. 10.5539/ies.v8n13p1. 
+Saidin, Nor & Abd halim, Noor & Yahaya, Noraffandy. (2015). A Review of Research on Augmented Reality in Education: Advantages and Applications. International Education Studies. 8. 10.5539/ies.v8n13p1. 
 \bibitem{note2}
 Popelka, Ondřej & Procházka, David & Kolomaznik, Jan & Landa, Jaromir & Koubek, Tomas. (2012). Adaptive Real-Time Object Recognition for Augmented Reality. 
 \bibitem{note3}
