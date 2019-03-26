@@ -204,22 +204,76 @@ HoloPiano represents an application that we have developed for people that are e
 In this case, augmented reality offers an unique approach for learning, allowing also people who do not have an extensive musical background to learn directly by doing, by approaching and mastering different plays in order of their difficulty, grasping dexterity, and theoretical background simultaneously.
 
 \section{Architecture}
+The flow of the app is the following, after startup, for more easy computing the device is going the ask the user to pinpoint the corners of the piano (look at each corner and make a pinch gesture), when the piano is incapsulated correctly, along with this data HoloLens is going to take a camera snapshot and send everything to a server where the position of each keys are going to be inferred, sent backed and mapped by the HoloLens. From this point the user can select a song base on its difficulty and start the process of playing (where holograms are going to be spawned up on the keys that are needed to be pressed).
+
+An initial approach consisted in creating a Convolutional Neural Network that would infer the position of the piano and all its keys (without prompting to the user for specifying the pianos corners), but as the first generation of HoloLens doesn't have support for running inference locally.
+
+As a backup solution we had chosen to prompt for those corners, so that after using image processing we just need to infer the position of all keys (as the application is designed to support multiple piano configurations).
+
+\subsection *{Detecting the piano keys}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{piano-original}
+     \caption{Original Image}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{piano-correction}
+    \caption{Homographic Correction}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.8\linewidth}
+    \includegraphics[width=\linewidth]{piano-points}
+    \caption{Final result}
+  \end{subfigure}
+  \caption{Steps for detecting the piano keys}
+  \label{fig:coffee3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{piano-originalv2}
+     \caption{Original Image}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.577\linewidth}
+    \includegraphics[width=\linewidth]{piano-correctionv2}
+    \caption{Homographic Correction}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.7\linewidth}
+    \includegraphics[width=\linewidth]{piano-pointsv2}
+    \caption{Final result}
+  \end{subfigure}
+  \caption{Steps for detecting the piano keys}
+  \label{fig:coffee3}
+\end{figure}
+
+After receiving 4 coordinates and a picture, using Homogrophic Correction, the image is rotated such that all piano keys have a vertical angle. Then, using a watershed algorithm the contours of all the keys are generated and what is left is to filter the out-layers and to give each contour the musical note that it represents. 
+
 \section{Conclusion}
 
 Unfortunately, after we have put together all the parts, we realised that the device we were using (HoloLens) is not powerful enough to maintain the holograms exactly on the position we are spawning them on, thus the holograms were drifting randomly over other piano keys, rendering the experience unusable.
 
-The key component of our approach was the experience given by smart glasses, as other type of AR, like the one given by Handheld device still represents an unfeasible approach, as we do not want to place a phone or a tablet between the user and the piano.
+The key component of our approach was the experience given by smart glasses, as other type of AR, like the one given by Handheld devices still represents an unfeasible approach, as we do not want to place a phone or a tablet between the user and the piano.
 
-We believe that in the near future, as the hardware and software are continuously improving (at the moment of writing Microsoft announced a new version of HoloLens that is going to come with built in AI capabilities and more precision), this approach is going to be realisable.
+We believe that in the near future, as the hardware and software are continuously improving (at the moment of writing Microsoft announced a new version of HoloLens that is going to come with built in AI capabilities and improve precision), this approach is going to be realisable.
 
 \section{Alternative approach}
-A more analogously, but working approach that we took is to replace HoloLens glasses with a strip of very small, individually controllable leds that are going to be sticked above the piano keys, one or two leds (depending on their size) are going to directly map one piano key. 
+A more analog, but working path that we took is to replace HoloLens glasses with a strip of very small, individually controllable leds that are going to be sticked above the piano keys, one or two leds (depending on their size) are going to directly map one piano key. 
 
 A few seconds before the user would need to press a piano key, the specific leds are going to be lit up, increasing in intensity until the moment they actually need to be pressed, then they will continue to blink prior to other keys needing to be pressed.
 
 If by placing a camera above the piano, using image processing we could detect if the required piano keys were actually pushed correctly and offer specialised lightning feedback and dynamic context advance of the song progress.
 
 For this approach, the strip of leds was connected to an Arduino board which exposes an API through that all the leds can individually be controlled. A Raspberry PI was used also used to orchestrate all the components.
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{piano-leds}
+\centering
+\label{fig:feature-points}
+\caption{Strip of leds sticked to the piano}
+\end{figure}
+
 
 \chapter{Application in Computer science}
 \section{Introduction}
