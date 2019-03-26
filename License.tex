@@ -157,7 +157,7 @@ In recent years, as augmented reality emerged as a new technology, its potential
 \section{Impact of using Augmented Reality in learning}
 One of the aspects that discourage future students in following a science path is the thought that grasping abstract aspects it is going to impose them real problems. The majority of difficulties that appear are related with understanding multi-dimensional data.
 
-Augmented reality is a great way of visualising three-dimensional objects, as it replaces classical wood or cartoon physical shapes that are used by teachers with virtual, augmented objects. Also, there are situations that not only require a three dimensional way of showing objects, but to also provide a way to observe dynamical interactions with a studied item.
+Augmented reality is a great way of visualising three-dimensional objects, as it replaces classical wood or cartoon physical shapes that are used by teachers with virtual, augmented objects. Also, there are situations that not only require a three dimensional way of showing objects, but to also provide a way to observe dynamical interactions with the studied item.
 
 The use of AR would also increase the time that students can spend studying different objects that otherwise would only be accessible inside the school hours, thus providing an unrestrained amount of study time.
 
@@ -182,18 +182,49 @@ The use of AR would also increase the time that students can spend studying diff
 \end{table}
 
 
-\section{Improving the understanding of Visual Abstract Concepts}
+\section{Pitfalls and limitations}
+It is known that designing an application that actually improves the process of learning (no matter the form and the device it is running on) in a certain field is a task that requires serious research as usually these kinds of solutions are not that intuitive to use, for both teachers and students. 
+
+From other technologies, AR's advantage is the fact that it offers a hands on approach by integrating it's interactions capabilities directly with the reality (in forms of holograms), thus theoretically closing the gap between real life teacher driven learning and text-book based classical learning. This advantage comes with a price, as latter forms of e-learning have been present and researched for years now, they have come to a more mature stage, some of them ready to enter in student's life, but as AR approaches have the power to redefine everything, they have to catch up in making sure that these kinds of solutions are straightforward, thus simplifying the process of learning, not making it more complex.
+
+From a technological point of view, only with the progress of software and hardware from the past few years AR has became feasible enough so that it can reach a large audience of people. At the moment, mobile devices (Hand-Held AR) are the only one that can bring AR to the masses, with only the majority of high-end phones and tablets launched in the past year and the half, having AR capabilities. The other types of AR (like smart glasses) would offer a more immersive approach, but the cost of these devices (HoloLens by Microsoft) makes them available only for companies and research purposes.
 
 
 
+\chapter{Application in Musical domain}
+HoloPiano represents an application that we have developed for people that are eager to learn how to play piano. It uses Augmented Reality to show holograms over the keys that need to be pressed.
 
+\begin{figure}[H]
+\includegraphics[width=0.7\textwidth]{piano}
+\centering
+\label{fig:feature-points}
+\caption{HoloPiano Concept Demo}
+\end{figure}
 
-\chapter{Applications}
-\section{Other techniques}
-\subsection{LSB \emph{(least significant byte}) method}
-\subsection{Phase coding}
-\section{Advantages/disadvantages}
+In this case, augmented reality offers an unique approach for learning, allowing also people who do not have an extensive musical background to learn directly by doing, by approaching and mastering different plays in order of their difficulty, grasping dexterity, and theoretical background simultaneously.
 
+\section{Architecture}
+\section{Conclusion}
+
+Unfortunately, after we have put together all the parts, we realised that the device we were using (HoloLens) is not powerful enough to maintain the holograms exactly on the position we are spawning them on, thus the holograms were drifting randomly over other piano keys, rendering the experience unusable.
+
+The key component of our approach was the experience given by smart glasses, as other type of AR, like the one given by Handheld device still represents an unfeasible approach, as we do not want to place a phone or a tablet between the user and the piano.
+
+We believe that in the near future, as the hardware and software are continuously improving (at the moment of writing Microsoft announced a new version of HoloLens that is going to come with built in AI capabilities and more precision), this approach is going to be realisable.
+
+\section{Alternative approach}
+A more analogously, but working approach that we took is to replace HoloLens glasses with a strip of very small, individually controllable leds that are going to be sticked above the piano keys, one or two leds (depending on their size) are going to directly map one piano key. 
+
+A few seconds before the user would need to press a piano key, the specific leds are going to be lit up, increasing in intensity until the moment they actually need to be pressed, then they will continue to blink prior to other keys needing to be pressed.
+
+If by placing a camera above the piano, using image processing we could detect if the required piano keys were actually pushed correctly and offer specialised lightning feedback and dynamic context advance of the song progress.
+
+For this approach, the strip of leds was connected to an Arduino board which exposes an API through that all the leds can individually be controlled. A Raspberry PI was used also used to orchestrate all the components.
+
+\chapter{Application in Computer science}
+\section{Introduction}
+\section{Application}
+\section{Conclusion}
 
 
 
