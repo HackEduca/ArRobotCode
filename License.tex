@@ -320,13 +320,37 @@ Using an IOS IPad, ARKit, and ScratchBlocks we have developed a solution called 
   \label{fig:coffee3}
 \end{figure}
 
-The levels are organised in chapters based on their difficulty and on the aspects that they emphasise.
+One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a signifiant boost in creativity and understanding.
+
+The levels are organised in chapters based on their difficulty and on the aspects that they emphasise. The content can be dynamically changed directly from the application by anybody that has administrative privileges, and it will propagate to all other users without the need to launch a separate update.
+
+
+
+
 
 \section{ScratchBlocks}
 == TO DO ==
+
+
+\section{Architecture}
+
+\subsection*{Game Activity}
+The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. Between them there is a bridge that allows permanent bi-directional communication between the two parties.
+
+When the run button is pressed to execute a sequence of instructions an event is sent to the WebView signalling to trigger the compilation of the code, thus forming a sequential list with all the instructions needed to be executed (if there is a forever instruction, the output will be of course truncated). When this list reaches the native part, the spaceship is moved to the initial position of the board, and each sequence is executed one by one (only one per second, to allow the user to observe every action and the exact moment an eventual mistake occurs). Before starting the movement animation of the spaceship, the native part sends an event to ScratchBlocks specifying witch instruction block is going to run, so that it glows, emphasising it.
+
+Right after a new level was loaded, the application enters in a state where it find horizontal planes that can host the 
+
+\subsection*{Data Persistence}
+
+
+\subsection*{Reactive Programming}
+
+
 \section{Gamification}
 As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process in an interactive game represents on of the most important aspects in maximising the impact of such an application.
 
+\section{Achievements}
 \subsection*{Hero choser}
 \begin{figure}[H]
 \includegraphics[width=0.25\textwidth]{ArRobotCodeChooseHero}
@@ -334,8 +358,6 @@ As the target public is formed of young kids, packing the application in a form 
 \label{fig:feature-points}
 \caption{Interface that enables the process of choosing a hero }
 \end{figure}
-
-
 
 Unlocking new characters that relates to the personality of the kids is a motivator to continue playing and solving levels so that the risk of abandon is diminished, and the feeling of accomplishment is stimulated.
 
