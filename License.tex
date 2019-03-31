@@ -192,7 +192,7 @@ From a technological point of view, only with the progress of software and hardw
 
 
 \chapter{Application in Musical domain}
-HoloPiano represents an application that we have developed for people that are eager to learn how to play piano. It uses Augmented Reality to show holograms over the keys that need to be pressed.
+HoloPiano represents an application dedicated for people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
 
 \begin{figure}[H]
 \includegraphics[width=0.7\textwidth]{piano}
@@ -201,14 +201,27 @@ HoloPiano represents an application that we have developed for people that are e
 \caption{HoloPiano Concept Demo}
 \end{figure}
 
+\begin{wrapfigure}{T}{0.33\textwidth}
+\raisebox{0pt}[\dimexpr\height-0.6\baselineskip\relax]
+\centering
+\includegraphics[width=0.30\textwidth]{hololens}
+\caption{\label{fig:hololens} HoloLens Glasses}
+\end{wrapfigure}
+
+
+The device on which it is running on (as the name of the application probably hints to) is the first generation of HoloLens augmented glasses built by Microsoft.
+
+
 In this case, augmented reality offers an unique approach for learning, allowing also people who do not have an extensive musical background to learn directly by doing, by approaching and mastering different plays in order of their difficulty, grasping dexterity, and theoretical background simultaneously.
 
+We headed towards an augmented approach (instead of a virtual reality one) due to the fact that it was a solution that would offer the actual tactile feedback that only a real piano key can provide. Moreover, as there are a multitude of piano and organs, all with different key sizes and specs (including low end, beginner purposed instruments), the capability to learn directly on the device you own, directly from the comfort of your own house represents a plus.
+
 \section{Architecture}
-The flow of the app is the following, after startup, for more easy computing the device is going the ask the user to pinpoint the corners of the piano (look at each corner and make a pinch gesture), when the piano is incapsulated correctly, along with this data HoloLens is going to take a camera snapshot and send everything to a server where the position of each keys are going to be inferred, sent backed and mapped by the HoloLens. From this point the user can select a song base on its difficulty and start the process of playing (where holograms are going to be spawned up on the keys that are needed to be pressed).
+The flow of the app is the following, after startup, for more easy computing the device is going the ask the user to pinpoint the corners of the piano (look at each corner and make a pinch gesture), when the piano is incapsulated correctly, along with this data HoloLens is going to take a camera snapshot and send everything to a server where the position of each keys are going to be inferred, sent back and mapped by the HoloLens. From this point the user can select a song base on its difficulty and start the process of playing (where holograms are going to be spawned up on the keys that are needed to be pressed).
 
-An initial approach consisted in creating a Convolutional Neural Network that would infer the position of the piano and all its keys (without prompting to the user for specifying the pianos corners), but as the first generation of HoloLens doesn't have support for running inference locally.
+An initial approach consisted in creating a Convolutional Neural Network that would infer the position of the piano and all its keys (without prompting to the user for specifying the pianos corners), but the first generation of HoloLens doesn't have support for running inference locally.
 
-As a backup solution we had chosen to prompt for those corners, so that after using image processing we just need to infer the position of all keys (as the application is designed to support multiple piano configurations).
+As a backup solution we had chosen to prompt for those corners and with image processing to just infer the position of all keys (as the application is designed to support multiple piano configurations), process that is not as computing intensive as a convolutional neural network.
 
 \subsection *{Detecting the piano keys}
 
@@ -220,7 +233,7 @@ As a backup solution we had chosen to prompt for those corners, so that after us
   \end{subfigure}
   \begin{subfigure}[b]{0.49\linewidth}
     \includegraphics[width=\linewidth]{piano-correction}
-    \caption{Homographic Correction}
+    \caption{Homographic correction and key contours}
   \end{subfigure}
   \begin{subfigure}[b]{0.8\linewidth}
     \includegraphics[width=\linewidth]{piano-points}
@@ -238,7 +251,7 @@ As a backup solution we had chosen to prompt for those corners, so that after us
   \end{subfigure}
   \begin{subfigure}[b]{0.577\linewidth}
     \includegraphics[width=\linewidth]{piano-correctionv2}
-    \caption{Homographic Correction}
+    \caption{Homographic correction and key contours}
   \end{subfigure}
   \begin{subfigure}[b]{0.7\linewidth}
     \includegraphics[width=\linewidth]{piano-pointsv2}
@@ -267,7 +280,9 @@ If by placing a camera above the piano, using image processing we could detect i
 
 For this approach, the strip of leds was connected to an Arduino board which exposes an API through that all the leds can individually be controlled. A Raspberry PI was used also used to orchestrate all the components.
 
-\begin{figure}[H]
+One disadvantage of this approach is given by the variable number of keys a piano has and the variation in width that can occur (for each key in particular and for the gap between two keys), giving the need of calibration prior of permanently positioning the leds .
+
+\begin{figure}[]
 \includegraphics[width=1.0\textwidth]{piano-leds}
 \centering
 \label{fig:feature-points}
@@ -276,9 +291,94 @@ For this approach, the strip of leds was connected to an Arduino board which exp
 
 
 \chapter{Application in Computer science}
-\section{Introduction}
-\section{Application}
+
+As Computer Science is a field that is dramatically increasing in popularity and still not quite keeping yet with the demand, forming a way of thinking suitable for a programmer takes time and practice, but by starting at a younger age, when the mind is at it peaks in term of forming and grasping new knowledge, the chances to be successful in this domain will improve.
+
+Using an IOS IPad, ARKit, and ScratchBlocks we have developed a solution called ArRobotCode that uses Augmented Reality in which the user (a child between 5 and 15 years) has to complete an array of levels (organised by complexity and topic) in which his or her role is to fly a spaceship from Earth to Moon. This can be done by providing a list of instructions so that the spaceship follows a given route (and does not deviate).
+
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCode0}
+     \caption{Main screen}
+     
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCode1}
+    \caption{Hero chooser}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCode2}
+    \caption{Game screen}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCode3}
+    \caption{Level builder}
+  \end{subfigure}
+  \caption{Screenshots from the Application}
+  \label{fig:coffee3}
+\end{figure}
+
+The levels are organised in chapters based on their difficulty and on the aspects that they emphasise.
+
+\section{ScratchBlocks}
+== TO DO ==
+\section{Gamification}
+As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process in an interactive game represents on of the most important aspects in maximising the impact of such an application.
+
+\subsection*{Hero choser}
+\begin{figure}[H]
+\includegraphics[width=0.25\textwidth]{ArRobotCodeChooseHero}
+\centering
+\label{fig:feature-points}
+\caption{Interface that enables the process of choosing a hero }
+\end{figure}
+
+
+
+Unlocking new characters that relates to the personality of the kids is a motivator to continue playing and solving levels so that the risk of abandon is diminished, and the feeling of accomplishment is stimulated.
+
+Each character has a number of levels that must be successfully completed in order to unlock them.  By default, there are two characters unlocked such that they discover the functionality and realise that more are to be unlocked if they complete enough levels.
+
+The benefits of unraveling a new character are only aesthetic, no actual advantage is being given in the game, but this hasn't proved to negatively affect the user experience on the grounds of their age.
+
+The aspect of the characters is chosen to reflect the general theme of the game, space exploration, a topic known to attract people of all ages, specially kids.
+
+
+
+\subsection*{Achievements}
+ 
+ \begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCodeAchiv1}
+     \caption{For X}
+     
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCodeAchiv2}
+    \caption{For Y}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCodeAchiv3}
+    \caption{For Z}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{ArRobotCodeAchiv4}
+    \caption{For W}
+  \end{subfigure}
+  \caption{Achievements}
+  \label{fig:coffee3}
+\end{figure}
+
+On the ground that the number of completed levels is not the only quantification of the user's progress. Achievements stimulate the usage of certain features of the application in some specific ways that ultimately bring benefits to the experience of learning.
+
+More specifically, achievements can direct the user to only use certain instructions for some levels (or chapters of levels) so that they are encouraged to find different ways to solve similar problems. Other aspects that can be targeted are the speed of coding, the precision with which they solve challenges (number of tries until their code is correct).
+
 \section{Conclusion}
+
+
 
 
 
