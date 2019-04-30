@@ -22,13 +22,23 @@
 \maketitle
 
 \begin{abstract}
-The way that people acquire new knowledge and interact with the information has remained more or less the same in the modern history of humans, from paper based books to digital ebooks. The interaction with the information is practically non-existent, even more, the medium of showing the information is only two-dimensional, making the understanding of real world, three-dimensional concepts more difficult. Augmented reality, as a technology, has greatly improved in the past few years and now has the power to redesign the process of learning and teaching in ways that are still not contoured. 
+The way that people acquire new knowledge and interact with the information has remained more or less the same in the modern history of humans, from paper based books to digital ebooks. The interaction with the information is practically non-existent, even more, the medium of showing the information is only two-dimensional, making the understanding of real world, three-dimensional concepts more difficult. Augmented reality, as a technology, has greatly improved in the past few years and now has the power to redesign the process of learning and teaching in ways that are still not contoured.
 \end{abstract}
 
 \tableofcontents
 
+\chapter{Introduction}
 
+\section{Motivation}
+On the grounds that in recent years the rate of technological advancements is increasing exponentially makes it our responsibility to always keep looking towards new ways of exploiting to the maximum the power of such technologies. Moreover when breakthroughs are powerful enough to enter into the public's attention it triggers and stimulates the desire to increase the research activity in that field, thus forming a circle that is in our interests to not break it.
 
+As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvite are definetely worth  it. 
+
+\section{Objective}
+The objective of this work is to find new use of recent technological advancements in Augmented Reality for the education sector and to research the effectiveness, feasibility of deploying such approaches to the general public. Also, to provide additional directions for future developments so that they enable the  forthcoming applications to have the power of redefining the already existing processes of learning.
+
+\section{Structure}
+The paper is divided into two major parts, the theoretical one that includes a description of how Augmented Reality works and the progresses that have been made in this field, followed by an in-depth depiction of the advantages that can be brought to the classical means of learning. In the second part the theoretical notions presented are applied into two applications, one being focused on the Musical domain, in more details in teaching people of all ages the basics of learning the piano and the other targeting young kids wishing to learn how to code. Both applications taking use of different types of augmented reality techniques.
 \chapter{Augmented Reality}
 
 \section{Introduction}
@@ -192,6 +202,12 @@ From a technological point of view, only with the progress of software and hardw
 
 
 \chapter{Application in Musical domain}
+
+\section{Problem}
+The importance of playing a musical instrument is indisputable, even as a side hobby, learning how to do such a thing provides real benefits to the life of an individual. Unfortunately, for people which do not possess basic musical theoretical background, learning a musical instrument seems a hustle and is often abandoned from early stages. Even if this step is passed the amount of people who are self thought is small and benefiting from the services of a music school can be expensive or disruptive. 
+
+
+\section{Solution}
 HoloPiano represents an application dedicated for people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
 
 \begin{figure}[H]
@@ -201,12 +217,13 @@ HoloPiano represents an application dedicated for people that are eager to learn
 \caption{HoloPiano Concept Demo}
 \end{figure}
 
-\begin{wrapfigure}{T}{0.33\textwidth}
-\raisebox{0pt}[\dimexpr\height-0.6\baselineskip\relax]
+\begin{figure}[H]
+\includegraphics[width=0.7\textwidth]{hololens}
 \centering
-\includegraphics[width=0.30\textwidth]{hololens}
-\caption{\label{fig:hololens} HoloLens Glasses}
-\end{wrapfigure}
+\label{fig:hololens}
+\caption{HoloPiano from Microsoft}
+\end{figure}
+
 
 
 The device on which it is running on (as the name of the application probably hints to) is the first generation of HoloLens augmented glasses built by Microsoft.
@@ -227,11 +244,11 @@ As a backup solution we had chosen to prompt for those corners and with image pr
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[b]{0.49\linewidth}
+  \begin{subfigure}[b]{0.8\linewidth}
     \includegraphics[width=\linewidth]{piano-original}
      \caption{Original Image}
   \end{subfigure}
-  \begin{subfigure}[b]{0.49\linewidth}
+  \begin{subfigure}[b]{0.8\linewidth}
     \includegraphics[width=\linewidth]{piano-correction}
     \caption{Homographic correction and key contours}
   \end{subfigure}
@@ -263,7 +280,7 @@ As a backup solution we had chosen to prompt for those corners and with image pr
 
 After receiving 4 coordinates and a picture, using Homogrophic Correction, the image is rotated such that all piano keys have a vertical angle. Then, using a watershed algorithm the contours of all the keys are generated and what is left is to filter the out-layers and to give each contour the musical note that it represents. 
 
-\section{Conclusion}
+\section{Limitations of the device}
 
 Unfortunately, after we have put together all the parts, we realised that the device we were using (HoloLens) is not powerful enough to maintain the holograms exactly on the position we are spawning them on, thus the holograms were drifting randomly over other piano keys, rendering the experience unusable.
 
@@ -282,6 +299,8 @@ For this approach, the strip of leds was connected to an Arduino board which exp
 
 One disadvantage of this approach is given by the variable number of keys a piano has and the variation in width that can occur (for each key in particular and for the gap between two keys), giving the need of calibration prior of permanently positioning the leds .
 
+\section{Conclusion}
+This generation of augmented reality enabled devices are not powerful enough to sustain such an use case, moreover at the current time these devices (with this form factor) are in early stages, mainly targeting researchers and developers, their price making them unreasonable for the average individual. Fortunately, the progress towards newer iterations that will come with improved precision, performance and a better prices are soon to be released, rendering this approach valid.
 \begin{figure}[]
 \includegraphics[width=1.0\textwidth]{piano-leds}
 \centering
@@ -292,8 +311,11 @@ One disadvantage of this approach is given by the variable number of keys a pian
 
 \chapter{Application in Computer science}
 
+\section{Problem}
 As Computer Science is a field that is dramatically increasing in popularity and still not quite keeping yet with the demand, forming a way of thinking suitable for a programmer takes time and practice, but by starting at a younger age, when the mind is at it peaks in term of forming and grasping new knowledge, the chances to be successful in this domain will improve.
 
+
+\section{Solution}
 Using an IOS IPad, ARKit, and ScratchBlocks we have developed a solution called ArRobotCode that uses Augmented Reality in which the user (a child between 5 and 15 years) has to complete an array of levels (organised by complexity and topic) in which his or her role is to fly a spaceship from Earth to Moon. This can be done by providing a list of instructions so that the spaceship follows a given route (and does not deviate).
 
 
@@ -400,6 +422,8 @@ More specifically, achievements can direct the user to only use certain instruct
 
 \section{Conclusion}
 
+\chapter{Conclusion}
+Final conclusion
 
 
 
