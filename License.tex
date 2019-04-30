@@ -318,50 +318,64 @@ As Computer Science is a field that is dramatically increasing in popularity and
 \section{Solution}
 Using an IOS IPad, ARKit, and ScratchBlocks we have developed a solution called ArRobotCode that uses Augmented Reality in which the user (a child between 5 and 15 years) has to complete an array of levels (organised by complexity and topic) in which his or her role is to fly a spaceship from Earth to Moon. This can be done by providing a list of instructions so that the spaceship follows a given route (and does not deviate).
 
-
-\begin{figure}[h!]
-  \centering
-  \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{ArRobotCode0}
-     \caption{Main screen}
-     
-  \end{subfigure}
-  \begin{subfigure}[b]{0.45\linewidth}
-    \includegraphics[width=\linewidth]{ArRobotCode1}
-    \caption{Hero chooser}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.4\linewidth}
-    \includegraphics[width=\linewidth]{ArRobotCode2}
-    \caption{Game screen}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.4\linewidth}
-    \includegraphics[width=\linewidth]{ArRobotCode3}
-    \caption{Level builder}
-  \end{subfigure}
-  \caption{Screenshots from the Application}
-  \label{fig:coffee3}
-\end{figure}
-
 One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a signifiant boost in creativity and understanding.
 
 The levels are organised in chapters based on their difficulty and on the aspects that they emphasise. The content can be dynamically changed directly from the application by anybody that has administrative privileges, and it will propagate to all other users without the need to launch a separate update.
 
-
-
-
-
 \section{ScratchBlocks}
-== TO DO ==
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{scratchblocks-2}
+\centering
+\label{fig:hololens}
+\caption{Scratchblocks}
+\end{figure}
+
+Scratch Blocks is a fork of Google's Blockly project that provides a design specification and codebase for building creative computing interfaces. Together with the Scratch Virtual Machine (VM) this codebase allows for the rapid design and development of visual programming interfaces. Unlike Blockly, Scratch Blocks does not use code generators, but rather leverages the Scratch Virtual Machine to create highly dynamic, interactive programming environments.
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{scratchblocks}
+\centering
+\label{fig:hololens}
+\caption{Scratchblocks}
+\end{figure}
+
+There are two types of blocks, horizontal and vertical ones. The horizontal blocks provides a simpler UI, focused on visual indications instead of textual ones, the downside being that it is fairly limited. The second category will be more familiar for those which have coded before, it allows for a more powerful set of instructions and more customisation, this being the reason behind why it was chosen for this application
+
 
 
 \section{Architecture}
 
+\subsection*{Main Activity}
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{ArRobotCode0}
+\centering
+\label{fig:hololens}
+\caption{Scratchblocks}
+\end{figure}
+
+To do - about main activity
 \subsection*{Game Activity}
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{ArRobotCode2}
+\centering
+\label{fig:hololens}
+\caption{Scratchblocks}
+\end{figure}
 The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. Between them there is a bridge that allows permanent bi-directional communication between the two parties.
 
 When the run button is pressed to execute a sequence of instructions an event is sent to the WebView signalling to trigger the compilation of the code, thus forming a sequential list with all the instructions needed to be executed (if there is a forever instruction, the output will be of course truncated). When this list reaches the native part, the spaceship is moved to the initial position of the board, and each sequence is executed one by one (only one per second, to allow the user to observe every action and the exact moment an eventual mistake occurs). Before starting the movement animation of the spaceship, the native part sends an event to ScratchBlocks specifying witch instruction block is going to run, so that it glows, emphasising it.
 
 Right after a new level was loaded, the application enters in a state where it find horizontal planes that can host the 
+
+\subsection*{Level Builder}
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{ArRobotCode3}
+\centering
+\label{fig:hololens}
+\caption{Scratchblocks}
+\end{figure}
+
+To do - about level builder
 
 \subsection*{Data Persistence}
 
@@ -372,10 +386,10 @@ Right after a new level was loaded, the application enters in a state where it f
 \section{Gamification}
 As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process in an interactive game represents on of the most important aspects in maximising the impact of such an application.
 
-\section{Achievements}
+
 \subsection*{Hero choser}
 \begin{figure}[H]
-\includegraphics[width=0.25\textwidth]{ArRobotCodeChooseHero}
+\includegraphics[width=0.89\textwidth]{ArRobotCode1}
 \centering
 \label{fig:feature-points}
 \caption{Interface that enables the process of choosing a hero }
