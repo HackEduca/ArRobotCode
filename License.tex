@@ -206,16 +206,29 @@ From a technological point of view, only with the progress of software and hardw
 \section{Problem}
 The importance of playing a musical instrument is indisputable, even as a side hobby, learning how to do such a thing provides real benefits to the life of an individual. Unfortunately, for people which do not possess basic musical theoretical background, learning a musical instrument seems a hustle and is often abandoned from early stages. Even if this step is passed the amount of people who are self thought is small and benefiting from the services of a music school can be expensive or disruptive. 
 
+\section{Related work}
+\begin{figure}[H]
+\includegraphics[width=0.7\textwidth]{flowkey}
+\centering
+\label{fig:hololens}
+\caption{Flowkey concept}
+\end{figure}
+
+Applications like FlowKey and Piano Maestro dominate the section of self learning piano playing. They work by continuously tracking the keys that are pressed (either by listening to the generated audio or by directly connecting the piano to an external computer). By using a screen that can be be in a form of either a phone or a laptop, additional information can be rendered: the progress you are making, the accuracy, tips on which fingers to use and one of the most important, the musical sheet (that can be simplified for beginners understanding).
+
+
+The other category of applications involves a more virtual approach by eliminating the need of having a physical piano or an organ, they allow versatility at the cost of loosing the real tactile feedback and experience. These kinds of solutions are more suited for entertainment rather than having actual educational value.
 
 \section{Solution}
-HoloPiano represents an application dedicated for people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
-
 \begin{figure}[H]
 \includegraphics[width=0.7\textwidth]{piano}
 \centering
 \label{fig:feature-points}
 \caption{HoloPiano Concept Demo}
 \end{figure}
+HoloPiano represents an application dedicated for people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
+
+
 
 \begin{figure}[H]
 \includegraphics[width=0.7\textwidth]{hololens}
@@ -300,7 +313,9 @@ For this approach, the strip of leds was connected to an Arduino board which exp
 One disadvantage of this approach is given by the variable number of keys a piano has and the variation in width that can occur (for each key in particular and for the gap between two keys), giving the need of calibration prior of permanently positioning the leds .
 
 \section{Conclusion}
-This generation of augmented reality enabled devices are not powerful enough to sustain such an use case, moreover at the current time these devices (with this form factor) are in early stages, mainly targeting researchers and developers, their price making them unreasonable for the average individual. Fortunately, the progress towards newer iterations that will come with improved precision, performance and a better prices are soon to be released, rendering this approach valid.
+This generation of augmented reality enabled devices are not powerful enough to sustain such an use case, moreover at the current time these devices are in early stages, mainly targeting researchers and developers, their price making them unreasonable for the average individual. Fortunately, the progress towards newer iterations that will come with improved precision, performance and a better prices are soon to be released, rendering this approach valid.
+
+From the point of view of bringing additional educational value, they truly have the potential to render the already available information on ways that could not be done before, thus being able to surpass even the classical in-class experience, even removing the limit of physically needing to be at a certain  time and location to benefit from such activity.
 \begin{figure}[]
 \includegraphics[width=1.0\textwidth]{piano-leds}
 \centering
