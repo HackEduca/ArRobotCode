@@ -342,7 +342,7 @@ The lessons are presented in a level format (a multitude of levels organised by 
 
 We believe that by taking the already proved success of other similar initiatives (like the one presented above) and adding all the benefits that come with augmented reality, will render a superior experience that will catch and be able to maintain the attention of a younger audience for longer periods of time.
 
-\section{ScratchBlocks}
+\section{ScratchBlocks instructions}
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{scratchblocks-2}
 \centering
@@ -359,10 +359,25 @@ Scratch Blocks is a fork of Google's Blockly project that provides a design spec
 \caption{Scratchblocks}
 \end{figure}
 
-There are two types of blocks, horizontal and vertical ones. The horizontal blocks provides a simpler UI, focused on visual indications instead of textual ones, the downside being that it is fairly limited. The second category will be more familiar for those which have coded before, it allows for a more powerful set of instructions and more customisation, this being the reason behind why it was chosen for this application
+There are two types of blocks, horizontal and vertical ones. The horizontal blocks provides a simpler UI, focused on visual indications instead of textual ones, the downside being that it is fairly limited. The second category will be more familiar for those which have coded before, it allows for a more powerful set of instructions and more customisation, this being the reason behind why it was chosen for this application.
 
+\begin{figure}[H]
+\includegraphics[width=0.4\textwidth]{allInstructions}
+\centering
+\label{fig:hololens}
+\caption{Instructions used in ArRobotCode}
+\end{figure}
 
+For the purpose of this project the instructions have been refined to be powerful enough but suited for the age group that is targeted. There have been kept only a subset of all the available instructions and categories, also they have been updated to a contain more visual information. 
 
+\begin{figure}[H]
+\includegraphics[width=0.4\textwidth]{newIf}
+\centering
+\label{fig:hololens}
+\caption{Inline conditional instructions}
+\end{figure}
+
+Inline conditional move instructions have been created to strip town the classical 'if'  to be more digestible for the youngest, basically it allows the spaceship to move or rotate towards a direction depending on the color  of the tile that the spaceship is sitting on.
 \section{Architecture}
 
 \subsection*{Main Activity}
@@ -373,7 +388,7 @@ There are two types of blocks, horizontal and vertical ones. The horizontal bloc
 \caption{Scratchblocks}
 \end{figure}
 
-The home screen of the applications consists of shows a list with all the levels organised by difficulty. All the completed levels are marked accordingly with a green tick to stimulate the feeling of accomplishment. 
+The home screen of the applications consists of a list of the levels organised by difficulty. All the completed levels are marked accordingly with a green tick to stimulate the feeling of accomplishment. 
 
 The levels are organised in chapters based on their difficulty and on different algorithmics aspects that they emphasise. The content can be dynamically changed directly from the application by anybody that has administrative privileges, and it will propagate to all other users without the need to launch a separate update.
 
@@ -384,29 +399,73 @@ The levels are organised in chapters based on their difficulty and on different 
 \label{fig:hololens}
 \caption{Scratchblocks}
 \end{figure}
-The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. Between them there is a bridge that allows permanent bi-directional communication between the two parties.
+The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. There is a bridge that allows permanent bi-directional communication between the two parties.
 
-When the run button is pressed to execute a sequence of instructions an event is sent to the WebView signalling to trigger the compilation of the code, thus forming a sequential list with all the instructions needed to be executed (if there is a forever instruction, the output will be of course truncated). When this list reaches the native part, the spaceship is moved to the initial position of the board, and each sequence is executed one by one (only one per second, to allow the user to observe every action and the exact moment an eventual mistake occurs). Before starting the movement animation of the spaceship, the native part sends an event to ScratchBlocks specifying witch instruction block is going to run, so that it glows, emphasising it.
+When the run button is pressed to execute a sequence of instructions an event is sent to the WebView signalling to trigger the compilation of the code, thus forming a sequential list with all the instructions needed to be executed (if there is a forever instruction, the output will be of course truncated). When this list reaches the native section, the spaceship is moved to the initial position of the board, and each sequence is executed one by one (only one per second, to allow the user to observe every action and the exact moment an eventual mistake occurs). Before starting the movement animation of the spaceship, the native part sends an event to ScratchBlocks specifying witch instruction block is going to run, so that it glows, emphasising it.
 
-Right after a new level was loaded, the application enters in a state where it find horizontal planes that can host the 
-
+Horizontal plane detection is a builtin feature of ArKit and it is used right after a level was loaded, more exactly when the application is entering in a state where it searches for suitable places to render the scene on. At that moment, by taping on one of them, the user can select the plane where the actual game scene is going to be instantiated. Due to the fact that the plans dimensions are variable (it can be spawned on a large floor or on a tight table), the scene scales accordingly. This process happens every time a new level is loaded, to enable for new location to be found and chosen.
 \subsection*{Level Builder}
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{ArRobotCode3}
 \centering
-\label{fig:hololens}
-\caption{Scratchblocks}
+\label{fig:levelBuilder}
+\caption{Level builder interface}
 \end{figure}
 
-One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a signifiant boost in creativity and understanding.
+One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a signifiant boost in creativity and understanding. 
 
-To do - about level builder
+Tiles are of the following types:
+\begin{enumerate}
+\item Start position - Spaceship
+\item End position - Moon
+\item Free
+\item Occupied
+\begin{enumerate}
+\item Pink
+\item Orange
+\item Blue
+\item Green
+\item Purple
+\end{enumerate}
+\end{enumerate}
 
+In order to interact with User Interface in the building menu, one has to use a few predefined gestures, a simple tap would switch between a free tile and a default green occupied one. By swiping right or left on an occupied tile, one can cycle between the five different available colours. In order to trigger the starting position, a long tap is required and from this current state if tapping one more time the end tile will appear, and after one more tap it will reset back to being a free cell.
+
+The grid size is also customisable, the number of rows and columns can be changed from the inputs that are situated on top of the screen. 
+
+If the account has administrative privileges, like in figure \ref{fig:levelBuilder} two extra inputs are going to be visible, a text field that contains the name of the category that the level is going to have and a toggle to publish it. 
+
+There is also the possibility to test the levels while building them by using the dedicated button.
 \subsection*{Data Persistence}
+Cloud Firestore (from FireBase) is used as the persistence layer, it is a scalable NoSQL cloud-hosted database with offline mode and syncing capabilities.
 
+It supports flexible, hierarchical data structure, files being organised in documents (the equivalent of tables from SQL) that further split into collections. It features realtime support, callbacks that are triggered if a substructure of the registered node is updated. Even if the application is in an offline state, all the data changes are going to be cached and then synced when the device comes back online. It also enable authenticaation integration with 3rd party services, in ArCode the option for one-click Google login is used, no other data being requested from the user.
+
+For the purpose of this project the data is divided into four collections:
+\begin{enumerate}
+\item Users: beside basic user information like the token, role, it contains the currently selected character and a reference to all the completed achievements and levels
+\item Levels: name, chapter name, height, width, reference to the user that created it, boolean specifying if the level is public or not and a sub-list of width*height length containing the type of tile
+\item Characters: name of the character, icon and the number of completed levels required for unlocking it
+\item Achievements: name of the achievement, a short description and its picture
+\end{enumerate}
 
 \subsection*{Reactive Programming}
 
+\begin{figure}[H]
+\includegraphics[width=0.6\textwidth]{streams}
+\centering
+\label{fig:reactive-pgrogramming}
+\caption{Example of reactive programming }
+\end{figure}
+
+Represents programming with asynchronous data streams. Its functional part is what it makes it an truly elegant way of writing code. Streams are cheap, ubiquitous and basically anything can be a stream: variables, user input, properties, data structures, etc. A stream can be used as an input to other stream, it can be merge into two streams, filtered to get only the events that impose interest, mapped to other  values and so on.
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{reactive-repository}
+\centering
+\label{fig:reactive-repository}
+\caption{Example of reactive programming }
+\end{figure}
 
 \section{Gamification}
 As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process in an interactive game represents on of the most important aspects in maximising the impact of such an application.
@@ -420,11 +479,11 @@ As the target public is formed of young kids, packing the application in a form 
 \caption{Interface that enables the process of choosing a hero }
 \end{figure}
 
-Unlocking new characters that relates to the personality of the kids is a motivator to continue playing and solving levels so that the risk of abandon is diminished, and the feeling of accomplishment is stimulated.
+Unlocking new characters that relates to the personality of the kids is a motivator to continue playing and solving levels so that the risk of abandonment is diminished, and the feeling of accomplishment is stimulated.
 
 Each character has a number of levels that must be successfully completed in order to unlock them.  By default, there are two characters unlocked such that they discover the functionality and realise that more are to be unlocked if they complete enough levels.
 
-The benefits of unraveling a new character are only aesthetic, no actual advantage is being given in the game, but this hasn't proved to negatively affect the user experience on the grounds of their age.
+The benefits of unraveling a new character are only aesthetic, no actual advantage is being given in the game, but this hasn't proved to negatxively affect the user experience on the grounds of their age.
 
 The aspect of the characters is chosen to reflect the general theme of the game, space exploration, a topic known to attract people of all ages, specially kids.
 
