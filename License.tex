@@ -36,7 +36,7 @@ The way that people acquire new knowledge and interact with the information has 
 \section{Motivation}
 On the grounds that in recent years the rate of technological advancements is increasing exponentially makes it our responsibility to always keep looking towards new ways of exploiting to the maximum the power of such technologies. Moreover when breakthroughs are powerful enough to enter into the public's attention it triggers and stimulates the desire to increase the research activity in that field, thus forming a circle that is in our interests to not break it.
 
-As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvite are definetely worth  it. 
+As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvise are definitely worth  it. 
 
 \section{Objective}
 The objective of this work is to find new use of recent technological advancements in Augmented Reality for the education sector and to research the effectiveness, feasibility of deploying such approaches to the general public. Also, to provide additional directions for future developments so that they enable the  forthcoming applications to have the power of redefining the already existing processes of learning.
@@ -251,6 +251,14 @@ In this case, augmented reality offers an unique approach for learning, allowing
 We headed towards an augmented approach (instead of a virtual reality one) due to the fact that it was a solution that would offer the actual tactile feedback that only a real piano key can provide. Moreover, as there are a multitude of piano and organs, all with different key sizes and specs (including low end, beginner purposed instruments), the capability to learn directly on the device you own, directly from the comfort of your own house represents a plus.
 
 \section{Architecture}
+
+\begin{figure}[H]
+\includegraphics[width=0.9\textwidth]{HoloPianoStateDiagram}
+\centering
+\label{fig:feature-points}
+\caption{ARKit feature points}
+\end{figure}
+
 The flow of the app is the following, after startup, for more easy computing the device is going the ask the user to pinpoint the corners of the piano (look at each corner and make a pinch gesture), when the piano is incapsulated correctly, along with this data HoloLens is going to take a camera snapshot and send everything to a server where the position of each keys are going to be inferred, sent back and mapped by the HoloLens. From this point the user can select a song base on its difficulty and start the process of playing (where holograms are going to be spawned up on the keys that are needed to be pressed).
 
 An initial approach consisted in creating a Convolutional Neural Network that would infer the position of the piano and all its keys (without prompting to the user for specifying the pianos corners), but the first generation of HoloLens doesn't have support for running inference locally.
