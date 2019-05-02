@@ -480,7 +480,7 @@ There are four varieties of a Subject, all designed for different use cases:
 \item Replay Subject: it emits to any observer all the items that were emitted by the source Observable, regardless of when the observer subscribes. Some implementations replay only a specific number of past emitted events.
 \end{enumerate}
 
-Reactive programming was used extensively throughout this project. 
+RxSwift is the implementation of rx that was used extensively throughout this project. Alongside it, RxGesture was used to provide rx capabilities for detecting different gestures like pan, rotation, swipe and so on.
 
 The application contains multiple repositories for levels, users, characters and achievements. Each repository is treated as a single source of truth and data propagation throughout all the views, for this reason each repository is also a singleton. The repositories output an observable allowing different parts of the program to subscribe and watch for any changes. The outputed observable observes an internal Replay Subject having a buffer size of 1, this allows for every component and the subscription time to receive the latest version of the data without needing to wait until new data is emitted.
 \begin{figure}[H]
@@ -490,8 +490,9 @@ The application contains multiple repositories for levels, users, characters and
 \caption{Repository integration with reactive programming }
 \end{figure}
 
-The instructions captured from ScratchBlocks JavaScript virtual machine are enqueued in an Behaviour Subject for the AR rendering controller that takes one instruction per second and executes its. The role of the delay is to provide enough time for the animations to finish rendering.
+The instructions captured from ScratchBlocks JavaScript virtual machine are enqueued in an Behaviour Subject for the AR rendering controller that takes one instruction per second and executes its. The role of the delay is to provide enough time for the animations to finish rendering. 
 
+One advantage of using reactive programming comes from easily being able to change the thread used for the subscription and observer code (thus leaving the main thread as uncluttered as possible to keep the smoothness of the user interface)
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{reactive-instructions}
 \centering
