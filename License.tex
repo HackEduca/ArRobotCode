@@ -526,9 +526,27 @@ The Data Binding part is where the reactive programming really shines by helping
 \end{figure}
 
 \section{Gamification}
-As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process in an interactive game represents on of the most important aspects in maximising the impact of such an application.
+\begin{figure}[H]
+\includegraphics[width=0.65\textwidth]{gamification}
+\centering
+\label{fig:feature-points}
+\caption{ Matrix classifing concepts related to gamification \cite{deterding} }
+\end{figure}
+
+As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelope the learning process into an interactive game represents on of the most important aspects in maximising the impact of such an application. 
+
+At the first look, the aspect of an application is enough to catch the attention of a kid, but especially at these ages, kids have the tendency to be drawn toward new activities rather than sticking to already known ones, but from an educational point of view in order to actually make a difference, the rate of retention is crucial, keeping them focused, motivated and willing to return in the application for the purpose of of completing other levels.
 
 
+Gamification helps this purpose by offering a collection of techniques:
+
+\begin{enumerate}
+\item Games adapt their difficulty to be slightly harder then the player skill
+\item The ability to receive items when a certain point has ben reached, in other words this represents a do-reward mechanism
+\item Settings a series of goals (through achievements for the case of this application)
+\item Integration with real world, augmented reality being a powerful technique
+\item The ability to self-express, to either customise certain elements (like the chosen character) or create (through the level builder)
+\end{enumerate}
 \subsection*{Hero choser}
 \begin{figure}[H]
 \includegraphics[width=0.89\textwidth]{ArRobotCode1}
@@ -545,7 +563,7 @@ The benefits of unraveling a new character are only aesthetic, no actual advanta
 
 The aspect of the characters is chosen to reflect the general theme of the game, space exploration, a topic known to attract people of all ages, specially kids.
 
-
+From a technical point of view the list of characters is shown into a modal window rendering over the Main Activity. Collection View was used as a container rendering two elements per row and in order to allow the selection of different available characters a tap listener is in place for every element showed in the collection view.
 
 \subsection*{Achievements}
  
@@ -595,6 +613,8 @@ Silva, Rodrigo and Rodrigues, Paulo and Mazala, Diego and Giraldi, Gilson. (2004
 Kesim, Mehmet and Ozarslan, Yasin. (2012). Augmented Reality in Education: Current Technologies and the Potential for Education. Procedia - Social and Behavioral Sciences. 47. 297–302. 10.1016/j.sbspro.2012.06.654. 
 \bibitem{reactivexDocumentation}
 ReactiveX documentation 2019. [Online; accessed 2-May-2019]
+\bibitem{deterding}
+Deterding, S., Sicart, M., Nacke, L., O'Hara, K., & Dixon, D. (2011b). Gamification. Using Game-Design Elements in Non-Gaming Contexts. In CHI'11 Extended Abstracts on Human Factors in Computing Systems (pp. 2425-2428).
 \end{thebibliography}
 
 
