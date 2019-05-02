@@ -461,10 +461,67 @@ For the purpose of this project the data is divided into four collections:
 Represents programming with asynchronous data streams. Its functional part is what it makes it an truly elegant way of writing code. Streams are cheap, ubiquitous and basically anything can be a stream: variables, user input, properties, data structures, etc. A stream can be used as an input to other stream, it can be merge into two streams, filtered to get only the events that impose interest, mapped to other  values and so on.
 
 \begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{observable-doc}
+\centering
+\label{fig:feature-points}
+\caption{ \cite{reactivexDocumentation} }
+\end{figure}
+
+
+An observer subscribes to an Observable making it react to whatever item or sequence of items the Observable emits. Concurrent operations are facilitated by using this pattern as there is no need to block while waiting for an Observable to emit object.
+
+A subject is a bridge or a proxy that acts both as an observer and as an Observable. Because it is an observer, it can subscribe to one or more observables and because it is an observable it can pass through the items it has observed by reemitting them, it can also emit new items.
+
+There are four varieties of a Subject, all designed for different use cases:
+\begin{enumerate}
+\item Async Subject: emits only the last value emitted by the source Observable and only after that source Observable completes
+\item Behaviour Subject: when an observer subscribes to a BehaviourSubject, it begins by emitting the item most recently emitted by the source Observable
+\item Public Subject: it emits to an observer only the items that have been emitted by the source Observable subsequent to the time of subscription
+\item Replay Subject: it emits to any observer all the items that were emitted by the source Observable, regardless of when the observer subscribes. Some implementations replay only a specific number of past emitted events.
+\end{enumerate}
+
+Reactive programming was used extensively throughout this project. 
+
+The application contains multiple repositories for levels, users, characters and achievements. Each repository is treated as a single source of truth and data propagation throughout all the views, for this reason each repository is also a singleton. The repositories output an observable allowing different parts of the program to subscribe and watch for any changes. The outputed observable observes an internal Replay Subject having a buffer size of 1, this allows for every component and the subscription time to receive the latest version of the data without needing to wait until new data is emitted.
+\begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{reactive-repository}
 \centering
 \label{fig:reactive-repository}
+\caption{Repository integration with reactive programming }
+\end{figure}
+
+The instructions captured from ScratchBlocks JavaScript virtual machine are enqueued in an Behaviour Subject for the AR rendering controller that takes one instruction per second and executes its. The role of the delay is to provide enough time for the animations to finish rendering.
+
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{reactive-instructions}
+\centering
+\label{fig:reactive-repository}
 \caption{Example of reactive programming }
+\end{figure}
+
+Model-view-viewmodel pattern, along reactive programming was used to facilitate the interaction with the graphical user interface.
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{mvvm}
+\centering
+\label{fig:reactive-repository}
+\caption{MVVM patern architecture }
+\end{figure}
+
+\begin{enumerate}
+\item Model is the domain object, it represents the actual data 
+\item View is the presentation of the data, what the final users see. It allows for interaction to take place, such accepting new input or  modifying already existing data
+\item ViewModel is a key piece of the triad on the ground that it introduces Presentation Separation.  Instead of making the model aware of the user’s view of the data, the model simply holds the data, the view just holds the formatted data, and the controller is the one that acts as the liaison between the two. The controller might take input from the view and place it on the model, or it might interact with a service to retrieve the model, then translate properties and place it on the view.
+\end{enumerate}
+
+The Data Binding part is where the reactive programming really shines by helping to reduce the event/callback clutter. Also, the ViewModel is outputing an observable so that the user interface can subscribe and automatically updates the changes that occur in the Model.
+
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{reactive-ui}
+\centering
+\label{fig:reactive-repository}
+\caption{ Reactive data binding }
 \end{figure}
 
 \section{Gamification}
@@ -514,14 +571,14 @@ The aspect of the characters is chosen to reflect the general theme of the game,
   \label{fig:coffee3}
 \end{figure}
 
-On the ground that the number of completed levels is not the only quantification of the user's progress. Achievements stimulate the usage of certain features of the application in some specific ways that ultimately bring benefits to the experience of learning.
+On the ground that the number of completed levels is not the only quantification of the user's progress. Achievements stimulate the usage of certain features of the application in some specific ways that ultimately bring benefsits to the experience of learning.
 
 More specifically, achievements can direct the user to only use certain instructions for some levels (or chapters of levels) so that they are encouraged to find different ways to solve similar problems. Other aspects that can be targeted are the speed of coding, the precision with which they solve challenges (number of tries until their code is correct).
 
 \section{Conclusion}
 
 \chapter{Conclusion}
-Final conclusion
+Final conclusionss!
 
 
 
@@ -535,6 +592,8 @@ Popelka, Ondřej and Procházka, David and Kolomaznik, Jan and Landa, Jaromir an
 Silva, Rodrigo and Rodrigues, Paulo and Mazala, Diego and Giraldi, Gilson. (2004).Applying Object Recognition and Tracking to Augmented Reality xfor Information Visualization. 
 \bibitem{note4}
 Kesim, Mehmet and Ozarslan, Yasin. (2012). Augmented Reality in Education: Current Technologies and the Potential for Education. Procedia - Social and Behavioral Sciences. 47. 297–302. 10.1016/j.sbspro.2012.06.654. 
+\bibitem{reactivexDocumentation}
+ReactiveX documentation 2019. [Online; accessed 2-May-2019]
 \end{thebibliography}
 
 
