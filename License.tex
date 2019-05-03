@@ -217,7 +217,7 @@ The Visual system is refreshed every time a new frame is captured by the camera 
 \includegraphics[width=1\textwidth]{plane-detection}
 \centering
 \label{fig:plane-detection}
-\caption{ARKit plane detection, spawning blue squares}
+\caption{ARKit plane detection spawning blue plane}
 \end{figure}
 
 In order to create an AR experience that can blend with reality, the ability to place an object on the ground represents one of the critical requirements. 
@@ -277,7 +277,7 @@ The importance of playing a musical instrument is indisputable, even as a side h
 \includegraphics[width=0.7\textwidth]{flowkey}
 \centering
 \label{fig:hololens}
-\caption{Flowkey concept}
+\caption{Concept of Flowkey application}
 \end{figure}
 
 Applications like FlowKey and Piano Maestro dominate the section of self learning piano playing. They work by continuously tracking the keys that are pressed (either by listening to the generated audio or by directly connecting the piano to an external computer). By using a screen that can be be in a form of either a phone or a laptop, additional information can be rendered: the progress you are making, the accuracy, tips on which fingers to use and one of the most important, the musical sheet (that can be simplified for beginners understanding).
@@ -290,7 +290,7 @@ The other category of applications involves a more virtual approach by eliminati
 \includegraphics[width=0.7\textwidth]{piano}
 \centering
 \label{fig:feature-points}
-\caption{HoloPiano Concept Demo}
+\caption{HoloPiano Concept}
 \end{figure}
 HoloPiano represents an application dedicated for people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
 
@@ -300,7 +300,7 @@ HoloPiano represents an application dedicated for people that are eager to learn
 \includegraphics[width=0.7\textwidth]{hololens}
 \centering
 \label{fig:hololens}
-\caption{HoloPiano from Microsoft}
+\caption{HoloLens device (from Microsoft)}
 \end{figure}
 
 
@@ -318,7 +318,7 @@ We headed towards an augmented approach (instead of a virtual reality one) due t
 \includegraphics[width=0.9\textwidth]{HoloPianoStateDiagram}
 \centering
 \label{fig:feature-points}
-\caption{ARKit feature points}
+\caption{HoloPiano application state diagram}
 \end{figure}
 
 The flow of the app is the following, after startup, for more easy computing the device is going the ask the user to pinpoint the corners of the piano (look at each corner and make a pinch gesture), when the piano is incapsulated correctly, along with this data HoloLens is going to take a camera snapshot and send everything to a server where the position of each keys are going to be inferred, sent back and mapped by the HoloLens. From this point the user can select a song base on its difficulty and start the process of playing (where holograms are going to be spawned up on the keys that are needed to be pressed).
@@ -343,7 +343,7 @@ As a backup solution we had chosen to prompt for those corners and with image pr
     \includegraphics[width=\linewidth]{piano-points}
     \caption{Final result}
   \end{subfigure}
-  \caption{Steps for detecting the piano keys}
+  \caption{Steps for detecting the piano keys (first case)}
   \label{fig:coffee3}
 \end{figure}
 
@@ -361,7 +361,7 @@ As a backup solution we had chosen to prompt for those corners and with image pr
     \includegraphics[width=\linewidth]{piano-pointsv2}
     \caption{Final result}
   \end{subfigure}
-  \caption{Steps for detecting the piano keys}
+  \caption{Steps for detecting the piano keys (second case)}
   \label{fig:coffee3}
 \end{figure}
 
@@ -394,7 +394,7 @@ From the point of view of bringing additional educational value, they truly have
 \includegraphics[width=1.0\textwidth]{piano-leds}
 \centering
 \label{fig:feature-points}
-\caption{Strip of leds sticked to the piano}
+\caption{Alternative approach, a strip of leds sticked to the piano}
 \end{figure}
 
 
@@ -421,7 +421,7 @@ We believe that by taking the already proved success of other similar initiative
 \includegraphics[width=1.0\textwidth]{scratchblocks-2}
 \centering
 \label{fig:hololens}
-\caption{Scratchblocks}
+\caption{Scratchblocks horizontal instructions}
 \end{figure}
 
 Scratch Blocks is a fork of Google's Blockly project that provides a design specification and codebase for building creative computing interfaces dedicated to young children. Together with the Scratch Virtual Machine (VM) this codebase allows for the rapid design and development of visual programming interfaces. Unlike Blockly, Scratch Blocks does not use code generators, but rather leverages the Scratch Virtual Machine to create highly dynamic, interactive programming environments.
@@ -430,7 +430,7 @@ Scratch Blocks is a fork of Google's Blockly project that provides a design spec
 \includegraphics[width=1.0\textwidth]{scratchblocks}
 \centering
 \label{fig:hololens}
-\caption{Scratchblocks}
+\caption{Scratchblocks horizontal and vertical instructions comparation}
 \end{figure}
 
 There are two types of blocks, horizontal and vertical ones. The horizontal blocks provides a simpler UI, focused on visual indications instead of textual ones, the downside being that it is fairly limited. The second category will be more familiar for those which have coded before, it allows for a more powerful set of instructions and more customisation, this being the reason behind why it was chosen for this application.
@@ -459,12 +459,12 @@ Inline conditional move instructions have been created to strip town the classic
 \includegraphics[width=1.0\textwidth]{ArRobotCode0}
 \centering
 \label{fig:hololens}
-\caption{Scratchblocks}
+\caption{ArRobotCode main activity}
 \end{figure}
 
 On the left side, multiple elements are displayed, starting from the upper left, an icon of the currently chosen character is shown, followed by a button to change the character and another one to go to the menu that allows for new level to be build and experimented with. The last element being a list of all the received and available achievements.
 
-On the right side, the home screen consists of a list of the levels organised by difficulty. All the completed levels are marked accordingly with a green tick to stimulate the feeling of accomplishment. The icon of every entry is a small representation of the level, giving a hint about it's difficulty. 
+On the right side, the home screen consists of a list of the levels organised by difficulty. All the completed levels are marked accordingly with a green tick to stimulate the feeling of accomplishment. The icon of every entry is a small representation of the level, giving a hint about itss difficulty. 
 
 The levels are organised in chapters based on their difficulty and on different algorithmic aspects that they emphasise. The content can be dynamically changed directly from the application by anybody that has administrative privileges, and it will propagate to all other users without the need to launch a separate update.
 
@@ -474,7 +474,7 @@ The levels are organised in chapters based on their difficulty and on different 
 \includegraphics[width=1.0\textwidth]{ArRobotCode2}
 \centering
 \label{fig:hololens}
-\caption{Scratchblocks}
+\caption{ArRobotcode game activity}
 \end{figure}
 The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. There is a bridge that allows permanent bi-directional communication between the two parties.
 
@@ -486,7 +486,7 @@ Horizontal plane detection is a builtin feature of ArKit and it is used right af
 \includegraphics[width=1.0\textwidth]{ArRobotCode3}
 \centering
 \label{fig:levelBuilder}
-\caption{Level builder interface}
+\caption{ArRobotCode level builder interface}
 \end{figure}
 
 One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a signifiant boost in creativity and understanding. 
@@ -541,7 +541,7 @@ Represents programming with asynchronous data streams. Its functional part is wh
 \includegraphics[width=1.0\textwidth]{observable-doc}
 \centering
 \label{fig:feature-points}
-\caption{ \cite{reactivexDocumentation} }
+\caption{ Observables scheme \cite{reactivexDocumentation} }
 \end{figure}
 
 
@@ -574,7 +574,7 @@ One advantage of using reactive programming comes from easily being able to chan
 \includegraphics[width=0.8\textwidth]{reactive-instructions}
 \centering
 \label{fig:reactive-repository}
-\caption{Example of reactive programming }
+\caption{Processing instructions stream using reactive programming}
 \end{figure}
 
 Model-view-viewmodel pattern, along reactive programming was used to facilitate the interaction with the graphical user interface.
@@ -599,7 +599,7 @@ The Data Binding part is where the reactive programming really shines by helping
 \includegraphics[width=1.0\textwidth]{reactive-ui}
 \centering
 \label{fig:reactive-repository}
-\caption{ Reactive data binding }
+\caption{Data binding using reactive programming}
 \end{figure}
 
 \subsection*{Augmented Reality Module Architecture}
@@ -678,7 +678,7 @@ Gamification helps this purpose by offering a collection of techniques:
 \includegraphics[width=0.89\textwidth]{ArRobotCode1}
 \centering
 \label{fig:feature-points}
-\caption{Interface that enables the process of choosing a hero }
+\caption{ArRobotCode hero chooser interface}
 \end{figure}
 
 Unlocking new characters that relates to the personality of the kids is a motivator to continue playing and solving levels so that the risk of abandonment is diminished, and the feeling of accomplishment is stimulated.
@@ -697,26 +697,26 @@ From a technical point of view the list of characters is shown into a modal wind
   \centering
   \begin{subfigure}[b]{0.3\linewidth}
     \includegraphics[width=\linewidth]{ArRobotCodeAchiv1}
-     \caption{For X}
+     \caption{For completing a level}
      
   \end{subfigure}
   \begin{subfigure}[b]{0.3\linewidth}
     \includegraphics[width=\linewidth]{ArRobotCodeAchiv2}
-    \caption{For Y}
+    \caption{For completing 10 levels}
   \end{subfigure}
   \begin{subfigure}[b]{0.3\linewidth}
     \includegraphics[width=\linewidth]{ArRobotCodeAchiv3}
-    \caption{For Z}
+    \caption{For completing a section }
   \end{subfigure}
   \begin{subfigure}[b]{0.3\linewidth}
     \includegraphics[width=\linewidth]{ArRobotCodeAchiv4}
-    \caption{For W}
+    \caption{For building a level}
   \end{subfigure}
-  \caption{Achievements}
+  \caption{ ArRobotCode list of Achievements}
   \label{fig:coffee3}
 \end{figure}
 
-On the ground that the number of completed levels is not the only quantification of the user's progress. Achievements stimulate the usage of certain features of the application in some specific ways that ultimately bring benefsits to the experience of learning.
+On the ground that the number of completed levels is not the only quantification of the user's progress. Achievements stimulate the usage of certain features of the application in some specific ways that ultimately bring benefits to the experience of learning.
 
 More specifically, achievements can direct the user to only use certain instructions for some levels (or chapters of levels) so that they are encouraged to find different ways to solve similar problems. Other aspects that can be targeted are the speed of coding, the precision with which they solve challenges (number of tries until their code is correct).
 
