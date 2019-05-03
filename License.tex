@@ -99,7 +99,7 @@ On the grounds that in recent years the rate of technological advancements is in
 Augmented Reality is one of the most promising technologies that have risen in the past years. It has a real potential to provide a boost in already existing applications across a multitude of domains, and even more to redefine and explore completely new use-cases, path that is in active research and encouraged
  by this work to be explored.
 
-As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvise are definitely worth it. We believe that augmented reality has the power to improve the digital methods of learning by  bringing the experience closer  to the in-class one.
+As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improve are definitely worth it. We believe that augmented reality has the power to enhance the digital methods of learning by  bringing the experience closer  to the in-class one.
 \section{Objective}
 The objective of this work is to find new use of recent technological advancements in Augmented Reality for the education sector and to research the effectiveness, feasibility of deploying such approaches to the general public. Also, to provide additional directions for future developments so that they enable the  forthcoming applications to have the power of redefining the already existing processes of learning.
 
@@ -367,6 +367,15 @@ As a backup solution we had chosen to prompt for those corners and with image pr
 
 After receiving 4 coordinates and a picture, using Homogrophic Correction, the image is rotated such that all piano keys have a vertical angle. Then, using a watershed algorithm the contours of all the keys are generated and what is left is to filter the out-layers and to give each contour the musical note that it represents. 
 
+The image processing script is written in Python (language known for the accelerate speed of prototyping). Afterwords, the script is wrapped into an API that receives POST request having in the body the image captured by the HoloLens along with the piano bounding box and returns a string that encodes the name and coordinate of each piano key.
+
+\begin{figure}[H]
+\includegraphics[width=0.95\textwidth]{holopiano-detection}
+\centering
+\label{fig:feature-points}
+\caption{Alternative approach, a strip of leds sticked to the piano}
+\end{figure}
+
 \section{Limitations of the device}
 
 Unfortunately, after we have put together all the parts, we realised that the device we were using (HoloLens) is not powerful enough to maintain the holograms exactly on the position we are spawning them on, thus the holograms were drifting randomly over other piano keys, rendering the experience unusable.
@@ -376,6 +385,14 @@ The key component of our approach was the experience given by smart glasses, as 
 We believe that in the near future, as the hardware and software are continuously improving (at the moment of writing Microsoft announced a new version of HoloLens that is going to come with built in AI capabilities and improve precision), this approach is going to be realisable.
 
 \section{Alternative approach}
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{piano-leds}
+\centering
+\label{fig:feature-points}
+\caption{Alternative approach, a strip of leds sticked to the piano}
+\end{figure}
+
 A more analog, but working path that we took is to replace HoloLens glasses with a strip of very small, individually controllable leds that are going to be sticked above the piano keys, one or two leds (depending on their size) are going to directly map one piano key. 
 
 A few seconds before the user would need to press a piano key, the specific leds are going to be lit up, increasing in intensity until the moment they actually need to be pressed, then they will continue to blink prior to other keys needing to be pressed.
@@ -390,13 +407,6 @@ One disadvantage of this approach is given by the variable number of keys a pian
 This generation of augmented reality enabled devices are not powerful enough to sustain such an use case, moreover at the current time these devices are in early stages, mainly targeting researchers and developers, their price making them unreasonable for the average individual. Fortunately, the progress towards newer iterations that will come with improved precision, performance and a better prices are soon to be released, rendering this approach valid.
 
 From the point of view of bringing additional educational value, they truly have the potential to render the already available information on ways that could not be done before, thus being able to surpass even the classical in-class experience, even removing the limit of physically needing to be at a certain  time and location to benefit from such activity.
-\begin{figure}[]
-\includegraphics[width=1.0\textwidth]{piano-leds}
-\centering
-\label{fig:feature-points}
-\caption{Alternative approach, a strip of leds sticked to the piano}
-\end{figure}
-
 
 \chapter{Application in Computer science}
 
