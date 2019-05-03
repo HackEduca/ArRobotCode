@@ -13,7 +13,6 @@
 \setcounter{section}{-1}
 
 \begin{document}
-
 \begin{titlepage}
 \title{%
   { \huge Babeș-Bolyai University\\
@@ -90,8 +89,17 @@ The way that people acquire new knowledge and interact with the information has 
 \section{Motivation}
 On the grounds that in recent years the rate of technological advancements is increasing exponentially makes it our responsibility to always keep looking towards new ways of exploiting to the maximum the power of such technologies. Moreover when breakthroughs are powerful enough to enter into the public's attention it triggers and stimulates the desire to increase the research activity in that field, thus forming a circle that is in our interests to not break it.
 
-As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvise are definitely worth  it. 
+\begin{figure}[H]
+\includegraphics[width=0.4\textwidth]{ar-chart}
+\centering
+\label{fig:feature-points}
+\caption{Augmented reality market size \cite{consultancy}}
+\end{figure}
 
+Augmented Reality is one of the most promising technologies that have risen in the past years. It has a real potential to provide a boost in already existing applications across a multitude of domains, and even more to redefine and explore completely new use-cases, path that is in active research and encouraged
+ by this work to be explored.
+
+As for the actual field which is the target of this study, Education, due to its major importance in forming new generations of capable people, the efforts to continuously find ways to improvise are definitely worth it. We believe that augmented reality has the power to improve the digital methods of learning by  bringing the experience closer  to the in-class one.
 \section{Objective}
 The objective of this work is to find new use of recent technological advancements in Augmented Reality for the education sector and to research the effectiveness, feasibility of deploying such approaches to the general public. Also, to provide additional directions for future developments so that they enable the  forthcoming applications to have the power of redefining the already existing processes of learning.
 
@@ -594,6 +602,55 @@ The Data Binding part is where the reactive programming really shines by helping
 \caption{ Reactive data binding }
 \end{figure}
 
+\subsection*{Augmented Reality Module Architecture}
+
+\begin{figure}[H]
+\includegraphics[width=0.9\textwidth]{ArRobotCodeUML}
+\centering
+\label{fig:feature-points}
+\caption{ Augmented Reality module class diagram }
+\end{figure}
+
+As ArKit only provides basic methods for functionality like plane finding or object spawning, a higher level system had to be build in order to interact with all these components in a reliable, maintainable and extensible way, in other words, a game engine.
+
+Following the path of executing a \textit{move front if} instruction, the first step is for the instruction observer to encounter and start processing  it:
+\begin{figure}[H]
+\includegraphics[width=0.9\textwidth]{move-front-if-1}
+\centering
+\label{fig:feature-points}
+\caption{ First step in moveFrontIf execution }
+\end{figure}
+
+Moving on to the EngineAr \textit{moveFrontIf} instruction, at first the state of the game is checked, if it has ended the execution will be canceled, otherwise if the current tile's colour matches the colour specified in the conditional instruction, the instruction changes into a simple, unconditional \textit{moveFront()}.
+
+The \textit{DispatchQueue.main.async} is needed on the grounds that the entire \textit{moveFrontIf} instruction is executed on a background thread (decision made for keeping the main thread dedicated to UI operations) and changing the text of the status is a UI related operation that can be executed only on the main thread.
+
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{move-front-if-2}
+\centering
+\label{fig:feature-points}
+\caption{ Second step in moveFrontIf execution }
+\end{figure}
+
+\textit{MoveFront} checks again for the game not to be completed, and if this happens the player's position is virtually moved to the new position and the PlayerAr's method of moveFront is called. 
+
+This extra layer of abstraction is needed in case the Augmented Reality render system is switched to another type of visualisation, as the state of the game is already kept in memory, only the last layer of visualisation needing to be updated.
+\begin{figure}[H]
+\includegraphics[width=0.6\textwidth]{move-front-if-3}
+\centering
+\label{fig:feature-points}
+\caption{ Third step in moveFrontIf execution }
+\end{figure}
+
+This method is the final one from the chain, being the most low-level as it physically translates the position of the spaceship within a period of time (one second in this case).
+\begin{figure}[H]
+\includegraphics[width=1.0\textwidth]{move-front-if-4}
+\centering
+\label{fig:feature-points}
+\caption{ Final step in moveFrontIf execution}
+\end{figure}
+
+
 \section{Gamification}
 \begin{figure}[H]
 \includegraphics[width=0.65\textwidth]{gamification}
@@ -690,6 +747,8 @@ Kesim, Mehmet and Ozarslan, Yasin. (2012). Augmented Reality in Education: Curre
 ReactiveX documentation 2019. [Online; accessed 2-May-2019]
 \bibitem{deterding}
 Deterding, S., Sicart, M., Nacke, L., O'Hara, K., Dixon, D. (2011b). Gamification. Using Game-Design Elements in Non-Gaming Contexts. In CHI'11 Extended Abstracts on Human Factors in Computing Systems (pp. 2425-2428).
+\bibitem{consultancy}
+ Consultancy.uk. [Online; accessed 2-May-2019]
 \end{thebibliography}
 
 
