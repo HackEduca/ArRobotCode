@@ -95,7 +95,7 @@ On the grounds that in recent years the rate of technological advancements is in
 \includegraphics[width=0.59\textwidth]{ar-chart}
 \centering
 \label{fig:feature-points}
-\caption{Augmented reality market size \cite{consultancy}}
+\caption{Augmented reality market size \cite{consultancy.uk}}
 \end{figure}
 
 Augmented Reality is one of the most promising technologies that have risen in the past years. It has a real potential to provide a boost in already existing applications across a multitude of domains, and even more to redefine and explore completely new use-cases, a path that is in active research and encouraged
@@ -158,11 +158,13 @@ In this approach, the original view is either fully or partially replaced with a
   \centering
   \begin{subfigure}[b]{0.4\linewidth}
     \includegraphics[width=\linewidth]{head-up}
-     \caption{Head Up Display}
+    \caption{Head Up Display}
+    \label{fig:headupdisplay}
   \end{subfigure}
   \begin{subfigure}[b]{0.4\linewidth}
     \includegraphics[width=\linewidth]{helmet-mounted}
     \caption{Helmet Mounted Display}
+    \label{fig:helmetdisplay}
   \end{subfigure}
   \begin{subfigure}[b]{0.4\linewidth}
     \includegraphics[width=\linewidth]{holographic-display}
@@ -177,24 +179,24 @@ In this approach, the original view is either fully or partially replaced with a
     \caption{Handheld}
   \end{subfigure}
   \caption{Types of AR enabled devices}
-  \label{fig:coffee3}
+  \label{fig:artypes}
 \end{figure}
 
 \subsection*{Head up displays}
-Mainly invented for mission-critical applications like flight controllers and weapon system dashboards where crucial information needs to be presented directly in the visual field of the user. In this case, the projected information is collimated (parallel light rays), focused on infinity so that the user’s eyes do not need to refocus to view outside the world.
-A regular HUD is composed out of a projector unit, a viewing glass and a computer that generates the data that needs to be shown.
+Mainly invented for mission-critical applications \cite{livingston2011military} like flight controllers and weapon system dashboards where crucial information needs to be presented directly in the visual field of the user. In this case, the projected information is collimated (parallel light rays), focused on infinity so that the user’s eyes do not need to refocus to view outside the world.
+A regular HUD \cite{beckwith2015augmented} is composed out of a projector unit, a viewing glass and a computer that generates the data that needs to be shown.
 
 \subsection*{Helmet mounted displays}
-Represents the next logical step from the head up displays, moving the display from a fixed position to a mobile one, mounted directly on the helmet.
+Represents the next logical step from the head up displays (\ref{fig:headupdisplay}) moving the display from a fixed position to a mobile one, mounted directly on the helmet (\ref{fig:helmetdisplay})
 
 \subsection*{Holographic displays}
-They use light diffraction to generate three-dimensional forms of an object in real space
+They use light diffraction \cite{lucente1997interactive} to generate three-dimensional forms of an object in real space
 
 \subsection*{Smart glasses}
 As the use case of Augmented Reality transitioned from critical applications (mostly used by the army) to applications available for the general mass of user, helmet mounted displays shifted toward a lighter form-factor, integrated directly in smart glasses. 
 
 \subsection*{Handheld AR}
-The majority of mobile devices enter in this category, as both major mobile software providers, Apple and Android offer augmented reality support (ARKit and ARCore). The advantage of this approach is that it makes augmented reality accessible to anyone with a decent smartphone, the drawback being the fact the user experience is not always satisfying as you need to always hold and pinpoint the device towards the zone you want to interact with.
+The majority of mobile devices enter in this category, as both major mobile software providers, iOS \cite{wilson2007iphone} and Android \cite{rogers2009android} offer augmented reality support (ARKit and ARCore). The advantage of this approach is that it makes augmented reality accessible to anyone with a decent smartphone, the drawback being the fact the user experience is not always satisfying as you need to always hold and pinpoint the device towards the zone you want to interact with.
 
 \section{ARKit}
 Primarily it does three essential things behind the scenes: tracking, scene understanding, and rendering, thus taking the heavy lift from the developer (as you only need to anchor virtual objects to the real world, and they stay glued to the physical position they were placed).
@@ -547,7 +549,7 @@ Represents programming with asynchronous data streams. Its functional part is wh
 \includegraphics[width=1.0\textwidth]{observable-doc}
 \centering
 \label{fig:feature-points}
-\caption{ Observables scheme \cite{reactivexDocumentation} }
+\caption{ Observables scheme \cite{reactivex} }
 \end{figure}
 
 An observer subscribes to an Observable making it react to whatever item or sequence of items the Observable emits. Concurrent operations are facilitated by using this pattern as there is no need to block while waiting for an Observable to emit object.
@@ -662,7 +664,7 @@ This method is the final one from the chain, being the most low-level as it phys
 \includegraphics[width=0.65\textwidth]{gamification}
 \centering
 \label{fig:feature-points}
-\caption{ Matrix classifing concepts related to gamification \cite{deterding} }
+\caption{ Matrix classifing concepts related to gamification \cite{deterding2011gamification} }
 \end{figure}
 
 As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelop the learning process into an interactive game represents one of the most important aspects in maximizing the impact of such an application. 
@@ -745,21 +747,6 @@ While the boost from the first application was given by the visualization capabi
 
 The educational sector has been improving its techniques for thousands of years, from providing a way to persist information throughout time by writing it on different materials, until formalizing it into a well defined educational system. At the moment, the technological progress made it all more straightforward to access, at any time, from any place, and augmented reality has the power to take it a step forward.
 
-
-\begin{thebibliography}{3}
-\bibitem{note2}
-Popelka, Ondřej and Procházka, David and Kolomaznik, Jan and Landa, Jaromir and Koubek, Tomas. (2012). Adaptive Real-Time Object Recognition for Augmented Reality. 
-\bibitem{note3}
-Silva, Rodrigo and Rodrigues, Paulo and Mazala, Diego and Giraldi, Gilson. (2004).Applying Object Recognition and Tracking to Augmented Reality xfor Information Visualization. 
-\bibitem{note4}
-Kesim, Mehmet and Ozarslan, Yasin. (2012). Augmented Reality in Education: Current Technologies and the Potential for Education. Procedia - Social and Behavioral Sciences. 47. 297–302. 10.1016/j.sbspro.2012.06.654. 
-\bibitem{reactivexDocumentation}
-ReactiveX documentation 2019. [Online; accessed 2-May-2019]
-\bibitem{deterding}
-Deterding, S., Sicart, M., Nacke, L., O'Hara, K., Dixon, D. (2011b). Gamification. Using Game-Design Elements in Non-Gaming Contexts. In CHI'11 Extended Abstracts on Human Factors in Computing Systems (pp. 2425-2428).
-\bibitem{consultancy}
- Consultancy.uk. [Online; accessed 2-May-2019]
-\end{thebibliography}
 
 \bibliography{references}
 \bibliographystyle{unsrt} 
