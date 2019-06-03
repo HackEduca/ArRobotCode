@@ -416,6 +416,14 @@ These kinds of applications are already known for their efficiency, Hour of Code
 The coding activities are usually found in a web or mobile format, making them easily accessible to the most used devices like laptops, mobile phones, and tablets.
 
 \section{Solution}
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{arrobotdiagram}
+\centering
+\label{fig:arrobotdiagram}
+\caption{ARRobotCode user case diagram}
+\end{figure}
+
 Using an IPad \cite{henderson2012ipad}, ARKit \cite{wang2018understanding} , and ScratchBlocks \cite{resnick2009scratch} we have developed a solution called ArRobotCode that uses Augmented Reality to aid in grasping the basic knowledge needed for writing algorithms, everything is packed into a form that tries to be more tightly coupled with the reality, making concepts that are very abstract for kids of that age understandable.
 
 The lessons are presented in a level format (a multitude of levels organized by complexity and topic) in which his or her role is to fly a spaceship from Earth to Moon. This can be done by providing a list of instructions so that the spaceship follows a given route (and does not deviate).
@@ -523,6 +531,15 @@ If the account has administrative privileges, like in figure \ref{fig:buildinglv
 There is also the possibility to test the levels while building them by using the dedicated button.
 
 \subsection*{Data Persistence}
+
+\begin{figure}[H]
+\includegraphics[width=0.92\textwidth]{ArRobotCodePersistUML}
+\centering
+\label{fig:arrobotcode-persist}
+\caption{Data Persistence class diagram for ARRobotCode}
+\end{figure}
+
+
 Cloud Firestore (from FireBase) \cite{wingerath2019real} is used as the persistence layer, it is a scalable NoSQL \cite{strauch2011nosql} cloud-hosted database with offline mode and syncing capabilities.
 
 It supports flexible, hierarchical data structure, files being organized in documents (the equivalent of tables from SQL) that further split into collections. It features real-time support, callbacks that are triggered if a substructure of the registered node is updated. Even if the application is in an offline state, all the data changes are going to be cached and then synced when the device comes back online. It also enables authentication integration with 3rd party services, in ArCode the option for one-click Google login is used, no other data is requested from the user.
