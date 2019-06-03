@@ -199,7 +199,7 @@ As the use case of Augmented Reality transitioned from critical applications (mo
 The majority of mobile devices enter in this category, as both major mobile software providers, iOS \cite{wilson2007iphone} and Android \cite{rogers2009android} offer augmented reality support (ARKit and ARCore). The advantage of this approach is that it makes augmented reality accessible to anyone with a decent smartphone, the drawback being the fact the user experience is not always satisfying as you need to always hold and pinpoint the device towards the zone you want to interact with.
 
 \section{ARKit}
-Primarily it does three essential things behind the scenes: tracking, scene understanding, and rendering, thus taking the heavy lift from the developer (as you only need to anchor virtual objects to the real world, and they stay glued to the physical position they were placed).
+It is a framework that does tracking, scene understanding, and rendering, thus taking the heavy lift from the developer (as you only need to anchor virtual objects to the real world, and they stay glued to the physical position they were placed).
 
 ArKit uses a technique called visual-inertial odometry (VIO). In more detail, the position of the phone is tracked via the Visual system (camera), by matching a point in the real world (called feature point) to a pixel on the camera sensor for each frame. In parallel, the pose is also tracked by the Inertial system  (also called IMU) formed of an accelerometer and gyroscope. These two outputs are combined via a Kalman filter to determine which of the two systems provides the best estimate of the real position.
 
@@ -211,7 +211,7 @@ ArKit uses a technique called visual-inertial odometry (VIO). In more detail, th
 \end{figure}
 
 
-The Visual system is refreshed every time a new frame is captured by the camera (30 times per second), while the inertial system outputs 1000 readings per second. Both the systems alone would accumulate errors in a certain condition, but the fact that there are no interdependencies between them leads to an overall much better performance. For example, the visual systems output weak results if the image is shaken, if the light is weak or the targeted object has a smooth surface (without particularities, like glass, or a perfectly white wall), during this time the Inertial part carries the load, and vice-versa in the case that the device is still (so there is no inertial data), the camera has the possibility to capture more accurate data, thus receiving priority as being closer to the truth from the Kalman filter.
+The Visual system is refreshed every time a new frame is captured by the camera (30 times per second), while the inertial system outputs 1000 readings per second. Both the systems alone would accumulate errors in a certain condition, but the fact that there are no interdependencies between them leads to an overall much better performance. For example, the visual systems output weak results if the image is shaken, if the light is weak or the targeted object has a smooth surface (without particularities, like glass, or a perfectly white wall), during this time the Inertial part carries the load, and vice-versa in the case that the device is still (so there is no inertial data), the camera has the possibility to capture more accurate data, thus receiving priority as being closer to the truth from the Kalman filter \cite{matt2017arkit} .
 
 
 \subsection*{Plane detection}
@@ -261,15 +261,15 @@ The use of AR would also increase the time that students can spend studying diff
 
 
 \section{Pitfalls and Limitations}
-It is known that designing an application that actually improves the process of learning (no matter the form and the device it is running on) in a certain field is a task that requires serious research as usually, these kinds of solutions are not that intuitive to use, for both teachers and students. 
+It is known that designing an application that actually improves the process of learning (no matter the form and the device it is running on) in a certain field is a task that requires serious research as usually, these kinds of solutions are not that intuitive to use, for both teachers and students \cite{wu2013current} . 
 
-From other technologies, AR's advantage is the fact that it offers a hands-on approach by integrating it's interactions capabilities directly with the reality (in forms of holograms), thus theoretically closing the gap between real life teacher-driven learning and textbook-based classical learning. This advantage comes with a price, as latter forms of e-learning have been present and researched for years now, they have come to a more mature stage, some of them ready to enter in student's life, but as AR approaches have the power to redefine everything, they have to catch up in making sure that these kinds of solutions are straightforward, thus simplifying the process of learning, not making it more complex.
+From other technologies, AR's advantage is the fact that it offers a hands-on approach by integrating it's interactions capabilities directly \cite{akccayir2017advantages} with the reality (in forms of holograms), thus theoretically closing the gap between real life teacher-driven learning and textbook-based classical learning. This advantage comes with a price, as latter forms of e-learning have been present and researched for years now, they have come to a more mature stage, some of them ready to enter in student's life, but as AR approaches have the power to redefine everything, they have to catch up in making sure that these kinds of solutions are straightforward, thus simplifying the process of learning, not making it more complex.
 
-From a technological point of view, only with the progress of software and hardware from the past few years, AR has become feasible enough so that it can reach a large audience of people. At the moment, mobile devices (Hand-Held AR) are the only ones that can bring AR to the masses, with only the majority of high-end phones and tablets launched in the past year and a half, having AR capabilities. The other types of AR (like smart glasses) would offer a more immersive approach, but the cost of these devices (HoloLens by Microsoft) makes them available only for companies and research purposes.
+From a technological point of view, only with the progress of software and hardware from the past few years, AR has become feasible enough so that it can reach a large audience of people. At the moment, mobile devices (Hand-Held AR) are the only ones that can bring AR to the masses, with only the majority of high-end phones and tablets launched in the past year and a half, having AR capabilities. The other types of AR (like smart glasses) would offer a more immersive approach, but the cost of these devices (HoloLens \cite{kress201711} by Microsoft) makes them available only for companies and research purposes.
 \chapter{Application in Musical Domain}
 
 \section{Problem}
-The importance of playing a musical instrument is indisputable, even as a side hobby, learning how to do such a thing provides real benefits to the life of an individual. Unfortunately, for people who do not possess the basic musical theoretical background, learning a musical instrument seems a hustle and is often abandoned from early stages. Even if this step is passed the number of people who are self-thought is small and benefiting from the services of a music school can be expensive or disruptive. 
+The importance of playing a musical instrument is indisputable, even as a side hobby, learning how to do such a thing provides real benefits to the life of an individual. Unfortunately, for people who do not possess the basic musical theoretical background, learning a musical instrument seems a hustle and is often abandoned from early stages. Even if this step is passed the number of people who are self-thought is small and benefiting from the services of a music school can be expensive or disruptive. Thus, finding new ways to increase the chances of developing for those who do not have access to a professor will provide a meaningful impact.
 
 \section{Related Work}
 \begin{figure}[H]
@@ -279,7 +279,7 @@ The importance of playing a musical instrument is indisputable, even as a side h
 \caption{Concept of Flowkey application}
 \end{figure}
 
-Applications like FlowKey and Piano Maestro dominate the section of self-learning piano playing. They work by continuously tracking the keys that are pressed (either by listening to the generated audio or by directly connecting the piano to an external computer). By using a screen that can be in a form of either a phone or a laptop, additional information can be rendered: the progress you are making, the accuracy, tips on which fingers to use and one of the most important, the musical sheet (that can be simplified for beginners understanding).
+Applications like FlowKey and Piano Maestro \cite{ng2015easy} dominate the section of self-learning piano playing. They work by continuously tracking the keys that are pressed (either by listening to the generated audio or by directly connecting the piano to an external computer). By using a screen that can be in a form of either a phone or a laptop, additional information can be rendered: the progress you are making, the accuracy, tips on which fingers to use and one of the most important, the musical sheet (that can be simplified for beginners understanding).
 
 
 The other category of applications involves a more virtual approach by eliminating the need of having a physical piano or an organ, they allow versatility at the cost of losing the real tactile feedback and experience. These kinds of solutions are more suited for entertainment rather than having actual educational value.
@@ -291,7 +291,7 @@ The other category of applications involves a more virtual approach by eliminati
 \label{fig:feature-points}
 \caption{HoloPiano Concept}
 \end{figure}
-HoloPiano represents an application dedicated to people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
+Our proposal, HoloPiano represents an application dedicated to people that are eager to learn the basics of piano playing. It uses Augmented Reality to show holograms over the keys that need to be pressed.
 
 
 \begin{figure}[H]
@@ -361,9 +361,9 @@ As a backup solution we had chosen to prompt for those corners and with image pr
   \label{fig:coffee3}
 \end{figure}
 
-After receiving 4 coordinates and a picture, using Homographic Correction, the image is rotated such that all piano keys have a vertical angle. Then, using a watershed algorithm the contours of all the keys are generated and what is left is to filter the out-layers and to give each contour the musical note that it represents. 
+After receiving 4 coordinates and a picture, using Homographic Correction \cite{opencvhomography} , the image is rotated such that all piano keys have a vertical angle. Then, using a watershed algorithm  \cite{wang2009image}  the contours of all the keys are generated and what is left is to filter the out-layers and to give each contour the musical note that it represents. 
 
-The image processing script is written in Python (language known for the accelerate speed of prototyping). Afterward, the script is wrapped into an API that receives POST request having in the body the image captured by the HoloLens along with the piano bounding box and returns a string that encodes the name and coordinates of each piano key.
+The image processing script is written in Python \cite{oliphant2007python} (language known for the accelerate speed of prototyping). Afterward, the script is wrapped into an API that receives POST request having in the body the image captured by the HoloLens along with the piano bounding box and returns a string that encodes the name and coordinates of each piano key.
 
 \begin{figure}[H]
 \includegraphics[width=0.95\textwidth]{holopiano-detection}
@@ -393,7 +393,7 @@ A more analog, but working path that we took is to replace HoloLens glasses with
 
 A few seconds before the user would need to press a piano key, the specific LEDs are going to be lit up, increasing in intensity until the moment they actually need to be pressed, then they will continue to blink prior to other keys needing to be pressed.
 
-If by placing a camera above the piano, using image processing we could detect if the required piano keys were actually pushed correctly and offer specialised lightning feedback and dynamic context advance of the song progress.
+If by placing a camera above the piano, using image processing we could detect if the required piano keys were actually pushed correctly and offer specialised lightning feedback and dynamic context advance of the song progress. Another option would be to use the already incorporated microphone to listen for the frequencies outputted by the piano.
 
 For this approach, the strip of LEDs was connected to an Arduino board which exposes an API through that all the LEDs can individually be controlled. A Raspberry PI was used also used to orchestrate all the components.
 
@@ -411,12 +411,12 @@ As Computer Science is a field that is dramatically increasing in popularity and
 
 
 \section{Related Work}
-These kinds of applications are already known for their efficiency, Hour of Code is one of the most popular platforms and movements (that hosts and encourages the apparition of code tutorials in this format), becoming a global success with over 2 million students and a total of 750 millions hours of coding. Its success is standing on gamifying the process of coding into a puzzle-solving activity that attracts people of all ages (from 5-year-old kids with animated levels to young adults). The goal of the project is to expose as many individuals as possible to one hour of code, an amount that is enough to form a spark that can lead to a lifelong passion.
+These kinds of applications are already known for their efficiency, Hour of Code \cite{wilson2014hour} is one of the most popular platforms and movements (that hosts and encourages the apparition of code tutorials in this format), becoming a global success with over 2 million students and a total of 750 millions hours of coding \cite{codeorg} . Its success is standing on gamifying the process of coding into a puzzle-solving activity that attracts people of all ages (from 5-year-old kids with animated levels to young adults). The goal of the project is to expose as many individuals as possible to one hour of code, an amount that is enough to form a spark that can lead to a lifelong passion.
 
 The coding activities are usually found in a web or mobile format, making them easily accessible to the most used devices like laptops, mobile phones, and tablets.
 
 \section{Solution}
-Using an IPad, ARKit, and ScratchBlocks we have developed a solution called ArRobotCode that uses Augmented Reality to aid in grasping the basic knowledge needed for writing algorithms, everything is packed into a form that tries to be more tightly coupled with the reality, making concepts that are very abstract for kids of that age understandable.
+Using an IPad \cite{henderson2012ipad}, ARKit \cite{wang2018understanding} , and ScratchBlocks \cite{resnick2009scratch} we have developed a solution called ArRobotCode that uses Augmented Reality to aid in grasping the basic knowledge needed for writing algorithms, everything is packed into a form that tries to be more tightly coupled with the reality, making concepts that are very abstract for kids of that age understandable.
 
 The lessons are presented in a level format (a multitude of levels organized by complexity and topic) in which his or her role is to fly a spaceship from Earth to Moon. This can be done by providing a list of instructions so that the spaceship follows a given route (and does not deviate).
 
@@ -430,7 +430,7 @@ We believe that by taking the already proved success of other similar initiative
 \caption{Scratchblocks horizontal instructions}
 \end{figure}
 
-Scratch Blocks is a fork of Google's Blockly project that provides a design specification and codebase for building creative computing interfaces dedicated to young children. Together with the Scratch Virtual Machine (VM), this codebase allows for the rapid design and development of visual programming interfaces. Unlike Blockly, Scratch Blocks does not use code generators, but rather leverages the Scratch Virtual Machine to create highly dynamic, interactive programming environments.
+Scratch Blocks is a fork of Google's Blockly project that provides a design specification and codebase for building creative computing interfaces dedicated to young children. Together with the Scratch Virtual Machine (VM) \cite{scratchvm} , this codebase allows for the rapid design and development of visual programming interfaces. Unlike Blockly, Scratch Blocks does not use code generators, but rather leverages the Scratch Virtual Machine to create highly dynamic, interactive programming environments.
 
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{scratchblocks}
@@ -482,18 +482,19 @@ The levels are organized in chapters based on their difficulty and on different 
 \label{fig:hololens}
 \caption{ArRobotcode game activity}
 \end{figure}
-The game screen is split into two parts. The one from the left is a WebView that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. There is a bridge that allows permanent bi-directional communication between the two parties.
+The game screen is split into two parts. The one from the left is a WebView \cite{hazarika2014recommendations} that hosts a heavily modified version of ScratchBlock, and the right part consists of the Augmented Reality view that renders the game scene over the reality. There is a bridge that allows permanent bi-directional communication between the two parties.
 
 When the run button is pressed to execute a sequence of instructions an event is sent to the WebView signaling to trigger the compilation of the code, thus forming a sequential list with all the instructions needed to be executed (if there is a forever instruction, the output will be of course truncated). When this list reaches the native section, the spaceship is moved to the initial position of the board, and each sequence is executed one by one (only one per second, to allow the user to observe every action and the exact moment an eventual mistake occurs). Before starting the movement animation of the spaceship, the native part sends an event to ScratchBlocks specifying witch instruction block is going to run, so that it glows, emphasizing it.
 
 Horizontal plane detection is a builtin feature of ArKit and it is used right after a level was loaded, more exactly when the application is entering in a state where it searches for suitable places to render the scene on. At that moment, by taping on one of them, the user can select the plane where the actual game scene is going to be instantiated. Due to the fact that the plane dimensions are variable (it can be spawned on a large floor or on a tight table), the scene scales accordingly. This process happens every time a new level is loaded, to enable for a new location to be found and chosen.
 
 \subsection*{Level Builder}
+
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{ArRobotCode3}
 \centering
-\label{fig:levelBuilder}
 \caption{ArRobotCode level builder interface}
+\label{fig:buildinglvl}
 \end{figure}
 
 One of the most important features is the in-game level builder that allows users to create and experiment with their own levels, providing a significant boost in creativity and understanding. 
@@ -517,7 +518,7 @@ In order to interact with User Interface in the building menu, one has to use a 
 
 The grid size is also customizable, the number of rows and columns can be changed from the inputs that are situated on top of the screen. 
 
-If the account has administrative privileges, like in figure \ref{fig:levelBuilder} two extra inputs are going to be visible, a text field that contains the name of the category that the level is going to have and a toggle to publish it. 
+If the account has administrative privileges, like in figure \ref{fig:buildinglvl} two extra inputs are going to be visible, a text field that contains the name of the category that the level is going to have and a toggle to publish it. 
 
 There is also the possibility to test the levels while building them by using the dedicated button.
 
