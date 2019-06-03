@@ -523,7 +523,7 @@ If the account has administrative privileges, like in figure \ref{fig:buildinglv
 There is also the possibility to test the levels while building them by using the dedicated button.
 
 \subsection*{Data Persistence}
-Cloud Firestore (from FireBase) is used as the persistence layer, it is a scalable NoSQL cloud-hosted database with offline mode and syncing capabilities.
+Cloud Firestore (from FireBase) \cite{wingerath2019real} is used as the persistence layer, it is a scalable NoSQL \cite{strauch2011nosql} cloud-hosted database with offline mode and syncing capabilities.
 
 It supports flexible, hierarchical data structure, files being organized in documents (the equivalent of tables from SQL) that further split into collections. It features real-time support, callbacks that are triggered if a substructure of the registered node is updated. Even if the application is in an offline state, all the data changes are going to be cached and then synced when the device comes back online. It also enables authentication integration with 3rd party services, in ArCode the option for one-click Google login is used, no other data is requested from the user.
 
@@ -544,7 +544,7 @@ For the purpose of this project the data is divided into four collections:
 \caption{Example of reactive programming }
 \end{figure}
 
-Represents programming with asynchronous data streams. Its functional part is what makes it a truly elegant way of writing code. Streams are cheap, ubiquitous and basically, anything can be a stream: variables, user input, properties, data structures, etc. A stream can be used as an input to other streams, it can be merged into two streams, filtered to get only the events that impose interest, mapped to other values and so on.
+Represents programming with asynchronous data streams. Its functional part is what makes it a truly elegant way of writing code \cite{reactivex}. Streams are cheap, ubiquitous and basically, anything can be a stream: variables, user input, properties, data structures, etc. A stream can be used as an input to other streams, it can be merged into two streams, filtered to get only the events that impose interest, mapped to other values and so on.
 
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{observable-doc}
@@ -553,7 +553,7 @@ Represents programming with asynchronous data streams. Its functional part is wh
 \caption{ Observables scheme \cite{reactivex} }
 \end{figure}
 
-An observer subscribes to an Observable making it react to whatever item or sequence of items the Observable emits. Concurrent operations are facilitated by using this pattern as there is no need to block while waiting for an Observable to emit object.
+An observer subscribes to an Observable \cite{meijer2010reactive} making it react to whatever item or sequence of items the Observable emits. Concurrent operations are facilitated by using this pattern as there is no need to block while waiting for an Observable to emit object.
 
 A subject is a bridge or a proxy that acts both as an observer and as an Observable. Because it is an observer, it can subscribe to one or more observables and because it is an observable it can pass through the items it has observed by reemitting them, it can also emit new items.
 
@@ -565,7 +565,7 @@ There are four varieties of a Subject, all designed for different use cases:
 \item Replay Subject: it emits to any observer all the items that were emitted by the source Observable, regardless of when the observer subscribes. Some implementations replay only a specific number of past emitted events.
 \end{enumerate}
 
-RxSwift is the implementation of Rx that was used extensively throughout this project. Alongside it, RxGesture was used to provide Rx capabilities for detecting different gestures like pan, rotation, swipe and so on.
+RxSwift \cite{pillet2017rxswift} is the implementation of Rx that was used extensively throughout this project. Alongside it, RxGesture was used to provide Rx capabilities for detecting different gestures like pan, rotation, swipe and so on.
 
 The application contains multiple repositories for levels, users, characters, and achievements. Each repository is treated as a single source of truth and data propagation throughout all the views, for this reason, each repository is also a singleton. The repositories output an observable allowing different parts of the program to subscribe and watch for any changes. The outputted observable observes an internal Replay Subject having a buffer size of 1, this allows for every component and the subscription time to receive the latest version of the data without needing to wait until new data is emitted.
 
@@ -586,7 +586,7 @@ One advantage of using reactive programming comes from easily being able to chan
 \caption{Processing instructions stream using reactive programming}
 \end{figure}
 
-Model-view-viewmodel pattern, along reactive programming, was used to facilitate the interaction with the graphical user interface.
+Model-view-viewmodel pattern \cite{anderson2012model}, along reactive programming, was used to facilitate the interaction with the graphical user interface.
 
 \begin{figure}[H]
 \includegraphics[width=1.0\textwidth]{mvvm}
@@ -668,7 +668,9 @@ This method is the final one from the chain, being the most low-level as it phys
 \caption{ Matrix classifing concepts related to gamification \cite{deterding2011gamification} }
 \end{figure}
 
-As the target public is formed of young kids, packing the application in a form that would appeal to them and that would envelop the learning process into an interactive game represents one of the most important aspects in maximizing the impact of such an application. 
+As the target public is formed of young students of age 5 to 15, packing the application in a form that would appeal to them and that would envelop the learning process into an interactive game represents a vital aspect for maximizing the retention and so, also the impact of such an application. 
+
+Although proper evaluation is mostly missing, the majority of the authors of the reviewed papers share the opinion that gamification has the potential to improve learning, if it is well designed and used correctly. Therefore, more substantial empirical research is needed to investigate, in particular, the motivating effects of using single gameelements in specific educational contexts and for particular types of learners \cite{dicheva2015gamification}. 
 
 At the first look, the aspect of an application is enough to catch the attention of a kid, but especially at these ages, kids have the tendency to be drawn toward new activities rather than sticking to already known ones, but from an educational point of view in order to actually make a difference, the rate of retention is crucial, keeping them focused, motivated and willing to return in the application for the purpose of completing other levels.
 
@@ -747,6 +749,8 @@ ArRobotCode targets a young audience for the purpose of guiding their first step
 While the boost from the first application was given by the visualization capabilities introduced by Augmented Reality, in the second presented work, gamification is the aspect that made an impact. Hence, augmented reality provides a multitude of use-cases that can be exploited, having the power to redefine even well-established techniques. Moreover, the fast pace of advancing continuously enlarges these possibilities.
 
 The educational sector has been improving its techniques for thousands of years, from providing a way to persist information throughout time by writing it on different materials, until formalizing it into a well defined educational system. At the moment, the technological progress made it all more straightforward to access, at any time, from any place, and augmented reality has the power to take it a step forward.
+
+This work and the domain it envisions can be improved by reiterating different solutions and so exploiting the accelerate progress of hardware and software while also keeping a close feedback loop between the creators of these systems and their users.
 
 
 \bibliography{references}
